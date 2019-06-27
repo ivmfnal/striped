@@ -1,3 +1,4 @@
+
 BUILD_DIR = $(HOME)/build/striped
 TARDIR = /tmp/$(USER)
 TARFILE = $(TARDIR)/striped_$(VERSION).tar
