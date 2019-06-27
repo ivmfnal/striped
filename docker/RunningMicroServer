@@ -1,0 +1,21 @@
+1. Build the striped_base docker image:
+
+    $ docker build -t striped_base --no-cache striped_base
+    
+2. Build the micro server image:
+
+    $ docker build -t micro_server --no-cache micro_server
+    
+3. Run the micro_server:
+
+    $ docker run --rm -p 8765:8765 micro_server
+    
+4. Point your client code to the node where you run the microserver. It has to be inside FNAL LAN:
+
+    from striped.job import SinglePointStripedSession as Session
+    job_server = ("node.where.docker.runs.fnal.gov", 8765)
+    session = Session(job_server) 
+    ...
+    
+
+

@@ -1,0 +1,38 @@
+{
+    "attributes": {
+	    "x": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "x",
+                "subtype": null
+            }, 
+        "n": {
+                "dtype": "i4", 
+                "shape": [], 
+                "source": "n",
+                "subtype": null
+            },
+        "xn": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "xn",
+                "subtype": null
+            }
+    },
+    "branches": {
+        "A": {
+            "p": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "A.p",
+                "subtype": null
+            }, 
+            "q": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "A.q",
+                "subtype": null
+            } 
+        }
+    }
+}

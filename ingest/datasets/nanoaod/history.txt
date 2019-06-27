@@ -1,0 +1,63 @@
+ 1226  python listDataset.py -c 130tb.cfg Sandbox test
+ 1227  ls
+ 1228  vi 130tb.cfg 
+ 1229  python listDataset.py -c 130tb.cfg Sandbox test
+ 1230  vi 130tb.cfg 
+ 1231  python listDataset.py -c 130tb.cfg Sandbox test
+ 1232  pwd
+ 1233  python listDataset.py -c 130tb.cfg Sandbox test
+ 1234  ls
+ 1235  python listDataset.py -c 130tb.cfg Sandbox test
+ 1236  ls
+ 1237  pwd
+ 1238  python createDataset.py 
+ 1239  ls
+ 1240  python createDataset.py -c 130tb.cfg /data/ahall/schemas/nanoMC2016_102.json Sandbox test
+ 1241  vi 130tb.cfg 
+ 1242  python createDataset.py -c 130tb.cfg /data/ahall/schemas/nanoMC2016_102.json Sandbox test
+ 1243  python listDataset.py -c 130tb.cfg Sandbox test
+ 1244  ls
+ 1245  pwd
+ 1246  ls
+ 1247  cd ../ingestion/
+ 1248  ls
+ 1249  python run_batch.py 
+ 1250  echo $COUCHBASE_BACKEND_CFG
+ 1251  vi DataReader.py
+ 1252  cp ../datasets/nanoaod/DataReader.py .
+ 1253  python run_batch.py ahall.json Sandbox test
+ 1254  ls
+ 1255  cd ..
+ 1256  ls
+ 1257  find . -name uproot\*.py -print
+ 1258  cd ..
+ 1259  find . -name uproot\*.py -print
+ 1260  ls
+ 1261  make
+ 1262  ls
+ 1263  cd ingest
+ 1264  ls
+ 1265  cd ingestion/
+ 1266  ls
+ 1267  vi DataReader.py
+ 1268  vi /home/ivm/build/striped/striped/ingestion/__init__.py 
+ 1269  vi DataReader.py
+ 1270  python run_batch.py ahall.json Sandbox test
+ 1271  python run_batch.py -m 1 ahall.json Sandbox test
+ 1272  python run_batch.py -m 1 -O ahall.json Sandbox test
+ 1273  cd ../..
+ 1274  make
+ 1275  cd -
+ 1276  python run_batch.py -m 1 -O ahall.json Sandbox test
+ 1277  python run_batch.py -m 5 -O ahall.json Sandbox test
+ 1278  python run_batch.py -m 5 ahall.json Sandbox test
+ 1279  ls
+ 1280  ls /data/ahall
+ 1281  pwd
+ 1282  cd ../tools/
+ 1283* 
+ 1284  python createDataset.py  /data/ahall/schemas/nanoMC2016_102.json NanoAOD WJetsToLNu_HT-400
+ 1285  cd ../ingestion/
+ 1286  ls
+ 1287  less ahall.json 
+ 1288  python run_batch.py ahall.json NanoAOD WJetsToLNu_HT-400

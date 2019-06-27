@@ -1,0 +1,5108 @@
+{
+    "attributes": {
+        "CaloMET_phi": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "CaloMET_phi", 
+            "subtype": null
+        }, 
+        "CaloMET_pt": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "CaloMET_pt", 
+            "subtype": null
+        }, 
+        "CaloMET_sumEt": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "CaloMET_sumEt", 
+            "subtype": null
+        }, 
+        "Flag_BadChargedCandidateFilter": {
+            "dtype": "|u1", 
+            "shape": [], 
+            "source": "Flag_BadChargedCandidateFilter", 
+            "subtype": null
+        }, 
+        "Flag_BadGlobalMuon": {
+            "dtype": "|u1", 
+            "shape": [], 
+            "source": "Flag_BadGlobalMuon", 
+            "subtype": null
+        }, 
+        "Flag_BadPFMuonFilter": {
+            "dtype": "|u1", 
+            "shape": [], 
+            "source": "Flag_BadPFMuonFilter", 
+            "subtype": null
+        }, 
+        "Flag_CSCTightHalo2015Filter": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_CSCTightHalo2015Filter", 
+            "subtype": null
+        }, 
+        "Flag_CSCTightHaloFilter": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_CSCTightHaloFilter", 
+            "subtype": null
+        }, 
+        "Flag_CSCTightHaloTrkMuUnvetoFilter": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_CSCTightHaloTrkMuUnvetoFilter", 
+            "subtype": null
+        }, 
+        "Flag_CloneGlobalMuon": {
+            "dtype": "|u1", 
+            "shape": [], 
+            "source": "Flag_CloneGlobalMuon", 
+            "subtype": null
+        }, 
+        "Flag_EcalDeadCellBoundaryEnergyFilter": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_EcalDeadCellBoundaryEnergyFilter", 
+            "subtype": null
+        }, 
+        "Flag_EcalDeadCellTriggerPrimitiveFilter": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_EcalDeadCellTriggerPrimitiveFilter", 
+            "subtype": null
+        }, 
+        "Flag_HBHENoiseFilter": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_HBHENoiseFilter", 
+            "subtype": null
+        }, 
+        "Flag_HBHENoiseIsoFilter": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_HBHENoiseIsoFilter", 
+            "subtype": null
+        }, 
+        "Flag_HcalStripHaloFilter": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_HcalStripHaloFilter", 
+            "subtype": null
+        }, 
+        "Flag_METFilters": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_METFilters", 
+            "subtype": null
+        }, 
+        "Flag_badMuons": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_badMuons", 
+            "subtype": null
+        }, 
+        "Flag_chargedHadronTrackResolutionFilter": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_chargedHadronTrackResolutionFilter", 
+            "subtype": null
+        }, 
+        "Flag_duplicateMuons": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_duplicateMuons", 
+            "subtype": null
+        }, 
+        "Flag_ecalLaserCorrFilter": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_ecalLaserCorrFilter", 
+            "subtype": null
+        }, 
+        "Flag_eeBadScFilter": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_eeBadScFilter", 
+            "subtype": null
+        }, 
+        "Flag_globalSuperTightHalo2016Filter": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_globalSuperTightHalo2016Filter", 
+            "subtype": null
+        }, 
+        "Flag_globalTightHalo2016Filter": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_globalTightHalo2016Filter", 
+            "subtype": null
+        }, 
+        "Flag_goodVertices": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_goodVertices", 
+            "subtype": null
+        }, 
+        "Flag_hcalLaserEventFilter": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_hcalLaserEventFilter", 
+            "subtype": null
+        }, 
+        "Flag_muonBadTrackFilter": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_muonBadTrackFilter", 
+            "subtype": null
+        }, 
+        "Flag_noBadMuons": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_noBadMuons", 
+            "subtype": null
+        }, 
+        "Flag_trkPOGFilters": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_trkPOGFilters", 
+            "subtype": null
+        }, 
+        "Flag_trkPOG_logErrorTooManyClusters": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_trkPOG_logErrorTooManyClusters", 
+            "subtype": null
+        }, 
+        "Flag_trkPOG_manystripclus53X": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_trkPOG_manystripclus53X", 
+            "subtype": null
+        }, 
+        "Flag_trkPOG_toomanystripclus53X": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "Flag_trkPOG_toomanystripclus53X", 
+            "subtype": null
+        }, 
+        "HLT_AK4CaloJet100": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK4CaloJet100", 
+            "subtype": null
+        }, 
+        "HLT_AK4CaloJet30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK4CaloJet30", 
+            "subtype": null
+        }, 
+        "HLT_AK4CaloJet40": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK4CaloJet40", 
+            "subtype": null
+        }, 
+        "HLT_AK4CaloJet50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK4CaloJet50", 
+            "subtype": null
+        }, 
+        "HLT_AK4CaloJet80": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK4CaloJet80", 
+            "subtype": null
+        }, 
+        "HLT_AK4PFJet100": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK4PFJet100", 
+            "subtype": null
+        }, 
+        "HLT_AK4PFJet30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK4PFJet30", 
+            "subtype": null
+        }, 
+        "HLT_AK4PFJet50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK4PFJet50", 
+            "subtype": null
+        }, 
+        "HLT_AK4PFJet80": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK4PFJet80", 
+            "subtype": null
+        }, 
+        "HLT_AK8DiPFJet250_200_TrimMass30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8DiPFJet250_200_TrimMass30", 
+            "subtype": null
+        }, 
+        "HLT_AK8DiPFJet250_200_TrimMass30_BTagCSV_p20": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8DiPFJet250_200_TrimMass30_BTagCSV_p20", 
+            "subtype": null
+        }, 
+        "HLT_AK8DiPFJet280_200_TrimMass30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8DiPFJet280_200_TrimMass30", 
+            "subtype": null
+        }, 
+        "HLT_AK8DiPFJet280_200_TrimMass30_BTagCSV_p20": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8DiPFJet280_200_TrimMass30_BTagCSV_p20", 
+            "subtype": null
+        }, 
+        "HLT_AK8PFHT600_TrimR0p1PT0p03Mass50_BTagCSV_p20": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8PFHT600_TrimR0p1PT0p03Mass50_BTagCSV_p20", 
+            "subtype": null
+        }, 
+        "HLT_AK8PFHT650_TrimR0p1PT0p03Mass50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8PFHT650_TrimR0p1PT0p03Mass50", 
+            "subtype": null
+        }, 
+        "HLT_AK8PFHT700_TrimR0p1PT0p03Mass50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8PFHT700_TrimR0p1PT0p03Mass50", 
+            "subtype": null
+        }, 
+        "HLT_AK8PFJet140": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8PFJet140", 
+            "subtype": null
+        }, 
+        "HLT_AK8PFJet200": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8PFJet200", 
+            "subtype": null
+        }, 
+        "HLT_AK8PFJet260": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8PFJet260", 
+            "subtype": null
+        }, 
+        "HLT_AK8PFJet320": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8PFJet320", 
+            "subtype": null
+        }, 
+        "HLT_AK8PFJet360_TrimMass30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8PFJet360_TrimMass30", 
+            "subtype": null
+        }, 
+        "HLT_AK8PFJet40": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8PFJet40", 
+            "subtype": null
+        }, 
+        "HLT_AK8PFJet400": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8PFJet400", 
+            "subtype": null
+        }, 
+        "HLT_AK8PFJet450": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8PFJet450", 
+            "subtype": null
+        }, 
+        "HLT_AK8PFJet500": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8PFJet500", 
+            "subtype": null
+        }, 
+        "HLT_AK8PFJet60": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8PFJet60", 
+            "subtype": null
+        }, 
+        "HLT_AK8PFJet80": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_AK8PFJet80", 
+            "subtype": null
+        }, 
+        "HLT_BTagMu_AK8Jet300_Mu5": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_BTagMu_AK8Jet300_Mu5", 
+            "subtype": null
+        }, 
+        "HLT_BTagMu_DiJet110_Mu5": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_BTagMu_DiJet110_Mu5", 
+            "subtype": null
+        }, 
+        "HLT_BTagMu_DiJet170_Mu5": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_BTagMu_DiJet170_Mu5", 
+            "subtype": null
+        }, 
+        "HLT_BTagMu_DiJet20_Mu5": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_BTagMu_DiJet20_Mu5", 
+            "subtype": null
+        }, 
+        "HLT_BTagMu_DiJet40_Mu5": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_BTagMu_DiJet40_Mu5", 
+            "subtype": null
+        }, 
+        "HLT_BTagMu_DiJet70_Mu5": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_BTagMu_DiJet70_Mu5", 
+            "subtype": null
+        }, 
+        "HLT_BTagMu_Jet300_Mu5": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_BTagMu_Jet300_Mu5", 
+            "subtype": null
+        }, 
+        "HLT_CaloJet500_NoJetID": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_CaloJet500_NoJetID", 
+            "subtype": null
+        }, 
+        "HLT_CaloMHTNoPU90_PFMET90_PFMHT90_IDTight": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_CaloMHTNoPU90_PFMET90_PFMHT90_IDTight", 
+            "subtype": null
+        }, 
+        "HLT_CaloMHTNoPU90_PFMET90_PFMHT90_IDTight_BTagCSV_p067": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_CaloMHTNoPU90_PFMET90_PFMHT90_IDTight_BTagCSV_p067", 
+            "subtype": null
+        }, 
+        "HLT_DiCentralPFJet170": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiCentralPFJet170", 
+            "subtype": null
+        }, 
+        "HLT_DiCentralPFJet170_CFMax0p1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiCentralPFJet170_CFMax0p1", 
+            "subtype": null
+        }, 
+        "HLT_DiCentralPFJet220_CFMax0p3": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiCentralPFJet220_CFMax0p3", 
+            "subtype": null
+        }, 
+        "HLT_DiCentralPFJet330_CFMax0p5": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiCentralPFJet330_CFMax0p5", 
+            "subtype": null
+        }, 
+        "HLT_DiCentralPFJet430": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiCentralPFJet430", 
+            "subtype": null
+        }, 
+        "HLT_DiCentralPFJet55_PFMET110": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiCentralPFJet55_PFMET110", 
+            "subtype": null
+        }, 
+        "HLT_DiMu9_Ele9_CaloIdL_TrackIdL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiMu9_Ele9_CaloIdL_TrackIdL", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJet15_FBEta3_NoCaloMatched": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJet15_FBEta3_NoCaloMatched", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJet15_NoCaloMatched": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJet15_NoCaloMatched", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJet25_FBEta3_NoCaloMatched": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJet25_FBEta3_NoCaloMatched", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJet25_NoCaloMatched": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJet25_NoCaloMatched", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJet40_DEta3p5_MJJ600_PFMETNoMu140": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJet40_DEta3p5_MJJ600_PFMETNoMu140", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJet40_DEta3p5_MJJ600_PFMETNoMu80": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJet40_DEta3p5_MJJ600_PFMETNoMu80", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve100_HFJEC": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve100_HFJEC", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve140": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve140", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve15_HFJEC": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve15_HFJEC", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve160_HFJEC": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve160_HFJEC", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve200": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve200", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve220_HFJEC": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve220_HFJEC", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve25_HFJEC": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve25_HFJEC", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve260": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve260", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve300_HFJEC": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve300_HFJEC", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve320": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve320", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve35_HFJEC": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve35_HFJEC", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve40": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve40", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve400": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve400", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve500": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve500", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve60": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve60", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve60_HFJEC": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve60_HFJEC", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve80": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve80", 
+            "subtype": null
+        }, 
+        "HLT_DiPFJetAve80_HFJEC": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiPFJetAve80_HFJEC", 
+            "subtype": null
+        }, 
+        "HLT_DiSC30_18_EIso_AND_HE_Mass70": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DiSC30_18_EIso_AND_HE_Mass70", 
+            "subtype": null
+        }, 
+        "HLT_Dimuon0_Jpsi_Muon": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Dimuon0_Jpsi_Muon", 
+            "subtype": null
+        }, 
+        "HLT_Dimuon0_Phi_Barrel": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Dimuon0_Phi_Barrel", 
+            "subtype": null
+        }, 
+        "HLT_Dimuon0_Upsilon_Muon": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Dimuon0_Upsilon_Muon", 
+            "subtype": null
+        }, 
+        "HLT_Dimuon0er16_Jpsi_NoOS_NoVertexing": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Dimuon0er16_Jpsi_NoOS_NoVertexing", 
+            "subtype": null
+        }, 
+        "HLT_Dimuon0er16_Jpsi_NoVertexing": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Dimuon0er16_Jpsi_NoVertexing", 
+            "subtype": null
+        }, 
+        "HLT_Dimuon10_Jpsi_Barrel": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Dimuon10_Jpsi_Barrel", 
+            "subtype": null
+        }, 
+        "HLT_Dimuon13_PsiPrime": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Dimuon13_PsiPrime", 
+            "subtype": null
+        }, 
+        "HLT_Dimuon13_Upsilon": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Dimuon13_Upsilon", 
+            "subtype": null
+        }, 
+        "HLT_Dimuon16_Jpsi": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Dimuon16_Jpsi", 
+            "subtype": null
+        }, 
+        "HLT_Dimuon20_Jpsi": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Dimuon20_Jpsi", 
+            "subtype": null
+        }, 
+        "HLT_Dimuon6_Jpsi_NoVertexing": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Dimuon6_Jpsi_NoVertexing", 
+            "subtype": null
+        }, 
+        "HLT_Dimuon8_PsiPrime_Barrel": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Dimuon8_PsiPrime_Barrel", 
+            "subtype": null
+        }, 
+        "HLT_Dimuon8_Upsilon_Barrel": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Dimuon8_Upsilon_Barrel", 
+            "subtype": null
+        }, 
+        "HLT_Diphoton30EB_18EB_R9Id_OR_IsoCaloId_AND_HE_R9Id_DoublePixelVeto_Mass55": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Diphoton30EB_18EB_R9Id_OR_IsoCaloId_AND_HE_R9Id_DoublePixelVeto_Mass55", 
+            "subtype": null
+        }, 
+        "HLT_Diphoton30PV_18PV_R9Id_AND_IsoCaloId_AND_HE_R9Id_DoublePixelVeto_Mass55": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Diphoton30PV_18PV_R9Id_AND_IsoCaloId_AND_HE_R9Id_DoublePixelVeto_Mass55", 
+            "subtype": null
+        }, 
+        "HLT_Diphoton30_18_R9Id_OR_IsoCaloId_AND_HE_R9Id_DoublePixelSeedMatch_Mass70": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Diphoton30_18_R9Id_OR_IsoCaloId_AND_HE_R9Id_DoublePixelSeedMatch_Mass70", 
+            "subtype": null
+        }, 
+        "HLT_Diphoton30_18_R9Id_OR_IsoCaloId_AND_HE_R9Id_Mass90": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Diphoton30_18_R9Id_OR_IsoCaloId_AND_HE_R9Id_Mass90", 
+            "subtype": null
+        }, 
+        "HLT_Diphoton30_18_Solid_R9Id_AND_IsoCaloId_AND_HE_R9Id_Mass55": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Diphoton30_18_Solid_R9Id_AND_IsoCaloId_AND_HE_R9Id_Mass55", 
+            "subtype": null
+        }, 
+        "HLT_DoubleEle24_22_eta2p1_WPLoose_Gsf": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleEle24_22_eta2p1_WPLoose_Gsf", 
+            "subtype": null
+        }, 
+        "HLT_DoubleEle33_CaloIdL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleEle33_CaloIdL", 
+            "subtype": null
+        }, 
+        "HLT_DoubleEle33_CaloIdL_GsfTrkIdVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleEle33_CaloIdL_GsfTrkIdVL", 
+            "subtype": null
+        }, 
+        "HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_MW": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_MW", 
+            "subtype": null
+        }, 
+        "HLT_DoubleEle33_CaloIdL_MW": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleEle33_CaloIdL_MW", 
+            "subtype": null
+        }, 
+        "HLT_DoubleEle37_Ele27_CaloIdL_GsfTrkIdVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleEle37_Ele27_CaloIdL_GsfTrkIdVL", 
+            "subtype": null
+        }, 
+        "HLT_DoubleEle8_CaloIdM_TrackIdM_Mass8_PFHT250": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleEle8_CaloIdM_TrackIdM_Mass8_PFHT250", 
+            "subtype": null
+        }, 
+        "HLT_DoubleEle8_CaloIdM_TrackIdM_Mass8_PFHT300": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleEle8_CaloIdM_TrackIdM_Mass8_PFHT300", 
+            "subtype": null
+        }, 
+        "HLT_DoubleIsoMu17_eta2p1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleIsoMu17_eta2p1", 
+            "subtype": null
+        }, 
+        "HLT_DoubleIsoMu17_eta2p1_noDzCut": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleIsoMu17_eta2p1_noDzCut", 
+            "subtype": null
+        }, 
+        "HLT_DoubleJet90_Double30_DoubleBTagCSV_p087": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleJet90_Double30_DoubleBTagCSV_p087", 
+            "subtype": null
+        }, 
+        "HLT_DoubleJet90_Double30_TripleBTagCSV_p087": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleJet90_Double30_TripleBTagCSV_p087", 
+            "subtype": null
+        }, 
+        "HLT_DoubleJetsC100_DoubleBTagCSV_p014_DoublePFJetsC100MaxDeta1p6": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleJetsC100_DoubleBTagCSV_p014_DoublePFJetsC100MaxDeta1p6", 
+            "subtype": null
+        }, 
+        "HLT_DoubleJetsC100_DoubleBTagCSV_p026_DoublePFJetsC160": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleJetsC100_DoubleBTagCSV_p026_DoublePFJetsC160", 
+            "subtype": null
+        }, 
+        "HLT_DoubleJetsC100_SingleBTagCSV_p014": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleJetsC100_SingleBTagCSV_p014", 
+            "subtype": null
+        }, 
+        "HLT_DoubleJetsC100_SingleBTagCSV_p014_SinglePFJetC350": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleJetsC100_SingleBTagCSV_p014_SinglePFJetC350", 
+            "subtype": null
+        }, 
+        "HLT_DoubleJetsC100_SingleBTagCSV_p026": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleJetsC100_SingleBTagCSV_p026", 
+            "subtype": null
+        }, 
+        "HLT_DoubleJetsC100_SingleBTagCSV_p026_SinglePFJetC350": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleJetsC100_SingleBTagCSV_p026_SinglePFJetC350", 
+            "subtype": null
+        }, 
+        "HLT_DoubleJetsC112_DoubleBTagCSV_p014_DoublePFJetsC112MaxDeta1p6": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleJetsC112_DoubleBTagCSV_p014_DoublePFJetsC112MaxDeta1p6", 
+            "subtype": null
+        }, 
+        "HLT_DoubleJetsC112_DoubleBTagCSV_p026_DoublePFJetsC172": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleJetsC112_DoubleBTagCSV_p026_DoublePFJetsC172", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMediumIsoPFTau32_Trk1_eta2p1_Reg": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMediumIsoPFTau32_Trk1_eta2p1_Reg", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMediumIsoPFTau35_Trk1_eta2p1_Reg": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMediumIsoPFTau35_Trk1_eta2p1_Reg", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMediumIsoPFTau40_Trk1_eta2p1_Reg": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMediumIsoPFTau40_Trk1_eta2p1_Reg", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMu18NoFiltersNoVtx": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMu18NoFiltersNoVtx", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMu23NoFiltersNoVtxDisplaced": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMu23NoFiltersNoVtxDisplaced", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMu28NoFiltersNoVtxDisplaced": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMu28NoFiltersNoVtxDisplaced", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMu33NoFiltersNoVtx": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMu33NoFiltersNoVtx", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMu38NoFiltersNoVtx": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMu38NoFiltersNoVtx", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMu3_PFMET50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMu3_PFMET50", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMu3_Trk_Tau3mu": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMu3_Trk_Tau3mu", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMu4_3_Bs": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMu4_3_Bs", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMu4_3_Jpsi_Displaced": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMu4_3_Jpsi_Displaced", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMu4_JpsiTrk_Displaced": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMu4_JpsiTrk_Displaced", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMu4_LowMassNonResonantTrk_Displaced": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMu4_LowMassNonResonantTrk_Displaced", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMu4_PsiPrimeTrk_Displaced": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMu4_PsiPrimeTrk_Displaced", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMu8_Mass8_PFHT250": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMu8_Mass8_PFHT250", 
+            "subtype": null
+        }, 
+        "HLT_DoubleMu8_Mass8_PFHT300": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoubleMu8_Mass8_PFHT300", 
+            "subtype": null
+        }, 
+        "HLT_DoublePhoton60": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoublePhoton60", 
+            "subtype": null
+        }, 
+        "HLT_DoublePhoton85": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_DoublePhoton85", 
+            "subtype": null
+        }, 
+        "HLT_ECALHT800": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_ECALHT800", 
+            "subtype": null
+        }, 
+        "HLT_EcalCalibration": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_EcalCalibration", 
+            "subtype": null
+        }, 
+        "HLT_Ele105_CaloIdVT_GsfTrkIdT": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele105_CaloIdVT_GsfTrkIdT", 
+            "subtype": null
+        }, 
+        "HLT_Ele10_CaloIdM_TrackIdM_CentralPFJet30_BTagCSV_p13": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele10_CaloIdM_TrackIdM_CentralPFJet30_BTagCSV_p13", 
+            "subtype": null
+        }, 
+        "HLT_Ele115_CaloIdVT_GsfTrkIdT": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele115_CaloIdVT_GsfTrkIdT", 
+            "subtype": null
+        }, 
+        "HLT_Ele12_CaloIdL_TrackIdL_IsoVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele12_CaloIdL_TrackIdL_IsoVL", 
+            "subtype": null
+        }, 
+        "HLT_Ele12_CaloIdL_TrackIdL_IsoVL_PFJet30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele12_CaloIdL_TrackIdL_IsoVL_PFJet30", 
+            "subtype": null
+        }, 
+        "HLT_Ele12_CaloIdM_TrackIdM_PFJet30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele12_CaloIdM_TrackIdM_PFJet30", 
+            "subtype": null
+        }, 
+        "HLT_Ele15_IsoVVVL_BTagCSV_p067_PFHT400": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele15_IsoVVVL_BTagCSV_p067_PFHT400", 
+            "subtype": null
+        }, 
+        "HLT_Ele15_IsoVVVL_PFHT350": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele15_IsoVVVL_PFHT350", 
+            "subtype": null
+        }, 
+        "HLT_Ele15_IsoVVVL_PFHT350_PFMET50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele15_IsoVVVL_PFHT350_PFMET50", 
+            "subtype": null
+        }, 
+        "HLT_Ele15_IsoVVVL_PFHT400": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele15_IsoVVVL_PFHT400", 
+            "subtype": null
+        }, 
+        "HLT_Ele15_IsoVVVL_PFHT400_PFMET50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele15_IsoVVVL_PFHT400_PFMET50", 
+            "subtype": null
+        }, 
+        "HLT_Ele15_IsoVVVL_PFHT600": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele15_IsoVVVL_PFHT600", 
+            "subtype": null
+        }, 
+        "HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL", 
+            "subtype": null
+        }, 
+        "HLT_Ele17_CaloIdL_GsfTrkIdVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele17_CaloIdL_GsfTrkIdVL", 
+            "subtype": null
+        }, 
+        "HLT_Ele17_CaloIdL_TrackIdL_IsoVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele17_CaloIdL_TrackIdL_IsoVL", 
+            "subtype": null
+        }, 
+        "HLT_Ele17_CaloIdL_TrackIdL_IsoVL_PFJet30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele17_CaloIdL_TrackIdL_IsoVL_PFJet30", 
+            "subtype": null
+        }, 
+        "HLT_Ele17_CaloIdM_TrackIdM_PFJet30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele17_CaloIdM_TrackIdM_PFJet30", 
+            "subtype": null
+        }, 
+        "HLT_Ele17_Ele12_CaloIdL_TrackIdL_IsoVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele17_Ele12_CaloIdL_TrackIdL_IsoVL", 
+            "subtype": null
+        }, 
+        "HLT_Ele17_Ele12_CaloIdL_TrackIdL_IsoVL_DZ": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele17_Ele12_CaloIdL_TrackIdL_IsoVL_DZ", 
+            "subtype": null
+        }, 
+        "HLT_Ele22_eta2p1_WPLoose_Gsf": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele22_eta2p1_WPLoose_Gsf", 
+            "subtype": null
+        }, 
+        "HLT_Ele22_eta2p1_WPLoose_Gsf_LooseIsoPFTau20_SingleL1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele22_eta2p1_WPLoose_Gsf_LooseIsoPFTau20_SingleL1", 
+            "subtype": null
+        }, 
+        "HLT_Ele23_CaloIdL_TrackIdL_IsoVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele23_CaloIdL_TrackIdL_IsoVL", 
+            "subtype": null
+        }, 
+        "HLT_Ele23_CaloIdL_TrackIdL_IsoVL_PFJet30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele23_CaloIdL_TrackIdL_IsoVL_PFJet30", 
+            "subtype": null
+        }, 
+        "HLT_Ele23_CaloIdM_TrackIdM_PFJet30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele23_CaloIdM_TrackIdM_PFJet30", 
+            "subtype": null
+        }, 
+        "HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL", 
+            "subtype": null
+        }, 
+        "HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ", 
+            "subtype": null
+        }, 
+        "HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_L1JetTauSeeded": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_L1JetTauSeeded", 
+            "subtype": null
+        }, 
+        "HLT_Ele23_WPLoose_Gsf": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele23_WPLoose_Gsf", 
+            "subtype": null
+        }, 
+        "HLT_Ele23_WPLoose_Gsf_WHbbBoost": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele23_WPLoose_Gsf_WHbbBoost", 
+            "subtype": null
+        }, 
+        "HLT_Ele24_eta2p1_WPLoose_Gsf": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele24_eta2p1_WPLoose_Gsf", 
+            "subtype": null
+        }, 
+        "HLT_Ele24_eta2p1_WPLoose_Gsf_LooseIsoPFTau20": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele24_eta2p1_WPLoose_Gsf_LooseIsoPFTau20", 
+            "subtype": null
+        }, 
+        "HLT_Ele24_eta2p1_WPLoose_Gsf_LooseIsoPFTau20_SingleL1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele24_eta2p1_WPLoose_Gsf_LooseIsoPFTau20_SingleL1", 
+            "subtype": null
+        }, 
+        "HLT_Ele250_CaloIdVT_GsfTrkIdT": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele250_CaloIdVT_GsfTrkIdT", 
+            "subtype": null
+        }, 
+        "HLT_Ele25_WPTight_Gsf": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele25_WPTight_Gsf", 
+            "subtype": null
+        }, 
+        "HLT_Ele25_eta2p1_WPLoose_Gsf": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele25_eta2p1_WPLoose_Gsf", 
+            "subtype": null
+        }, 
+        "HLT_Ele25_eta2p1_WPTight_Gsf": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele25_eta2p1_WPTight_Gsf", 
+            "subtype": null
+        }, 
+        "HLT_Ele27_HighEta_Ele20_Mass55": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele27_HighEta_Ele20_Mass55", 
+            "subtype": null
+        }, 
+        "HLT_Ele27_WPLoose_Gsf": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele27_WPLoose_Gsf", 
+            "subtype": null
+        }, 
+        "HLT_Ele27_WPLoose_Gsf_WHbbBoost": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele27_WPLoose_Gsf_WHbbBoost", 
+            "subtype": null
+        }, 
+        "HLT_Ele27_WPTight_Gsf": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele27_WPTight_Gsf", 
+            "subtype": null
+        }, 
+        "HLT_Ele27_WPTight_Gsf_L1JetTauSeeded": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele27_WPTight_Gsf_L1JetTauSeeded", 
+            "subtype": null
+        }, 
+        "HLT_Ele27_eta2p1_WPLoose_Gsf": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele27_eta2p1_WPLoose_Gsf", 
+            "subtype": null
+        }, 
+        "HLT_Ele27_eta2p1_WPLoose_Gsf_DoubleMediumIsoPFTau32_Trk1_eta2p1_Reg": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele27_eta2p1_WPLoose_Gsf_DoubleMediumIsoPFTau32_Trk1_eta2p1_Reg", 
+            "subtype": null
+        }, 
+        "HLT_Ele27_eta2p1_WPLoose_Gsf_DoubleMediumIsoPFTau35_Trk1_eta2p1_Reg": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele27_eta2p1_WPLoose_Gsf_DoubleMediumIsoPFTau35_Trk1_eta2p1_Reg", 
+            "subtype": null
+        }, 
+        "HLT_Ele27_eta2p1_WPLoose_Gsf_DoubleMediumIsoPFTau40_Trk1_eta2p1_Reg": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele27_eta2p1_WPLoose_Gsf_DoubleMediumIsoPFTau40_Trk1_eta2p1_Reg", 
+            "subtype": null
+        }, 
+        "HLT_Ele27_eta2p1_WPLoose_Gsf_HT200": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele27_eta2p1_WPLoose_Gsf_HT200", 
+            "subtype": null
+        }, 
+        "HLT_Ele27_eta2p1_WPLoose_Gsf_LooseIsoPFTau20_SingleL1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele27_eta2p1_WPLoose_Gsf_LooseIsoPFTau20_SingleL1", 
+            "subtype": null
+        }, 
+        "HLT_Ele27_eta2p1_WPTight_Gsf": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele27_eta2p1_WPTight_Gsf", 
+            "subtype": null
+        }, 
+        "HLT_Ele300_CaloIdVT_GsfTrkIdT": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele300_CaloIdVT_GsfTrkIdT", 
+            "subtype": null
+        }, 
+        "HLT_Ele30WP60_Ele8_Mass55": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele30WP60_Ele8_Mass55", 
+            "subtype": null
+        }, 
+        "HLT_Ele30WP60_SC4_Mass55": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele30WP60_SC4_Mass55", 
+            "subtype": null
+        }, 
+        "HLT_Ele32_eta2p1_WPLoose_Gsf_LooseIsoPFTau20_SingleL1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele32_eta2p1_WPLoose_Gsf_LooseIsoPFTau20_SingleL1", 
+            "subtype": null
+        }, 
+        "HLT_Ele32_eta2p1_WPTight_Gsf": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele32_eta2p1_WPTight_Gsf", 
+            "subtype": null
+        }, 
+        "HLT_Ele35_CaloIdVT_GsfTrkIdT_PFJet150_PFJet50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele35_CaloIdVT_GsfTrkIdT_PFJet150_PFJet50", 
+            "subtype": null
+        }, 
+        "HLT_Ele35_WPLoose_Gsf": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele35_WPLoose_Gsf", 
+            "subtype": null
+        }, 
+        "HLT_Ele45_CaloIdVT_GsfTrkIdT_PFJet200_PFJet50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele45_CaloIdVT_GsfTrkIdT_PFJet200_PFJet50", 
+            "subtype": null
+        }, 
+        "HLT_Ele45_WPLoose_Gsf": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele45_WPLoose_Gsf", 
+            "subtype": null
+        }, 
+        "HLT_Ele45_WPLoose_Gsf_L1JetTauSeeded": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele45_WPLoose_Gsf_L1JetTauSeeded", 
+            "subtype": null
+        }, 
+        "HLT_Ele50_CaloIdVT_GsfTrkIdT_PFJet140": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele50_CaloIdVT_GsfTrkIdT_PFJet140", 
+            "subtype": null
+        }, 
+        "HLT_Ele50_CaloIdVT_GsfTrkIdT_PFJet165": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele50_CaloIdVT_GsfTrkIdT_PFJet165", 
+            "subtype": null
+        }, 
+        "HLT_Ele50_IsoVVVL_PFHT400": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele50_IsoVVVL_PFHT400", 
+            "subtype": null
+        }, 
+        "HLT_Ele8_CaloIdL_TrackIdL_IsoVL_PFJet30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele8_CaloIdL_TrackIdL_IsoVL_PFJet30", 
+            "subtype": null
+        }, 
+        "HLT_Ele8_CaloIdM_TrackIdM_PFJet30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Ele8_CaloIdM_TrackIdM_PFJet30", 
+            "subtype": null
+        }, 
+        "HLT_FullTracks_Multiplicity100": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_FullTracks_Multiplicity100", 
+            "subtype": null
+        }, 
+        "HLT_FullTracks_Multiplicity130": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_FullTracks_Multiplicity130", 
+            "subtype": null
+        }, 
+        "HLT_FullTracks_Multiplicity150": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_FullTracks_Multiplicity150", 
+            "subtype": null
+        }, 
+        "HLT_FullTracks_Multiplicity80": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_FullTracks_Multiplicity80", 
+            "subtype": null
+        }, 
+        "HLT_GlobalRunHPDNoise": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_GlobalRunHPDNoise", 
+            "subtype": null
+        }, 
+        "HLT_HISinglePhoton10": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HISinglePhoton10", 
+            "subtype": null
+        }, 
+        "HLT_HISinglePhoton15": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HISinglePhoton15", 
+            "subtype": null
+        }, 
+        "HLT_HISinglePhoton20": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HISinglePhoton20", 
+            "subtype": null
+        }, 
+        "HLT_HISinglePhoton40": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HISinglePhoton40", 
+            "subtype": null
+        }, 
+        "HLT_HISinglePhoton60": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HISinglePhoton60", 
+            "subtype": null
+        }, 
+        "HLT_HT200": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT200", 
+            "subtype": null
+        }, 
+        "HLT_HT2000": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT2000", 
+            "subtype": null
+        }, 
+        "HLT_HT200_DisplacedDijet40_DisplacedTrack": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT200_DisplacedDijet40_DisplacedTrack", 
+            "subtype": null
+        }, 
+        "HLT_HT2500": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT2500", 
+            "subtype": null
+        }, 
+        "HLT_HT250_DisplacedDijet40_DisplacedTrack": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT250_DisplacedDijet40_DisplacedTrack", 
+            "subtype": null
+        }, 
+        "HLT_HT275": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT275", 
+            "subtype": null
+        }, 
+        "HLT_HT325": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT325", 
+            "subtype": null
+        }, 
+        "HLT_HT350_DisplacedDijet40_DisplacedTrack": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT350_DisplacedDijet40_DisplacedTrack", 
+            "subtype": null
+        }, 
+        "HLT_HT350_DisplacedDijet40_Inclusive": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT350_DisplacedDijet40_Inclusive", 
+            "subtype": null
+        }, 
+        "HLT_HT350_DisplacedDijet80_DisplacedTrack": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT350_DisplacedDijet80_DisplacedTrack", 
+            "subtype": null
+        }, 
+        "HLT_HT350_DisplacedDijet80_Tight_DisplacedTrack": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT350_DisplacedDijet80_Tight_DisplacedTrack", 
+            "subtype": null
+        }, 
+        "HLT_HT400_DisplacedDijet40_Inclusive": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT400_DisplacedDijet40_Inclusive", 
+            "subtype": null
+        }, 
+        "HLT_HT410to430": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT410to430", 
+            "subtype": null
+        }, 
+        "HLT_HT425": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT425", 
+            "subtype": null
+        }, 
+        "HLT_HT430to450": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT430to450", 
+            "subtype": null
+        }, 
+        "HLT_HT450to470": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT450to470", 
+            "subtype": null
+        }, 
+        "HLT_HT470to500": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT470to500", 
+            "subtype": null
+        }, 
+        "HLT_HT500_DisplacedDijet40_Inclusive": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT500_DisplacedDijet40_Inclusive", 
+            "subtype": null
+        }, 
+        "HLT_HT500to550": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT500to550", 
+            "subtype": null
+        }, 
+        "HLT_HT550_DisplacedDijet40_Inclusive": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT550_DisplacedDijet40_Inclusive", 
+            "subtype": null
+        }, 
+        "HLT_HT550to650": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT550to650", 
+            "subtype": null
+        }, 
+        "HLT_HT575": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT575", 
+            "subtype": null
+        }, 
+        "HLT_HT650": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT650", 
+            "subtype": null
+        }, 
+        "HLT_HT650_DisplacedDijet80_Inclusive": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT650_DisplacedDijet80_Inclusive", 
+            "subtype": null
+        }, 
+        "HLT_HT750_DisplacedDijet80_Inclusive": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HT750_DisplacedDijet80_Inclusive", 
+            "subtype": null
+        }, 
+        "HLT_HcalCalibration": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HcalCalibration", 
+            "subtype": null
+        }, 
+        "HLT_HcalNZS": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HcalNZS", 
+            "subtype": null
+        }, 
+        "HLT_HcalPhiSym": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_HcalPhiSym", 
+            "subtype": null
+        }, 
+        "HLT_IsoMu16_eta2p1_MET30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoMu16_eta2p1_MET30", 
+            "subtype": null
+        }, 
+        "HLT_IsoMu16_eta2p1_MET30_LooseIsoPFTau50_Trk30_eta2p1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoMu16_eta2p1_MET30_LooseIsoPFTau50_Trk30_eta2p1", 
+            "subtype": null
+        }, 
+        "HLT_IsoMu17_eta2p1_LooseIsoPFTau20": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoMu17_eta2p1_LooseIsoPFTau20", 
+            "subtype": null
+        }, 
+        "HLT_IsoMu17_eta2p1_LooseIsoPFTau20_SingleL1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoMu17_eta2p1_LooseIsoPFTau20_SingleL1", 
+            "subtype": null
+        }, 
+        "HLT_IsoMu18": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoMu18", 
+            "subtype": null
+        }, 
+        "HLT_IsoMu19_eta2p1_LooseIsoPFTau20": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoMu19_eta2p1_LooseIsoPFTau20", 
+            "subtype": null
+        }, 
+        "HLT_IsoMu19_eta2p1_LooseIsoPFTau20_SingleL1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoMu19_eta2p1_LooseIsoPFTau20_SingleL1", 
+            "subtype": null
+        }, 
+        "HLT_IsoMu19_eta2p1_MediumIsoPFTau32_Trk1_eta2p1_Reg": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoMu19_eta2p1_MediumIsoPFTau32_Trk1_eta2p1_Reg", 
+            "subtype": null
+        }, 
+        "HLT_IsoMu20": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoMu20", 
+            "subtype": null
+        }, 
+        "HLT_IsoMu21_eta2p1_LooseIsoPFTau20_SingleL1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoMu21_eta2p1_LooseIsoPFTau20_SingleL1", 
+            "subtype": null
+        }, 
+        "HLT_IsoMu21_eta2p1_MediumIsoPFTau32_Trk1_eta2p1_Reg": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoMu21_eta2p1_MediumIsoPFTau32_Trk1_eta2p1_Reg", 
+            "subtype": null
+        }, 
+        "HLT_IsoMu22": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoMu22", 
+            "subtype": null
+        }, 
+        "HLT_IsoMu22_eta2p1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoMu22_eta2p1", 
+            "subtype": null
+        }, 
+        "HLT_IsoMu24": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoMu24", 
+            "subtype": null
+        }, 
+        "HLT_IsoMu27": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoMu27", 
+            "subtype": null
+        }, 
+        "HLT_IsoTkMu18": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoTkMu18", 
+            "subtype": null
+        }, 
+        "HLT_IsoTkMu20": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoTkMu20", 
+            "subtype": null
+        }, 
+        "HLT_IsoTkMu22": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoTkMu22", 
+            "subtype": null
+        }, 
+        "HLT_IsoTkMu22_eta2p1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoTkMu22_eta2p1", 
+            "subtype": null
+        }, 
+        "HLT_IsoTkMu24": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoTkMu24", 
+            "subtype": null
+        }, 
+        "HLT_IsoTkMu27": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoTkMu27", 
+            "subtype": null
+        }, 
+        "HLT_IsoTrackHB": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoTrackHB", 
+            "subtype": null
+        }, 
+        "HLT_IsoTrackHE": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_IsoTrackHE", 
+            "subtype": null
+        }, 
+        "HLT_JetE30_NoBPTX": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_JetE30_NoBPTX", 
+            "subtype": null
+        }, 
+        "HLT_JetE30_NoBPTX3BX": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_JetE30_NoBPTX3BX", 
+            "subtype": null
+        }, 
+        "HLT_JetE50_NoBPTX3BX": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_JetE50_NoBPTX3BX", 
+            "subtype": null
+        }, 
+        "HLT_JetE70_NoBPTX3BX": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_JetE70_NoBPTX3BX", 
+            "subtype": null
+        }, 
+        "HLT_L1BeamGasMinus": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1BeamGasMinus", 
+            "subtype": null
+        }, 
+        "HLT_L1BeamGasPlus": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1BeamGasPlus", 
+            "subtype": null
+        }, 
+        "HLT_L1BptxMinus": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1BptxMinus", 
+            "subtype": null
+        }, 
+        "HLT_L1BptxPlus": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1BptxPlus", 
+            "subtype": null
+        }, 
+        "HLT_L1BptxXOR": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1BptxXOR", 
+            "subtype": null
+        }, 
+        "HLT_L1FatEvents": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1FatEvents", 
+            "subtype": null
+        }, 
+        "HLT_L1FatEvents_part0": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1FatEvents_part0", 
+            "subtype": null
+        }, 
+        "HLT_L1FatEvents_part1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1FatEvents_part1", 
+            "subtype": null
+        }, 
+        "HLT_L1FatEvents_part2": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1FatEvents_part2", 
+            "subtype": null
+        }, 
+        "HLT_L1FatEvents_part3": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1FatEvents_part3", 
+            "subtype": null
+        }, 
+        "HLT_L1MinimumBiasHF_AND": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1MinimumBiasHF_AND", 
+            "subtype": null
+        }, 
+        "HLT_L1MinimumBiasHF_OR": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1MinimumBiasHF_OR", 
+            "subtype": null
+        }, 
+        "HLT_L1NotBptxOR": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1NotBptxOR", 
+            "subtype": null
+        }, 
+        "HLT_L1SingleMu18": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1SingleMu18", 
+            "subtype": null
+        }, 
+        "HLT_L1SingleMuOpen": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1SingleMuOpen", 
+            "subtype": null
+        }, 
+        "HLT_L1SingleMuOpen_DT": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1SingleMuOpen_DT", 
+            "subtype": null
+        }, 
+        "HLT_L1_TripleJet_VBF": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L1_TripleJet_VBF", 
+            "subtype": null
+        }, 
+        "HLT_L2DoubleMu23_NoVertex": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L2DoubleMu23_NoVertex", 
+            "subtype": null
+        }, 
+        "HLT_L2DoubleMu28_NoVertex_2Cha_Angle2p5_Mass10": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L2DoubleMu28_NoVertex_2Cha_Angle2p5_Mass10", 
+            "subtype": null
+        }, 
+        "HLT_L2DoubleMu38_NoVertex_2Cha_Angle2p5_Mass10": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L2DoubleMu38_NoVertex_2Cha_Angle2p5_Mass10", 
+            "subtype": null
+        }, 
+        "HLT_L2Mu10": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L2Mu10", 
+            "subtype": null
+        }, 
+        "HLT_L2Mu10_NoVertex_NoBPTX": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L2Mu10_NoVertex_NoBPTX", 
+            "subtype": null
+        }, 
+        "HLT_L2Mu10_NoVertex_NoBPTX3BX": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L2Mu10_NoVertex_NoBPTX3BX", 
+            "subtype": null
+        }, 
+        "HLT_L2Mu35_NoVertex_3Sta_NoBPTX3BX": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L2Mu35_NoVertex_3Sta_NoBPTX3BX", 
+            "subtype": null
+        }, 
+        "HLT_L2Mu40_NoVertex_3Sta_NoBPTX3BX": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_L2Mu40_NoVertex_3Sta_NoBPTX3BX", 
+            "subtype": null
+        }, 
+        "HLT_LooseIsoPFTau50_Trk30_eta2p1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_LooseIsoPFTau50_Trk30_eta2p1", 
+            "subtype": null
+        }, 
+        "HLT_LooseIsoPFTau50_Trk30_eta2p1_MET110": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_LooseIsoPFTau50_Trk30_eta2p1_MET110", 
+            "subtype": null
+        }, 
+        "HLT_LooseIsoPFTau50_Trk30_eta2p1_MET120": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_LooseIsoPFTau50_Trk30_eta2p1_MET120", 
+            "subtype": null
+        }, 
+        "HLT_LooseIsoPFTau50_Trk30_eta2p1_MET80": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_LooseIsoPFTau50_Trk30_eta2p1_MET80", 
+            "subtype": null
+        }, 
+        "HLT_LooseIsoPFTau50_Trk30_eta2p1_MET90": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_LooseIsoPFTau50_Trk30_eta2p1_MET90", 
+            "subtype": null
+        }, 
+        "HLT_MET200": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_MET200", 
+            "subtype": null
+        }, 
+        "HLT_MET250": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_MET250", 
+            "subtype": null
+        }, 
+        "HLT_MET300": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_MET300", 
+            "subtype": null
+        }, 
+        "HLT_MET600": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_MET600", 
+            "subtype": null
+        }, 
+        "HLT_MET60_IsoTrk35_Loose": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_MET60_IsoTrk35_Loose", 
+            "subtype": null
+        }, 
+        "HLT_MET700": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_MET700", 
+            "subtype": null
+        }, 
+        "HLT_MET75_IsoTrk50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_MET75_IsoTrk50", 
+            "subtype": null
+        }, 
+        "HLT_MET90_IsoTrk50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_MET90_IsoTrk50", 
+            "subtype": null
+        }, 
+        "HLT_MonoCentralPFJet80_PFMETNoMu100_PFMHTNoMu100_IDTight": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_MonoCentralPFJet80_PFMETNoMu100_PFMHTNoMu100_IDTight", 
+            "subtype": null
+        }, 
+        "HLT_MonoCentralPFJet80_PFMETNoMu110_PFMHTNoMu110_IDTight": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_MonoCentralPFJet80_PFMETNoMu110_PFMHTNoMu110_IDTight", 
+            "subtype": null
+        }, 
+        "HLT_MonoCentralPFJet80_PFMETNoMu120_PFMHTNoMu120_IDTight": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_MonoCentralPFJet80_PFMETNoMu120_PFMHTNoMu120_IDTight", 
+            "subtype": null
+        }, 
+        "HLT_MonoCentralPFJet80_PFMETNoMu90_PFMHTNoMu90_IDTight": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_MonoCentralPFJet80_PFMETNoMu90_PFMHTNoMu90_IDTight", 
+            "subtype": null
+        }, 
+        "HLT_Mu10_CentralPFJet30_BTagCSV_p13": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu10_CentralPFJet30_BTagCSV_p13", 
+            "subtype": null
+        }, 
+        "HLT_Mu10_TrkIsoVVL_DiPFJet40_DEta3p5_MJJ750_HTT350_PFMETNoMu60": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu10_TrkIsoVVL_DiPFJet40_DEta3p5_MJJ750_HTT350_PFMETNoMu60", 
+            "subtype": null
+        }, 
+        "HLT_Mu12_Photon25_CaloIdL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu12_Photon25_CaloIdL", 
+            "subtype": null
+        }, 
+        "HLT_Mu12_Photon25_CaloIdL_L1ISO": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu12_Photon25_CaloIdL_L1ISO", 
+            "subtype": null
+        }, 
+        "HLT_Mu12_Photon25_CaloIdL_L1OR": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu12_Photon25_CaloIdL_L1OR", 
+            "subtype": null
+        }, 
+        "HLT_Mu14er_PFMET100": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu14er_PFMET100", 
+            "subtype": null
+        }, 
+        "HLT_Mu15_IsoVVVL_BTagCSV_p067_PFHT400": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu15_IsoVVVL_BTagCSV_p067_PFHT400", 
+            "subtype": null
+        }, 
+        "HLT_Mu15_IsoVVVL_PFHT350": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu15_IsoVVVL_PFHT350", 
+            "subtype": null
+        }, 
+        "HLT_Mu15_IsoVVVL_PFHT350_PFMET50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu15_IsoVVVL_PFHT350_PFMET50", 
+            "subtype": null
+        }, 
+        "HLT_Mu15_IsoVVVL_PFHT400": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu15_IsoVVVL_PFHT400", 
+            "subtype": null
+        }, 
+        "HLT_Mu15_IsoVVVL_PFHT400_PFMET50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu15_IsoVVVL_PFHT400_PFMET50", 
+            "subtype": null
+        }, 
+        "HLT_Mu15_IsoVVVL_PFHT600": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu15_IsoVVVL_PFHT600", 
+            "subtype": null
+        }, 
+        "HLT_Mu16_TkMu0_dEta18_Onia": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu16_TkMu0_dEta18_Onia", 
+            "subtype": null
+        }, 
+        "HLT_Mu16_TkMu0_dEta18_Phi": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu16_TkMu0_dEta18_Phi", 
+            "subtype": null
+        }, 
+        "HLT_Mu16_eta2p1_MET30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu16_eta2p1_MET30", 
+            "subtype": null
+        }, 
+        "HLT_Mu17": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu17", 
+            "subtype": null
+        }, 
+        "HLT_Mu17_Mu8": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu17_Mu8", 
+            "subtype": null
+        }, 
+        "HLT_Mu17_Mu8_DZ": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu17_Mu8_DZ", 
+            "subtype": null
+        }, 
+        "HLT_Mu17_Mu8_SameSign": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu17_Mu8_SameSign", 
+            "subtype": null
+        }, 
+        "HLT_Mu17_Mu8_SameSign_DZ": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu17_Mu8_SameSign_DZ", 
+            "subtype": null
+        }, 
+        "HLT_Mu17_Photon22_CaloIdL_L1ISO": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu17_Photon22_CaloIdL_L1ISO", 
+            "subtype": null
+        }, 
+        "HLT_Mu17_Photon30_CaloIdL_L1ISO": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu17_Photon30_CaloIdL_L1ISO", 
+            "subtype": null
+        }, 
+        "HLT_Mu17_Photon35_CaloIdL_L1ISO": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu17_Photon35_CaloIdL_L1ISO", 
+            "subtype": null
+        }, 
+        "HLT_Mu17_TkMu8_DZ": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu17_TkMu8_DZ", 
+            "subtype": null
+        }, 
+        "HLT_Mu17_TrkIsoVVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu17_TrkIsoVVL", 
+            "subtype": null
+        }, 
+        "HLT_Mu17_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu17_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL", 
+            "subtype": null
+        }, 
+        "HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL", 
+            "subtype": null
+        }, 
+        "HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ", 
+            "subtype": null
+        }, 
+        "HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL", 
+            "subtype": null
+        }, 
+        "HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ", 
+            "subtype": null
+        }, 
+        "HLT_Mu20": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu20", 
+            "subtype": null
+        }, 
+        "HLT_Mu20_Mu10": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu20_Mu10", 
+            "subtype": null
+        }, 
+        "HLT_Mu20_Mu10_DZ": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu20_Mu10_DZ", 
+            "subtype": null
+        }, 
+        "HLT_Mu20_Mu10_SameSign": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu20_Mu10_SameSign", 
+            "subtype": null
+        }, 
+        "HLT_Mu20_Mu10_SameSign_DZ": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu20_Mu10_SameSign_DZ", 
+            "subtype": null
+        }, 
+        "HLT_Mu23NoFiltersNoVtx_Photon23_CaloIdL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu23NoFiltersNoVtx_Photon23_CaloIdL", 
+            "subtype": null
+        }, 
+        "HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL", 
+            "subtype": null
+        }, 
+        "HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL", 
+            "subtype": null
+        }, 
+        "HLT_Mu24_eta2p1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu24_eta2p1", 
+            "subtype": null
+        }, 
+        "HLT_Mu25_TkMu0_dEta18_Onia": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu25_TkMu0_dEta18_Onia", 
+            "subtype": null
+        }, 
+        "HLT_Mu27": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu27", 
+            "subtype": null
+        }, 
+        "HLT_Mu27_Ele37_CaloIdL_GsfTrkIdVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu27_Ele37_CaloIdL_GsfTrkIdVL", 
+            "subtype": null
+        }, 
+        "HLT_Mu27_TkMu8": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu27_TkMu8", 
+            "subtype": null
+        }, 
+        "HLT_Mu28NoFiltersNoVtxDisplaced_Photon28_CaloIdL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu28NoFiltersNoVtxDisplaced_Photon28_CaloIdL", 
+            "subtype": null
+        }, 
+        "HLT_Mu28NoFiltersNoVtx_CentralCaloJet40": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu28NoFiltersNoVtx_CentralCaloJet40", 
+            "subtype": null
+        }, 
+        "HLT_Mu28NoFiltersNoVtx_DisplacedJet40_Loose": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu28NoFiltersNoVtx_DisplacedJet40_Loose", 
+            "subtype": null
+        }, 
+        "HLT_Mu300": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu300", 
+            "subtype": null
+        }, 
+        "HLT_Mu30_Ele30_CaloIdL_GsfTrkIdVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu30_Ele30_CaloIdL_GsfTrkIdVL", 
+            "subtype": null
+        }, 
+        "HLT_Mu30_TkMu11": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu30_TkMu11", 
+            "subtype": null
+        }, 
+        "HLT_Mu30_eta2p1_PFJet150_PFJet50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu30_eta2p1_PFJet150_PFJet50", 
+            "subtype": null
+        }, 
+        "HLT_Mu33NoFiltersNoVtxDisplaced_DisplacedJet50_Loose": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu33NoFiltersNoVtxDisplaced_DisplacedJet50_Loose", 
+            "subtype": null
+        }, 
+        "HLT_Mu33NoFiltersNoVtxDisplaced_DisplacedJet50_Tight": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu33NoFiltersNoVtxDisplaced_DisplacedJet50_Tight", 
+            "subtype": null
+        }, 
+        "HLT_Mu33NoFiltersNoVtxDisplaced_Photon33_CaloIdL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu33NoFiltersNoVtxDisplaced_Photon33_CaloIdL", 
+            "subtype": null
+        }, 
+        "HLT_Mu350": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu350", 
+            "subtype": null
+        }, 
+        "HLT_Mu37_Ele27_CaloIdL_GsfTrkIdVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu37_Ele27_CaloIdL_GsfTrkIdVL", 
+            "subtype": null
+        }, 
+        "HLT_Mu38NoFiltersNoVtxDisplaced_DisplacedJet60_Loose": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu38NoFiltersNoVtxDisplaced_DisplacedJet60_Loose", 
+            "subtype": null
+        }, 
+        "HLT_Mu38NoFiltersNoVtxDisplaced_DisplacedJet60_Tight": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu38NoFiltersNoVtxDisplaced_DisplacedJet60_Tight", 
+            "subtype": null
+        }, 
+        "HLT_Mu38NoFiltersNoVtx_DisplacedJet60_Loose": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu38NoFiltersNoVtx_DisplacedJet60_Loose", 
+            "subtype": null
+        }, 
+        "HLT_Mu38NoFiltersNoVtx_Photon38_CaloIdL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu38NoFiltersNoVtx_Photon38_CaloIdL", 
+            "subtype": null
+        }, 
+        "HLT_Mu3_PFJet40": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu3_PFJet40", 
+            "subtype": null
+        }, 
+        "HLT_Mu3er_PFHT140_PFMET125": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu3er_PFHT140_PFMET125", 
+            "subtype": null
+        }, 
+        "HLT_Mu40_TkMu11": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu40_TkMu11", 
+            "subtype": null
+        }, 
+        "HLT_Mu40_eta2p1_PFJet200_PFJet50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu40_eta2p1_PFJet200_PFJet50", 
+            "subtype": null
+        }, 
+        "HLT_Mu42NoFiltersNoVtx_Photon42_CaloIdL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu42NoFiltersNoVtx_Photon42_CaloIdL", 
+            "subtype": null
+        }, 
+        "HLT_Mu45_eta2p1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu45_eta2p1", 
+            "subtype": null
+        }, 
+        "HLT_Mu50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu50", 
+            "subtype": null
+        }, 
+        "HLT_Mu50_IsoVVVL_PFHT400": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu50_IsoVVVL_PFHT400", 
+            "subtype": null
+        }, 
+        "HLT_Mu55": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu55", 
+            "subtype": null
+        }, 
+        "HLT_Mu6_PFHT200_PFMET100": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu6_PFHT200_PFMET100", 
+            "subtype": null
+        }, 
+        "HLT_Mu6_PFHT200_PFMET80_BTagCSV_p067": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu6_PFHT200_PFMET80_BTagCSV_p067", 
+            "subtype": null
+        }, 
+        "HLT_Mu7p5_L2Mu2_Jpsi": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu7p5_L2Mu2_Jpsi", 
+            "subtype": null
+        }, 
+        "HLT_Mu7p5_L2Mu2_Upsilon": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu7p5_L2Mu2_Upsilon", 
+            "subtype": null
+        }, 
+        "HLT_Mu7p5_Track2_Jpsi": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu7p5_Track2_Jpsi", 
+            "subtype": null
+        }, 
+        "HLT_Mu7p5_Track2_Upsilon": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu7p5_Track2_Upsilon", 
+            "subtype": null
+        }, 
+        "HLT_Mu7p5_Track3p5_Jpsi": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu7p5_Track3p5_Jpsi", 
+            "subtype": null
+        }, 
+        "HLT_Mu7p5_Track3p5_Upsilon": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu7p5_Track3p5_Upsilon", 
+            "subtype": null
+        }, 
+        "HLT_Mu7p5_Track7_Jpsi": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu7p5_Track7_Jpsi", 
+            "subtype": null
+        }, 
+        "HLT_Mu7p5_Track7_Upsilon": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu7p5_Track7_Upsilon", 
+            "subtype": null
+        }, 
+        "HLT_Mu8": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu8", 
+            "subtype": null
+        }, 
+        "HLT_Mu8_DiEle12_CaloIdL_TrackIdL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu8_DiEle12_CaloIdL_TrackIdL", 
+            "subtype": null
+        }, 
+        "HLT_Mu8_Ele8_CaloIdM_TrackIdM_Mass8_PFHT250": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu8_Ele8_CaloIdM_TrackIdM_Mass8_PFHT250", 
+            "subtype": null
+        }, 
+        "HLT_Mu8_Ele8_CaloIdM_TrackIdM_Mass8_PFHT300": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu8_Ele8_CaloIdM_TrackIdM_Mass8_PFHT300", 
+            "subtype": null
+        }, 
+        "HLT_Mu8_TrkIsoVVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu8_TrkIsoVVL", 
+            "subtype": null
+        }, 
+        "HLT_Mu8_TrkIsoVVL_DiPFJet40_DEta3p5_MJJ750_HTT300_PFMETNoMu60": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu8_TrkIsoVVL_DiPFJet40_DEta3p5_MJJ750_HTT300_PFMETNoMu60", 
+            "subtype": null
+        }, 
+        "HLT_Mu8_TrkIsoVVL_Ele17_CaloIdL_TrackIdL_IsoVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu8_TrkIsoVVL_Ele17_CaloIdL_TrackIdL_IsoVL", 
+            "subtype": null
+        }, 
+        "HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL", 
+            "subtype": null
+        }, 
+        "HLT_PFHT125": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT125", 
+            "subtype": null
+        }, 
+        "HLT_PFHT200": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT200", 
+            "subtype": null
+        }, 
+        "HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57", 
+            "subtype": null
+        }, 
+        "HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT200_DiPFJetAve90_PFAlphaT0p63", 
+            "subtype": null
+        }, 
+        "HLT_PFHT200_PFAlphaT0p51": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT200_PFAlphaT0p51", 
+            "subtype": null
+        }, 
+        "HLT_PFHT250": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT250", 
+            "subtype": null
+        }, 
+        "HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55", 
+            "subtype": null
+        }, 
+        "HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT250_DiPFJetAve90_PFAlphaT0p58", 
+            "subtype": null
+        }, 
+        "HLT_PFHT300": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT300", 
+            "subtype": null
+        }, 
+        "HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53", 
+            "subtype": null
+        }, 
+        "HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT300_DiPFJetAve90_PFAlphaT0p54", 
+            "subtype": null
+        }, 
+        "HLT_PFHT300_PFMET100": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT300_PFMET100", 
+            "subtype": null
+        }, 
+        "HLT_PFHT300_PFMET110": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT300_PFMET110", 
+            "subtype": null
+        }, 
+        "HLT_PFHT350": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT350", 
+            "subtype": null
+        }, 
+        "HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52", 
+            "subtype": null
+        }, 
+        "HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT350_DiPFJetAve90_PFAlphaT0p53", 
+            "subtype": null
+        }, 
+        "HLT_PFHT400": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT400", 
+            "subtype": null
+        }, 
+        "HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51", 
+            "subtype": null
+        }, 
+        "HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT400_DiPFJetAve90_PFAlphaT0p52", 
+            "subtype": null
+        }, 
+        "HLT_PFHT400_SixJet30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT400_SixJet30", 
+            "subtype": null
+        }, 
+        "HLT_PFHT400_SixJet30_DoubleBTagCSV_p056": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT400_SixJet30_DoubleBTagCSV_p056", 
+            "subtype": null
+        }, 
+        "HLT_PFHT450_SixJet40": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT450_SixJet40", 
+            "subtype": null
+        }, 
+        "HLT_PFHT450_SixJet40_BTagCSV_p056": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT450_SixJet40_BTagCSV_p056", 
+            "subtype": null
+        }, 
+        "HLT_PFHT475": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT475", 
+            "subtype": null
+        }, 
+        "HLT_PFHT550_4JetPt50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT550_4JetPt50", 
+            "subtype": null
+        }, 
+        "HLT_PFHT600": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT600", 
+            "subtype": null
+        }, 
+        "HLT_PFHT650": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT650", 
+            "subtype": null
+        }, 
+        "HLT_PFHT650_4JetPt50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT650_4JetPt50", 
+            "subtype": null
+        }, 
+        "HLT_PFHT650_WideJetMJJ900DEtaJJ1p5": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT650_WideJetMJJ900DEtaJJ1p5", 
+            "subtype": null
+        }, 
+        "HLT_PFHT650_WideJetMJJ950DEtaJJ1p5": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT650_WideJetMJJ950DEtaJJ1p5", 
+            "subtype": null
+        }, 
+        "HLT_PFHT750_4JetPt50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT750_4JetPt50", 
+            "subtype": null
+        }, 
+        "HLT_PFHT800": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT800", 
+            "subtype": null
+        }, 
+        "HLT_PFHT900": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFHT900", 
+            "subtype": null
+        }, 
+        "HLT_PFJet140": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFJet140", 
+            "subtype": null
+        }, 
+        "HLT_PFJet15_NoCaloMatched": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFJet15_NoCaloMatched", 
+            "subtype": null
+        }, 
+        "HLT_PFJet200": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFJet200", 
+            "subtype": null
+        }, 
+        "HLT_PFJet25_NoCaloMatched": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFJet25_NoCaloMatched", 
+            "subtype": null
+        }, 
+        "HLT_PFJet260": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFJet260", 
+            "subtype": null
+        }, 
+        "HLT_PFJet320": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFJet320", 
+            "subtype": null
+        }, 
+        "HLT_PFJet40": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFJet40", 
+            "subtype": null
+        }, 
+        "HLT_PFJet400": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFJet400", 
+            "subtype": null
+        }, 
+        "HLT_PFJet450": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFJet450", 
+            "subtype": null
+        }, 
+        "HLT_PFJet500": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFJet500", 
+            "subtype": null
+        }, 
+        "HLT_PFJet60": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFJet60", 
+            "subtype": null
+        }, 
+        "HLT_PFJet80": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFJet80", 
+            "subtype": null
+        }, 
+        "HLT_PFMET100_PFMHT100_IDTight": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMET100_PFMHT100_IDTight", 
+            "subtype": null
+        }, 
+        "HLT_PFMET110_PFMHT110_IDTight": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMET110_PFMHT110_IDTight", 
+            "subtype": null
+        }, 
+        "HLT_PFMET120_BTagCSV_p067": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMET120_BTagCSV_p067", 
+            "subtype": null
+        }, 
+        "HLT_PFMET120_Mu5": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMET120_Mu5", 
+            "subtype": null
+        }, 
+        "HLT_PFMET120_PFMHT120_IDTight": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMET120_PFMHT120_IDTight", 
+            "subtype": null
+        }, 
+        "HLT_PFMET170_BeamHaloCleaned": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMET170_BeamHaloCleaned", 
+            "subtype": null
+        }, 
+        "HLT_PFMET170_HBHECleaned": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMET170_HBHECleaned", 
+            "subtype": null
+        }, 
+        "HLT_PFMET170_NotCleaned": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMET170_NotCleaned", 
+            "subtype": null
+        }, 
+        "HLT_PFMET300": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMET300", 
+            "subtype": null
+        }, 
+        "HLT_PFMET400": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMET400", 
+            "subtype": null
+        }, 
+        "HLT_PFMET500": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMET500", 
+            "subtype": null
+        }, 
+        "HLT_PFMET600": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMET600", 
+            "subtype": null
+        }, 
+        "HLT_PFMET90_PFMHT90_IDTight": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMET90_PFMHT90_IDTight", 
+            "subtype": null
+        }, 
+        "HLT_PFMETNoMu100_PFMHTNoMu100_IDTight": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMETNoMu100_PFMHTNoMu100_IDTight", 
+            "subtype": null
+        }, 
+        "HLT_PFMETNoMu110_PFMHTNoMu110_IDTight": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMETNoMu110_PFMHTNoMu110_IDTight", 
+            "subtype": null
+        }, 
+        "HLT_PFMETNoMu120_PFMHTNoMu120_IDTight": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMETNoMu120_PFMHTNoMu120_IDTight", 
+            "subtype": null
+        }, 
+        "HLT_PFMETNoMu90_PFMHTNoMu90_IDTight": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFMETNoMu90_PFMHTNoMu90_IDTight", 
+            "subtype": null
+        }, 
+        "HLT_PFTau120_eta2p1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PFTau120_eta2p1", 
+            "subtype": null
+        }, 
+        "HLT_Photon120": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon120", 
+            "subtype": null
+        }, 
+        "HLT_Photon120_R9Id90_HE10_Iso40_EBOnly_PFMET40": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon120_R9Id90_HE10_Iso40_EBOnly_PFMET40", 
+            "subtype": null
+        }, 
+        "HLT_Photon120_R9Id90_HE10_Iso40_EBOnly_VBF": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon120_R9Id90_HE10_Iso40_EBOnly_VBF", 
+            "subtype": null
+        }, 
+        "HLT_Photon120_R9Id90_HE10_IsoM": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon120_R9Id90_HE10_IsoM", 
+            "subtype": null
+        }, 
+        "HLT_Photon135_PFMET100": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon135_PFMET100", 
+            "subtype": null
+        }, 
+        "HLT_Photon165_HE10": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon165_HE10", 
+            "subtype": null
+        }, 
+        "HLT_Photon165_R9Id90_HE10_IsoM": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon165_R9Id90_HE10_IsoM", 
+            "subtype": null
+        }, 
+        "HLT_Photon175": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon175", 
+            "subtype": null
+        }, 
+        "HLT_Photon22": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon22", 
+            "subtype": null
+        }, 
+        "HLT_Photon22_R9Id90_HE10_Iso40_EBOnly_PFMET40": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon22_R9Id90_HE10_Iso40_EBOnly_PFMET40", 
+            "subtype": null
+        }, 
+        "HLT_Photon22_R9Id90_HE10_Iso40_EBOnly_VBF": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon22_R9Id90_HE10_Iso40_EBOnly_VBF", 
+            "subtype": null
+        }, 
+        "HLT_Photon22_R9Id90_HE10_IsoM": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon22_R9Id90_HE10_IsoM", 
+            "subtype": null
+        }, 
+        "HLT_Photon250_NoHE": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon250_NoHE", 
+            "subtype": null
+        }, 
+        "HLT_Photon26_R9Id85_OR_CaloId24b40e_Iso50T80L_Photon16_AND_HE10_R9Id65_Eta2_Mass60": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon26_R9Id85_OR_CaloId24b40e_Iso50T80L_Photon16_AND_HE10_R9Id65_Eta2_Mass60", 
+            "subtype": null
+        }, 
+        "HLT_Photon30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon30", 
+            "subtype": null
+        }, 
+        "HLT_Photon300_NoHE": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon300_NoHE", 
+            "subtype": null
+        }, 
+        "HLT_Photon30_R9Id90_HE10_IsoM": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon30_R9Id90_HE10_IsoM", 
+            "subtype": null
+        }, 
+        "HLT_Photon36": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon36", 
+            "subtype": null
+        }, 
+        "HLT_Photon36_R9Id85_OR_CaloId24b40e_Iso50T80L_Photon22_AND_HE10_R9Id65_Eta2_Mass15": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon36_R9Id85_OR_CaloId24b40e_Iso50T80L_Photon22_AND_HE10_R9Id65_Eta2_Mass15", 
+            "subtype": null
+        }, 
+        "HLT_Photon36_R9Id90_HE10_Iso40_EBOnly_PFMET40": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon36_R9Id90_HE10_Iso40_EBOnly_PFMET40", 
+            "subtype": null
+        }, 
+        "HLT_Photon36_R9Id90_HE10_Iso40_EBOnly_VBF": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon36_R9Id90_HE10_Iso40_EBOnly_VBF", 
+            "subtype": null
+        }, 
+        "HLT_Photon36_R9Id90_HE10_IsoM": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon36_R9Id90_HE10_IsoM", 
+            "subtype": null
+        }, 
+        "HLT_Photon42_R9Id85_OR_CaloId24b40e_Iso50T80L_Photon25_AND_HE10_R9Id65_Eta2_Mass15": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon42_R9Id85_OR_CaloId24b40e_Iso50T80L_Photon25_AND_HE10_R9Id65_Eta2_Mass15", 
+            "subtype": null
+        }, 
+        "HLT_Photon50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon50", 
+            "subtype": null
+        }, 
+        "HLT_Photon500": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon500", 
+            "subtype": null
+        }, 
+        "HLT_Photon50_R9Id90_HE10_Iso40_EBOnly_PFMET40": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon50_R9Id90_HE10_Iso40_EBOnly_PFMET40", 
+            "subtype": null
+        }, 
+        "HLT_Photon50_R9Id90_HE10_Iso40_EBOnly_VBF": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon50_R9Id90_HE10_Iso40_EBOnly_VBF", 
+            "subtype": null
+        }, 
+        "HLT_Photon50_R9Id90_HE10_IsoM": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon50_R9Id90_HE10_IsoM", 
+            "subtype": null
+        }, 
+        "HLT_Photon600": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon600", 
+            "subtype": null
+        }, 
+        "HLT_Photon75": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon75", 
+            "subtype": null
+        }, 
+        "HLT_Photon75_R9Id90_HE10_Iso40_EBOnly_PFMET40": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon75_R9Id90_HE10_Iso40_EBOnly_PFMET40", 
+            "subtype": null
+        }, 
+        "HLT_Photon75_R9Id90_HE10_Iso40_EBOnly_VBF": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon75_R9Id90_HE10_Iso40_EBOnly_VBF", 
+            "subtype": null
+        }, 
+        "HLT_Photon75_R9Id90_HE10_IsoM": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon75_R9Id90_HE10_IsoM", 
+            "subtype": null
+        }, 
+        "HLT_Photon90": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon90", 
+            "subtype": null
+        }, 
+        "HLT_Photon90_CaloIdL_PFHT500": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon90_CaloIdL_PFHT500", 
+            "subtype": null
+        }, 
+        "HLT_Photon90_CaloIdL_PFHT600": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon90_CaloIdL_PFHT600", 
+            "subtype": null
+        }, 
+        "HLT_Photon90_R9Id90_HE10_Iso40_EBOnly_PFMET40": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon90_R9Id90_HE10_Iso40_EBOnly_PFMET40", 
+            "subtype": null
+        }, 
+        "HLT_Photon90_R9Id90_HE10_Iso40_EBOnly_VBF": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon90_R9Id90_HE10_Iso40_EBOnly_VBF", 
+            "subtype": null
+        }, 
+        "HLT_Photon90_R9Id90_HE10_IsoM": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Photon90_R9Id90_HE10_IsoM", 
+            "subtype": null
+        }, 
+        "HLT_Physics": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Physics", 
+            "subtype": null
+        }, 
+        "HLT_PixelTracks_Multiplicity110ForEndOfFill": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PixelTracks_Multiplicity110ForEndOfFill", 
+            "subtype": null
+        }, 
+        "HLT_PixelTracks_Multiplicity135ForEndOfFill": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PixelTracks_Multiplicity135ForEndOfFill", 
+            "subtype": null
+        }, 
+        "HLT_PixelTracks_Multiplicity160ForEndOfFill": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PixelTracks_Multiplicity160ForEndOfFill", 
+            "subtype": null
+        }, 
+        "HLT_PixelTracks_Multiplicity60ForEndOfFill": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PixelTracks_Multiplicity60ForEndOfFill", 
+            "subtype": null
+        }, 
+        "HLT_PixelTracks_Multiplicity85ForEndOfFill": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_PixelTracks_Multiplicity85ForEndOfFill", 
+            "subtype": null
+        }, 
+        "HLT_QuadJet45_DoubleBTagCSV_p087": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_QuadJet45_DoubleBTagCSV_p087", 
+            "subtype": null
+        }, 
+        "HLT_QuadJet45_TripleBTagCSV_p087": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_QuadJet45_TripleBTagCSV_p087", 
+            "subtype": null
+        }, 
+        "HLT_QuadMuon0_Dimuon0_Jpsi": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_QuadMuon0_Dimuon0_Jpsi", 
+            "subtype": null
+        }, 
+        "HLT_QuadMuon0_Dimuon0_Upsilon": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_QuadMuon0_Dimuon0_Upsilon", 
+            "subtype": null
+        }, 
+        "HLT_QuadPFJet_BTagCSV_p016_VBF_Mqq460": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_QuadPFJet_BTagCSV_p016_VBF_Mqq460", 
+            "subtype": null
+        }, 
+        "HLT_QuadPFJet_BTagCSV_p016_VBF_Mqq500": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_QuadPFJet_BTagCSV_p016_VBF_Mqq500", 
+            "subtype": null
+        }, 
+        "HLT_QuadPFJet_BTagCSV_p016_p11_VBF_Mqq200": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_QuadPFJet_BTagCSV_p016_p11_VBF_Mqq200", 
+            "subtype": null
+        }, 
+        "HLT_QuadPFJet_BTagCSV_p016_p11_VBF_Mqq240": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_QuadPFJet_BTagCSV_p016_p11_VBF_Mqq240", 
+            "subtype": null
+        }, 
+        "HLT_QuadPFJet_VBF": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_QuadPFJet_VBF", 
+            "subtype": null
+        }, 
+        "HLT_Random": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Random", 
+            "subtype": null
+        }, 
+        "HLT_Rsq0p02_MR300_TriPFJet80_60_40_BTagCSV_p063_p20_Mbb60_200": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Rsq0p02_MR300_TriPFJet80_60_40_BTagCSV_p063_p20_Mbb60_200", 
+            "subtype": null
+        }, 
+        "HLT_Rsq0p02_MR300_TriPFJet80_60_40_DoubleBTagCSV_p063_Mbb60_200": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Rsq0p02_MR300_TriPFJet80_60_40_DoubleBTagCSV_p063_Mbb60_200", 
+            "subtype": null
+        }, 
+        "HLT_Rsq0p25": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Rsq0p25", 
+            "subtype": null
+        }, 
+        "HLT_Rsq0p30": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_Rsq0p30", 
+            "subtype": null
+        }, 
+        "HLT_RsqMR240_Rsq0p09_MR200": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_RsqMR240_Rsq0p09_MR200", 
+            "subtype": null
+        }, 
+        "HLT_RsqMR240_Rsq0p09_MR200_4jet": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_RsqMR240_Rsq0p09_MR200_4jet", 
+            "subtype": null
+        }, 
+        "HLT_RsqMR270_Rsq0p09_MR200": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_RsqMR270_Rsq0p09_MR200", 
+            "subtype": null
+        }, 
+        "HLT_RsqMR270_Rsq0p09_MR200_4jet": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_RsqMR270_Rsq0p09_MR200_4jet", 
+            "subtype": null
+        }, 
+        "HLT_SingleCentralPFJet170_CFMax0p1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_SingleCentralPFJet170_CFMax0p1", 
+            "subtype": null
+        }, 
+        "HLT_TkMu20": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_TkMu20", 
+            "subtype": null
+        }, 
+        "HLT_TkMu24_eta2p1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_TkMu24_eta2p1", 
+            "subtype": null
+        }, 
+        "HLT_TkMu27": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_TkMu27", 
+            "subtype": null
+        }, 
+        "HLT_TkMu50": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_TkMu50", 
+            "subtype": null
+        }, 
+        "HLT_TripleMu_12_10_5": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_TripleMu_12_10_5", 
+            "subtype": null
+        }, 
+        "HLT_TripleMu_5_3_3": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_TripleMu_5_3_3", 
+            "subtype": null
+        }, 
+        "HLT_TrkMu15_DoubleTrkMu5NoFiltersNoVtx": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_TrkMu15_DoubleTrkMu5NoFiltersNoVtx", 
+            "subtype": null
+        }, 
+        "HLT_TrkMu17_DoubleTrkMu8NoFiltersNoVtx": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_TrkMu17_DoubleTrkMu8NoFiltersNoVtx", 
+            "subtype": null
+        }, 
+        "HLT_VBF_DisplacedJet40_DisplacedTrack": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_VBF_DisplacedJet40_DisplacedTrack", 
+            "subtype": null
+        }, 
+        "HLT_VBF_DisplacedJet40_DisplacedTrack_2TrackIP2DSig5": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_VBF_DisplacedJet40_DisplacedTrack_2TrackIP2DSig5", 
+            "subtype": null
+        }, 
+        "HLT_VBF_DisplacedJet40_Hadronic": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_VBF_DisplacedJet40_Hadronic", 
+            "subtype": null
+        }, 
+        "HLT_VBF_DisplacedJet40_Hadronic_2PromptTrack": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_VBF_DisplacedJet40_Hadronic_2PromptTrack", 
+            "subtype": null
+        }, 
+        "HLT_VBF_DisplacedJet40_TightID_DisplacedTrack": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_VBF_DisplacedJet40_TightID_DisplacedTrack", 
+            "subtype": null
+        }, 
+        "HLT_VBF_DisplacedJet40_TightID_Hadronic": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_VBF_DisplacedJet40_TightID_Hadronic", 
+            "subtype": null
+        }, 
+        "HLT_VBF_DisplacedJet40_VTightID_DisplacedTrack": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_VBF_DisplacedJet40_VTightID_DisplacedTrack", 
+            "subtype": null
+        }, 
+        "HLT_VBF_DisplacedJet40_VTightID_Hadronic": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_VBF_DisplacedJet40_VTightID_Hadronic", 
+            "subtype": null
+        }, 
+        "HLT_VBF_DisplacedJet40_VVTightID_DisplacedTrack": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_VBF_DisplacedJet40_VVTightID_DisplacedTrack", 
+            "subtype": null
+        }, 
+        "HLT_VBF_DisplacedJet40_VVTightID_Hadronic": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_VBF_DisplacedJet40_VVTightID_Hadronic", 
+            "subtype": null
+        }, 
+        "HLT_VLooseIsoPFTau120_Trk50_eta2p1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_VLooseIsoPFTau120_Trk50_eta2p1", 
+            "subtype": null
+        }, 
+        "HLT_VLooseIsoPFTau140_Trk50_eta2p1": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_VLooseIsoPFTau140_Trk50_eta2p1", 
+            "subtype": null
+        }, 
+        "HLT_ZeroBias": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_ZeroBias", 
+            "subtype": null
+        }, 
+        "HLT_ZeroBias_FirstCollisionAfterAbortGap": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_ZeroBias_FirstCollisionAfterAbortGap", 
+            "subtype": null
+        }, 
+        "HLT_ZeroBias_FirstCollisionAfterAbortGap_TCDS": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_ZeroBias_FirstCollisionAfterAbortGap_TCDS", 
+            "subtype": null
+        }, 
+        "HLT_ZeroBias_FirstCollisionAfterAbortGap_copy": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_ZeroBias_FirstCollisionAfterAbortGap_copy", 
+            "subtype": null
+        }, 
+        "HLT_ZeroBias_IsolatedBunches": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLT_ZeroBias_IsolatedBunches", 
+            "subtype": null
+        }, 
+        "HLTriggerFinalPath": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLTriggerFinalPath", 
+            "subtype": null
+        }, 
+        "HLTriggerFirstPath": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "HLTriggerFirstPath", 
+            "subtype": null
+        }, 
+        "L1Reco_step": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "L1Reco_step", 
+            "subtype": null
+        }, 
+        "MET_MetUnclustEnUpDeltaX": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "MET_MetUnclustEnUpDeltaX", 
+            "subtype": null
+        }, 
+        "MET_MetUnclustEnUpDeltaY": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "MET_MetUnclustEnUpDeltaY", 
+            "subtype": null
+        }, 
+        "MET_covXX": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "MET_covXX", 
+            "subtype": null
+        }, 
+        "MET_covXY": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "MET_covXY", 
+            "subtype": null
+        }, 
+        "MET_covYY": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "MET_covYY", 
+            "subtype": null
+        }, 
+        "MET_phi": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "MET_phi", 
+            "subtype": null
+        }, 
+        "MET_pt": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "MET_pt", 
+            "subtype": null
+        }, 
+        "MET_significance": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "MET_significance", 
+            "subtype": null
+        }, 
+        "MET_sumEt": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "MET_sumEt", 
+            "subtype": null
+        }, 
+        "PV_chi2": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "PV_chi2", 
+            "subtype": null
+        }, 
+        "PV_ndof": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "PV_ndof", 
+            "subtype": null
+        }, 
+        "PV_npvs": {
+            "dtype": "<i4", 
+            "shape": [], 
+            "source": "PV_npvs", 
+            "subtype": null
+        }, 
+        "PV_npvsGood": {
+            "dtype": "<i4", 
+            "shape": [], 
+            "source": "PV_npvsGood", 
+            "subtype": null
+        }, 
+        "PV_score": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "PV_score", 
+            "subtype": null
+        }, 
+        "PV_x": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "PV_x", 
+            "subtype": null
+        }, 
+        "PV_y": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "PV_y", 
+            "subtype": null
+        }, 
+        "PV_z": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "PV_z", 
+            "subtype": null
+        }, 
+        "PuppiMET_phi": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "PuppiMET_phi", 
+            "subtype": null
+        }, 
+        "PuppiMET_pt": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "PuppiMET_pt", 
+            "subtype": null
+        }, 
+        "PuppiMET_sumEt": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "PuppiMET_sumEt", 
+            "subtype": null
+        }, 
+        "RawMET_phi": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "RawMET_phi", 
+            "subtype": null
+        }, 
+        "RawMET_pt": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "RawMET_pt", 
+            "subtype": null
+        }, 
+        "RawMET_sumEt": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "RawMET_sumEt", 
+            "subtype": null
+        }, 
+        "SoftActivityJetHT": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "SoftActivityJetHT", 
+            "subtype": null
+        }, 
+        "SoftActivityJetHT10": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "SoftActivityJetHT10", 
+            "subtype": null
+        }, 
+        "SoftActivityJetHT2": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "SoftActivityJetHT2", 
+            "subtype": null
+        }, 
+        "SoftActivityJetHT5": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "SoftActivityJetHT5", 
+            "subtype": null
+        }, 
+        "SoftActivityJetNjets10": {
+            "dtype": "<i4", 
+            "shape": [], 
+            "source": "SoftActivityJetNjets10", 
+            "subtype": null
+        }, 
+        "SoftActivityJetNjets2": {
+            "dtype": "<i4", 
+            "shape": [], 
+            "source": "SoftActivityJetNjets2", 
+            "subtype": null
+        }, 
+        "SoftActivityJetNjets5": {
+            "dtype": "<i4", 
+            "shape": [], 
+            "source": "SoftActivityJetNjets5", 
+            "subtype": null
+        }, 
+        "TkMET_phi": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "TkMET_phi", 
+            "subtype": null
+        }, 
+        "TkMET_pt": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "TkMET_pt", 
+            "subtype": null
+        }, 
+        "TkMET_sumEt": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "TkMET_sumEt", 
+            "subtype": null
+        }, 
+        "event": {
+            "dtype": "<u8", 
+            "shape": [], 
+            "source": "event", 
+            "subtype": null
+        }, 
+        "fixedGridRhoFastjetAll": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "fixedGridRhoFastjetAll", 
+            "subtype": null
+        }, 
+        "fixedGridRhoFastjetCentralCalo": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "fixedGridRhoFastjetCentralCalo", 
+            "subtype": null
+        }, 
+        "fixedGridRhoFastjetCentralNeutral": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "fixedGridRhoFastjetCentralNeutral", 
+            "subtype": null
+        }, 
+        "luminosityBlock": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "luminosityBlock", 
+            "subtype": null
+        }, 
+        "nAK15Puppi": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "nAK15Puppi", 
+            "subtype": null
+        }, 
+        "nAK15PuppiSubJet": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "nAK15PuppiSubJet", 
+            "subtype": null
+        }, 
+        "nElectron": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "nElectron", 
+            "subtype": null
+        }, 
+        "nJet": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "nJet", 
+            "subtype": null
+        }, 
+        "nMuon": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "nMuon", 
+            "subtype": null
+        }, 
+        "nOtherPV": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "nOtherPV", 
+            "subtype": null
+        }, 
+        "nPhoton": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "nPhoton", 
+            "subtype": null
+        }, 
+        "nSV": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "nSV", 
+            "subtype": null
+        }, 
+        "nTau": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "nTau", 
+            "subtype": null
+        }, 
+        "nTrigObj": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "nTrigObj", 
+            "subtype": null
+        }, 
+        "run": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "run", 
+            "subtype": null
+        }
+    }, 
+    "branches": {
+        "AK15Puppi": {
+            "area": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_area", 
+                "subtype": null
+            }, 
+            "btagCSVV2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_btagCSVV2", 
+                "subtype": null
+            }, 
+            "btagJP": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_btagJP", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_eta", 
+                "subtype": null
+            }, 
+            "jetId": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK15Puppi_jetId", 
+                "subtype": null
+            }, 
+            "mass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_mass", 
+                "subtype": null
+            }, 
+            "msoftdrop": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_msoftdrop", 
+                "subtype": null
+            }, 
+            "nBHadrons": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK15Puppi_nBHadrons", 
+                "subtype": null
+            }, 
+            "nCHadrons": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK15Puppi_nCHadrons", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_phi", 
+                "subtype": null
+            }, 
+            "probHbb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probHbb", 
+                "subtype": null
+            }, 
+            "probHcc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probHcc", 
+                "subtype": null
+            }, 
+            "probHqqqq": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probHqqqq", 
+                "subtype": null
+            }, 
+            "probQCDb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probQCDb", 
+                "subtype": null
+            }, 
+            "probQCDbb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probQCDbb", 
+                "subtype": null
+            }, 
+            "probQCDc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probQCDc", 
+                "subtype": null
+            }, 
+            "probQCDcc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probQCDcc", 
+                "subtype": null
+            }, 
+            "probQCDothers": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probQCDothers", 
+                "subtype": null
+            }, 
+            "probTbc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probTbc", 
+                "subtype": null
+            }, 
+            "probTbcq": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probTbcq", 
+                "subtype": null
+            }, 
+            "probTbq": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probTbq", 
+                "subtype": null
+            }, 
+            "probTbqq": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probTbqq", 
+                "subtype": null
+            }, 
+            "probWcq": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probWcq", 
+                "subtype": null
+            }, 
+            "probWqq": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probWqq", 
+                "subtype": null
+            }, 
+            "probZbb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probZbb", 
+                "subtype": null
+            }, 
+            "probZcc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probZcc", 
+                "subtype": null
+            }, 
+            "probZqq": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_probZqq", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_pt", 
+                "subtype": null
+            }, 
+            "rawFactor": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_rawFactor", 
+                "subtype": null
+            }, 
+            "subJetIdx1": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK15Puppi_subJetIdx1", 
+                "subtype": null
+            }, 
+            "subJetIdx2": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK15Puppi_subJetIdx2", 
+                "subtype": null
+            }, 
+            "tau1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_tau1", 
+                "subtype": null
+            }, 
+            "tau2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_tau2", 
+                "subtype": null
+            }, 
+            "tau3": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15Puppi_tau3", 
+                "subtype": null
+            }
+        }, 
+        "AK15PuppiSubJet": {
+            "area": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15PuppiSubJet_area", 
+                "subtype": null
+            }, 
+            "btagCSVV2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15PuppiSubJet_btagCSVV2", 
+                "subtype": null
+            }, 
+            "btagJP": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15PuppiSubJet_btagJP", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15PuppiSubJet_eta", 
+                "subtype": null
+            }, 
+            "mass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15PuppiSubJet_mass", 
+                "subtype": null
+            }, 
+            "nBHadrons": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK15PuppiSubJet_nBHadrons", 
+                "subtype": null
+            }, 
+            "nCHadrons": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK15PuppiSubJet_nCHadrons", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15PuppiSubJet_phi", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15PuppiSubJet_pt", 
+                "subtype": null
+            }, 
+            "rawFactor": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK15PuppiSubJet_rawFactor", 
+                "subtype": null
+            }
+        }, 
+        "Electron": {
+            "charge": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Electron_charge", 
+                "subtype": null
+            }, 
+            "cleanmask": {
+                "dtype": "|u1", 
+                "shape": [], 
+                "source": "Electron_cleanmask", 
+                "subtype": null
+            }, 
+            "convVeto": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Electron_convVeto", 
+                "subtype": null
+            }, 
+            "cutBased": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Electron_cutBased", 
+                "subtype": null
+            }, 
+            "cutBased_HEEP": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Electron_cutBased_HEEP", 
+                "subtype": null
+            }, 
+            "cutBased_HLTPreSel": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Electron_cutBased_HLTPreSel", 
+                "subtype": null
+            }, 
+            "deltaEtaSC": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_deltaEtaSC", 
+                "subtype": null
+            }, 
+            "dr03EcalRecHitSumEt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_dr03EcalRecHitSumEt", 
+                "subtype": null
+            }, 
+            "dr03HcalDepth1TowerSumEt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_dr03HcalDepth1TowerSumEt", 
+                "subtype": null
+            }, 
+            "dr03TkSumPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_dr03TkSumPt", 
+                "subtype": null
+            }, 
+            "dxy": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_dxy", 
+                "subtype": null
+            }, 
+            "dxyErr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_dxyErr", 
+                "subtype": null
+            }, 
+            "dz": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_dz", 
+                "subtype": null
+            }, 
+            "dzErr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_dzErr", 
+                "subtype": null
+            }, 
+            "eCorr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_eCorr", 
+                "subtype": null
+            }, 
+            "eInvMinusPInv": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_eInvMinusPInv", 
+                "subtype": null
+            }, 
+            "energyErr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_energyErr", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_eta", 
+                "subtype": null
+            }, 
+            "hoe": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_hoe", 
+                "subtype": null
+            }, 
+            "ip3d": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_ip3d", 
+                "subtype": null
+            }, 
+            "isPFcand": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Electron_isPFcand", 
+                "subtype": null
+            }, 
+            "jetIdx": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Electron_jetIdx", 
+                "subtype": null
+            }, 
+            "lostHits": {
+                "dtype": "|u1", 
+                "shape": [], 
+                "source": "Electron_lostHits", 
+                "subtype": null
+            }, 
+            "mass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_mass", 
+                "subtype": null
+            }, 
+            "miniPFRelIso_all": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_miniPFRelIso_all", 
+                "subtype": null
+            }, 
+            "miniPFRelIso_chg": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_miniPFRelIso_chg", 
+                "subtype": null
+            }, 
+            "mvaSpring16GP": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_mvaSpring16GP", 
+                "subtype": null
+            }, 
+            "mvaSpring16GP_WP80": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Electron_mvaSpring16GP_WP80", 
+                "subtype": null
+            }, 
+            "mvaSpring16GP_WP90": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Electron_mvaSpring16GP_WP90", 
+                "subtype": null
+            }, 
+            "mvaSpring16HZZ": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_mvaSpring16HZZ", 
+                "subtype": null
+            }, 
+            "mvaSpring16HZZ_WPL": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Electron_mvaSpring16HZZ_WPL", 
+                "subtype": null
+            }, 
+            "mvaTTH": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_mvaTTH", 
+                "subtype": null
+            }, 
+            "pdgId": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Electron_pdgId", 
+                "subtype": null
+            }, 
+            "pfRelIso03_all": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_pfRelIso03_all", 
+                "subtype": null
+            }, 
+            "pfRelIso03_chg": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_pfRelIso03_chg", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_phi", 
+                "subtype": null
+            }, 
+            "photonIdx": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Electron_photonIdx", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_pt", 
+                "subtype": null
+            }, 
+            "r9": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_r9", 
+                "subtype": null
+            }, 
+            "sieie": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_sieie", 
+                "subtype": null
+            }, 
+            "sip3d": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron_sip3d", 
+                "subtype": null
+            }, 
+            "tightCharge": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Electron_tightCharge", 
+                "subtype": null
+            }, 
+            "vidNestedWPBitmap": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Electron_vidNestedWPBitmap", 
+                "subtype": null
+            }
+        }, 
+        "Jet": {
+            "area": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_area", 
+                "subtype": null
+            }, 
+            "bRegCorr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_bRegCorr", 
+                "subtype": null
+            }, 
+            "bRegRes": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_bRegRes", 
+                "subtype": null
+            }, 
+            "btagCMVA": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_btagCMVA", 
+                "subtype": null
+            }, 
+            "btagCSVV2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_btagCSVV2", 
+                "subtype": null
+            }, 
+            "btagDeepB": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_btagDeepB", 
+                "subtype": null
+            }, 
+            "btagDeepC": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_btagDeepC", 
+                "subtype": null
+            }, 
+            "btagDeepFlavB": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_btagDeepFlavB", 
+                "subtype": null
+            }, 
+            "chEmEF": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_chEmEF", 
+                "subtype": null
+            }, 
+            "chHEF": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_chHEF", 
+                "subtype": null
+            }, 
+            "cleanmask": {
+                "dtype": "|u1", 
+                "shape": [], 
+                "source": "Jet_cleanmask", 
+                "subtype": null
+            }, 
+            "electronIdx1": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Jet_electronIdx1", 
+                "subtype": null
+            }, 
+            "electronIdx2": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Jet_electronIdx2", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_eta", 
+                "subtype": null
+            }, 
+            "jetId": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Jet_jetId", 
+                "subtype": null
+            }, 
+            "mass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_mass", 
+                "subtype": null
+            }, 
+            "muEF": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_muEF", 
+                "subtype": null
+            }, 
+            "muonIdx1": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Jet_muonIdx1", 
+                "subtype": null
+            }, 
+            "muonIdx2": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Jet_muonIdx2", 
+                "subtype": null
+            }, 
+            "nConstituents": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Jet_nConstituents", 
+                "subtype": null
+            }, 
+            "nElectrons": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Jet_nElectrons", 
+                "subtype": null
+            }, 
+            "nMuons": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Jet_nMuons", 
+                "subtype": null
+            }, 
+            "neEmEF": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_neEmEF", 
+                "subtype": null
+            }, 
+            "neHEF": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_neHEF", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_phi", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_pt", 
+                "subtype": null
+            }, 
+            "puId": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Jet_puId", 
+                "subtype": null
+            }, 
+            "qgl": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_qgl", 
+                "subtype": null
+            }, 
+            "rawFactor": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Jet_rawFactor", 
+                "subtype": null
+            }
+        }, 
+        "Muon": {
+            "charge": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Muon_charge", 
+                "subtype": null
+            }, 
+            "cleanmask": {
+                "dtype": "|u1", 
+                "shape": [], 
+                "source": "Muon_cleanmask", 
+                "subtype": null
+            }, 
+            "dxy": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_dxy", 
+                "subtype": null
+            }, 
+            "dxyErr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_dxyErr", 
+                "subtype": null
+            }, 
+            "dz": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_dz", 
+                "subtype": null
+            }, 
+            "dzErr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_dzErr", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_eta", 
+                "subtype": null
+            }, 
+            "highPtId": {
+                "dtype": "|u1", 
+                "shape": [], 
+                "source": "Muon_highPtId", 
+                "subtype": null
+            }, 
+            "ip3d": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_ip3d", 
+                "subtype": null
+            }, 
+            "isPFcand": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Muon_isPFcand", 
+                "subtype": null
+            }, 
+            "jetIdx": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Muon_jetIdx", 
+                "subtype": null
+            }, 
+            "mass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_mass", 
+                "subtype": null
+            }, 
+            "mediumId": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Muon_mediumId", 
+                "subtype": null
+            }, 
+            "miniPFRelIso_all": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_miniPFRelIso_all", 
+                "subtype": null
+            }, 
+            "miniPFRelIso_chg": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_miniPFRelIso_chg", 
+                "subtype": null
+            }, 
+            "mvaTTH": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_mvaTTH", 
+                "subtype": null
+            }, 
+            "nStations": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Muon_nStations", 
+                "subtype": null
+            }, 
+            "nTrackerLayers": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Muon_nTrackerLayers", 
+                "subtype": null
+            }, 
+            "pdgId": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Muon_pdgId", 
+                "subtype": null
+            }, 
+            "pfRelIso03_all": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_pfRelIso03_all", 
+                "subtype": null
+            }, 
+            "pfRelIso03_chg": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_pfRelIso03_chg", 
+                "subtype": null
+            }, 
+            "pfRelIso04_all": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_pfRelIso04_all", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_phi", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_pt", 
+                "subtype": null
+            }, 
+            "ptErr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_ptErr", 
+                "subtype": null
+            }, 
+            "segmentComp": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_segmentComp", 
+                "subtype": null
+            }, 
+            "sip3d": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon_sip3d", 
+                "subtype": null
+            }, 
+            "softId": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Muon_softId", 
+                "subtype": null
+            }, 
+            "tightCharge": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Muon_tightCharge", 
+                "subtype": null
+            }, 
+            "tightId": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Muon_tightId", 
+                "subtype": null
+            }
+        }, 
+        "OtherPV": {
+            "z": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "OtherPV_z", 
+                "subtype": null
+            }
+        }, 
+        "Photon": {
+            "charge": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Photon_charge", 
+                "subtype": null
+            }, 
+            "cleanmask": {
+                "dtype": "|u1", 
+                "shape": [], 
+                "source": "Photon_cleanmask", 
+                "subtype": null
+            }, 
+            "cutBased": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Photon_cutBased", 
+                "subtype": null
+            }, 
+            "eCorr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon_eCorr", 
+                "subtype": null
+            }, 
+            "electronIdx": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Photon_electronIdx", 
+                "subtype": null
+            }, 
+            "electronVeto": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Photon_electronVeto", 
+                "subtype": null
+            }, 
+            "energyErr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon_energyErr", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon_eta", 
+                "subtype": null
+            }, 
+            "hoe": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon_hoe", 
+                "subtype": null
+            }, 
+            "isScEtaEB": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Photon_isScEtaEB", 
+                "subtype": null
+            }, 
+            "isScEtaEE": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Photon_isScEtaEE", 
+                "subtype": null
+            }, 
+            "jetIdx": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Photon_jetIdx", 
+                "subtype": null
+            }, 
+            "mass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon_mass", 
+                "subtype": null
+            }, 
+            "mvaID": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon_mvaID", 
+                "subtype": null
+            }, 
+            "mvaID_WP80": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Photon_mvaID_WP80", 
+                "subtype": null
+            }, 
+            "mvaID_WP90": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Photon_mvaID_WP90", 
+                "subtype": null
+            }, 
+            "pdgId": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Photon_pdgId", 
+                "subtype": null
+            }, 
+            "pfRelIso03_all": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon_pfRelIso03_all", 
+                "subtype": null
+            }, 
+            "pfRelIso03_chg": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon_pfRelIso03_chg", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon_phi", 
+                "subtype": null
+            }, 
+            "pixelSeed": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Photon_pixelSeed", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon_pt", 
+                "subtype": null
+            }, 
+            "r9": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon_r9", 
+                "subtype": null
+            }, 
+            "sieie": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon_sieie", 
+                "subtype": null
+            }, 
+            "vidNestedWPBitmap": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Photon_vidNestedWPBitmap", 
+                "subtype": null
+            }
+        }, 
+        "SV": {
+            "chi2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV_chi2", 
+                "subtype": null
+            }, 
+            "dlen": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV_dlen", 
+                "subtype": null
+            }, 
+            "dlenSig": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV_dlenSig", 
+                "subtype": null
+            }, 
+            "dxy": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV_dxy", 
+                "subtype": null
+            }, 
+            "dxySig": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV_dxySig", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV_eta", 
+                "subtype": null
+            }, 
+            "mass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV_mass", 
+                "subtype": null
+            }, 
+            "ndof": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV_ndof", 
+                "subtype": null
+            }, 
+            "ntracks": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "SV_ntracks", 
+                "subtype": null
+            }, 
+            "pAngle": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV_pAngle", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV_phi", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV_pt", 
+                "subtype": null
+            }, 
+            "x": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV_x", 
+                "subtype": null
+            }, 
+            "y": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV_y", 
+                "subtype": null
+            }, 
+            "z": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV_z", 
+                "subtype": null
+            }
+        }, 
+        "Tau": {
+            "charge": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Tau_charge", 
+                "subtype": null
+            }, 
+            "chargedIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_chargedIso", 
+                "subtype": null
+            }, 
+            "cleanmask": {
+                "dtype": "|u1", 
+                "shape": [], 
+                "source": "Tau_cleanmask", 
+                "subtype": null
+            }, 
+            "decayMode": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Tau_decayMode", 
+                "subtype": null
+            }, 
+            "dxy": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_dxy", 
+                "subtype": null
+            }, 
+            "dz": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_dz", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_eta", 
+                "subtype": null
+            }, 
+            "idAntiEle": {
+                "dtype": "|u1", 
+                "shape": [], 
+                "source": "Tau_idAntiEle", 
+                "subtype": null
+            }, 
+            "idAntiMu": {
+                "dtype": "|u1", 
+                "shape": [], 
+                "source": "Tau_idAntiMu", 
+                "subtype": null
+            }, 
+            "idDecayMode": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Tau_idDecayMode", 
+                "subtype": null
+            }, 
+            "idDecayModeNewDMs": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Tau_idDecayModeNewDMs", 
+                "subtype": null
+            }, 
+            "idMVAnew": {
+                "dtype": "|u1", 
+                "shape": [], 
+                "source": "Tau_idMVAnew", 
+                "subtype": null
+            }, 
+            "idMVAoldDM": {
+                "dtype": "|u1", 
+                "shape": [], 
+                "source": "Tau_idMVAoldDM", 
+                "subtype": null
+            }, 
+            "idMVAoldDMdR03": {
+                "dtype": "|u1", 
+                "shape": [], 
+                "source": "Tau_idMVAoldDMdR03", 
+                "subtype": null
+            }, 
+            "jetIdx": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Tau_jetIdx", 
+                "subtype": null
+            }, 
+            "leadTkDeltaEta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_leadTkDeltaEta", 
+                "subtype": null
+            }, 
+            "leadTkDeltaPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_leadTkDeltaPhi", 
+                "subtype": null
+            }, 
+            "leadTkPtOverTauPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_leadTkPtOverTauPt", 
+                "subtype": null
+            }, 
+            "mass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_mass", 
+                "subtype": null
+            }, 
+            "neutralIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_neutralIso", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_phi", 
+                "subtype": null
+            }, 
+            "photonsOutsideSignalCone": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_photonsOutsideSignalCone", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_pt", 
+                "subtype": null
+            }, 
+            "puCorr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_puCorr", 
+                "subtype": null
+            }, 
+            "rawAntiEle": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_rawAntiEle", 
+                "subtype": null
+            }, 
+            "rawAntiEleCat": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Tau_rawAntiEleCat", 
+                "subtype": null
+            }, 
+            "rawIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_rawIso", 
+                "subtype": null
+            }, 
+            "rawIsodR03": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_rawIsodR03", 
+                "subtype": null
+            }, 
+            "rawMVAnewDM": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_rawMVAnewDM", 
+                "subtype": null
+            }, 
+            "rawMVAoldDM": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_rawMVAoldDM", 
+                "subtype": null
+            }, 
+            "rawMVAoldDMdR03": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau_rawMVAoldDMdR03", 
+                "subtype": null
+            }
+        }, 
+        "TrigObj": {
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "TrigObj_eta", 
+                "subtype": null
+            }, 
+            "filterBits": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "TrigObj_filterBits", 
+                "subtype": null
+            }, 
+            "id": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "TrigObj_id", 
+                "subtype": null
+            }, 
+            "l1charge": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "TrigObj_l1charge", 
+                "subtype": null
+            }, 
+            "l1iso": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "TrigObj_l1iso", 
+                "subtype": null
+            }, 
+            "l1pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "TrigObj_l1pt", 
+                "subtype": null
+            }, 
+            "l1pt_2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "TrigObj_l1pt_2", 
+                "subtype": null
+            }, 
+            "l2pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "TrigObj_l2pt", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "TrigObj_phi", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "TrigObj_pt", 
+                "subtype": null
+            }
+        }
+    }
+}

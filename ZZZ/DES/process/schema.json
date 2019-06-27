@@ -1,0 +1,678 @@
+{
+    "attributes": {
+        "ALPHAWIN_J2000": {
+            "dtype": "<f8", 
+            "shape": [], 
+            "source": null, 
+            "subtype": null
+        }, 
+        "BAD": {
+            "dtype": "<i1", 
+            "shape": [], 
+            "source": null, 
+            "subtype": null
+        }, 
+        "DELTAWIN_J2000": {
+            "dtype": "<f8", 
+            "shape": [], 
+            "source": null, 
+            "subtype": null
+        }, 
+        "HPIX": {
+            "dtype": "<i8", 
+            "shape": [], 
+            "source": null, 
+            "subtype": null
+        }, 
+        "OBJECT_ID": {
+            "dtype": "<i8", 
+            "shape": [], 
+            "source": null, 
+            "subtype": null
+        }
+    }, 
+    "branches": {
+        "Observation": {
+            "ALPHAPEAK_J2000": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ALPHAPEAK_J2000", 
+                "subtype": null
+            }, 
+            "ALPHAPSF_J2000": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ALPHAPSF_J2000", 
+                "subtype": null
+            }, 
+            "ALPHAWIN_J2000": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ALPHAWIN_J2000", 
+                "subtype": null
+            }, 
+            "ALPHA_J2000": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ALPHA_J2000", 
+                "subtype": null
+            }, 
+            "A_IMAGE": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "A_IMAGE", 
+                "subtype": null
+            }, 
+            "BACKGROUND": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "BACKGROUND", 
+                "subtype": null
+            }, 
+            "B_IMAGE": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "B_IMAGE", 
+                "subtype": null
+            }, 
+            "CCDNUM": {
+                "dtype": "<i8", 
+                "shape": [], 
+                "source": "CCDNUM", 
+                "subtype": null
+            }, 
+            "CHI2_PSF": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CHI2_PSF", 
+                "subtype": null
+            }, 
+            "CLASS_STAR": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CLASS_STAR", 
+                "subtype": null
+            }, 
+            "DELTAPEAK_J2000": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "DELTAPEAK_J2000", 
+                "subtype": null
+            }, 
+            "DELTAPSF_J2000": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "DELTAPSF_J2000", 
+                "subtype": null
+            }, 
+            "DELTAWIN_J2000": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "DELTAWIN_J2000", 
+                "subtype": null
+            }, 
+            "DELTA_J2000": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "DELTA_J2000", 
+                "subtype": null
+            }, 
+            "DURATION_ANALYSIS": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "DURATION_ANALYSIS", 
+                "subtype": null
+            }, 
+            "ELLIPTICITY": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ELLIPTICITY", 
+                "subtype": null
+            }, 
+            "ELONGATION": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ELONGATION", 
+                "subtype": null
+            }, 
+            "ERRAPSF_IMAGE": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ERRAPSF_IMAGE", 
+                "subtype": null
+            }, 
+            "ERRAPSF_WORLD": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ERRAPSF_WORLD", 
+                "subtype": null
+            }, 
+            "ERRAWIN_IMAGE": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ERRAWIN_IMAGE", 
+                "subtype": null
+            }, 
+            "ERRAWIN_WORLD": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ERRAWIN_WORLD", 
+                "subtype": null
+            }, 
+            "ERRBPSF_IMAGE": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ERRBPSF_IMAGE", 
+                "subtype": null
+            }, 
+            "ERRBPSF_WORLD": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ERRBPSF_WORLD", 
+                "subtype": null
+            }, 
+            "ERRBWIN_IMAGE": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ERRBWIN_IMAGE", 
+                "subtype": null
+            }, 
+            "ERRBWIN_WORLD": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ERRBWIN_WORLD", 
+                "subtype": null
+            }, 
+            "ERRTHETAPSF_IMAGE": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ERRTHETAPSF_IMAGE", 
+                "subtype": null
+            }, 
+            "ERRTHETAPSF_J2000": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ERRTHETAPSF_J2000", 
+                "subtype": null
+            }, 
+            "ERRTHETAWIN_IMAGE": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ERRTHETAWIN_IMAGE", 
+                "subtype": null
+            }, 
+            "ERRTHETAWIN_J2000": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ERRTHETAWIN_J2000", 
+                "subtype": null
+            }, 
+            "ERRX2WIN_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ERRX2WIN_IMAGE", 
+                "subtype": null
+            }, 
+            "ERRX2WIN_WORLD": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ERRX2WIN_WORLD", 
+                "subtype": null
+            }, 
+            "ERRX2_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ERRX2_IMAGE", 
+                "subtype": null
+            }, 
+            "ERRX2_WORLD": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ERRX2_WORLD", 
+                "subtype": null
+            }, 
+            "ERRXYWIN_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ERRXYWIN_IMAGE", 
+                "subtype": null
+            }, 
+            "ERRXYWIN_WORLD": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ERRXYWIN_WORLD", 
+                "subtype": null
+            }, 
+            "ERRXY_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ERRXY_IMAGE", 
+                "subtype": null
+            }, 
+            "ERRXY_WORLD": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ERRXY_WORLD", 
+                "subtype": null
+            }, 
+            "ERRY2WIN_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ERRY2WIN_IMAGE", 
+                "subtype": null
+            }, 
+            "ERRY2WIN_WORLD": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ERRY2WIN_WORLD", 
+                "subtype": null
+            }, 
+            "ERRY2_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ERRY2_IMAGE", 
+                "subtype": null
+            }, 
+            "ERRY2_WORLD": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "ERRY2_WORLD", 
+                "subtype": null
+            }, 
+            "EXPNUM": {
+                "dtype": "<i8", 
+                "shape": [], 
+                "source": "EXPNUM", 
+                "subtype": null
+            }, 
+            "FLAGS": {
+                "dtype": "<i2", 
+                "shape": [], 
+                "source": "FLAGS", 
+                "subtype": null
+            }, 
+            "FLAGS_WEIGHT": {
+                "dtype": "<i2", 
+                "shape": [], 
+                "source": "FLAGS_WEIGHT", 
+                "subtype": null
+            }, 
+            "FLUXERR_APER": {
+                "dtype": "<f4", 
+                "shape": [
+                    12
+                ], 
+                "source": "FLUXERR_APER", 
+                "subtype": null
+            }, 
+            "FLUXERR_AUTO": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "FLUXERR_AUTO", 
+                "subtype": null
+            }, 
+            "FLUXERR_PSF": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "FLUXERR_PSF", 
+                "subtype": null
+            }, 
+            "FLUX_APER": {
+                "dtype": "<f4", 
+                "shape": [
+                    12
+                ], 
+                "source": "FLUX_APER", 
+                "subtype": null
+            }, 
+            "FLUX_AUTO": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "FLUX_AUTO", 
+                "subtype": null
+            }, 
+            "FLUX_MAX": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "FLUX_MAX", 
+                "subtype": null
+            }, 
+            "FLUX_PSF": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "FLUX_PSF", 
+                "subtype": null
+            }, 
+            "FLUX_RADIUS": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "FLUX_RADIUS", 
+                "subtype": null
+            }, 
+            "FWHMPSF_IMAGE": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "FWHMPSF_IMAGE", 
+                "subtype": null
+            }, 
+            "FWHMPSF_WORLD": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "FWHMPSF_WORLD", 
+                "subtype": null
+            }, 
+            "FWHM_WORLD": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "FWHM_WORLD", 
+                "subtype": null
+            }, 
+            "HPIX": {
+                "dtype": "<i8", 
+                "shape": [], 
+                "source": null, 
+                "subtype": null
+            }, 
+            "IMAFLAGS_ISO": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "IMAFLAGS_ISO", 
+                "subtype": null
+            }, 
+            "ISOAREAF_IMAGE": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "ISOAREAF_IMAGE", 
+                "subtype": null
+            }, 
+            "ISOAREAF_WORLD": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ISOAREAF_WORLD", 
+                "subtype": null
+            }, 
+            "ISOAREA_IMAGE": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "ISOAREA_IMAGE", 
+                "subtype": null
+            }, 
+            "ISOAREA_WORLD": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "ISOAREA_WORLD", 
+                "subtype": null
+            }, 
+            "KRON_RADIUS": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "KRON_RADIUS", 
+                "subtype": null
+            }, 
+            "MAGERR_APER": {
+                "dtype": "<f4", 
+                "shape": [
+                    12
+                ], 
+                "source": "MAGERR_APER", 
+                "subtype": null
+            }, 
+            "MAGERR_AUTO": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "MAGERR_AUTO", 
+                "subtype": null
+            }, 
+            "MAGERR_ISO": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "MAGERR_ISO", 
+                "subtype": null
+            }, 
+            "MAGERR_PSF": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "MAGERR_PSF", 
+                "subtype": null
+            }, 
+            "MAG_APER": {
+                "dtype": "<f4", 
+                "shape": [
+                    12
+                ], 
+                "source": "MAG_APER", 
+                "subtype": null
+            }, 
+            "MAG_AUTO": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "MAG_AUTO", 
+                "subtype": null
+            }, 
+            "MAG_ISO": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "MAG_ISO", 
+                "subtype": null
+            }, 
+            "MAG_POINTSOURCE": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "MAG_POINTSOURCE", 
+                "subtype": null
+            }, 
+            "MAG_PSF": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "MAG_PSF", 
+                "subtype": null
+            }, 
+            "MU_MAX": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "MU_MAX", 
+                "subtype": null
+            }, 
+            "MU_THRESHOLD": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "MU_THRESHOLD", 
+                "subtype": null
+            }, 
+            "NITER_PSF": {
+                "dtype": "<i2", 
+                "shape": [], 
+                "source": "NITER_PSF", 
+                "subtype": null
+            }, 
+            "NUMBER": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "NUMBER", 
+                "subtype": null
+            }, 
+            "OBJECT_ID": {
+                "dtype": "<i8", 
+                "shape": [], 
+                "source": null, 
+                "subtype": null
+            },                
+            "SPREADERR_MODEL": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SPREADERR_MODEL", 
+                "subtype": null
+            }, 
+            "SPREAD_MODEL": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SPREAD_MODEL", 
+                "subtype": null
+            }, 
+            "THETA_IMAGE": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "THETA_IMAGE", 
+                "subtype": null
+            }, 
+            "THETA_J2000": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "THETA_J2000", 
+                "subtype": null
+            }, 
+            "THRESHOLD": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "THRESHOLD", 
+                "subtype": null
+            }, 
+            "X2WIN_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "X2WIN_IMAGE", 
+                "subtype": null
+            }, 
+            "X2WIN_WORLD": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "X2WIN_WORLD", 
+                "subtype": null
+            }, 
+            "X2_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "X2_IMAGE", 
+                "subtype": null
+            }, 
+            "X2_WORLD": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "X2_WORLD", 
+                "subtype": null
+            }, 
+            "XMAX_IMAGE": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "XMAX_IMAGE", 
+                "subtype": null
+            }, 
+            "XMIN_IMAGE": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "XMIN_IMAGE", 
+                "subtype": null
+            }, 
+            "XPEAK_IMAGE": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "XPEAK_IMAGE", 
+                "subtype": null
+            }, 
+            "XPSF_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "XPSF_IMAGE", 
+                "subtype": null
+            }, 
+            "XWIN_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "XWIN_IMAGE", 
+                "subtype": null
+            }, 
+            "XYWIN_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "XYWIN_IMAGE", 
+                "subtype": null
+            }, 
+            "XYWIN_WORLD": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "XYWIN_WORLD", 
+                "subtype": null
+            }, 
+            "XY_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "XY_IMAGE", 
+                "subtype": null
+            }, 
+            "XY_WORLD": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "XY_WORLD", 
+                "subtype": null
+            }, 
+            "X_IMAGE": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "X_IMAGE", 
+                "subtype": null
+            }, 
+            "Y2WIN_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "Y2WIN_IMAGE", 
+                "subtype": null
+            }, 
+            "Y2WIN_WORLD": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "Y2WIN_WORLD", 
+                "subtype": null
+            }, 
+            "Y2_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "Y2_IMAGE", 
+                "subtype": null
+            }, 
+            "Y2_WORLD": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "Y2_WORLD", 
+                "subtype": null
+            }, 
+            "YMAX_IMAGE": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "YMAX_IMAGE", 
+                "subtype": null
+            }, 
+            "YMIN_IMAGE": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "YMIN_IMAGE", 
+                "subtype": null
+            }, 
+            "YPEAK_IMAGE": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "YPEAK_IMAGE", 
+                "subtype": null
+            }, 
+            "YPSF_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "YPSF_IMAGE", 
+                "subtype": null
+            }, 
+            "YWIN_IMAGE": {
+                "dtype": "<f8", 
+                "shape": [], 
+                "source": "YWIN_IMAGE", 
+                "subtype": null
+            }, 
+            "Y_IMAGE": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Y_IMAGE", 
+                "subtype": null
+            }
+        }
+    }, 
+    "tree_top": "", 
+    "version": "1.0"
+}

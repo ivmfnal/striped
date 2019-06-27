@@ -1,0 +1,44 @@
+{% extends "template.html" %}
+
+{% block contents %}
+<h1>Jobs</h1>
+
+<table class="data">
+    <tr>
+        <th>Job ID</th>
+        <th>Status</th>
+        <th>User</th>
+        <th>Dataset</th>
+        <th>Fraction</th>
+        <th>Created</th>
+        <th>Started</th>
+        <th>Runtime</th>
+        <th>Ended</th>
+    </tr>
+    {% for j in running+queued+history %}
+        <tr>
+            <td>{{j.JID}}</td>
+            <td>{{j|job_status}}</td>
+            <td>{{j.JobDescription.Username}}</td>
+            <td>{{j.JobDescription.DatasetName}}</td>
+            <td>{{j.JobDescription.Fraction or '(all)'}}</td>
+            <td>{{j.Created|ctime}} ({{j.Created|delta(0)}})</td>
+            <td>{{j.Started|ctime}} ({{j.Started|delta(j.Created)}})</td>
+            <td>
+                {% if j.Ended %}
+                    {{j.Ended|delta(j.Started)}}
+                {% else %}
+                    {{j.Started|delta(0)}}
+                {% endif %}
+            </td>
+            <td>
+                {% if j.Ended %}
+                    {{j.Ended|ctime}} ({{j.Ended|delta(0)}})
+                {% endif %}
+            </td>
+        <tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
+            

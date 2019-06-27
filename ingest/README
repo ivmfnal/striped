@@ -1,0 +1,157 @@
+Data uploading instructions
+===========================
+
+Striped framework uploading is performed in batches. Each dataset is broken
+into one of more batches and then each batch is uploaded as a single unit
+of the uploading process.
+
+Abstract Data Access
+--------------------
+
+Dataet Schema
+.............
+Each dataset is described using "schema" file. Schema file is a JSON
+document describing all the "event" attributes and branches with their
+attributes.
+
+DataReader
+..........
+Also the user has to provide a python module,
+which will know how to read the data and represent them in terms of stripes.
+This module will be called DataReader and it will define class called
+DataReader. DataReader will have the following methods:
+
+    __init__(self, file_path, schema) 
+
+        object constructor
+
+        - file_path is the string for the data file
+
+        - schema is parsed dataset schema
+    
+    profile(self) 
+
+        returns metadata dictionary for the file, or None
+    
+    reopen(self)
+
+        will be called to drop unused memory
+    
+    nevents(self)
+
+        returns number of events in the file
+    
+    branchSizeArray(self, bname)
+
+        returns integer numpy array with branch multiplicity for 
+        each event in the file
+    
+    stripesAndSizes(self, groups, bname, attr_name, attr_desc)
+
+        Python generator, returning the seqence of (stripe, size) pairs
+        for the column <bname>.<attr_name>. Stripes represent data
+        for frames with sizes ginev by the "groups" argument.
+        
+        attr_desc is part of the schema describing the <bname>.<attr_name>
+        column.
+        
+        As a generator, must yield (stripe, size_array) tuples.
+        If the attribute is scalar, size_array in each tuple should be
+        None. In this case, sizes for each stripe will be calculated
+        using the branchSizeArray() output for corresponding branch.
+        
+        banme will be None for event attribute columns.
+        
+
+Data uploading process
+----------------------
+
+After writing DataReader.py and the schema file:
+
+git clone http://cdcvs.fnal.gov/projects/nosql-ldrd bigdata
+# Or git pull if you have cloned the repository already
+
+cd bigdata
+
+python setup.py install
+
+cd ingest/tools
+
+python createDataset.py -c <couchbase config file> <schema.json> <bucket name> <dataset name>
+
+cd ../ingestion
+
+cp /<path to your DataReader.py>/DataReader.py .
+
+Create Batch
+............
+
+# you are still in bigdata/ingest/ingestion directory
+
+python create_batch.py \
+    -c <couchbase config file> \
+    -n <target frame size>\
+    <batch file name>     \  # this will be new JSON file
+    <bucket name> <dataset name> <file> <file> ...
+    
+# run python create_batch.py without arguments to see other options
+
+This will create new batch file.
+
+Run Batch
+.........
+
+python run_batch.py \
+    -c <couchbase config file> \
+    -m <max workers> \ # default 5
+    <batch file> <bucket name> <dataset name>
+    
+# run python run_batch.py without arguments to see other options
+
+In case of failures
+...................
+You can always re-run the same batch again in "override" or "finish" mode.
+
+If you failed in the middle and you just want to resume and finish loading ("finish" mode),
+then just run the script with the same arguments again. It will skip all successfully written frames and
+write only those which need to bo written.
+
+Alternatively, you can re-run the batch and override everything you have written so far. Use -O option for that.
+
+Keep in mind that Couchbase has this "eventual consistency" feature. If you re-start your batch too soon,
+before the database re-builds its index, the run_batch script may not be able to see those frames which 
+were successfully writen during the previous run. In this case, re-running the batch will override them. 
+You can trigger index updating using listDataset.py script (see below). It is difficult to say reliably whether 
+the re-indexing has started or finished.
+It is good idea to wait for some time for Couchbase to update its index. If you start too soon, it's not
+actually a problem. In the worst case, you will just override more than you had to.
+
+If you want to go back to re-defining the batch parameters, most importantly, the target frame size, then
+you have to go back to creating the batch. 
+
+Important safety feature: never delete or edit your batch file.
+
+Redefining batch parameters after the batch was (partially) written is dangerous operation.
+Sometimes it will require some careful clean-up before writing data again. So it is better to wipe the whole
+dataset and start from scratch.
+
+Tools
+-----
+
+There are some utility scripts on the bigdata/ingest/tools directory:
+
+createBatch.py - ctreates new dataset and re-initializes the next frame ID generator
+   Usage: python createDataset.py -c <couchbase config file> <schema.json> <bucket name> <dataset name>
+
+
+listDataset.py - lists files and frames in the dataset
+   Usage: python listDataset.py -c <couchbase config file> <bucket name> <dataset name>
+
+This script will also start re-indexing the database after running your batch. If you repeat
+using listDataset.py, you will see how, due to re-indexing, this script will show more frames
+each time it runs.
+
+verifyDataset.py - verifies the dataset for consistency
+  
+        
+  

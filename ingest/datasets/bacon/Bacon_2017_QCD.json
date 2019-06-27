@@ -1,0 +1,4355 @@
+{
+    "attributes": {
+        "alpacaMET": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "alpacaMET", 
+            "subtype": null
+        }, 
+        "alpacaMETphi": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "alpacaMETphi", 
+            "subtype": null
+        }, 
+        "bsx": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "bsx", 
+            "subtype": null
+        }, 
+        "bsy": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "bsy", 
+            "subtype": null
+        }, 
+        "bsz": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "bsz", 
+            "subtype": null
+        }, 
+        "caloMET": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "caloMET", 
+            "subtype": null
+        }, 
+        "caloMETphi": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "caloMETphi", 
+            "subtype": null
+        }, 
+        "evtNum": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "evtNum", 
+            "subtype": null
+        }, 
+        "hasGoodPV": {
+            "dtype": "|b1", 
+            "shape": [], 
+            "source": "hasGoodPV", 
+            "subtype": null
+        }, 
+        "id_1": {
+            "dtype": "<i4", 
+            "shape": [], 
+            "source": "id_1", 
+            "subtype": null
+        }, 
+        "id_2": {
+            "dtype": "<i4", 
+            "shape": [], 
+            "source": "id_2", 
+            "subtype": null
+        }, 
+        "lumiSec": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "lumiSec", 
+            "subtype": null
+        }, 
+        "metFilterFailBits": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "metFilterFailBits", 
+            "subtype": null
+        }, 
+        "nPU": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "nPU", 
+            "subtype": null
+        }, 
+        "nPUm": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "nPUm", 
+            "subtype": null
+        }, 
+        "nPUmean": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "nPUmean", 
+            "subtype": null
+        }, 
+        "nPUmeanm": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "nPUmeanm", 
+            "subtype": null
+        }, 
+        "nPUmeanp": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "nPUmeanp", 
+            "subtype": null
+        }, 
+        "nPUp": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "nPUp", 
+            "subtype": null
+        }, 
+        "pcpMET": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pcpMET", 
+            "subtype": null
+        }, 
+        "pcpMETphi": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pcpMETphi", 
+            "subtype": null
+        }, 
+        "pfMET": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMET", 
+            "subtype": null
+        }, 
+        "pfMETC": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETC", 
+            "subtype": null
+        }, 
+        "pfMETCCov00": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCCov00", 
+            "subtype": null
+        }, 
+        "pfMETCCov01": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCCov01", 
+            "subtype": null
+        }, 
+        "pfMETCCov11": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCCov11", 
+            "subtype": null
+        }, 
+        "pfMETCjendn": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCjendn", 
+            "subtype": null
+        }, 
+        "pfMETCjenup": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCjenup", 
+            "subtype": null
+        }, 
+        "pfMETCjerdn": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCjerdn", 
+            "subtype": null
+        }, 
+        "pfMETCjerup": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCjerup", 
+            "subtype": null
+        }, 
+        "pfMETCjrsdn": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCjrsdn", 
+            "subtype": null
+        }, 
+        "pfMETCjrsup": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCjrsup", 
+            "subtype": null
+        }, 
+        "pfMETCov00": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCov00", 
+            "subtype": null
+        }, 
+        "pfMETCov01": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCov01", 
+            "subtype": null
+        }, 
+        "pfMETCov11": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCov11", 
+            "subtype": null
+        }, 
+        "pfMETCphi": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCphi", 
+            "subtype": null
+        }, 
+        "pfMETCphijendn": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCphijendn", 
+            "subtype": null
+        }, 
+        "pfMETCphijenup": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCphijenup", 
+            "subtype": null
+        }, 
+        "pfMETCphijerdn": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCphijerdn", 
+            "subtype": null
+        }, 
+        "pfMETCphijerup": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCphijerup", 
+            "subtype": null
+        }, 
+        "pfMETCphijrsdn": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCphijrsdn", 
+            "subtype": null
+        }, 
+        "pfMETCphijrsup": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCphijrsup", 
+            "subtype": null
+        }, 
+        "pfMETCphiuncdn": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCphiuncdn", 
+            "subtype": null
+        }, 
+        "pfMETCphiuncup": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCphiuncup", 
+            "subtype": null
+        }, 
+        "pfMETCuncdn": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCuncdn", 
+            "subtype": null
+        }, 
+        "pfMETCuncup": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETCuncup", 
+            "subtype": null
+        }, 
+        "pfMETphi": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pfMETphi", 
+            "subtype": null
+        }, 
+        "puppET": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "puppET", 
+            "subtype": null
+        }, 
+        "puppETC": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "puppETC", 
+            "subtype": null
+        }, 
+        "puppETCCov00": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "puppETCCov00", 
+            "subtype": null
+        }, 
+        "puppETCCov01": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "puppETCCov01", 
+            "subtype": null
+        }, 
+        "puppETCCov11": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "puppETCCov11", 
+            "subtype": null
+        }, 
+        "puppETCov00": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "puppETCov00", 
+            "subtype": null
+        }, 
+        "puppETCov01": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "puppETCov01", 
+            "subtype": null
+        }, 
+        "puppETCov11": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "puppETCov11", 
+            "subtype": null
+        }, 
+        "puppETCphi": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "puppETCphi", 
+            "subtype": null
+        }, 
+        "puppETphi": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "puppETphi", 
+            "subtype": null
+        }, 
+        "pvx": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pvx", 
+            "subtype": null
+        }, 
+        "pvy": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pvy", 
+            "subtype": null
+        }, 
+        "pvz": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "pvz", 
+            "subtype": null
+        }, 
+        "rhoIso": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "rhoIso", 
+            "subtype": null
+        }, 
+        "rhoJet": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "rhoJet", 
+            "subtype": null
+        }, 
+        "runNum": {
+            "dtype": "<u4", 
+            "shape": [], 
+            "source": "runNum", 
+            "subtype": null
+        }, 
+        "scalePDF": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "scalePDF", 
+            "subtype": null
+        }, 
+        "triggerBits": {
+            "dtype": "|b1", 
+            "shape": [
+                null, 
+                256
+            ], 
+            "source": "triggerBits", 
+            "subtype": null
+        }, 
+        "trkMET": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "trkMET", 
+            "subtype": null
+        }, 
+        "trkMETphi": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "trkMETphi", 
+            "subtype": null
+        }, 
+        "weight": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "weight", 
+            "subtype": null
+        }, 
+        "x_1": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "x_1", 
+            "subtype": null
+        }, 
+        "x_2": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "x_2", 
+            "subtype": null
+        }, 
+        "xs": {
+            "dtype": "<f4", 
+            "shape": [], 
+            "source": "xs", 
+            "subtype": null
+        }
+    }, 
+    "branches": {
+        "AK4CHS": {
+            "area": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.area", 
+                "subtype": null
+            }, 
+            "axis2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.axis2", 
+                "subtype": null
+            }, 
+            "beta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.beta", 
+                "subtype": null
+            }, 
+            "betaStar": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.betaStar", 
+                "subtype": null
+            }, 
+            "bjetcorr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.bjetcorr", 
+                "subtype": null
+            }, 
+            "bjetres": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.bjetres", 
+                "subtype": null
+            }, 
+            "bmva": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.bmva", 
+                "subtype": null
+            }, 
+            "chEmFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.chEmFrac", 
+                "subtype": null
+            }, 
+            "chHadFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.chHadFrac", 
+                "subtype": null
+            }, 
+            "chPullPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.chPullPhi", 
+                "subtype": null
+            }, 
+            "chPullY": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.chPullY", 
+                "subtype": null
+            }, 
+            "csv": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.csv", 
+                "subtype": null
+            }, 
+            "cvb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.cvb", 
+                "subtype": null
+            }, 
+            "cvl": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.cvl", 
+                "subtype": null
+            }, 
+            "d0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.d0", 
+                "subtype": null
+            }, 
+            "dR2Mean": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.dR2Mean", 
+                "subtype": null
+            }, 
+            "deepcmvab": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.deepcmvab", 
+                "subtype": null
+            }, 
+            "deepcmvabb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.deepcmvabb", 
+                "subtype": null
+            }, 
+            "deepcmvac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.deepcmvac", 
+                "subtype": null
+            }, 
+            "deepcmval": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.deepcmval", 
+                "subtype": null
+            }, 
+            "deepcsvb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.deepcsvb", 
+                "subtype": null
+            }, 
+            "deepcsvbb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.deepcsvbb", 
+                "subtype": null
+            }, 
+            "deepcsvc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.deepcsvc", 
+                "subtype": null
+            }, 
+            "deepcsvl": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.deepcsvl", 
+                "subtype": null
+            }, 
+            "dz": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.dz", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.eta", 
+                "subtype": null
+            }, 
+            "gene2sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.gene2sdb1", 
+                "subtype": null
+            }, 
+            "gene3_v2_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.gene3_v2_sdb1", 
+                "subtype": null
+            }, 
+            "geneta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.geneta", 
+                "subtype": null
+            }, 
+            "genm": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.genm", 
+                "subtype": null
+            }, 
+            "genmsd": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.genmsd", 
+                "subtype": null
+            }, 
+            "genphi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.genphi", 
+                "subtype": null
+            }, 
+            "genpt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.genpt", 
+                "subtype": null
+            }, 
+            "hadronFlavor": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK4CHS.hadronFlavor", 
+                "subtype": null
+            }, 
+            "hltMatchBits": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "AK4CHS.hltMatchBits", 
+                "subtype": null
+            }, 
+            "leadPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.leadPt", 
+                "subtype": null
+            }, 
+            "lepDR": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.lepDR", 
+                "subtype": null
+            }, 
+            "lepPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.lepPt", 
+                "subtype": null
+            }, 
+            "mass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.mass", 
+                "subtype": null
+            }, 
+            "mult": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK4CHS.mult", 
+                "subtype": null
+            }, 
+            "muonFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.muonFrac", 
+                "subtype": null
+            }, 
+            "mva": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.mva", 
+                "subtype": null
+            }, 
+            "nCharged": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "AK4CHS.nCharged", 
+                "subtype": null
+            }, 
+            "nNeutrals": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "AK4CHS.nNeutrals", 
+                "subtype": null
+            }, 
+            "nParticles": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "AK4CHS.nParticles", 
+                "subtype": null
+            }, 
+            "neuEmFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.neuEmFrac", 
+                "subtype": null
+            }, 
+            "neuHadFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.neuHadFrac", 
+                "subtype": null
+            }, 
+            "neuPullPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.neuPullPhi", 
+                "subtype": null
+            }, 
+            "neuPullY": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.neuPullY", 
+                "subtype": null
+            }, 
+            "partonFlavor": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK4CHS.partonFlavor", 
+                "subtype": null
+            }, 
+            "pfCands": {
+                "dtype": "<i2", 
+                "shape": [], 
+                "source": "AK4CHS.pfCands", 
+                "subtype": null
+            }, 
+            "pfCands__count": {
+                "dtype": "<u2", 
+                "shape": [], 
+                "source": ":count_of:AK4CHS.pfCands", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.phi", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.pt", 
+                "subtype": null
+            }, 
+            "ptD": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.ptD", 
+                "subtype": null
+            }, 
+            "ptRaw": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.ptRaw", 
+                "subtype": null
+            }, 
+            "ptreg": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.ptreg", 
+                "subtype": null
+            }, 
+            "pullPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.pullPhi", 
+                "subtype": null
+            }, 
+            "pullY": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.pullY", 
+                "subtype": null
+            }, 
+            "q": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.q", 
+                "subtype": null
+            }, 
+            "qgid": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.qgid", 
+                "subtype": null
+            }, 
+            "unc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.unc", 
+                "subtype": null
+            }, 
+            "vtx3DSig": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.vtx3DSig", 
+                "subtype": null
+            }, 
+            "vtx3DVal": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.vtx3DVal", 
+                "subtype": null
+            }, 
+            "vtxFlavInfo": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK4CHS.vtxFlavInfo", 
+                "subtype": null
+            }, 
+            "vtxFlavor": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK4CHS.vtxFlavor", 
+                "subtype": null
+            }, 
+            "vtxMass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.vtxMass", 
+                "subtype": null
+            }, 
+            "vtxNtk": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.vtxNtk", 
+                "subtype": null
+            }, 
+            "vtxPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4CHS.vtxPt", 
+                "subtype": null
+            }
+        }, 
+        "AK4Puppi": {
+            "area": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.area", 
+                "subtype": null
+            }, 
+            "axis2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.axis2", 
+                "subtype": null
+            }, 
+            "beta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.beta", 
+                "subtype": null
+            }, 
+            "betaStar": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.betaStar", 
+                "subtype": null
+            }, 
+            "bjetcorr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.bjetcorr", 
+                "subtype": null
+            }, 
+            "bjetres": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.bjetres", 
+                "subtype": null
+            }, 
+            "bmva": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.bmva", 
+                "subtype": null
+            }, 
+            "chEmFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.chEmFrac", 
+                "subtype": null
+            }, 
+            "chHadFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.chHadFrac", 
+                "subtype": null
+            }, 
+            "chPullPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.chPullPhi", 
+                "subtype": null
+            }, 
+            "chPullY": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.chPullY", 
+                "subtype": null
+            }, 
+            "csv": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.csv", 
+                "subtype": null
+            }, 
+            "cvb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.cvb", 
+                "subtype": null
+            }, 
+            "cvl": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.cvl", 
+                "subtype": null
+            }, 
+            "d0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.d0", 
+                "subtype": null
+            }, 
+            "dR2Mean": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.dR2Mean", 
+                "subtype": null
+            }, 
+            "deepcmvab": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.deepcmvab", 
+                "subtype": null
+            }, 
+            "deepcmvabb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.deepcmvabb", 
+                "subtype": null
+            }, 
+            "deepcmvac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.deepcmvac", 
+                "subtype": null
+            }, 
+            "deepcmval": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.deepcmval", 
+                "subtype": null
+            }, 
+            "deepcsvb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.deepcsvb", 
+                "subtype": null
+            }, 
+            "deepcsvbb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.deepcsvbb", 
+                "subtype": null
+            }, 
+            "deepcsvc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.deepcsvc", 
+                "subtype": null
+            }, 
+            "deepcsvl": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.deepcsvl", 
+                "subtype": null
+            }, 
+            "dz": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.dz", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.eta", 
+                "subtype": null
+            }, 
+            "gene2sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.gene2sdb1", 
+                "subtype": null
+            }, 
+            "gene3_v2_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.gene3_v2_sdb1", 
+                "subtype": null
+            }, 
+            "geneta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.geneta", 
+                "subtype": null
+            }, 
+            "genm": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.genm", 
+                "subtype": null
+            }, 
+            "genmsd": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.genmsd", 
+                "subtype": null
+            }, 
+            "genphi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.genphi", 
+                "subtype": null
+            }, 
+            "genpt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.genpt", 
+                "subtype": null
+            }, 
+            "hadronFlavor": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK4Puppi.hadronFlavor", 
+                "subtype": null
+            }, 
+            "hltMatchBits": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "AK4Puppi.hltMatchBits", 
+                "subtype": null
+            }, 
+            "leadPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.leadPt", 
+                "subtype": null
+            }, 
+            "lepDR": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.lepDR", 
+                "subtype": null
+            }, 
+            "lepPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.lepPt", 
+                "subtype": null
+            }, 
+            "mass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.mass", 
+                "subtype": null
+            }, 
+            "mult": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK4Puppi.mult", 
+                "subtype": null
+            }, 
+            "muonFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.muonFrac", 
+                "subtype": null
+            }, 
+            "mva": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.mva", 
+                "subtype": null
+            }, 
+            "nCharged": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "AK4Puppi.nCharged", 
+                "subtype": null
+            }, 
+            "nNeutrals": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "AK4Puppi.nNeutrals", 
+                "subtype": null
+            }, 
+            "nParticles": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "AK4Puppi.nParticles", 
+                "subtype": null
+            }, 
+            "neuEmFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.neuEmFrac", 
+                "subtype": null
+            }, 
+            "neuHadFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.neuHadFrac", 
+                "subtype": null
+            }, 
+            "neuPullPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.neuPullPhi", 
+                "subtype": null
+            }, 
+            "neuPullY": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.neuPullY", 
+                "subtype": null
+            }, 
+            "partonFlavor": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK4Puppi.partonFlavor", 
+                "subtype": null
+            }, 
+            "pfCands": {
+                "dtype": "<i2", 
+                "shape": [], 
+                "source": "AK4Puppi.pfCands", 
+                "subtype": null
+            }, 
+            "pfCands__count": {
+                "dtype": "<u2", 
+                "shape": [], 
+                "source": ":count_of:AK4Puppi.pfCands", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.phi", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.pt", 
+                "subtype": null
+            }, 
+            "ptD": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.ptD", 
+                "subtype": null
+            }, 
+            "ptRaw": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.ptRaw", 
+                "subtype": null
+            }, 
+            "ptreg": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.ptreg", 
+                "subtype": null
+            }, 
+            "pullPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.pullPhi", 
+                "subtype": null
+            }, 
+            "pullY": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.pullY", 
+                "subtype": null
+            }, 
+            "q": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.q", 
+                "subtype": null
+            }, 
+            "qgid": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.qgid", 
+                "subtype": null
+            }, 
+            "unc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.unc", 
+                "subtype": null
+            }, 
+            "vtx3DSig": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.vtx3DSig", 
+                "subtype": null
+            }, 
+            "vtx3DVal": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.vtx3DVal", 
+                "subtype": null
+            }, 
+            "vtxFlavInfo": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK4Puppi.vtxFlavInfo", 
+                "subtype": null
+            }, 
+            "vtxFlavor": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK4Puppi.vtxFlavor", 
+                "subtype": null
+            }, 
+            "vtxMass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.vtxMass", 
+                "subtype": null
+            }, 
+            "vtxNtk": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.vtxNtk", 
+                "subtype": null
+            }, 
+            "vtxPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK4Puppi.vtxPt", 
+                "subtype": null
+            }
+        }, 
+        "AK8Puppi": {
+            "area": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.area", 
+                "subtype": null
+            }, 
+            "axis2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.axis2", 
+                "subtype": null
+            }, 
+            "beta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.beta", 
+                "subtype": null
+            }, 
+            "betaStar": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.betaStar", 
+                "subtype": null
+            }, 
+            "bjetcorr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.bjetcorr", 
+                "subtype": null
+            }, 
+            "bjetres": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.bjetres", 
+                "subtype": null
+            }, 
+            "bmva": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.bmva", 
+                "subtype": null
+            }, 
+            "chEmFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.chEmFrac", 
+                "subtype": null
+            }, 
+            "chHadFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.chHadFrac", 
+                "subtype": null
+            }, 
+            "chPullPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.chPullPhi", 
+                "subtype": null
+            }, 
+            "chPullY": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.chPullY", 
+                "subtype": null
+            }, 
+            "csv": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.csv", 
+                "subtype": null
+            }, 
+            "cvb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.cvb", 
+                "subtype": null
+            }, 
+            "cvl": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.cvl", 
+                "subtype": null
+            }, 
+            "d0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.d0", 
+                "subtype": null
+            }, 
+            "dR2Mean": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.dR2Mean", 
+                "subtype": null
+            }, 
+            "deepcmvab": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.deepcmvab", 
+                "subtype": null
+            }, 
+            "deepcmvabb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.deepcmvabb", 
+                "subtype": null
+            }, 
+            "deepcmvac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.deepcmvac", 
+                "subtype": null
+            }, 
+            "deepcmval": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.deepcmval", 
+                "subtype": null
+            }, 
+            "deepcsvb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.deepcsvb", 
+                "subtype": null
+            }, 
+            "deepcsvbb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.deepcsvbb", 
+                "subtype": null
+            }, 
+            "deepcsvc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.deepcsvc", 
+                "subtype": null
+            }, 
+            "deepcsvl": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.deepcsvl", 
+                "subtype": null
+            }, 
+            "dz": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.dz", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.eta", 
+                "subtype": null
+            }, 
+            "gene2sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.gene2sdb1", 
+                "subtype": null
+            }, 
+            "gene3_v2_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.gene3_v2_sdb1", 
+                "subtype": null
+            }, 
+            "geneta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.geneta", 
+                "subtype": null
+            }, 
+            "genm": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.genm", 
+                "subtype": null
+            }, 
+            "genmsd": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.genmsd", 
+                "subtype": null
+            }, 
+            "genphi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.genphi", 
+                "subtype": null
+            }, 
+            "genpt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.genpt", 
+                "subtype": null
+            }, 
+            "hadronFlavor": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK8Puppi.hadronFlavor", 
+                "subtype": null
+            }, 
+            "hltMatchBits": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "AK8Puppi.hltMatchBits", 
+                "subtype": null
+            }, 
+            "leadPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.leadPt", 
+                "subtype": null
+            }, 
+            "lepDR": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.lepDR", 
+                "subtype": null
+            }, 
+            "lepPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.lepPt", 
+                "subtype": null
+            }, 
+            "mass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.mass", 
+                "subtype": null
+            }, 
+            "mult": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK8Puppi.mult", 
+                "subtype": null
+            }, 
+            "muonFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.muonFrac", 
+                "subtype": null
+            }, 
+            "mva": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.mva", 
+                "subtype": null
+            }, 
+            "nCharged": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "AK8Puppi.nCharged", 
+                "subtype": null
+            }, 
+            "nNeutrals": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "AK8Puppi.nNeutrals", 
+                "subtype": null
+            }, 
+            "nParticles": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "AK8Puppi.nParticles", 
+                "subtype": null
+            }, 
+            "neuEmFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.neuEmFrac", 
+                "subtype": null
+            }, 
+            "neuHadFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.neuHadFrac", 
+                "subtype": null
+            }, 
+            "neuPullPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.neuPullPhi", 
+                "subtype": null
+            }, 
+            "neuPullY": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.neuPullY", 
+                "subtype": null
+            }, 
+            "partonFlavor": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK8Puppi.partonFlavor", 
+                "subtype": null
+            }, 
+            "pfCands": {
+                "dtype": "<i2", 
+                "shape": [], 
+                "source": "AK8Puppi.pfCands", 
+                "subtype": null
+            }, 
+            "pfCands__count": {
+                "dtype": "<u2", 
+                "shape": [], 
+                "source": ":count_of:AK8Puppi.pfCands", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.phi", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.pt", 
+                "subtype": null
+            }, 
+            "ptD": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.ptD", 
+                "subtype": null
+            }, 
+            "ptRaw": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.ptRaw", 
+                "subtype": null
+            }, 
+            "ptreg": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.ptreg", 
+                "subtype": null
+            }, 
+            "pullPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.pullPhi", 
+                "subtype": null
+            }, 
+            "pullY": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.pullY", 
+                "subtype": null
+            }, 
+            "q": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.q", 
+                "subtype": null
+            }, 
+            "qgid": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.qgid", 
+                "subtype": null
+            }, 
+            "unc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.unc", 
+                "subtype": null
+            }, 
+            "vtx3DSig": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.vtx3DSig", 
+                "subtype": null
+            }, 
+            "vtx3DVal": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.vtx3DVal", 
+                "subtype": null
+            }, 
+            "vtxFlavInfo": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK8Puppi.vtxFlavInfo", 
+                "subtype": null
+            }, 
+            "vtxFlavor": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AK8Puppi.vtxFlavor", 
+                "subtype": null
+            }, 
+            "vtxMass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.vtxMass", 
+                "subtype": null
+            }, 
+            "vtxNtk": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.vtxNtk", 
+                "subtype": null
+            }, 
+            "vtxPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AK8Puppi.vtxPt", 
+                "subtype": null
+            }
+        }, 
+        "AddAK8Puppi": {
+            "Double_sub": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.Double_sub", 
+                "subtype": null
+            }, 
+            "c2_0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.c2_0", 
+                "subtype": null
+            }, 
+            "c2_0P2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.c2_0P2", 
+                "subtype": null
+            }, 
+            "c2_0P5": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.c2_0P5", 
+                "subtype": null
+            }, 
+            "c2_1P0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.c2_1P0", 
+                "subtype": null
+            }, 
+            "c2_2P0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.c2_2P0", 
+                "subtype": null
+            }, 
+            "deepdoubleb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.deepdoubleb", 
+                "subtype": null
+            }, 
+            "deepdoubleb_nomasssculptpen": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.deepdoubleb_nomasssculptpen", 
+                "subtype": null
+            }, 
+            "doublecsv": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.doublecsv", 
+                "subtype": null
+            }, 
+            "e2_b1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.e2_b1", 
+                "subtype": null
+            }, 
+            "e2_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.e2_sdb1", 
+                "subtype": null
+            }, 
+            "e3_b1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.e3_b1", 
+                "subtype": null
+            }, 
+            "e3_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.e3_sdb1", 
+                "subtype": null
+            }, 
+            "e3_v1_b1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.e3_v1_b1", 
+                "subtype": null
+            }, 
+            "e3_v1_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.e3_v1_sdb1", 
+                "subtype": null
+            }, 
+            "e3_v2_b1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.e3_v2_b1", 
+                "subtype": null
+            }, 
+            "e3_v2_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.e3_v2_sdb1", 
+                "subtype": null
+            }, 
+            "e4_v1_b1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.e4_v1_b1", 
+                "subtype": null
+            }, 
+            "e4_v1_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.e4_v1_sdb1", 
+                "subtype": null
+            }, 
+            "e4_v2_b1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.e4_v2_b1", 
+                "subtype": null
+            }, 
+            "e4_v2_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.e4_v2_sdb1", 
+                "subtype": null
+            }, 
+            "index": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.index", 
+                "subtype": null
+            }, 
+            "lepCEta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lepCEta", 
+                "subtype": null
+            }, 
+            "lepCId": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lepCId", 
+                "subtype": null
+            }, 
+            "lepCPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lepCPhi", 
+                "subtype": null
+            }, 
+            "lepCPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lepCPt", 
+                "subtype": null
+            }, 
+            "lmdCInc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lmdCInc", 
+                "subtype": null
+            }, 
+            "lmdC_2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lmdC_2", 
+                "subtype": null
+            }, 
+            "lmdC_3": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lmdC_3", 
+                "subtype": null
+            }, 
+            "lmdC_4": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lmdC_4", 
+                "subtype": null
+            }, 
+            "lsfCInc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfCInc", 
+                "subtype": null
+            }, 
+            "lsfC_2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfC_2", 
+                "subtype": null
+            }, 
+            "lsfC_3": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfC_3", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj1_eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfC_3_sj1_eta", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj1_m": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfC_3_sj1_m", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj1_phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfC_3_sj1_phi", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj1_pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfC_3_sj1_pt", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj2_eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfC_3_sj2_eta", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj2_m": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfC_3_sj2_m", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj2_phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfC_3_sj2_phi", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj2_pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfC_3_sj2_pt", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj3_eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfC_3_sj3_eta", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj3_m": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfC_3_sj3_m", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj3_phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfC_3_sj3_phi", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj3_pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfC_3_sj3_pt", 
+                "subtype": null
+            }, 
+            "lsfC_4": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.lsfC_4", 
+                "subtype": null
+            }, 
+            "mass_prun": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.mass_prun", 
+                "subtype": null
+            }, 
+            "mass_rsd0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.mass_rsd0", 
+                "subtype": null
+            }, 
+            "mass_rsd1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.mass_rsd1", 
+                "subtype": null
+            }, 
+            "mass_sd0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.mass_sd0", 
+                "subtype": null
+            }, 
+            "mass_trim": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.mass_trim", 
+                "subtype": null
+            }, 
+            "pullAngle": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.pullAngle", 
+                "subtype": null
+            }, 
+            "qjet": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.qjet", 
+                "subtype": null
+            }, 
+            "sj1_csv": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj1_csv", 
+                "subtype": null
+            }, 
+            "sj1_eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj1_eta", 
+                "subtype": null
+            }, 
+            "sj1_m": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj1_m", 
+                "subtype": null
+            }, 
+            "sj1_phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj1_phi", 
+                "subtype": null
+            }, 
+            "sj1_pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj1_pt", 
+                "subtype": null
+            }, 
+            "sj1_q": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj1_q", 
+                "subtype": null
+            }, 
+            "sj1_qgid": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj1_qgid", 
+                "subtype": null
+            }, 
+            "sj2_csv": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj2_csv", 
+                "subtype": null
+            }, 
+            "sj2_eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj2_eta", 
+                "subtype": null
+            }, 
+            "sj2_m": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj2_m", 
+                "subtype": null
+            }, 
+            "sj2_phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj2_phi", 
+                "subtype": null
+            }, 
+            "sj2_pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj2_pt", 
+                "subtype": null
+            }, 
+            "sj2_q": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj2_q", 
+                "subtype": null
+            }, 
+            "sj2_qgid": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj2_qgid", 
+                "subtype": null
+            }, 
+            "sj3_csv": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj3_csv", 
+                "subtype": null
+            }, 
+            "sj3_eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj3_eta", 
+                "subtype": null
+            }, 
+            "sj3_m": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj3_m", 
+                "subtype": null
+            }, 
+            "sj3_phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj3_phi", 
+                "subtype": null
+            }, 
+            "sj3_pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj3_pt", 
+                "subtype": null
+            }, 
+            "sj3_q": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj3_q", 
+                "subtype": null
+            }, 
+            "sj3_qgid": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj3_qgid", 
+                "subtype": null
+            }, 
+            "sj4_csv": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj4_csv", 
+                "subtype": null
+            }, 
+            "sj4_eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj4_eta", 
+                "subtype": null
+            }, 
+            "sj4_m": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj4_m", 
+                "subtype": null
+            }, 
+            "sj4_phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj4_phi", 
+                "subtype": null
+            }, 
+            "sj4_pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj4_pt", 
+                "subtype": null
+            }, 
+            "sj4_q": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj4_q", 
+                "subtype": null
+            }, 
+            "sj4_qgid": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.sj4_qgid", 
+                "subtype": null
+            }, 
+            "svtx": {
+                "dtype": "<i2", 
+                "shape": [], 
+                "source": "AddAK8Puppi.svtx", 
+                "subtype": null
+            }, 
+            "svtx__count": {
+                "dtype": "<u2", 
+                "shape": [], 
+                "source": ":count_of:AddAK8Puppi.svtx", 
+                "subtype": null
+            }, 
+            "tau1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.tau1", 
+                "subtype": null
+            }, 
+            "tau2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.tau2", 
+                "subtype": null
+            }, 
+            "tau3": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.tau3", 
+                "subtype": null
+            }, 
+            "tau4": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.tau4", 
+                "subtype": null
+            }, 
+            "topTagType": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.topTagType", 
+                "subtype": null
+            }, 
+            "top_fRec": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.top_fRec", 
+                "subtype": null
+            }, 
+            "top_m_123": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.top_m_123", 
+                "subtype": null
+            }, 
+            "top_m_min": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.top_m_min", 
+                "subtype": null
+            }, 
+            "top_n_subjets": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.top_n_subjets", 
+                "subtype": null
+            }, 
+            "topchi2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddAK8Puppi.topchi2", 
+                "subtype": null
+            }
+        }, 
+        "AddCA15Puppi": {
+            "Double_sub": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.Double_sub", 
+                "subtype": null
+            }, 
+            "c2_0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.c2_0", 
+                "subtype": null
+            }, 
+            "c2_0P2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.c2_0P2", 
+                "subtype": null
+            }, 
+            "c2_0P5": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.c2_0P5", 
+                "subtype": null
+            }, 
+            "c2_1P0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.c2_1P0", 
+                "subtype": null
+            }, 
+            "c2_2P0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.c2_2P0", 
+                "subtype": null
+            }, 
+            "deepdoubleb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.deepdoubleb", 
+                "subtype": null
+            }, 
+            "deepdoubleb_nomasssculptpen": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.deepdoubleb_nomasssculptpen", 
+                "subtype": null
+            }, 
+            "doublecsv": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.doublecsv", 
+                "subtype": null
+            }, 
+            "e2_b1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.e2_b1", 
+                "subtype": null
+            }, 
+            "e2_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.e2_sdb1", 
+                "subtype": null
+            }, 
+            "e3_b1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.e3_b1", 
+                "subtype": null
+            }, 
+            "e3_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.e3_sdb1", 
+                "subtype": null
+            }, 
+            "e3_v1_b1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.e3_v1_b1", 
+                "subtype": null
+            }, 
+            "e3_v1_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.e3_v1_sdb1", 
+                "subtype": null
+            }, 
+            "e3_v2_b1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.e3_v2_b1", 
+                "subtype": null
+            }, 
+            "e3_v2_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.e3_v2_sdb1", 
+                "subtype": null
+            }, 
+            "e4_v1_b1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.e4_v1_b1", 
+                "subtype": null
+            }, 
+            "e4_v1_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.e4_v1_sdb1", 
+                "subtype": null
+            }, 
+            "e4_v2_b1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.e4_v2_b1", 
+                "subtype": null
+            }, 
+            "e4_v2_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.e4_v2_sdb1", 
+                "subtype": null
+            }, 
+            "index": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.index", 
+                "subtype": null
+            }, 
+            "lepCEta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lepCEta", 
+                "subtype": null
+            }, 
+            "lepCId": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lepCId", 
+                "subtype": null
+            }, 
+            "lepCPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lepCPhi", 
+                "subtype": null
+            }, 
+            "lepCPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lepCPt", 
+                "subtype": null
+            }, 
+            "lmdCInc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lmdCInc", 
+                "subtype": null
+            }, 
+            "lmdC_2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lmdC_2", 
+                "subtype": null
+            }, 
+            "lmdC_3": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lmdC_3", 
+                "subtype": null
+            }, 
+            "lmdC_4": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lmdC_4", 
+                "subtype": null
+            }, 
+            "lsfCInc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfCInc", 
+                "subtype": null
+            }, 
+            "lsfC_2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfC_2", 
+                "subtype": null
+            }, 
+            "lsfC_3": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfC_3", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj1_eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfC_3_sj1_eta", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj1_m": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfC_3_sj1_m", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj1_phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfC_3_sj1_phi", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj1_pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfC_3_sj1_pt", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj2_eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfC_3_sj2_eta", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj2_m": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfC_3_sj2_m", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj2_phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfC_3_sj2_phi", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj2_pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfC_3_sj2_pt", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj3_eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfC_3_sj3_eta", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj3_m": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfC_3_sj3_m", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj3_phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfC_3_sj3_phi", 
+                "subtype": null
+            }, 
+            "lsfC_3_sj3_pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfC_3_sj3_pt", 
+                "subtype": null
+            }, 
+            "lsfC_4": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.lsfC_4", 
+                "subtype": null
+            }, 
+            "mass_prun": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.mass_prun", 
+                "subtype": null
+            }, 
+            "mass_rsd0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.mass_rsd0", 
+                "subtype": null
+            }, 
+            "mass_rsd1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.mass_rsd1", 
+                "subtype": null
+            }, 
+            "mass_sd0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.mass_sd0", 
+                "subtype": null
+            }, 
+            "mass_trim": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.mass_trim", 
+                "subtype": null
+            }, 
+            "pullAngle": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.pullAngle", 
+                "subtype": null
+            }, 
+            "qjet": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.qjet", 
+                "subtype": null
+            }, 
+            "sj1_csv": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj1_csv", 
+                "subtype": null
+            }, 
+            "sj1_eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj1_eta", 
+                "subtype": null
+            }, 
+            "sj1_m": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj1_m", 
+                "subtype": null
+            }, 
+            "sj1_phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj1_phi", 
+                "subtype": null
+            }, 
+            "sj1_pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj1_pt", 
+                "subtype": null
+            }, 
+            "sj1_q": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj1_q", 
+                "subtype": null
+            }, 
+            "sj1_qgid": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj1_qgid", 
+                "subtype": null
+            }, 
+            "sj2_csv": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj2_csv", 
+                "subtype": null
+            }, 
+            "sj2_eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj2_eta", 
+                "subtype": null
+            }, 
+            "sj2_m": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj2_m", 
+                "subtype": null
+            }, 
+            "sj2_phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj2_phi", 
+                "subtype": null
+            }, 
+            "sj2_pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj2_pt", 
+                "subtype": null
+            }, 
+            "sj2_q": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj2_q", 
+                "subtype": null
+            }, 
+            "sj2_qgid": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj2_qgid", 
+                "subtype": null
+            }, 
+            "sj3_csv": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj3_csv", 
+                "subtype": null
+            }, 
+            "sj3_eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj3_eta", 
+                "subtype": null
+            }, 
+            "sj3_m": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj3_m", 
+                "subtype": null
+            }, 
+            "sj3_phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj3_phi", 
+                "subtype": null
+            }, 
+            "sj3_pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj3_pt", 
+                "subtype": null
+            }, 
+            "sj3_q": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj3_q", 
+                "subtype": null
+            }, 
+            "sj3_qgid": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj3_qgid", 
+                "subtype": null
+            }, 
+            "sj4_csv": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj4_csv", 
+                "subtype": null
+            }, 
+            "sj4_eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj4_eta", 
+                "subtype": null
+            }, 
+            "sj4_m": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj4_m", 
+                "subtype": null
+            }, 
+            "sj4_phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj4_phi", 
+                "subtype": null
+            }, 
+            "sj4_pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj4_pt", 
+                "subtype": null
+            }, 
+            "sj4_q": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj4_q", 
+                "subtype": null
+            }, 
+            "sj4_qgid": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.sj4_qgid", 
+                "subtype": null
+            }, 
+            "svtx": {
+                "dtype": "<i2", 
+                "shape": [], 
+                "source": "AddCA15Puppi.svtx", 
+                "subtype": null
+            }, 
+            "svtx__count": {
+                "dtype": "<u2", 
+                "shape": [], 
+                "source": ":count_of:AddCA15Puppi.svtx", 
+                "subtype": null
+            }, 
+            "tau1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.tau1", 
+                "subtype": null
+            }, 
+            "tau2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.tau2", 
+                "subtype": null
+            }, 
+            "tau3": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.tau3", 
+                "subtype": null
+            }, 
+            "tau4": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.tau4", 
+                "subtype": null
+            }, 
+            "topTagType": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.topTagType", 
+                "subtype": null
+            }, 
+            "top_fRec": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.top_fRec", 
+                "subtype": null
+            }, 
+            "top_m_123": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.top_m_123", 
+                "subtype": null
+            }, 
+            "top_m_min": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.top_m_min", 
+                "subtype": null
+            }, 
+            "top_n_subjets": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.top_n_subjets", 
+                "subtype": null
+            }, 
+            "topchi2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "AddCA15Puppi.topchi2", 
+                "subtype": null
+            }
+        }, 
+        "CA15Puppi": {
+            "area": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.area", 
+                "subtype": null
+            }, 
+            "axis2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.axis2", 
+                "subtype": null
+            }, 
+            "beta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.beta", 
+                "subtype": null
+            }, 
+            "betaStar": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.betaStar", 
+                "subtype": null
+            }, 
+            "bjetcorr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.bjetcorr", 
+                "subtype": null
+            }, 
+            "bjetres": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.bjetres", 
+                "subtype": null
+            }, 
+            "bmva": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.bmva", 
+                "subtype": null
+            }, 
+            "chEmFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.chEmFrac", 
+                "subtype": null
+            }, 
+            "chHadFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.chHadFrac", 
+                "subtype": null
+            }, 
+            "chPullPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.chPullPhi", 
+                "subtype": null
+            }, 
+            "chPullY": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.chPullY", 
+                "subtype": null
+            }, 
+            "csv": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.csv", 
+                "subtype": null
+            }, 
+            "cvb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.cvb", 
+                "subtype": null
+            }, 
+            "cvl": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.cvl", 
+                "subtype": null
+            }, 
+            "d0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.d0", 
+                "subtype": null
+            }, 
+            "dR2Mean": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.dR2Mean", 
+                "subtype": null
+            }, 
+            "deepcmvab": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.deepcmvab", 
+                "subtype": null
+            }, 
+            "deepcmvabb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.deepcmvabb", 
+                "subtype": null
+            }, 
+            "deepcmvac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.deepcmvac", 
+                "subtype": null
+            }, 
+            "deepcmval": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.deepcmval", 
+                "subtype": null
+            }, 
+            "deepcsvb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.deepcsvb", 
+                "subtype": null
+            }, 
+            "deepcsvbb": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.deepcsvbb", 
+                "subtype": null
+            }, 
+            "deepcsvc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.deepcsvc", 
+                "subtype": null
+            }, 
+            "deepcsvl": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.deepcsvl", 
+                "subtype": null
+            }, 
+            "dz": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.dz", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.eta", 
+                "subtype": null
+            }, 
+            "gene2sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.gene2sdb1", 
+                "subtype": null
+            }, 
+            "gene3_v2_sdb1": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.gene3_v2_sdb1", 
+                "subtype": null
+            }, 
+            "geneta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.geneta", 
+                "subtype": null
+            }, 
+            "genm": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.genm", 
+                "subtype": null
+            }, 
+            "genmsd": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.genmsd", 
+                "subtype": null
+            }, 
+            "genphi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.genphi", 
+                "subtype": null
+            }, 
+            "genpt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.genpt", 
+                "subtype": null
+            }, 
+            "hadronFlavor": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "CA15Puppi.hadronFlavor", 
+                "subtype": null
+            }, 
+            "hltMatchBits": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "CA15Puppi.hltMatchBits", 
+                "subtype": null
+            }, 
+            "leadPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.leadPt", 
+                "subtype": null
+            }, 
+            "lepDR": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.lepDR", 
+                "subtype": null
+            }, 
+            "lepPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.lepPt", 
+                "subtype": null
+            }, 
+            "mass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.mass", 
+                "subtype": null
+            }, 
+            "mult": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "CA15Puppi.mult", 
+                "subtype": null
+            }, 
+            "muonFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.muonFrac", 
+                "subtype": null
+            }, 
+            "mva": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.mva", 
+                "subtype": null
+            }, 
+            "nCharged": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "CA15Puppi.nCharged", 
+                "subtype": null
+            }, 
+            "nNeutrals": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "CA15Puppi.nNeutrals", 
+                "subtype": null
+            }, 
+            "nParticles": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "CA15Puppi.nParticles", 
+                "subtype": null
+            }, 
+            "neuEmFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.neuEmFrac", 
+                "subtype": null
+            }, 
+            "neuHadFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.neuHadFrac", 
+                "subtype": null
+            }, 
+            "neuPullPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.neuPullPhi", 
+                "subtype": null
+            }, 
+            "neuPullY": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.neuPullY", 
+                "subtype": null
+            }, 
+            "partonFlavor": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "CA15Puppi.partonFlavor", 
+                "subtype": null
+            }, 
+            "pfCands": {
+                "dtype": "<i2", 
+                "shape": [], 
+                "source": "CA15Puppi.pfCands", 
+                "subtype": null
+            }, 
+            "pfCands__count": {
+                "dtype": "<u2", 
+                "shape": [], 
+                "source": ":count_of:CA15Puppi.pfCands", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.phi", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.pt", 
+                "subtype": null
+            }, 
+            "ptD": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.ptD", 
+                "subtype": null
+            }, 
+            "ptRaw": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.ptRaw", 
+                "subtype": null
+            }, 
+            "ptreg": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.ptreg", 
+                "subtype": null
+            }, 
+            "pullPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.pullPhi", 
+                "subtype": null
+            }, 
+            "pullY": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.pullY", 
+                "subtype": null
+            }, 
+            "q": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.q", 
+                "subtype": null
+            }, 
+            "qgid": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.qgid", 
+                "subtype": null
+            }, 
+            "unc": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.unc", 
+                "subtype": null
+            }, 
+            "vtx3DSig": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.vtx3DSig", 
+                "subtype": null
+            }, 
+            "vtx3DVal": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.vtx3DVal", 
+                "subtype": null
+            }, 
+            "vtxFlavInfo": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "CA15Puppi.vtxFlavInfo", 
+                "subtype": null
+            }, 
+            "vtxFlavor": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "CA15Puppi.vtxFlavor", 
+                "subtype": null
+            }, 
+            "vtxMass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.vtxMass", 
+                "subtype": null
+            }, 
+            "vtxNtk": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.vtxNtk", 
+                "subtype": null
+            }, 
+            "vtxPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "CA15Puppi.vtxPt", 
+                "subtype": null
+            }
+        }, 
+        "Electron": {
+            "chHadIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.chHadIso", 
+                "subtype": null
+            }, 
+            "classification": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Electron.classification", 
+                "subtype": null
+            }, 
+            "d0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.d0", 
+                "subtype": null
+            }, 
+            "dEtaIn": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.dEtaIn", 
+                "subtype": null
+            }, 
+            "dEtaInSeed": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.dEtaInSeed", 
+                "subtype": null
+            }, 
+            "dPhiIn": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.dPhiIn", 
+                "subtype": null
+            }, 
+            "dz": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.dz", 
+                "subtype": null
+            }, 
+            "e1x5": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.e1x5", 
+                "subtype": null
+            }, 
+            "e2x5": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.e2x5", 
+                "subtype": null
+            }, 
+            "e5x5": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.e5x5", 
+                "subtype": null
+            }, 
+            "ecalEnergy": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.ecalEnergy", 
+                "subtype": null
+            }, 
+            "ecalIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.ecalIso", 
+                "subtype": null
+            }, 
+            "ecalPFClusIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.ecalPFClusIso", 
+                "subtype": null
+            }, 
+            "eoverp": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.eoverp", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.eta", 
+                "subtype": null
+            }, 
+            "fbrem": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.fbrem", 
+                "subtype": null
+            }, 
+            "fiducialBits": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Electron.fiducialBits", 
+                "subtype": null
+            }, 
+            "gammaIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.gammaIso", 
+                "subtype": null
+            }, 
+            "hcalDepth1Iso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.hcalDepth1Iso", 
+                "subtype": null
+            }, 
+            "hcalIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.hcalIso", 
+                "subtype": null
+            }, 
+            "hcalPFClusIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.hcalPFClusIso", 
+                "subtype": null
+            }, 
+            "hltMatchBits": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Electron.hltMatchBits", 
+                "subtype": null
+            }, 
+            "hovere": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.hovere", 
+                "subtype": null
+            }, 
+            "isConv": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Electron.isConv", 
+                "subtype": null
+            }, 
+            "mva": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.mva", 
+                "subtype": null
+            }, 
+            "mvaBit": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Electron.mvaBit", 
+                "subtype": null
+            }, 
+            "mvaCat": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.mvaCat", 
+                "subtype": null
+            }, 
+            "mvaIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.mvaIso", 
+                "subtype": null
+            }, 
+            "mvaIsoBit": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Electron.mvaIsoBit", 
+                "subtype": null
+            }, 
+            "mvaIsoCat": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.mvaIsoCat", 
+                "subtype": null
+            }, 
+            "nMissingHits": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Electron.nMissingHits", 
+                "subtype": null
+            }, 
+            "neuHadIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.neuHadIso", 
+                "subtype": null
+            }, 
+            "pfEta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.pfEta", 
+                "subtype": null
+            }, 
+            "pfPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.pfPhi", 
+                "subtype": null
+            }, 
+            "pfPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.pfPt", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.phi", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.pt", 
+                "subtype": null
+            }, 
+            "puIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.puIso", 
+                "subtype": null
+            }, 
+            "puppiChHadIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.puppiChHadIso", 
+                "subtype": null
+            }, 
+            "puppiChHadIsoNoLep": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.puppiChHadIsoNoLep", 
+                "subtype": null
+            }, 
+            "puppiGammaIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.puppiGammaIso", 
+                "subtype": null
+            }, 
+            "puppiGammaIsoNoLep": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.puppiGammaIsoNoLep", 
+                "subtype": null
+            }, 
+            "puppiNeuHadIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.puppiNeuHadIso", 
+                "subtype": null
+            }, 
+            "puppiNeuHadIsoNoLep": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.puppiNeuHadIsoNoLep", 
+                "subtype": null
+            }, 
+            "q": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Electron.q", 
+                "subtype": null
+            }, 
+            "r9": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.r9", 
+                "subtype": null
+            }, 
+            "regscale": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.regscale", 
+                "subtype": null
+            }, 
+            "regsmear": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.regsmear", 
+                "subtype": null
+            }, 
+            "scEt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.scEt", 
+                "subtype": null
+            }, 
+            "scEta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.scEta", 
+                "subtype": null
+            }, 
+            "scID": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Electron.scID", 
+                "subtype": null
+            }, 
+            "scPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.scPhi", 
+                "subtype": null
+            }, 
+            "sieie": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.sieie", 
+                "subtype": null
+            }, 
+            "sip3d": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.sip3d", 
+                "subtype": null
+            }, 
+            "trkID": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Electron.trkID", 
+                "subtype": null
+            }, 
+            "trkIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Electron.trkIso", 
+                "subtype": null
+            }, 
+            "typeBits": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Electron.typeBits", 
+                "subtype": null
+            }
+        }, 
+        "GenParticle": {
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "GenParticle.eta", 
+                "subtype": null
+            }, 
+            "mass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "GenParticle.mass", 
+                "subtype": null
+            }, 
+            "parent": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "GenParticle.parent", 
+                "subtype": null
+            }, 
+            "pdgId": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "GenParticle.pdgId", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "GenParticle.phi", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "GenParticle.pt", 
+                "subtype": null
+            }, 
+            "status": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "GenParticle.status", 
+                "subtype": null
+            }, 
+            "y": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "GenParticle.y", 
+                "subtype": null
+            }
+        }, 
+        "Muon": {
+            "caloComp": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.caloComp", 
+                "subtype": null
+            }, 
+            "chHadIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.chHadIso", 
+                "subtype": null
+            }, 
+            "chi2LocPos": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.chi2LocPos", 
+                "subtype": null
+            }, 
+            "d0": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.d0", 
+                "subtype": null
+            }, 
+            "dz": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.dz", 
+                "subtype": null
+            }, 
+            "ecalIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.ecalIso", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.eta", 
+                "subtype": null
+            }, 
+            "gammaIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.gammaIso", 
+                "subtype": null
+            }, 
+            "glbKink": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.glbKink", 
+                "subtype": null
+            }, 
+            "hcalIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.hcalIso", 
+                "subtype": null
+            }, 
+            "hltMatchBits": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Muon.hltMatchBits", 
+                "subtype": null
+            }, 
+            "muNchi2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.muNchi2", 
+                "subtype": null
+            }, 
+            "nMatchStn": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Muon.nMatchStn", 
+                "subtype": null
+            }, 
+            "nPixHits": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Muon.nPixHits", 
+                "subtype": null
+            }, 
+            "nPixLayers": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Muon.nPixLayers", 
+                "subtype": null
+            }, 
+            "nTkHits": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Muon.nTkHits", 
+                "subtype": null
+            }, 
+            "nTkLayers": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Muon.nTkLayers", 
+                "subtype": null
+            }, 
+            "nValidHits": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Muon.nValidHits", 
+                "subtype": null
+            }, 
+            "neuHadIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.neuHadIso", 
+                "subtype": null
+            }, 
+            "pfEta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.pfEta", 
+                "subtype": null
+            }, 
+            "pfPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.pfPhi", 
+                "subtype": null
+            }, 
+            "pfPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.pfPt", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.phi", 
+                "subtype": null
+            }, 
+            "pogIDBits": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Muon.pogIDBits", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.pt", 
+                "subtype": null
+            }, 
+            "ptErr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.ptErr", 
+                "subtype": null
+            }, 
+            "puIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.puIso", 
+                "subtype": null
+            }, 
+            "puppiChHadIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.puppiChHadIso", 
+                "subtype": null
+            }, 
+            "puppiChHadIsoNoLep": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.puppiChHadIsoNoLep", 
+                "subtype": null
+            }, 
+            "puppiGammaIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.puppiGammaIso", 
+                "subtype": null
+            }, 
+            "puppiGammaIsoNoLep": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.puppiGammaIsoNoLep", 
+                "subtype": null
+            }, 
+            "puppiNeuHadIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.puppiNeuHadIso", 
+                "subtype": null
+            }, 
+            "puppiNeuHadIsoNoLep": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.puppiNeuHadIsoNoLep", 
+                "subtype": null
+            }, 
+            "q": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Muon.q", 
+                "subtype": null
+            }, 
+            "segComp": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.segComp", 
+                "subtype": null
+            }, 
+            "selectorBits": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Muon.selectorBits", 
+                "subtype": null
+            }, 
+            "sip3d": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.sip3d", 
+                "subtype": null
+            }, 
+            "staEta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.staEta", 
+                "subtype": null
+            }, 
+            "staPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.staPhi", 
+                "subtype": null
+            }, 
+            "staPt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.staPt", 
+                "subtype": null
+            }, 
+            "tkNchi2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.tkNchi2", 
+                "subtype": null
+            }, 
+            "trkHitFrac": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.trkHitFrac", 
+                "subtype": null
+            }, 
+            "trkID": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Muon.trkID", 
+                "subtype": null
+            }, 
+            "trkIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.trkIso", 
+                "subtype": null
+            }, 
+            "trkKink": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Muon.trkKink", 
+                "subtype": null
+            }, 
+            "typeBits": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Muon.typeBits", 
+                "subtype": null
+            }
+        }, 
+        "PV": {
+            "chi2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "PV.chi2", 
+                "subtype": null
+            }, 
+            "nTracksFit": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "PV.nTracksFit", 
+                "subtype": null
+            }, 
+            "ndof": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "PV.ndof", 
+                "subtype": null
+            }, 
+            "x": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "PV.x", 
+                "subtype": null
+            }, 
+            "y": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "PV.y", 
+                "subtype": null
+            }, 
+            "z": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "PV.z", 
+                "subtype": null
+            }
+        }, 
+        "Photon": {
+            "chHadIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.chHadIso", 
+                "subtype": null
+            }, 
+            "ecalIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.ecalIso", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.eta", 
+                "subtype": null
+            }, 
+            "fiducialBits": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Photon.fiducialBits", 
+                "subtype": null
+            }, 
+            "gammaIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.gammaIso", 
+                "subtype": null
+            }, 
+            "hasPixelSeed": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Photon.hasPixelSeed", 
+                "subtype": null
+            }, 
+            "hcalIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.hcalIso", 
+                "subtype": null
+            }, 
+            "hltMatchBits": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Photon.hltMatchBits", 
+                "subtype": null
+            }, 
+            "hovere": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.hovere", 
+                "subtype": null
+            }, 
+            "isConv": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Photon.isConv", 
+                "subtype": null
+            }, 
+            "mva": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.mva", 
+                "subtype": null
+            }, 
+            "neuHadIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.neuHadIso", 
+                "subtype": null
+            }, 
+            "passElectronVeto": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Photon.passElectronVeto", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.phi", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.pt", 
+                "subtype": null
+            }, 
+            "r9": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.r9", 
+                "subtype": null
+            }, 
+            "scEt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.scEt", 
+                "subtype": null
+            }, 
+            "scEta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.scEta", 
+                "subtype": null
+            }, 
+            "scID": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Photon.scID", 
+                "subtype": null
+            }, 
+            "scPhi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.scPhi", 
+                "subtype": null
+            }, 
+            "sieie": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.sieie", 
+                "subtype": null
+            }, 
+            "sipip": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.sipip", 
+                "subtype": null
+            }, 
+            "sthovere": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.sthovere", 
+                "subtype": null
+            }, 
+            "trkIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Photon.trkIso", 
+                "subtype": null
+            }, 
+            "typeBits": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Photon.typeBits", 
+                "subtype": null
+            }
+        }, 
+        "SV": {
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.eta", 
+                "subtype": null
+            }, 
+            "etarel": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.etarel", 
+                "subtype": null
+            }, 
+            "mass": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.mass", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.phi", 
+                "subtype": null
+            }, 
+            "phirel": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.phirel", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.pt", 
+                "subtype": null
+            }, 
+            "sv_chi2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.sv_chi2", 
+                "subtype": null
+            }, 
+            "sv_d3d": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.sv_d3d", 
+                "subtype": null
+            }, 
+            "sv_d3derr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.sv_d3derr", 
+                "subtype": null
+            }, 
+            "sv_d3dsig": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.sv_d3dsig", 
+                "subtype": null
+            }, 
+            "sv_deltaR": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.sv_deltaR", 
+                "subtype": null
+            }, 
+            "sv_dxy": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.sv_dxy", 
+                "subtype": null
+            }, 
+            "sv_dxyerr": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.sv_dxyerr", 
+                "subtype": null
+            }, 
+            "sv_dxysig": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.sv_dxysig", 
+                "subtype": null
+            }, 
+            "sv_enratio": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.sv_enratio", 
+                "subtype": null
+            }, 
+            "sv_ndf": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.sv_ndf", 
+                "subtype": null
+            }, 
+            "sv_normchi2": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.sv_normchi2", 
+                "subtype": null
+            }, 
+            "sv_ntracks": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "SV.sv_ntracks", 
+                "subtype": null
+            }
+        }, 
+        "Tau": {
+            "antiEleMVA6": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.antiEleMVA6", 
+                "subtype": null
+            }, 
+            "antiEleMVA6Cat": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.antiEleMVA6Cat", 
+                "subtype": null
+            }, 
+            "d0LeadChHad": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.d0LeadChHad", 
+                "subtype": null
+            }, 
+            "decaymode": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Tau.decaymode", 
+                "subtype": null
+            }, 
+            "dzLeadChHad": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.dzLeadChHad", 
+                "subtype": null
+            }, 
+            "e": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.e", 
+                "subtype": null
+            }, 
+            "eta": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.eta", 
+                "subtype": null
+            }, 
+            "hltMatchBits": {
+                "dtype": "|b1", 
+                "shape": [], 
+                "source": "Tau.hltMatchBits", 
+                "subtype": null
+            }, 
+            "hpsDisc": {
+                "dtype": "<u8", 
+                "shape": [], 
+                "source": "Tau.hpsDisc", 
+                "subtype": null
+            }, 
+            "m": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.m", 
+                "subtype": null
+            }, 
+            "nSignalChHad": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Tau.nSignalChHad", 
+                "subtype": null
+            }, 
+            "nSignalGamma": {
+                "dtype": "<u4", 
+                "shape": [], 
+                "source": "Tau.nSignalGamma", 
+                "subtype": null
+            }, 
+            "phi": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.phi", 
+                "subtype": null
+            }, 
+            "pt": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.pt", 
+                "subtype": null
+            }, 
+            "puppiChHadIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.puppiChHadIso", 
+                "subtype": null
+            }, 
+            "puppiChHadIsoNoLep": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.puppiChHadIsoNoLep", 
+                "subtype": null
+            }, 
+            "puppiGammaIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.puppiGammaIso", 
+                "subtype": null
+            }, 
+            "puppiGammaIsoNoLep": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.puppiGammaIsoNoLep", 
+                "subtype": null
+            }, 
+            "puppiNeuHadIso": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.puppiNeuHadIso", 
+                "subtype": null
+            }, 
+            "puppiNeuHadIsoNoLep": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.puppiNeuHadIsoNoLep", 
+                "subtype": null
+            }, 
+            "q": {
+                "dtype": "<i4", 
+                "shape": [], 
+                "source": "Tau.q", 
+                "subtype": null
+            }, 
+            "rawIso3Hits": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.rawIso3Hits", 
+                "subtype": null
+            }, 
+            "rawIsoMVA3newDMwLT": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.rawIsoMVA3newDMwLT", 
+                "subtype": null
+            }, 
+            "rawIsoMVA3newDMwoLT": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.rawIsoMVA3newDMwoLT", 
+                "subtype": null
+            }, 
+            "rawIsoMVA3oldDMwLT": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.rawIsoMVA3oldDMwLT", 
+                "subtype": null
+            }, 
+            "rawIsoMVA3oldDMwoLT": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.rawIsoMVA3oldDMwoLT", 
+                "subtype": null
+            }, 
+            "rawMuonRejection": {
+                "dtype": "<f4", 
+                "shape": [], 
+                "source": "Tau.rawMuonRejection", 
+                "subtype": null
+            }
+        }
+    }
+}

@@ -1,0 +1,4159 @@
+{
+    "attributes": {
+        "beamgatetime": {
+            "dtype": "<f8",
+            "shape": [],
+            "source": "beamgatetime"
+        },
+        "beamtime": {
+            "dtype": "<f8",
+            "shape": [],
+            "source": "beamtime"
+        },
+        "event": {
+            "dtype": "<i4",
+            "shape": [],
+            "source": "event"
+        },
+        "evttime": {
+            "dtype": "<f8",
+            "shape": [],
+            "source": "evttime"
+        },
+        "evtwgt_funcname": {
+            "dtype": "S",
+            "shape": [
+                null
+            ],
+            "source": "evtwgt_funcname"
+        },
+        "evtwgt_nfunc": {
+            "dtype": "<i4",
+            "shape": [],
+            "source": "evtwgt_nfunc"
+        },
+        "evtwgt_nweight": {
+            "dtype": "<i4",
+            "shape": [
+                null
+            ],
+            "source": "evtwgt_nweight"
+        },
+        "isdata": {
+            "dtype": "<i1",
+            "shape": [],
+            "source": "isdata"
+        },
+        "kNFlashAlgos": {
+            "dtype": "<i1",
+            "shape": [],
+            "source": "kNFlashAlgos"
+        },
+        "kNNeutrinoVertexAlgos": {
+            "dtype": "<i1",
+            "shape": [],
+            "source": "kNNeutrinoVertexAlgos"
+        },
+        "kNShowerAlgos": {
+            "dtype": "<i1",
+            "shape": [],
+            "source": "kNShowerAlgos"
+        },
+        "kNTracker": {
+            "dtype": "<i1",
+            "shape": [],
+            "source": "kNTracker"
+        },
+        "kNVertexAlgos": {
+            "dtype": "<i1",
+            "shape": [],
+            "source": "kNVertexAlgos"
+        },
+        "nPFParticles": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nPFParticles"
+        },
+        "nclusters": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nclusters"
+        },
+        "nfls_opflashBeam": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nfls_opflashBeam"
+        },
+        "nfls_opflashCosmic": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nfls_opflashCosmic"
+        },
+        "nfls_simpleFlashBeam": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nfls_simpleFlashBeam"
+        },
+        "nfls_simpleFlashBeamLowPE": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nfls_simpleFlashBeamLowPE"
+        },
+        "nfls_simpleFlashCosmic": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nfls_simpleFlashCosmic"
+        },
+        "nnuvtx_pandoraNu": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nnuvtx_pandoraNu"
+        },
+        "no_hits": {
+            "dtype": "<i4",
+            "shape": [],
+            "source": "no_hits"
+        },
+        "no_hits_stored": {
+            "dtype": "<i4",
+            "shape": [],
+            "source": "no_hits_stored"
+        },
+        "nshowers_pandoraCosmic": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nshowers_pandoraCosmic"
+        },
+        "nshowers_pandoraNu": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nshowers_pandoraNu"
+        },
+        "nshowers_showerrecopandora": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nshowers_showerrecopandora"
+        },
+        "ntracks_pandoraCosmic": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "ntracks_pandoraCosmic"
+        },
+        "ntracks_pandoraCosmicKHit": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "ntracks_pandoraCosmicKHit"
+        },
+        "ntracks_pandoraCosmicKalmanTrack": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "ntracks_pandoraCosmicKalmanTrack"
+        },
+        "ntracks_pandoraNu": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "ntracks_pandoraNu"
+        },
+        "ntracks_pandoraNuKHit": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "ntracks_pandoraNuKHit"
+        },
+        "ntracks_pandoraNuKalmanShower": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "ntracks_pandoraNuKalmanShower"
+        },
+        "ntracks_pandoraNuKalmanTrack": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "ntracks_pandoraNuKalmanTrack"
+        },
+        "ntracks_pandoraNuPMA": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "ntracks_pandoraNuPMA"
+        },
+        "ntracks_pmtrack": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "ntracks_pmtrack"
+        },
+        "nvtx_linecluster": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nvtx_linecluster"
+        },
+        "nvtx_pandoraCosmic": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nvtx_pandoraCosmic"
+        },
+        "nvtx_pandoraNu": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nvtx_pandoraNu"
+        },
+        "nvtx_pmtrack": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nvtx_pmtrack"
+        },
+        "nvtx_trajcluster": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "nvtx_trajcluster"
+        },
+        "opfilter_pebeam": {
+            "dtype": "<f4",
+            "shape": [],
+            "source": "opfilter_pebeam"
+        },
+        "opfilter_peveto": {
+            "dtype": "<f4",
+            "shape": [],
+            "source": "opfilter_peveto"
+        },
+        "opfilter_pmtmaxfrac": {
+            "dtype": "<f4",
+            "shape": [],
+            "source": "opfilter_pmtmaxfrac"
+        },
+        "pfp_neutrinoIDs": {
+            "dtype": "<i2",
+            "shape": [
+                10
+            ],
+            "source": "pfp_neutrinoIDs"
+        },
+        "pfp_numNeutrinos": {
+            "dtype": "<i2",
+            "shape": [],
+            "source": "pfp_numNeutrinos"
+        },
+        "pot": {
+            "dtype": "<f8",
+            "shape": [],
+            "source": "pot"
+        },
+        "potbnb": {
+            "dtype": "<f8",
+            "shape": [],
+            "source": "potbnb"
+        },
+        "potnumi101": {
+            "dtype": "<f8",
+            "shape": [],
+            "source": "potnumi101"
+        },
+        "potnumitgt": {
+            "dtype": "<f8",
+            "shape": [],
+            "source": "potnumitgt"
+        },
+        "run": {
+            "dtype": "<i4",
+            "shape": [],
+            "source": "run"
+        },
+        "subrun": {
+            "dtype": "<i4",
+            "shape": [],
+            "source": "subrun"
+        },
+        "taulife": {
+            "dtype": "<f8",
+            "shape": [],
+            "source": "taulife"
+        },
+        "triggerbits": {
+            "dtype": "<u4",
+            "shape": [],
+            "source": "triggerbits"
+        },
+        "triggernumber": {
+            "dtype": "<u4",
+            "shape": [],
+            "source": "triggernumber"
+        },
+        "triggertime": {
+            "dtype": "<f8",
+            "shape": [],
+            "source": "triggertime"
+        }
+    },
+    "branches": {
+        "PFParticle": {
+            "pfp_clusterIDs": {
+                "dtype": "<i2",
+                "shape": [
+                    100
+                ],
+                "source": "pfp_clusterIDs"
+            },
+            "pfp_daughterIDs": {
+                "dtype": "<i2",
+                "shape": [
+                    100
+                ],
+                "source": "pfp_daughterIDs"
+            },
+            "pfp_isNeutrino": {
+                "dtype": "<i2",
+                "source": "pfp_isNeutrino"
+            },
+            "pfp_isPrimary": {
+                "dtype": "<i2",
+                "source": "pfp_isPrimary"
+            },
+            "pfp_isShower": {
+                "dtype": "<i2",
+                "source": "pfp_isShower"
+            },
+            "pfp_isTrack": {
+                "dtype": "<i2",
+                "source": "pfp_isTrack"
+            },
+            "pfp_numClusters": {
+                "dtype": "<i2",
+                "source": "pfp_numClusters"
+            },
+            "pfp_numDaughters": {
+                "dtype": "<i2",
+                "source": "pfp_numDaughters"
+            },
+            "pfp_parentID": {
+                "dtype": "<i2",
+                "source": "pfp_parentID"
+            },
+            "pfp_pdgCode": {
+                "dtype": "<i4",
+                "source": "pfp_pdgCode"
+            },
+            "pfp_selfID": {
+                "dtype": "<i2",
+                "source": "pfp_selfID"
+            },
+            "pfp_showerID": {
+                "dtype": "<i2",
+                "source": "pfp_showerID"
+            },
+            "pfp_trackID": {
+                "dtype": "<i2",
+                "source": "pfp_trackID"
+            },
+            "pfp_vertexID": {
+                "dtype": "<i2",
+                "source": "pfp_vertexID"
+            }
+        },
+        "cluster": {
+            "clucosmicscore_tagger": {
+                "dtype": "<f4",
+                "source": "clucosmicscore_tagger"
+            },
+            "clucosmictype_tagger": {
+                "dtype": "<i2",
+                "source": "clucosmictype_tagger"
+            },
+            "cluncosmictags_tagger": {
+                "dtype": "<i2",
+                "source": "cluncosmictags_tagger"
+            },
+            "clusterId": {
+                "dtype": "<i2",
+                "source": "clusterId"
+            },
+            "clusterView": {
+                "dtype": "<i2",
+                "source": "clusterView"
+            },
+            "cluster_EndAngle": {
+                "dtype": "<f4",
+                "source": "cluster_EndAngle"
+            },
+            "cluster_EndCharge": {
+                "dtype": "<f4",
+                "source": "cluster_EndCharge"
+            },
+            "cluster_EndTick": {
+                "dtype": "<i2",
+                "source": "cluster_EndTick"
+            },
+            "cluster_EndWire": {
+                "dtype": "<i2",
+                "source": "cluster_EndWire"
+            },
+            "cluster_Integral": {
+                "dtype": "<f4",
+                "source": "cluster_Integral"
+            },
+            "cluster_IntegralAverage": {
+                "dtype": "<f4",
+                "source": "cluster_IntegralAverage"
+            },
+            "cluster_MultipleHitDensity": {
+                "dtype": "<f4",
+                "source": "cluster_MultipleHitDensity"
+            },
+            "cluster_NHits": {
+                "dtype": "<i2",
+                "source": "cluster_NHits"
+            },
+            "cluster_StartAngle": {
+                "dtype": "<f4",
+                "source": "cluster_StartAngle"
+            },
+            "cluster_StartCharge": {
+                "dtype": "<f4",
+                "source": "cluster_StartCharge"
+            },
+            "cluster_StartTick": {
+                "dtype": "<i2",
+                "source": "cluster_StartTick"
+            },
+            "cluster_StartWire": {
+                "dtype": "<i2",
+                "source": "cluster_StartWire"
+            },
+            "cluster_SummedADC": {
+                "dtype": "<f4",
+                "source": "cluster_SummedADC"
+            },
+            "cluster_SummedADCaverage": {
+                "dtype": "<f4",
+                "source": "cluster_SummedADCaverage"
+            },
+            "cluster_Width": {
+                "dtype": "<f4",
+                "source": "cluster_Width"
+            }
+        },
+        "evtwgt": {
+            "weight": {
+                "dtype": ">f8",
+                "source": "evtwgt_weight"
+            }
+        },
+        "hit_stored": {
+            "hit_channel": {
+                "dtype": "<i2",
+                "source": "hit_channel"
+            },
+            "hit_charge": {
+                "dtype": "<f4",
+                "source": "hit_charge"
+            },
+            "hit_clusterKey": {
+                "dtype": "<i2",
+                "source": "hit_clusterKey"
+            },
+            "hit_clusterid": {
+                "dtype": "<i2",
+                "source": "hit_clusterid"
+            },
+            "hit_endT": {
+                "dtype": "<f4",
+                "source": "hit_endT"
+            },
+            "hit_energy": {
+                "dtype": "<f4",
+                "source": "hit_energy"
+            },
+            "hit_goodnessOfFit": {
+                "dtype": "<f4",
+                "source": "hit_goodnessOfFit"
+            },
+            "hit_multiplicity": {
+                "dtype": "<i2",
+                "source": "hit_multiplicity"
+            },
+            "hit_nelec": {
+                "dtype": "<f4",
+                "source": "hit_nelec"
+            },
+            "hit_peakT": {
+                "dtype": "<f4",
+                "source": "hit_peakT"
+            },
+            "hit_ph": {
+                "dtype": "<f4",
+                "source": "hit_ph"
+            },
+            "hit_plane": {
+                "dtype": "<i2",
+                "source": "hit_plane"
+            },
+            "hit_rms": {
+                "dtype": "<f4",
+                "source": "hit_rms"
+            },
+            "hit_startT": {
+                "dtype": "<f4",
+                "source": "hit_startT"
+            },
+            "hit_trkKey": {
+                "dtype": "<i2",
+                "source": "hit_trkKey"
+            },
+            "hit_trkid": {
+                "dtype": "<i2",
+                "source": "hit_trkid"
+            },
+            "hit_trueX": {
+                "dtype": "<f4",
+                "source": "hit_trueX"
+            },
+            "hit_wire": {
+                "dtype": "<i2",
+                "source": "hit_wire"
+            }
+        },
+        "nuvtx_pandoraNu": {
+            "nuvtxId_pandoraNu": {
+                "dtype": "<i2",
+                "source": "nuvtxId_pandoraNu"
+            },
+            "nuvtxPFParticleID_pandoraNu": {
+                "dtype": "<i2",
+                "source": "nuvtxPFParticleID_pandoraNu"
+            },
+            "nuvtxhasPFParticle_pandoraNu": {
+                "dtype": "<i2",
+                "source": "nuvtxhasPFParticle_pandoraNu"
+            },
+            "nuvtxpdg_pandoraNu": {
+                "dtype": "<i4",
+                "source": "nuvtxpdg_pandoraNu"
+            },
+            "nuvtxx_pandoraNu": {
+                "dtype": "<f4",
+                "source": "nuvtxx_pandoraNu"
+            },
+            "nuvtxy_pandoraNu": {
+                "dtype": "<f4",
+                "source": "nuvtxy_pandoraNu"
+            },
+            "nuvtxz_pandoraNu": {
+                "dtype": "<f4",
+                "source": "nuvtxz_pandoraNu"
+            }
+        },
+        "opflashBeam": {
+            "flsPePerOpDet_opflashBeam": {
+                "dtype": "<f8",
+                "shape": [
+                    32
+                ],
+                "source": "flsPePerOpDet_opflashBeam"
+            },
+            "flsPe_opflashBeam": {
+                "dtype": "<f4",
+                "source": "flsPe_opflashBeam"
+            },
+            "flsTime_opflashBeam": {
+                "dtype": "<f4",
+                "source": "flsTime_opflashBeam"
+            },
+            "flsTwidth_opflashBeam": {
+                "dtype": "<f4",
+                "source": "flsTwidth_opflashBeam"
+            },
+            "flsXcenter_opflashBeam": {
+                "dtype": "<f4",
+                "source": "flsXcenter_opflashBeam"
+            },
+            "flsYcenter_opflashBeam": {
+                "dtype": "<f4",
+                "source": "flsYcenter_opflashBeam"
+            },
+            "flsYwidth_opflashBeam": {
+                "dtype": "<f4",
+                "source": "flsYwidth_opflashBeam"
+            },
+            "flsZcenter_opflashBeam": {
+                "dtype": "<f4",
+                "source": "flsZcenter_opflashBeam"
+            },
+            "flsZwidth_opflashBeam": {
+                "dtype": "<f4",
+                "source": "flsZwidth_opflashBeam"
+            }
+        },
+        "opflashCosmic": {
+            "flsPePerOpDet_opflashCosmic": {
+                "dtype": "<f8",
+                "shape": [
+                    32
+                ],
+                "source": "flsPePerOpDet_opflashCosmic"
+            },
+            "flsPe_opflashCosmic": {
+                "dtype": "<f4",
+                "source": "flsPe_opflashCosmic"
+            },
+            "flsTime_opflashCosmic": {
+                "dtype": "<f4",
+                "source": "flsTime_opflashCosmic"
+            },
+            "flsTwidth_opflashCosmic": {
+                "dtype": "<f4",
+                "source": "flsTwidth_opflashCosmic"
+            },
+            "flsXcenter_opflashCosmic": {
+                "dtype": "<f4",
+                "source": "flsXcenter_opflashCosmic"
+            },
+            "flsYcenter_opflashCosmic": {
+                "dtype": "<f4",
+                "source": "flsYcenter_opflashCosmic"
+            },
+            "flsYwidth_opflashCosmic": {
+                "dtype": "<f4",
+                "source": "flsYwidth_opflashCosmic"
+            },
+            "flsZcenter_opflashCosmic": {
+                "dtype": "<f4",
+                "source": "flsZcenter_opflashCosmic"
+            },
+            "flsZwidth_opflashCosmic": {
+                "dtype": "<f4",
+                "source": "flsZwidth_opflashCosmic"
+            }
+        },
+        "shower_pandoraCosmic": {
+            "showerID_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "showerID_pandoraCosmic"
+            },
+            "shwr_PFParticleID_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "shwr_PFParticleID_pandoraCosmic"
+            },
+            "shwr_bestplane_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "shwr_bestplane_pandoraCosmic"
+            },
+            "shwr_dedx_pandoraCosmic": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "shwr_dedx_pandoraCosmic"
+            },
+            "shwr_hasPFParticle_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "shwr_hasPFParticle_pandoraCosmic"
+            },
+            "shwr_length_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "shwr_length_pandoraCosmic"
+            },
+            "shwr_mipEng_pandoraCosmic": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "shwr_mipEng_pandoraCosmic"
+            },
+            "shwr_startdcosx_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "shwr_startdcosx_pandoraCosmic"
+            },
+            "shwr_startdcosy_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "shwr_startdcosy_pandoraCosmic"
+            },
+            "shwr_startdcosz_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "shwr_startdcosz_pandoraCosmic"
+            },
+            "shwr_startx_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "shwr_startx_pandoraCosmic"
+            },
+            "shwr_starty_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "shwr_starty_pandoraCosmic"
+            },
+            "shwr_startz_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "shwr_startz_pandoraCosmic"
+            },
+            "shwr_totEng_pandoraCosmic": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "shwr_totEng_pandoraCosmic"
+            }
+        },
+        "shower_pandoraNu": {
+            "showerID_pandoraNu": {
+                "dtype": "<i2",
+                "source": "showerID_pandoraNu"
+            },
+            "shwr_PFParticleID_pandoraNu": {
+                "dtype": "<i2",
+                "source": "shwr_PFParticleID_pandoraNu"
+            },
+            "shwr_bestplane_pandoraNu": {
+                "dtype": "<i2",
+                "source": "shwr_bestplane_pandoraNu"
+            },
+            "shwr_dedx_pandoraNu": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "shwr_dedx_pandoraNu"
+            },
+            "shwr_hasPFParticle_pandoraNu": {
+                "dtype": "<i2",
+                "source": "shwr_hasPFParticle_pandoraNu"
+            },
+            "shwr_length_pandoraNu": {
+                "dtype": "<f4",
+                "source": "shwr_length_pandoraNu"
+            },
+            "shwr_mipEng_pandoraNu": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "shwr_mipEng_pandoraNu"
+            },
+            "shwr_startdcosx_pandoraNu": {
+                "dtype": "<f4",
+                "source": "shwr_startdcosx_pandoraNu"
+            },
+            "shwr_startdcosy_pandoraNu": {
+                "dtype": "<f4",
+                "source": "shwr_startdcosy_pandoraNu"
+            },
+            "shwr_startdcosz_pandoraNu": {
+                "dtype": "<f4",
+                "source": "shwr_startdcosz_pandoraNu"
+            },
+            "shwr_startx_pandoraNu": {
+                "dtype": "<f4",
+                "source": "shwr_startx_pandoraNu"
+            },
+            "shwr_starty_pandoraNu": {
+                "dtype": "<f4",
+                "source": "shwr_starty_pandoraNu"
+            },
+            "shwr_startz_pandoraNu": {
+                "dtype": "<f4",
+                "source": "shwr_startz_pandoraNu"
+            },
+            "shwr_totEng_pandoraNu": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "shwr_totEng_pandoraNu"
+            }
+        },
+        "shower_showerrecopandora": {
+            "showerID_showerrecopandora": {
+                "dtype": "<i2",
+                "source": "showerID_showerrecopandora"
+            },
+            "shwr_PFParticleID_showerrecopandora": {
+                "dtype": "<i2",
+                "source": "shwr_PFParticleID_showerrecopandora"
+            },
+            "shwr_bestplane_showerrecopandora": {
+                "dtype": "<i2",
+                "source": "shwr_bestplane_showerrecopandora"
+            },
+            "shwr_dedx_showerrecopandora": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "shwr_dedx_showerrecopandora"
+            },
+            "shwr_hasPFParticle_showerrecopandora": {
+                "dtype": "<i2",
+                "source": "shwr_hasPFParticle_showerrecopandora"
+            },
+            "shwr_length_showerrecopandora": {
+                "dtype": "<f4",
+                "source": "shwr_length_showerrecopandora"
+            },
+            "shwr_mipEng_showerrecopandora": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "shwr_mipEng_showerrecopandora"
+            },
+            "shwr_startdcosx_showerrecopandora": {
+                "dtype": "<f4",
+                "source": "shwr_startdcosx_showerrecopandora"
+            },
+            "shwr_startdcosy_showerrecopandora": {
+                "dtype": "<f4",
+                "source": "shwr_startdcosy_showerrecopandora"
+            },
+            "shwr_startdcosz_showerrecopandora": {
+                "dtype": "<f4",
+                "source": "shwr_startdcosz_showerrecopandora"
+            },
+            "shwr_startx_showerrecopandora": {
+                "dtype": "<f4",
+                "source": "shwr_startx_showerrecopandora"
+            },
+            "shwr_starty_showerrecopandora": {
+                "dtype": "<f4",
+                "source": "shwr_starty_showerrecopandora"
+            },
+            "shwr_startz_showerrecopandora": {
+                "dtype": "<f4",
+                "source": "shwr_startz_showerrecopandora"
+            },
+            "shwr_totEng_showerrecopandora": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "shwr_totEng_showerrecopandora"
+            }
+        },
+        "simpleFlashBeam": {
+            "flsPePerOpDet_simpleFlashBeam": {
+                "dtype": "<f8",
+                "shape": [
+                    32
+                ],
+                "source": "flsPePerOpDet_simpleFlashBeam"
+            },
+            "flsPe_simpleFlashBeam": {
+                "dtype": "<f4",
+                "source": "flsPe_simpleFlashBeam"
+            },
+            "flsTime_simpleFlashBeam": {
+                "dtype": "<f4",
+                "source": "flsTime_simpleFlashBeam"
+            },
+            "flsTwidth_simpleFlashBeam": {
+                "dtype": "<f4",
+                "source": "flsTwidth_simpleFlashBeam"
+            },
+            "flsXcenter_simpleFlashBeam": {
+                "dtype": "<f4",
+                "source": "flsXcenter_simpleFlashBeam"
+            },
+            "flsYcenter_simpleFlashBeam": {
+                "dtype": "<f4",
+                "source": "flsYcenter_simpleFlashBeam"
+            },
+            "flsYwidth_simpleFlashBeam": {
+                "dtype": "<f4",
+                "source": "flsYwidth_simpleFlashBeam"
+            },
+            "flsZcenter_simpleFlashBeam": {
+                "dtype": "<f4",
+                "source": "flsZcenter_simpleFlashBeam"
+            },
+            "flsZwidth_simpleFlashBeam": {
+                "dtype": "<f4",
+                "source": "flsZwidth_simpleFlashBeam"
+            }
+        },
+        "simpleFlashBeamLowPE": {
+            "flsPePerOpDet_simpleFlashBeamLowPE": {
+                "dtype": "<f8",
+                "shape": [
+                    32
+                ],
+                "source": "flsPePerOpDet_simpleFlashBeamLowPE"
+            },
+            "flsPe_simpleFlashBeamLowPE": {
+                "dtype": "<f4",
+                "source": "flsPe_simpleFlashBeamLowPE"
+            },
+            "flsTime_simpleFlashBeamLowPE": {
+                "dtype": "<f4",
+                "source": "flsTime_simpleFlashBeamLowPE"
+            },
+            "flsTwidth_simpleFlashBeamLowPE": {
+                "dtype": "<f4",
+                "source": "flsTwidth_simpleFlashBeamLowPE"
+            },
+            "flsXcenter_simpleFlashBeamLowPE": {
+                "dtype": "<f4",
+                "source": "flsXcenter_simpleFlashBeamLowPE"
+            },
+            "flsYcenter_simpleFlashBeamLowPE": {
+                "dtype": "<f4",
+                "source": "flsYcenter_simpleFlashBeamLowPE"
+            },
+            "flsYwidth_simpleFlashBeamLowPE": {
+                "dtype": "<f4",
+                "source": "flsYwidth_simpleFlashBeamLowPE"
+            },
+            "flsZcenter_simpleFlashBeamLowPE": {
+                "dtype": "<f4",
+                "source": "flsZcenter_simpleFlashBeamLowPE"
+            },
+            "flsZwidth_simpleFlashBeamLowPE": {
+                "dtype": "<f4",
+                "source": "flsZwidth_simpleFlashBeamLowPE"
+            }
+        },
+        "simpleFlashCosmic": {
+            "flsPePerOpDet_simpleFlashCosmic": {
+                "dtype": "<f8",
+                "shape": [
+                    32
+                ],
+                "source": "flsPePerOpDet_simpleFlashCosmic"
+            },
+            "flsPe_simpleFlashCosmic": {
+                "dtype": "<f4",
+                "source": "flsPe_simpleFlashCosmic"
+            },
+            "flsTime_simpleFlashCosmic": {
+                "dtype": "<f4",
+                "source": "flsTime_simpleFlashCosmic"
+            },
+            "flsTwidth_simpleFlashCosmic": {
+                "dtype": "<f4",
+                "source": "flsTwidth_simpleFlashCosmic"
+            },
+            "flsXcenter_simpleFlashCosmic": {
+                "dtype": "<f4",
+                "source": "flsXcenter_simpleFlashCosmic"
+            },
+            "flsYcenter_simpleFlashCosmic": {
+                "dtype": "<f4",
+                "source": "flsYcenter_simpleFlashCosmic"
+            },
+            "flsYwidth_simpleFlashCosmic": {
+                "dtype": "<f4",
+                "source": "flsYwidth_simpleFlashCosmic"
+            },
+            "flsZcenter_simpleFlashCosmic": {
+                "dtype": "<f4",
+                "source": "flsZcenter_simpleFlashCosmic"
+            },
+            "flsZwidth_simpleFlashCosmic": {
+                "dtype": "<f4",
+                "source": "flsZwidth_simpleFlashCosmic"
+            }
+        },
+        "track_pandoraCosmic": {
+            "ntrkhits_pandoraCosmic": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "ntrkhits_pandoraCosmic"
+            },
+            "trkACpierceT0_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkACpierceT0_pandoraCosmic"
+            },
+            "trkId_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "trkId_pandoraCosmic"
+            },
+            "trkPFParticleID_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "trkPFParticleID_pandoraCosmic"
+            },
+            "trkcompleteness_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkcompleteness_pandoraCosmic"
+            },
+            "trkcosmicscore_containmenttagger_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_containmenttagger_pandoraCosmic"
+            },
+            "trkcosmicscore_flashmatch_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_flashmatch_pandoraCosmic"
+            },
+            "trkcosmicscore_tagger_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_tagger_pandoraCosmic"
+            },
+            "trkcosmictype_containmenttagger_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_containmenttagger_pandoraCosmic"
+            },
+            "trkcosmictype_flashmatch_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_flashmatch_pandoraCosmic"
+            },
+            "trkcosmictype_tagger_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_tagger_pandoraCosmic"
+            },
+            "trkefftruth_pandoraCosmic": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkefftruth_pandoraCosmic"
+            },
+            "trkendd_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkendd_pandoraCosmic"
+            },
+            "trkenddcosx_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkenddcosx_pandoraCosmic"
+            },
+            "trkenddcosy_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkenddcosy_pandoraCosmic"
+            },
+            "trkenddcosz_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkenddcosz_pandoraCosmic"
+            },
+            "trkendx_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkendx_pandoraCosmic"
+            },
+            "trkendy_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkendy_pandoraCosmic"
+            },
+            "trkendz_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkendz_pandoraCosmic"
+            },
+            "trkevtxid_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "trkevtxid_pandoraCosmic"
+            },
+            "trkflashT0_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkflashT0_pandoraCosmic"
+            },
+            "trkg4id_pandoraCosmic": {
+                "dtype": "<i4",
+                "source": "trkg4id_pandoraCosmic"
+            },
+            "trkhasPFParticle_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "trkhasPFParticle_pandoraCosmic"
+            },
+            "trkidtruth_pandoraCosmic": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkidtruth_pandoraCosmic"
+            },
+            "trkke_pandoraCosmic": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkke_pandoraCosmic"
+            },
+            "trklen_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trklen_pandoraCosmic"
+            },
+            "trkmcsbwderr_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkmcsbwderr_pandoraCosmic"
+            },
+            "trkmcsbwdll_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdll_pandoraCosmic"
+            },
+            "trkmcsbwdmom_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdmom_pandoraCosmic"
+            },
+            "trkmcsfwderr_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkmcsfwderr_pandoraCosmic"
+            },
+            "trkmcsfwdll_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdll_pandoraCosmic"
+            },
+            "trkmcsfwdmom_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdmom_pandoraCosmic"
+            },
+            "trkmom_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkmom_pandoraCosmic"
+            },
+            "trkmommschi2_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkmommschi2_pandoraCosmic"
+            },
+            "trkmommsllhd_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkmommsllhd_pandoraCosmic"
+            },
+            "trkmomrange_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkmomrange_pandoraCosmic"
+            },
+            "trkncosmictags_containmenttagger_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_containmenttagger_pandoraCosmic"
+            },
+            "trkncosmictags_flashmatch_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_flashmatch_pandoraCosmic"
+            },
+            "trkncosmictags_tagger_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_tagger_pandoraCosmic"
+            },
+            "trkorig_pandoraCosmic": {
+                "dtype": "<i4",
+                "source": "trkorig_pandoraCosmic"
+            },
+            "trkorigin_pandoraCosmic": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "trkorigin_pandoraCosmic"
+            },
+            "trkpdgtruth_pandoraCosmic": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpdgtruth_pandoraCosmic"
+            },
+            "trkphi_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkphi_pandoraCosmic"
+            },
+            "trkpidbestplane_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "trkpidbestplane_pandoraCosmic"
+            },
+            "trkpidchi_pandoraCosmic": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchi_pandoraCosmic"
+            },
+            "trkpidchika_pandoraCosmic": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchika_pandoraCosmic"
+            },
+            "trkpidchimu_pandoraCosmic": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchimu_pandoraCosmic"
+            },
+            "trkpidchipi_pandoraCosmic": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipi_pandoraCosmic"
+            },
+            "trkpidchipr_pandoraCosmic": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipr_pandoraCosmic"
+            },
+            "trkpidpdg_pandoraCosmic": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpdg_pandoraCosmic"
+            },
+            "trkpidpida_pandoraCosmic": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpida_pandoraCosmic"
+            },
+            "trkpitchc_pandoraCosmic": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpitchc_pandoraCosmic"
+            },
+            "trkpurity_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkpurity_pandoraCosmic"
+            },
+            "trkpurtruth_pandoraCosmic": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpurtruth_pandoraCosmic"
+            },
+            "trkrange_pandoraCosmic": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkrange_pandoraCosmic"
+            },
+            "trkstartd_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkstartd_pandoraCosmic"
+            },
+            "trkstartdcosx_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkstartdcosx_pandoraCosmic"
+            },
+            "trkstartdcosy_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkstartdcosy_pandoraCosmic"
+            },
+            "trkstartdcosz_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkstartdcosz_pandoraCosmic"
+            },
+            "trkstartx_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkstartx_pandoraCosmic"
+            },
+            "trkstarty_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkstarty_pandoraCosmic"
+            },
+            "trkstartz_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkstartz_pandoraCosmic"
+            },
+            "trksvtxid_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "trksvtxid_pandoraCosmic"
+            },
+            "trktheta_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trktheta_pandoraCosmic"
+            },
+            "trkthetaxz_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkthetaxz_pandoraCosmic"
+            },
+            "trkthetayz_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trkthetayz_pandoraCosmic"
+            },
+            "trktrueT0_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "trktrueT0_pandoraCosmic"
+            }
+        },
+        "track_pandoraCosmicKHit": {
+            "ntrkhits_pandoraCosmicKHit": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "ntrkhits_pandoraCosmicKHit"
+            },
+            "trkACpierceT0_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkACpierceT0_pandoraCosmicKHit"
+            },
+            "trkId_pandoraCosmicKHit": {
+                "dtype": "<i2",
+                "source": "trkId_pandoraCosmicKHit"
+            },
+            "trkPFParticleID_pandoraCosmicKHit": {
+                "dtype": "<i2",
+                "source": "trkPFParticleID_pandoraCosmicKHit"
+            },
+            "trkcompleteness_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkcompleteness_pandoraCosmicKHit"
+            },
+            "trkcosmicscore_containmenttagger_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_containmenttagger_pandoraCosmicKHit"
+            },
+            "trkcosmicscore_flashmatch_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_flashmatch_pandoraCosmicKHit"
+            },
+            "trkcosmicscore_tagger_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_tagger_pandoraCosmicKHit"
+            },
+            "trkcosmictype_containmenttagger_pandoraCosmicKHit": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_containmenttagger_pandoraCosmicKHit"
+            },
+            "trkcosmictype_flashmatch_pandoraCosmicKHit": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_flashmatch_pandoraCosmicKHit"
+            },
+            "trkcosmictype_tagger_pandoraCosmicKHit": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_tagger_pandoraCosmicKHit"
+            },
+            "trkefftruth_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkefftruth_pandoraCosmicKHit"
+            },
+            "trkendd_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkendd_pandoraCosmicKHit"
+            },
+            "trkenddcosx_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkenddcosx_pandoraCosmicKHit"
+            },
+            "trkenddcosy_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkenddcosy_pandoraCosmicKHit"
+            },
+            "trkenddcosz_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkenddcosz_pandoraCosmicKHit"
+            },
+            "trkendx_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkendx_pandoraCosmicKHit"
+            },
+            "trkendy_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkendy_pandoraCosmicKHit"
+            },
+            "trkendz_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkendz_pandoraCosmicKHit"
+            },
+            "trkevtxid_pandoraCosmicKHit": {
+                "dtype": "<i2",
+                "source": "trkevtxid_pandoraCosmicKHit"
+            },
+            "trkflashT0_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkflashT0_pandoraCosmicKHit"
+            },
+            "trkg4id_pandoraCosmicKHit": {
+                "dtype": "<i4",
+                "source": "trkg4id_pandoraCosmicKHit"
+            },
+            "trkhasPFParticle_pandoraCosmicKHit": {
+                "dtype": "<i2",
+                "source": "trkhasPFParticle_pandoraCosmicKHit"
+            },
+            "trkidtruth_pandoraCosmicKHit": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkidtruth_pandoraCosmicKHit"
+            },
+            "trkke_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkke_pandoraCosmicKHit"
+            },
+            "trklen_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trklen_pandoraCosmicKHit"
+            },
+            "trkmcsbwderr_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkmcsbwderr_pandoraCosmicKHit"
+            },
+            "trkmcsbwdll_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdll_pandoraCosmicKHit"
+            },
+            "trkmcsbwdmom_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdmom_pandoraCosmicKHit"
+            },
+            "trkmcsfwderr_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkmcsfwderr_pandoraCosmicKHit"
+            },
+            "trkmcsfwdll_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdll_pandoraCosmicKHit"
+            },
+            "trkmcsfwdmom_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdmom_pandoraCosmicKHit"
+            },
+            "trkmom_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkmom_pandoraCosmicKHit"
+            },
+            "trkmommschi2_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkmommschi2_pandoraCosmicKHit"
+            },
+            "trkmommsllhd_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkmommsllhd_pandoraCosmicKHit"
+            },
+            "trkmomrange_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkmomrange_pandoraCosmicKHit"
+            },
+            "trkncosmictags_containmenttagger_pandoraCosmicKHit": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_containmenttagger_pandoraCosmicKHit"
+            },
+            "trkncosmictags_flashmatch_pandoraCosmicKHit": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_flashmatch_pandoraCosmicKHit"
+            },
+            "trkncosmictags_tagger_pandoraCosmicKHit": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_tagger_pandoraCosmicKHit"
+            },
+            "trkorig_pandoraCosmicKHit": {
+                "dtype": "<i4",
+                "source": "trkorig_pandoraCosmicKHit"
+            },
+            "trkorigin_pandoraCosmicKHit": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "trkorigin_pandoraCosmicKHit"
+            },
+            "trkpdgtruth_pandoraCosmicKHit": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpdgtruth_pandoraCosmicKHit"
+            },
+            "trkphi_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkphi_pandoraCosmicKHit"
+            },
+            "trkpidbestplane_pandoraCosmicKHit": {
+                "dtype": "<i2",
+                "source": "trkpidbestplane_pandoraCosmicKHit"
+            },
+            "trkpidchi_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchi_pandoraCosmicKHit"
+            },
+            "trkpidchika_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchika_pandoraCosmicKHit"
+            },
+            "trkpidchimu_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchimu_pandoraCosmicKHit"
+            },
+            "trkpidchipi_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipi_pandoraCosmicKHit"
+            },
+            "trkpidchipr_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipr_pandoraCosmicKHit"
+            },
+            "trkpidpdg_pandoraCosmicKHit": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpdg_pandoraCosmicKHit"
+            },
+            "trkpidpida_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpida_pandoraCosmicKHit"
+            },
+            "trkpitchc_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpitchc_pandoraCosmicKHit"
+            },
+            "trkpurity_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkpurity_pandoraCosmicKHit"
+            },
+            "trkpurtruth_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpurtruth_pandoraCosmicKHit"
+            },
+            "trkrange_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkrange_pandoraCosmicKHit"
+            },
+            "trkstartd_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkstartd_pandoraCosmicKHit"
+            },
+            "trkstartdcosx_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkstartdcosx_pandoraCosmicKHit"
+            },
+            "trkstartdcosy_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkstartdcosy_pandoraCosmicKHit"
+            },
+            "trkstartdcosz_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkstartdcosz_pandoraCosmicKHit"
+            },
+            "trkstartx_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkstartx_pandoraCosmicKHit"
+            },
+            "trkstarty_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkstarty_pandoraCosmicKHit"
+            },
+            "trkstartz_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkstartz_pandoraCosmicKHit"
+            },
+            "trksvtxid_pandoraCosmicKHit": {
+                "dtype": "<i2",
+                "source": "trksvtxid_pandoraCosmicKHit"
+            },
+            "trktheta_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trktheta_pandoraCosmicKHit"
+            },
+            "trkthetaxz_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkthetaxz_pandoraCosmicKHit"
+            },
+            "trkthetayz_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trkthetayz_pandoraCosmicKHit"
+            },
+            "trktrueT0_pandoraCosmicKHit": {
+                "dtype": "<f4",
+                "source": "trktrueT0_pandoraCosmicKHit"
+            }
+        },
+        "track_pandoraCosmicKalmanTrack": {
+            "ntrkhits_pandoraCosmicKalmanTrack": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "ntrkhits_pandoraCosmicKalmanTrack"
+            },
+            "trkACpierceT0_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkACpierceT0_pandoraCosmicKalmanTrack"
+            },
+            "trkId_pandoraCosmicKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkId_pandoraCosmicKalmanTrack"
+            },
+            "trkPFParticleID_pandoraCosmicKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkPFParticleID_pandoraCosmicKalmanTrack"
+            },
+            "trkcompleteness_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkcompleteness_pandoraCosmicKalmanTrack"
+            },
+            "trkcosmicscore_containmenttagger_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_containmenttagger_pandoraCosmicKalmanTrack"
+            },
+            "trkcosmicscore_flashmatch_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_flashmatch_pandoraCosmicKalmanTrack"
+            },
+            "trkcosmicscore_tagger_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_tagger_pandoraCosmicKalmanTrack"
+            },
+            "trkcosmictype_containmenttagger_pandoraCosmicKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_containmenttagger_pandoraCosmicKalmanTrack"
+            },
+            "trkcosmictype_flashmatch_pandoraCosmicKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_flashmatch_pandoraCosmicKalmanTrack"
+            },
+            "trkcosmictype_tagger_pandoraCosmicKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_tagger_pandoraCosmicKalmanTrack"
+            },
+            "trkefftruth_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkefftruth_pandoraCosmicKalmanTrack"
+            },
+            "trkendd_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkendd_pandoraCosmicKalmanTrack"
+            },
+            "trkenddcosx_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkenddcosx_pandoraCosmicKalmanTrack"
+            },
+            "trkenddcosy_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkenddcosy_pandoraCosmicKalmanTrack"
+            },
+            "trkenddcosz_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkenddcosz_pandoraCosmicKalmanTrack"
+            },
+            "trkendx_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkendx_pandoraCosmicKalmanTrack"
+            },
+            "trkendy_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkendy_pandoraCosmicKalmanTrack"
+            },
+            "trkendz_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkendz_pandoraCosmicKalmanTrack"
+            },
+            "trkevtxid_pandoraCosmicKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkevtxid_pandoraCosmicKalmanTrack"
+            },
+            "trkflashT0_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkflashT0_pandoraCosmicKalmanTrack"
+            },
+            "trkg4id_pandoraCosmicKalmanTrack": {
+                "dtype": "<i4",
+                "source": "trkg4id_pandoraCosmicKalmanTrack"
+            },
+            "trkhasPFParticle_pandoraCosmicKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkhasPFParticle_pandoraCosmicKalmanTrack"
+            },
+            "trkidtruth_pandoraCosmicKalmanTrack": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkidtruth_pandoraCosmicKalmanTrack"
+            },
+            "trkke_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkke_pandoraCosmicKalmanTrack"
+            },
+            "trklen_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trklen_pandoraCosmicKalmanTrack"
+            },
+            "trkmcsbwderr_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmcsbwderr_pandoraCosmicKalmanTrack"
+            },
+            "trkmcsbwdll_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdll_pandoraCosmicKalmanTrack"
+            },
+            "trkmcsbwdmom_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdmom_pandoraCosmicKalmanTrack"
+            },
+            "trkmcsfwderr_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmcsfwderr_pandoraCosmicKalmanTrack"
+            },
+            "trkmcsfwdll_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdll_pandoraCosmicKalmanTrack"
+            },
+            "trkmcsfwdmom_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdmom_pandoraCosmicKalmanTrack"
+            },
+            "trkmom_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmom_pandoraCosmicKalmanTrack"
+            },
+            "trkmommschi2_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmommschi2_pandoraCosmicKalmanTrack"
+            },
+            "trkmommsllhd_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmommsllhd_pandoraCosmicKalmanTrack"
+            },
+            "trkmomrange_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmomrange_pandoraCosmicKalmanTrack"
+            },
+            "trkncosmictags_containmenttagger_pandoraCosmicKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_containmenttagger_pandoraCosmicKalmanTrack"
+            },
+            "trkncosmictags_flashmatch_pandoraCosmicKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_flashmatch_pandoraCosmicKalmanTrack"
+            },
+            "trkncosmictags_tagger_pandoraCosmicKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_tagger_pandoraCosmicKalmanTrack"
+            },
+            "trkorig_pandoraCosmicKalmanTrack": {
+                "dtype": "<i4",
+                "source": "trkorig_pandoraCosmicKalmanTrack"
+            },
+            "trkorigin_pandoraCosmicKalmanTrack": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "trkorigin_pandoraCosmicKalmanTrack"
+            },
+            "trkpdgtruth_pandoraCosmicKalmanTrack": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpdgtruth_pandoraCosmicKalmanTrack"
+            },
+            "trkphi_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkphi_pandoraCosmicKalmanTrack"
+            },
+            "trkpidbestplane_pandoraCosmicKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkpidbestplane_pandoraCosmicKalmanTrack"
+            },
+            "trkpidchi_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchi_pandoraCosmicKalmanTrack"
+            },
+            "trkpidchika_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchika_pandoraCosmicKalmanTrack"
+            },
+            "trkpidchimu_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchimu_pandoraCosmicKalmanTrack"
+            },
+            "trkpidchipi_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipi_pandoraCosmicKalmanTrack"
+            },
+            "trkpidchipr_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipr_pandoraCosmicKalmanTrack"
+            },
+            "trkpidpdg_pandoraCosmicKalmanTrack": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpdg_pandoraCosmicKalmanTrack"
+            },
+            "trkpidpida_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpida_pandoraCosmicKalmanTrack"
+            },
+            "trkpitchc_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpitchc_pandoraCosmicKalmanTrack"
+            },
+            "trkpurity_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkpurity_pandoraCosmicKalmanTrack"
+            },
+            "trkpurtruth_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpurtruth_pandoraCosmicKalmanTrack"
+            },
+            "trkrange_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkrange_pandoraCosmicKalmanTrack"
+            },
+            "trkstartd_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkstartd_pandoraCosmicKalmanTrack"
+            },
+            "trkstartdcosx_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkstartdcosx_pandoraCosmicKalmanTrack"
+            },
+            "trkstartdcosy_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkstartdcosy_pandoraCosmicKalmanTrack"
+            },
+            "trkstartdcosz_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkstartdcosz_pandoraCosmicKalmanTrack"
+            },
+            "trkstartx_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkstartx_pandoraCosmicKalmanTrack"
+            },
+            "trkstarty_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkstarty_pandoraCosmicKalmanTrack"
+            },
+            "trkstartz_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkstartz_pandoraCosmicKalmanTrack"
+            },
+            "trksvtxid_pandoraCosmicKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trksvtxid_pandoraCosmicKalmanTrack"
+            },
+            "trktheta_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trktheta_pandoraCosmicKalmanTrack"
+            },
+            "trkthetaxz_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkthetaxz_pandoraCosmicKalmanTrack"
+            },
+            "trkthetayz_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkthetayz_pandoraCosmicKalmanTrack"
+            },
+            "trktrueT0_pandoraCosmicKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trktrueT0_pandoraCosmicKalmanTrack"
+            }
+        },
+        "track_pandoraNu": {
+            "ntrkhits_pandoraNu": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "ntrkhits_pandoraNu"
+            },
+            "trkACpierceT0_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkACpierceT0_pandoraNu"
+            },
+            "trkId_pandoraNu": {
+                "dtype": "<i2",
+                "source": "trkId_pandoraNu"
+            },
+            "trkPFParticleID_pandoraNu": {
+                "dtype": "<i2",
+                "source": "trkPFParticleID_pandoraNu"
+            },
+            "trkcompleteness_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkcompleteness_pandoraNu"
+            },
+            "trkcosmicscore_containmenttagger_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_containmenttagger_pandoraNu"
+            },
+            "trkcosmicscore_flashmatch_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_flashmatch_pandoraNu"
+            },
+            "trkcosmicscore_tagger_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_tagger_pandoraNu"
+            },
+            "trkcosmictype_containmenttagger_pandoraNu": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_containmenttagger_pandoraNu"
+            },
+            "trkcosmictype_flashmatch_pandoraNu": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_flashmatch_pandoraNu"
+            },
+            "trkcosmictype_tagger_pandoraNu": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_tagger_pandoraNu"
+            },
+            "trkefftruth_pandoraNu": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkefftruth_pandoraNu"
+            },
+            "trkendd_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkendd_pandoraNu"
+            },
+            "trkenddcosx_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkenddcosx_pandoraNu"
+            },
+            "trkenddcosy_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkenddcosy_pandoraNu"
+            },
+            "trkenddcosz_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkenddcosz_pandoraNu"
+            },
+            "trkendx_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkendx_pandoraNu"
+            },
+            "trkendy_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkendy_pandoraNu"
+            },
+            "trkendz_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkendz_pandoraNu"
+            },
+            "trkevtxid_pandoraNu": {
+                "dtype": "<i2",
+                "source": "trkevtxid_pandoraNu"
+            },
+            "trkflashT0_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkflashT0_pandoraNu"
+            },
+            "trkg4id_pandoraNu": {
+                "dtype": "<i4",
+                "source": "trkg4id_pandoraNu"
+            },
+            "trkhasPFParticle_pandoraNu": {
+                "dtype": "<i2",
+                "source": "trkhasPFParticle_pandoraNu"
+            },
+            "trkidtruth_pandoraNu": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkidtruth_pandoraNu"
+            },
+            "trkke_pandoraNu": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkke_pandoraNu"
+            },
+            "trklen_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trklen_pandoraNu"
+            },
+            "trkmcsbwderr_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkmcsbwderr_pandoraNu"
+            },
+            "trkmcsbwdll_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdll_pandoraNu"
+            },
+            "trkmcsbwdmom_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdmom_pandoraNu"
+            },
+            "trkmcsfwderr_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkmcsfwderr_pandoraNu"
+            },
+            "trkmcsfwdll_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdll_pandoraNu"
+            },
+            "trkmcsfwdmom_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdmom_pandoraNu"
+            },
+            "trkmom_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkmom_pandoraNu"
+            },
+            "trkmommschi2_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkmommschi2_pandoraNu"
+            },
+            "trkmommsllhd_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkmommsllhd_pandoraNu"
+            },
+            "trkmomrange_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkmomrange_pandoraNu"
+            },
+            "trkncosmictags_containmenttagger_pandoraNu": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_containmenttagger_pandoraNu"
+            },
+            "trkncosmictags_flashmatch_pandoraNu": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_flashmatch_pandoraNu"
+            },
+            "trkncosmictags_tagger_pandoraNu": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_tagger_pandoraNu"
+            },
+            "trkorig_pandoraNu": {
+                "dtype": "<i4",
+                "source": "trkorig_pandoraNu"
+            },
+            "trkorigin_pandoraNu": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "trkorigin_pandoraNu"
+            },
+            "trkpdgtruth_pandoraNu": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpdgtruth_pandoraNu"
+            },
+            "trkphi_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkphi_pandoraNu"
+            },
+            "trkpidbestplane_pandoraNu": {
+                "dtype": "<i2",
+                "source": "trkpidbestplane_pandoraNu"
+            },
+            "trkpidchi_pandoraNu": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchi_pandoraNu"
+            },
+            "trkpidchika_pandoraNu": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchika_pandoraNu"
+            },
+            "trkpidchimu_pandoraNu": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchimu_pandoraNu"
+            },
+            "trkpidchipi_pandoraNu": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipi_pandoraNu"
+            },
+            "trkpidchipr_pandoraNu": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipr_pandoraNu"
+            },
+            "trkpidpdg_pandoraNu": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpdg_pandoraNu"
+            },
+            "trkpidpida_pandoraNu": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpida_pandoraNu"
+            },
+            "trkpitchc_pandoraNu": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpitchc_pandoraNu"
+            },
+            "trkpurity_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkpurity_pandoraNu"
+            },
+            "trkpurtruth_pandoraNu": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpurtruth_pandoraNu"
+            },
+            "trkrange_pandoraNu": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkrange_pandoraNu"
+            },
+            "trkstartd_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkstartd_pandoraNu"
+            },
+            "trkstartdcosx_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkstartdcosx_pandoraNu"
+            },
+            "trkstartdcosy_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkstartdcosy_pandoraNu"
+            },
+            "trkstartdcosz_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkstartdcosz_pandoraNu"
+            },
+            "trkstartx_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkstartx_pandoraNu"
+            },
+            "trkstarty_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkstarty_pandoraNu"
+            },
+            "trkstartz_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkstartz_pandoraNu"
+            },
+            "trksvtxid_pandoraNu": {
+                "dtype": "<i2",
+                "source": "trksvtxid_pandoraNu"
+            },
+            "trktheta_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trktheta_pandoraNu"
+            },
+            "trkthetaxz_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkthetaxz_pandoraNu"
+            },
+            "trkthetayz_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trkthetayz_pandoraNu"
+            },
+            "trktrueT0_pandoraNu": {
+                "dtype": "<f4",
+                "source": "trktrueT0_pandoraNu"
+            }
+        },
+        "track_pandoraNuKHit": {
+            "ntrkhits_pandoraNuKHit": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "ntrkhits_pandoraNuKHit"
+            },
+            "trkACpierceT0_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkACpierceT0_pandoraNuKHit"
+            },
+            "trkId_pandoraNuKHit": {
+                "dtype": "<i2",
+                "source": "trkId_pandoraNuKHit"
+            },
+            "trkPFParticleID_pandoraNuKHit": {
+                "dtype": "<i2",
+                "source": "trkPFParticleID_pandoraNuKHit"
+            },
+            "trkcompleteness_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkcompleteness_pandoraNuKHit"
+            },
+            "trkcosmicscore_containmenttagger_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_containmenttagger_pandoraNuKHit"
+            },
+            "trkcosmicscore_flashmatch_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_flashmatch_pandoraNuKHit"
+            },
+            "trkcosmicscore_tagger_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_tagger_pandoraNuKHit"
+            },
+            "trkcosmictype_containmenttagger_pandoraNuKHit": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_containmenttagger_pandoraNuKHit"
+            },
+            "trkcosmictype_flashmatch_pandoraNuKHit": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_flashmatch_pandoraNuKHit"
+            },
+            "trkcosmictype_tagger_pandoraNuKHit": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_tagger_pandoraNuKHit"
+            },
+            "trkefftruth_pandoraNuKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkefftruth_pandoraNuKHit"
+            },
+            "trkendd_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkendd_pandoraNuKHit"
+            },
+            "trkenddcosx_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkenddcosx_pandoraNuKHit"
+            },
+            "trkenddcosy_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkenddcosy_pandoraNuKHit"
+            },
+            "trkenddcosz_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkenddcosz_pandoraNuKHit"
+            },
+            "trkendx_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkendx_pandoraNuKHit"
+            },
+            "trkendy_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkendy_pandoraNuKHit"
+            },
+            "trkendz_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkendz_pandoraNuKHit"
+            },
+            "trkevtxid_pandoraNuKHit": {
+                "dtype": "<i2",
+                "source": "trkevtxid_pandoraNuKHit"
+            },
+            "trkflashT0_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkflashT0_pandoraNuKHit"
+            },
+            "trkg4id_pandoraNuKHit": {
+                "dtype": "<i4",
+                "source": "trkg4id_pandoraNuKHit"
+            },
+            "trkhasPFParticle_pandoraNuKHit": {
+                "dtype": "<i2",
+                "source": "trkhasPFParticle_pandoraNuKHit"
+            },
+            "trkidtruth_pandoraNuKHit": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkidtruth_pandoraNuKHit"
+            },
+            "trkke_pandoraNuKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkke_pandoraNuKHit"
+            },
+            "trklen_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trklen_pandoraNuKHit"
+            },
+            "trkmcsbwderr_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkmcsbwderr_pandoraNuKHit"
+            },
+            "trkmcsbwdll_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdll_pandoraNuKHit"
+            },
+            "trkmcsbwdmom_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdmom_pandoraNuKHit"
+            },
+            "trkmcsfwderr_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkmcsfwderr_pandoraNuKHit"
+            },
+            "trkmcsfwdll_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdll_pandoraNuKHit"
+            },
+            "trkmcsfwdmom_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdmom_pandoraNuKHit"
+            },
+            "trkmom_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkmom_pandoraNuKHit"
+            },
+            "trkmommschi2_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkmommschi2_pandoraNuKHit"
+            },
+            "trkmommsllhd_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkmommsllhd_pandoraNuKHit"
+            },
+            "trkmomrange_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkmomrange_pandoraNuKHit"
+            },
+            "trkncosmictags_containmenttagger_pandoraNuKHit": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_containmenttagger_pandoraNuKHit"
+            },
+            "trkncosmictags_flashmatch_pandoraNuKHit": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_flashmatch_pandoraNuKHit"
+            },
+            "trkncosmictags_tagger_pandoraNuKHit": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_tagger_pandoraNuKHit"
+            },
+            "trkorig_pandoraNuKHit": {
+                "dtype": "<i4",
+                "source": "trkorig_pandoraNuKHit"
+            },
+            "trkorigin_pandoraNuKHit": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "trkorigin_pandoraNuKHit"
+            },
+            "trkpdgtruth_pandoraNuKHit": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpdgtruth_pandoraNuKHit"
+            },
+            "trkphi_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkphi_pandoraNuKHit"
+            },
+            "trkpidbestplane_pandoraNuKHit": {
+                "dtype": "<i2",
+                "source": "trkpidbestplane_pandoraNuKHit"
+            },
+            "trkpidchi_pandoraNuKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchi_pandoraNuKHit"
+            },
+            "trkpidchika_pandoraNuKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchika_pandoraNuKHit"
+            },
+            "trkpidchimu_pandoraNuKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchimu_pandoraNuKHit"
+            },
+            "trkpidchipi_pandoraNuKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipi_pandoraNuKHit"
+            },
+            "trkpidchipr_pandoraNuKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipr_pandoraNuKHit"
+            },
+            "trkpidpdg_pandoraNuKHit": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpdg_pandoraNuKHit"
+            },
+            "trkpidpida_pandoraNuKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpida_pandoraNuKHit"
+            },
+            "trkpitchc_pandoraNuKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpitchc_pandoraNuKHit"
+            },
+            "trkpurity_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkpurity_pandoraNuKHit"
+            },
+            "trkpurtruth_pandoraNuKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpurtruth_pandoraNuKHit"
+            },
+            "trkrange_pandoraNuKHit": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkrange_pandoraNuKHit"
+            },
+            "trkstartd_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkstartd_pandoraNuKHit"
+            },
+            "trkstartdcosx_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkstartdcosx_pandoraNuKHit"
+            },
+            "trkstartdcosy_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkstartdcosy_pandoraNuKHit"
+            },
+            "trkstartdcosz_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkstartdcosz_pandoraNuKHit"
+            },
+            "trkstartx_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkstartx_pandoraNuKHit"
+            },
+            "trkstarty_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkstarty_pandoraNuKHit"
+            },
+            "trkstartz_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkstartz_pandoraNuKHit"
+            },
+            "trksvtxid_pandoraNuKHit": {
+                "dtype": "<i2",
+                "source": "trksvtxid_pandoraNuKHit"
+            },
+            "trktheta_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trktheta_pandoraNuKHit"
+            },
+            "trkthetaxz_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkthetaxz_pandoraNuKHit"
+            },
+            "trkthetayz_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trkthetayz_pandoraNuKHit"
+            },
+            "trktrueT0_pandoraNuKHit": {
+                "dtype": "<f4",
+                "source": "trktrueT0_pandoraNuKHit"
+            }
+        },
+        "track_pandoraNuKalmanShower": {
+            "ntrkhits_pandoraNuKalmanShower": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "ntrkhits_pandoraNuKalmanShower"
+            },
+            "trkACpierceT0_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkACpierceT0_pandoraNuKalmanShower"
+            },
+            "trkId_pandoraNuKalmanShower": {
+                "dtype": "<i2",
+                "source": "trkId_pandoraNuKalmanShower"
+            },
+            "trkPFParticleID_pandoraNuKalmanShower": {
+                "dtype": "<i2",
+                "source": "trkPFParticleID_pandoraNuKalmanShower"
+            },
+            "trkcompleteness_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkcompleteness_pandoraNuKalmanShower"
+            },
+            "trkcosmicscore_containmenttagger_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_containmenttagger_pandoraNuKalmanShower"
+            },
+            "trkcosmicscore_flashmatch_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_flashmatch_pandoraNuKalmanShower"
+            },
+            "trkcosmicscore_tagger_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_tagger_pandoraNuKalmanShower"
+            },
+            "trkcosmictype_containmenttagger_pandoraNuKalmanShower": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_containmenttagger_pandoraNuKalmanShower"
+            },
+            "trkcosmictype_flashmatch_pandoraNuKalmanShower": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_flashmatch_pandoraNuKalmanShower"
+            },
+            "trkcosmictype_tagger_pandoraNuKalmanShower": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_tagger_pandoraNuKalmanShower"
+            },
+            "trkefftruth_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkefftruth_pandoraNuKalmanShower"
+            },
+            "trkendd_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkendd_pandoraNuKalmanShower"
+            },
+            "trkenddcosx_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkenddcosx_pandoraNuKalmanShower"
+            },
+            "trkenddcosy_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkenddcosy_pandoraNuKalmanShower"
+            },
+            "trkenddcosz_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkenddcosz_pandoraNuKalmanShower"
+            },
+            "trkendx_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkendx_pandoraNuKalmanShower"
+            },
+            "trkendy_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkendy_pandoraNuKalmanShower"
+            },
+            "trkendz_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkendz_pandoraNuKalmanShower"
+            },
+            "trkevtxid_pandoraNuKalmanShower": {
+                "dtype": "<i2",
+                "source": "trkevtxid_pandoraNuKalmanShower"
+            },
+            "trkflashT0_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkflashT0_pandoraNuKalmanShower"
+            },
+            "trkg4id_pandoraNuKalmanShower": {
+                "dtype": "<i4",
+                "source": "trkg4id_pandoraNuKalmanShower"
+            },
+            "trkhasPFParticle_pandoraNuKalmanShower": {
+                "dtype": "<i2",
+                "source": "trkhasPFParticle_pandoraNuKalmanShower"
+            },
+            "trkidtruth_pandoraNuKalmanShower": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkidtruth_pandoraNuKalmanShower"
+            },
+            "trkke_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkke_pandoraNuKalmanShower"
+            },
+            "trklen_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trklen_pandoraNuKalmanShower"
+            },
+            "trkmcsbwderr_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkmcsbwderr_pandoraNuKalmanShower"
+            },
+            "trkmcsbwdll_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdll_pandoraNuKalmanShower"
+            },
+            "trkmcsbwdmom_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdmom_pandoraNuKalmanShower"
+            },
+            "trkmcsfwderr_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkmcsfwderr_pandoraNuKalmanShower"
+            },
+            "trkmcsfwdll_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdll_pandoraNuKalmanShower"
+            },
+            "trkmcsfwdmom_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdmom_pandoraNuKalmanShower"
+            },
+            "trkmom_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkmom_pandoraNuKalmanShower"
+            },
+            "trkmommschi2_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkmommschi2_pandoraNuKalmanShower"
+            },
+            "trkmommsllhd_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkmommsllhd_pandoraNuKalmanShower"
+            },
+            "trkmomrange_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkmomrange_pandoraNuKalmanShower"
+            },
+            "trkncosmictags_containmenttagger_pandoraNuKalmanShower": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_containmenttagger_pandoraNuKalmanShower"
+            },
+            "trkncosmictags_flashmatch_pandoraNuKalmanShower": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_flashmatch_pandoraNuKalmanShower"
+            },
+            "trkncosmictags_tagger_pandoraNuKalmanShower": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_tagger_pandoraNuKalmanShower"
+            },
+            "trkorig_pandoraNuKalmanShower": {
+                "dtype": "<i4",
+                "source": "trkorig_pandoraNuKalmanShower"
+            },
+            "trkorigin_pandoraNuKalmanShower": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "trkorigin_pandoraNuKalmanShower"
+            },
+            "trkpdgtruth_pandoraNuKalmanShower": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpdgtruth_pandoraNuKalmanShower"
+            },
+            "trkphi_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkphi_pandoraNuKalmanShower"
+            },
+            "trkpidbestplane_pandoraNuKalmanShower": {
+                "dtype": "<i2",
+                "source": "trkpidbestplane_pandoraNuKalmanShower"
+            },
+            "trkpidchi_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchi_pandoraNuKalmanShower"
+            },
+            "trkpidchika_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchika_pandoraNuKalmanShower"
+            },
+            "trkpidchimu_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchimu_pandoraNuKalmanShower"
+            },
+            "trkpidchipi_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipi_pandoraNuKalmanShower"
+            },
+            "trkpidchipr_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipr_pandoraNuKalmanShower"
+            },
+            "trkpidpdg_pandoraNuKalmanShower": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpdg_pandoraNuKalmanShower"
+            },
+            "trkpidpida_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpida_pandoraNuKalmanShower"
+            },
+            "trkpitchc_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpitchc_pandoraNuKalmanShower"
+            },
+            "trkpurity_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkpurity_pandoraNuKalmanShower"
+            },
+            "trkpurtruth_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpurtruth_pandoraNuKalmanShower"
+            },
+            "trkrange_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkrange_pandoraNuKalmanShower"
+            },
+            "trkstartd_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkstartd_pandoraNuKalmanShower"
+            },
+            "trkstartdcosx_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkstartdcosx_pandoraNuKalmanShower"
+            },
+            "trkstartdcosy_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkstartdcosy_pandoraNuKalmanShower"
+            },
+            "trkstartdcosz_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkstartdcosz_pandoraNuKalmanShower"
+            },
+            "trkstartx_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkstartx_pandoraNuKalmanShower"
+            },
+            "trkstarty_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkstarty_pandoraNuKalmanShower"
+            },
+            "trkstartz_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkstartz_pandoraNuKalmanShower"
+            },
+            "trksvtxid_pandoraNuKalmanShower": {
+                "dtype": "<i2",
+                "source": "trksvtxid_pandoraNuKalmanShower"
+            },
+            "trktheta_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trktheta_pandoraNuKalmanShower"
+            },
+            "trkthetaxz_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkthetaxz_pandoraNuKalmanShower"
+            },
+            "trkthetayz_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trkthetayz_pandoraNuKalmanShower"
+            },
+            "trktrueT0_pandoraNuKalmanShower": {
+                "dtype": "<f4",
+                "source": "trktrueT0_pandoraNuKalmanShower"
+            }
+        },
+        "track_pandoraNuKalmanTrack": {
+            "ntrkhits_pandoraNuKalmanTrack": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "ntrkhits_pandoraNuKalmanTrack"
+            },
+            "trkACpierceT0_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkACpierceT0_pandoraNuKalmanTrack"
+            },
+            "trkId_pandoraNuKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkId_pandoraNuKalmanTrack"
+            },
+            "trkPFParticleID_pandoraNuKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkPFParticleID_pandoraNuKalmanTrack"
+            },
+            "trkcompleteness_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkcompleteness_pandoraNuKalmanTrack"
+            },
+            "trkcosmicscore_containmenttagger_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_containmenttagger_pandoraNuKalmanTrack"
+            },
+            "trkcosmicscore_flashmatch_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_flashmatch_pandoraNuKalmanTrack"
+            },
+            "trkcosmicscore_tagger_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_tagger_pandoraNuKalmanTrack"
+            },
+            "trkcosmictype_containmenttagger_pandoraNuKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_containmenttagger_pandoraNuKalmanTrack"
+            },
+            "trkcosmictype_flashmatch_pandoraNuKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_flashmatch_pandoraNuKalmanTrack"
+            },
+            "trkcosmictype_tagger_pandoraNuKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_tagger_pandoraNuKalmanTrack"
+            },
+            "trkefftruth_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkefftruth_pandoraNuKalmanTrack"
+            },
+            "trkendd_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkendd_pandoraNuKalmanTrack"
+            },
+            "trkenddcosx_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkenddcosx_pandoraNuKalmanTrack"
+            },
+            "trkenddcosy_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkenddcosy_pandoraNuKalmanTrack"
+            },
+            "trkenddcosz_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkenddcosz_pandoraNuKalmanTrack"
+            },
+            "trkendx_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkendx_pandoraNuKalmanTrack"
+            },
+            "trkendy_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkendy_pandoraNuKalmanTrack"
+            },
+            "trkendz_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkendz_pandoraNuKalmanTrack"
+            },
+            "trkevtxid_pandoraNuKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkevtxid_pandoraNuKalmanTrack"
+            },
+            "trkflashT0_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkflashT0_pandoraNuKalmanTrack"
+            },
+            "trkg4id_pandoraNuKalmanTrack": {
+                "dtype": "<i4",
+                "source": "trkg4id_pandoraNuKalmanTrack"
+            },
+            "trkhasPFParticle_pandoraNuKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkhasPFParticle_pandoraNuKalmanTrack"
+            },
+            "trkidtruth_pandoraNuKalmanTrack": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkidtruth_pandoraNuKalmanTrack"
+            },
+            "trkke_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkke_pandoraNuKalmanTrack"
+            },
+            "trklen_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trklen_pandoraNuKalmanTrack"
+            },
+            "trkmcsbwderr_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmcsbwderr_pandoraNuKalmanTrack"
+            },
+            "trkmcsbwdll_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdll_pandoraNuKalmanTrack"
+            },
+            "trkmcsbwdmom_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdmom_pandoraNuKalmanTrack"
+            },
+            "trkmcsfwderr_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmcsfwderr_pandoraNuKalmanTrack"
+            },
+            "trkmcsfwdll_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdll_pandoraNuKalmanTrack"
+            },
+            "trkmcsfwdmom_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdmom_pandoraNuKalmanTrack"
+            },
+            "trkmom_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmom_pandoraNuKalmanTrack"
+            },
+            "trkmommschi2_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmommschi2_pandoraNuKalmanTrack"
+            },
+            "trkmommsllhd_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmommsllhd_pandoraNuKalmanTrack"
+            },
+            "trkmomrange_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkmomrange_pandoraNuKalmanTrack"
+            },
+            "trkncosmictags_containmenttagger_pandoraNuKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_containmenttagger_pandoraNuKalmanTrack"
+            },
+            "trkncosmictags_flashmatch_pandoraNuKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_flashmatch_pandoraNuKalmanTrack"
+            },
+            "trkncosmictags_tagger_pandoraNuKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_tagger_pandoraNuKalmanTrack"
+            },
+            "trkorig_pandoraNuKalmanTrack": {
+                "dtype": "<i4",
+                "source": "trkorig_pandoraNuKalmanTrack"
+            },
+            "trkorigin_pandoraNuKalmanTrack": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "trkorigin_pandoraNuKalmanTrack"
+            },
+            "trkpdgtruth_pandoraNuKalmanTrack": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpdgtruth_pandoraNuKalmanTrack"
+            },
+            "trkphi_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkphi_pandoraNuKalmanTrack"
+            },
+            "trkpidbestplane_pandoraNuKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trkpidbestplane_pandoraNuKalmanTrack"
+            },
+            "trkpidchi_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchi_pandoraNuKalmanTrack"
+            },
+            "trkpidchika_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchika_pandoraNuKalmanTrack"
+            },
+            "trkpidchimu_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchimu_pandoraNuKalmanTrack"
+            },
+            "trkpidchipi_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipi_pandoraNuKalmanTrack"
+            },
+            "trkpidchipr_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipr_pandoraNuKalmanTrack"
+            },
+            "trkpidpdg_pandoraNuKalmanTrack": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpdg_pandoraNuKalmanTrack"
+            },
+            "trkpidpida_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpida_pandoraNuKalmanTrack"
+            },
+            "trkpitchc_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpitchc_pandoraNuKalmanTrack"
+            },
+            "trkpurity_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkpurity_pandoraNuKalmanTrack"
+            },
+            "trkpurtruth_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpurtruth_pandoraNuKalmanTrack"
+            },
+            "trkrange_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkrange_pandoraNuKalmanTrack"
+            },
+            "trkstartd_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkstartd_pandoraNuKalmanTrack"
+            },
+            "trkstartdcosx_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkstartdcosx_pandoraNuKalmanTrack"
+            },
+            "trkstartdcosy_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkstartdcosy_pandoraNuKalmanTrack"
+            },
+            "trkstartdcosz_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkstartdcosz_pandoraNuKalmanTrack"
+            },
+            "trkstartx_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkstartx_pandoraNuKalmanTrack"
+            },
+            "trkstarty_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkstarty_pandoraNuKalmanTrack"
+            },
+            "trkstartz_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkstartz_pandoraNuKalmanTrack"
+            },
+            "trksvtxid_pandoraNuKalmanTrack": {
+                "dtype": "<i2",
+                "source": "trksvtxid_pandoraNuKalmanTrack"
+            },
+            "trktheta_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trktheta_pandoraNuKalmanTrack"
+            },
+            "trkthetaxz_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkthetaxz_pandoraNuKalmanTrack"
+            },
+            "trkthetayz_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trkthetayz_pandoraNuKalmanTrack"
+            },
+            "trktrueT0_pandoraNuKalmanTrack": {
+                "dtype": "<f4",
+                "source": "trktrueT0_pandoraNuKalmanTrack"
+            }
+        },
+        "track_pandoraNuPMA": {
+            "ntrkhits_pandoraNuPMA": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "ntrkhits_pandoraNuPMA"
+            },
+            "trkACpierceT0_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkACpierceT0_pandoraNuPMA"
+            },
+            "trkId_pandoraNuPMA": {
+                "dtype": "<i2",
+                "source": "trkId_pandoraNuPMA"
+            },
+            "trkPFParticleID_pandoraNuPMA": {
+                "dtype": "<i2",
+                "source": "trkPFParticleID_pandoraNuPMA"
+            },
+            "trkcompleteness_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkcompleteness_pandoraNuPMA"
+            },
+            "trkcosmicscore_containmenttagger_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_containmenttagger_pandoraNuPMA"
+            },
+            "trkcosmicscore_flashmatch_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_flashmatch_pandoraNuPMA"
+            },
+            "trkcosmicscore_tagger_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_tagger_pandoraNuPMA"
+            },
+            "trkcosmictype_containmenttagger_pandoraNuPMA": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_containmenttagger_pandoraNuPMA"
+            },
+            "trkcosmictype_flashmatch_pandoraNuPMA": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_flashmatch_pandoraNuPMA"
+            },
+            "trkcosmictype_tagger_pandoraNuPMA": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_tagger_pandoraNuPMA"
+            },
+            "trkefftruth_pandoraNuPMA": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkefftruth_pandoraNuPMA"
+            },
+            "trkendd_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkendd_pandoraNuPMA"
+            },
+            "trkenddcosx_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkenddcosx_pandoraNuPMA"
+            },
+            "trkenddcosy_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkenddcosy_pandoraNuPMA"
+            },
+            "trkenddcosz_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkenddcosz_pandoraNuPMA"
+            },
+            "trkendx_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkendx_pandoraNuPMA"
+            },
+            "trkendy_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkendy_pandoraNuPMA"
+            },
+            "trkendz_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkendz_pandoraNuPMA"
+            },
+            "trkevtxid_pandoraNuPMA": {
+                "dtype": "<i2",
+                "source": "trkevtxid_pandoraNuPMA"
+            },
+            "trkflashT0_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkflashT0_pandoraNuPMA"
+            },
+            "trkg4id_pandoraNuPMA": {
+                "dtype": "<i4",
+                "source": "trkg4id_pandoraNuPMA"
+            },
+            "trkhasPFParticle_pandoraNuPMA": {
+                "dtype": "<i2",
+                "source": "trkhasPFParticle_pandoraNuPMA"
+            },
+            "trkidtruth_pandoraNuPMA": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkidtruth_pandoraNuPMA"
+            },
+            "trkke_pandoraNuPMA": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkke_pandoraNuPMA"
+            },
+            "trklen_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trklen_pandoraNuPMA"
+            },
+            "trkmcsbwderr_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkmcsbwderr_pandoraNuPMA"
+            },
+            "trkmcsbwdll_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdll_pandoraNuPMA"
+            },
+            "trkmcsbwdmom_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdmom_pandoraNuPMA"
+            },
+            "trkmcsfwderr_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkmcsfwderr_pandoraNuPMA"
+            },
+            "trkmcsfwdll_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdll_pandoraNuPMA"
+            },
+            "trkmcsfwdmom_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdmom_pandoraNuPMA"
+            },
+            "trkmom_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkmom_pandoraNuPMA"
+            },
+            "trkmommschi2_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkmommschi2_pandoraNuPMA"
+            },
+            "trkmommsllhd_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkmommsllhd_pandoraNuPMA"
+            },
+            "trkmomrange_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkmomrange_pandoraNuPMA"
+            },
+            "trkncosmictags_containmenttagger_pandoraNuPMA": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_containmenttagger_pandoraNuPMA"
+            },
+            "trkncosmictags_flashmatch_pandoraNuPMA": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_flashmatch_pandoraNuPMA"
+            },
+            "trkncosmictags_tagger_pandoraNuPMA": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_tagger_pandoraNuPMA"
+            },
+            "trkorig_pandoraNuPMA": {
+                "dtype": "<i4",
+                "source": "trkorig_pandoraNuPMA"
+            },
+            "trkorigin_pandoraNuPMA": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "trkorigin_pandoraNuPMA"
+            },
+            "trkpdgtruth_pandoraNuPMA": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpdgtruth_pandoraNuPMA"
+            },
+            "trkphi_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkphi_pandoraNuPMA"
+            },
+            "trkpidbestplane_pandoraNuPMA": {
+                "dtype": "<i2",
+                "source": "trkpidbestplane_pandoraNuPMA"
+            },
+            "trkpidchi_pandoraNuPMA": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchi_pandoraNuPMA"
+            },
+            "trkpidchika_pandoraNuPMA": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchika_pandoraNuPMA"
+            },
+            "trkpidchimu_pandoraNuPMA": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchimu_pandoraNuPMA"
+            },
+            "trkpidchipi_pandoraNuPMA": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipi_pandoraNuPMA"
+            },
+            "trkpidchipr_pandoraNuPMA": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipr_pandoraNuPMA"
+            },
+            "trkpidpdg_pandoraNuPMA": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpdg_pandoraNuPMA"
+            },
+            "trkpidpida_pandoraNuPMA": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpida_pandoraNuPMA"
+            },
+            "trkpitchc_pandoraNuPMA": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpitchc_pandoraNuPMA"
+            },
+            "trkpurity_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkpurity_pandoraNuPMA"
+            },
+            "trkpurtruth_pandoraNuPMA": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpurtruth_pandoraNuPMA"
+            },
+            "trkrange_pandoraNuPMA": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkrange_pandoraNuPMA"
+            },
+            "trkstartd_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkstartd_pandoraNuPMA"
+            },
+            "trkstartdcosx_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkstartdcosx_pandoraNuPMA"
+            },
+            "trkstartdcosy_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkstartdcosy_pandoraNuPMA"
+            },
+            "trkstartdcosz_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkstartdcosz_pandoraNuPMA"
+            },
+            "trkstartx_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkstartx_pandoraNuPMA"
+            },
+            "trkstarty_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkstarty_pandoraNuPMA"
+            },
+            "trkstartz_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkstartz_pandoraNuPMA"
+            },
+            "trksvtxid_pandoraNuPMA": {
+                "dtype": "<i2",
+                "source": "trksvtxid_pandoraNuPMA"
+            },
+            "trktheta_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trktheta_pandoraNuPMA"
+            },
+            "trkthetaxz_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkthetaxz_pandoraNuPMA"
+            },
+            "trkthetayz_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trkthetayz_pandoraNuPMA"
+            },
+            "trktrueT0_pandoraNuPMA": {
+                "dtype": "<f4",
+                "source": "trktrueT0_pandoraNuPMA"
+            }
+        },
+        "track_pmtrack": {
+            "ntrkhits_pmtrack": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "ntrkhits_pmtrack"
+            },
+            "trkACpierceT0_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkACpierceT0_pmtrack"
+            },
+            "trkId_pmtrack": {
+                "dtype": "<i2",
+                "source": "trkId_pmtrack"
+            },
+            "trkPFParticleID_pmtrack": {
+                "dtype": "<i2",
+                "source": "trkPFParticleID_pmtrack"
+            },
+            "trkcompleteness_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkcompleteness_pmtrack"
+            },
+            "trkcosmicscore_containmenttagger_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_containmenttagger_pmtrack"
+            },
+            "trkcosmicscore_flashmatch_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_flashmatch_pmtrack"
+            },
+            "trkcosmicscore_tagger_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkcosmicscore_tagger_pmtrack"
+            },
+            "trkcosmictype_containmenttagger_pmtrack": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_containmenttagger_pmtrack"
+            },
+            "trkcosmictype_flashmatch_pmtrack": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_flashmatch_pmtrack"
+            },
+            "trkcosmictype_tagger_pmtrack": {
+                "dtype": "<i2",
+                "source": "trkcosmictype_tagger_pmtrack"
+            },
+            "trkefftruth_pmtrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkefftruth_pmtrack"
+            },
+            "trkendd_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkendd_pmtrack"
+            },
+            "trkenddcosx_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkenddcosx_pmtrack"
+            },
+            "trkenddcosy_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkenddcosy_pmtrack"
+            },
+            "trkenddcosz_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkenddcosz_pmtrack"
+            },
+            "trkendx_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkendx_pmtrack"
+            },
+            "trkendy_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkendy_pmtrack"
+            },
+            "trkendz_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkendz_pmtrack"
+            },
+            "trkevtxid_pmtrack": {
+                "dtype": "<i2",
+                "source": "trkevtxid_pmtrack"
+            },
+            "trkflashT0_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkflashT0_pmtrack"
+            },
+            "trkg4id_pmtrack": {
+                "dtype": "<i4",
+                "source": "trkg4id_pmtrack"
+            },
+            "trkhasPFParticle_pmtrack": {
+                "dtype": "<i2",
+                "source": "trkhasPFParticle_pmtrack"
+            },
+            "trkidtruth_pmtrack": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkidtruth_pmtrack"
+            },
+            "trkke_pmtrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkke_pmtrack"
+            },
+            "trklen_pmtrack": {
+                "dtype": "<f4",
+                "source": "trklen_pmtrack"
+            },
+            "trkmcsbwderr_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkmcsbwderr_pmtrack"
+            },
+            "trkmcsbwdll_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdll_pmtrack"
+            },
+            "trkmcsbwdmom_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkmcsbwdmom_pmtrack"
+            },
+            "trkmcsfwderr_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkmcsfwderr_pmtrack"
+            },
+            "trkmcsfwdll_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdll_pmtrack"
+            },
+            "trkmcsfwdmom_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkmcsfwdmom_pmtrack"
+            },
+            "trkmom_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkmom_pmtrack"
+            },
+            "trkmommschi2_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkmommschi2_pmtrack"
+            },
+            "trkmommsllhd_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkmommsllhd_pmtrack"
+            },
+            "trkmomrange_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkmomrange_pmtrack"
+            },
+            "trkncosmictags_containmenttagger_pmtrack": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_containmenttagger_pmtrack"
+            },
+            "trkncosmictags_flashmatch_pmtrack": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_flashmatch_pmtrack"
+            },
+            "trkncosmictags_tagger_pmtrack": {
+                "dtype": "<i2",
+                "source": "trkncosmictags_tagger_pmtrack"
+            },
+            "trkorig_pmtrack": {
+                "dtype": "<i4",
+                "source": "trkorig_pmtrack"
+            },
+            "trkorigin_pmtrack": {
+                "dtype": "<i2",
+                "shape": [
+                    3
+                ],
+                "source": "trkorigin_pmtrack"
+            },
+            "trkpdgtruth_pmtrack": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpdgtruth_pmtrack"
+            },
+            "trkphi_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkphi_pmtrack"
+            },
+            "trkpidbestplane_pmtrack": {
+                "dtype": "<i2",
+                "source": "trkpidbestplane_pmtrack"
+            },
+            "trkpidchi_pmtrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchi_pmtrack"
+            },
+            "trkpidchika_pmtrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchika_pmtrack"
+            },
+            "trkpidchimu_pmtrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchimu_pmtrack"
+            },
+            "trkpidchipi_pmtrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipi_pmtrack"
+            },
+            "trkpidchipr_pmtrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidchipr_pmtrack"
+            },
+            "trkpidpdg_pmtrack": {
+                "dtype": "<i4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpdg_pmtrack"
+            },
+            "trkpidpida_pmtrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpidpida_pmtrack"
+            },
+            "trkpitchc_pmtrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpitchc_pmtrack"
+            },
+            "trkpurity_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkpurity_pmtrack"
+            },
+            "trkpurtruth_pmtrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkpurtruth_pmtrack"
+            },
+            "trkrange_pmtrack": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkrange_pmtrack"
+            },
+            "trkstartd_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkstartd_pmtrack"
+            },
+            "trkstartdcosx_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkstartdcosx_pmtrack"
+            },
+            "trkstartdcosy_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkstartdcosy_pmtrack"
+            },
+            "trkstartdcosz_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkstartdcosz_pmtrack"
+            },
+            "trkstartx_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkstartx_pmtrack"
+            },
+            "trkstarty_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkstarty_pmtrack"
+            },
+            "trkstartz_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkstartz_pmtrack"
+            },
+            "trksvtxid_pmtrack": {
+                "dtype": "<i2",
+                "source": "trksvtxid_pmtrack"
+            },
+            "trktheta_pmtrack": {
+                "dtype": "<f4",
+                "source": "trktheta_pmtrack"
+            },
+            "trkthetaxz_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkthetaxz_pmtrack"
+            },
+            "trkthetayz_pmtrack": {
+                "dtype": "<f4",
+                "source": "trkthetayz_pmtrack"
+            },
+            "trktrueT0_pmtrack": {
+                "dtype": "<f4",
+                "source": "trktrueT0_pmtrack"
+            }
+        },
+        "trkhits_pandoraCosmic": {
+            "dedx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdedx_pandoraCosmic"
+            },
+            "dqdx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdqdx_pandoraCosmic"
+            },
+            "resrg": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkresrg_pandoraCosmic"
+            },
+            "xyz": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkxyz_pandoraCosmic"
+            }
+        },
+        "trkhits_pandoraCosmicKHit": {
+            "dedx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdedx_pandoraCosmicKHit"
+            },
+            "dqdx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdqdx_pandoraCosmicKHit"
+            },
+            "resrg": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkresrg_pandoraCosmicKHit"
+            },
+            "xyz": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkxyz_pandoraCosmicKHit"
+            }
+        },
+        "trkhits_pandoraCosmicKalmanTrack": {
+            "dedx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdedx_pandoraCosmicKalmanTrack"
+            },
+            "dqdx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdqdx_pandoraCosmicKalmanTrack"
+            },
+            "resrg": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkresrg_pandoraCosmicKalmanTrack"
+            },
+            "xyz": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkxyz_pandoraCosmicKalmanTrack"
+            }
+        },
+        "trkhits_pandoraNu": {
+            "dedx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdedx_pandoraNu"
+            },
+            "dqdx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdqdx_pandoraNu"
+            },
+            "resrg": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkresrg_pandoraNu"
+            },
+            "xyz": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkxyz_pandoraNu"
+            }
+        },
+        "trkhits_pandoraNuKHit": {
+            "dedx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdedx_pandoraNuKHit"
+            },
+            "dqdx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdqdx_pandoraNuKHit"
+            },
+            "resrg": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkresrg_pandoraNuKHit"
+            },
+            "xyz": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkxyz_pandoraNuKHit"
+            }
+        },
+        "trkhits_pandoraNuKalmanShower": {
+            "dedx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdedx_pandoraNuKalmanShower"
+            },
+            "dqdx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdqdx_pandoraNuKalmanShower"
+            },
+            "resrg": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkresrg_pandoraNuKalmanShower"
+            },
+            "xyz": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkxyz_pandoraNuKalmanShower"
+            }
+        },
+        "trkhits_pandoraNuKalmanTrack": {
+            "dedx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdedx_pandoraNuKalmanTrack"
+            },
+            "dqdx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdqdx_pandoraNuKalmanTrack"
+            },
+            "resrg": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkresrg_pandoraNuKalmanTrack"
+            },
+            "xyz": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkxyz_pandoraNuKalmanTrack"
+            }
+        },
+        "trkhits_pandoraNuPMA": {
+            "dedx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdedx_pandoraNuPMA"
+            },
+            "dqdx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdqdx_pandoraNuPMA"
+            },
+            "resrg": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkresrg_pandoraNuPMA"
+            },
+            "xyz": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkxyz_pandoraNuPMA"
+            }
+        },
+        "trkhits_pmtrack": {
+            "dedx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdedx_pmtrack"
+            },
+            "dqdx": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkdqdx_pmtrack"
+            },
+            "resrg": {
+                "dtype": "<f4",
+                "shape": [],
+                "source": "trkresrg_pmtrack"
+            },
+            "xyz": {
+                "dtype": "<f4",
+                "shape": [
+                    3
+                ],
+                "source": "trkxyz_pmtrack"
+            }
+        },
+        "vtx_linecluster": {
+            "vtxId_linecluster": {
+                "dtype": "<i2",
+                "source": "vtxId_linecluster"
+            },
+            "vtxPFParticleID_linecluster": {
+                "dtype": "<i2",
+                "source": "vtxPFParticleID_linecluster"
+            },
+            "vtxhasPFParticle_linecluster": {
+                "dtype": "<i2",
+                "source": "vtxhasPFParticle_linecluster"
+            },
+            "vtxx_linecluster": {
+                "dtype": "<f4",
+                "source": "vtxx_linecluster"
+            },
+            "vtxy_linecluster": {
+                "dtype": "<f4",
+                "source": "vtxy_linecluster"
+            },
+            "vtxz_linecluster": {
+                "dtype": "<f4",
+                "source": "vtxz_linecluster"
+            }
+        },
+        "vtx_pandoraCosmic": {
+            "vtxId_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "vtxId_pandoraCosmic"
+            },
+            "vtxPFParticleID_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "vtxPFParticleID_pandoraCosmic"
+            },
+            "vtxhasPFParticle_pandoraCosmic": {
+                "dtype": "<i2",
+                "source": "vtxhasPFParticle_pandoraCosmic"
+            },
+            "vtxx_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "vtxx_pandoraCosmic"
+            },
+            "vtxy_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "vtxy_pandoraCosmic"
+            },
+            "vtxz_pandoraCosmic": {
+                "dtype": "<f4",
+                "source": "vtxz_pandoraCosmic"
+            }
+        },
+        "vtx_pandoraNu": {
+            "vtxId_pandoraNu": {
+                "dtype": "<i2",
+                "source": "vtxId_pandoraNu"
+            },
+            "vtxPFParticleID_pandoraNu": {
+                "dtype": "<i2",
+                "source": "vtxPFParticleID_pandoraNu"
+            },
+            "vtxhasPFParticle_pandoraNu": {
+                "dtype": "<i2",
+                "source": "vtxhasPFParticle_pandoraNu"
+            },
+            "vtxx_pandoraNu": {
+                "dtype": "<f4",
+                "source": "vtxx_pandoraNu"
+            },
+            "vtxy_pandoraNu": {
+                "dtype": "<f4",
+                "source": "vtxy_pandoraNu"
+            },
+            "vtxz_pandoraNu": {
+                "dtype": "<f4",
+                "source": "vtxz_pandoraNu"
+            }
+        },
+        "vtx_pmtrack": {
+            "vtxId_pmtrack": {
+                "dtype": "<i2",
+                "source": "vtxId_pmtrack"
+            },
+            "vtxPFParticleID_pmtrack": {
+                "dtype": "<i2",
+                "source": "vtxPFParticleID_pmtrack"
+            },
+            "vtxhasPFParticle_pmtrack": {
+                "dtype": "<i2",
+                "source": "vtxhasPFParticle_pmtrack"
+            },
+            "vtxx_pmtrack": {
+                "dtype": "<f4",
+                "source": "vtxx_pmtrack"
+            },
+            "vtxy_pmtrack": {
+                "dtype": "<f4",
+                "source": "vtxy_pmtrack"
+            },
+            "vtxz_pmtrack": {
+                "dtype": "<f4",
+                "source": "vtxz_pmtrack"
+            }
+        },
+        "vtx_trajcluster": {
+            "vtxId_trajcluster": {
+                "dtype": "<i2",
+                "source": "vtxId_trajcluster"
+            },
+            "vtxPFParticleID_trajcluster": {
+                "dtype": "<i2",
+                "source": "vtxPFParticleID_trajcluster"
+            },
+            "vtxhasPFParticle_trajcluster": {
+                "dtype": "<i2",
+                "source": "vtxhasPFParticle_trajcluster"
+            },
+            "vtxx_trajcluster": {
+                "dtype": "<f4",
+                "source": "vtxx_trajcluster"
+            },
+            "vtxy_trajcluster": {
+                "dtype": "<f4",
+                "source": "vtxy_trajcluster"
+            },
+            "vtxz_trajcluster": {
+                "dtype": "<f4",
+                "source": "vtxz_trajcluster"
+            }
+        }
+    },
+    "tree_top": "analysistree/anatree",
+    "version": "3.0"
+}

@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+
+{% block contents %}
+<table class=data>
+    <tr>
+        <th>Bucket</th><th>Stripes</th><th>Disk Used, GB</th><th>Memory Used, GB</th>
+        <th>Quota Used</th><th>Ops/second</th><th>Datasets</th>
+    </tr>
+    {% for bname, items, diskUsed, memUsed, quotaUsed, ops, datasets in data %}
+        <tr>
+            <td>{{bname}}</td>
+            <td>{{items}}</td>
+            <td>{{diskUsed}}</td>
+            <td>{{memUsed}}</td>
+            <td>{{quotaUsed}}%</td>
+            <td>{{ops}}</td>
+            <td>{% for ds in datasets%}
+                    {{- ds -}}</br>
+                {% endfor %}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+                

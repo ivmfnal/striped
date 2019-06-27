@@ -1,0 +1,19 @@
+{% extends "template.html" %}
+
+{% block contents %}
+<h1>Job Server</h1>
+
+<p>
+<a href="/jobs">jobs</a>&nbsp;<a href="./workers">workers ({{nworkers}})</a>
+</p>
+
+<table class="formatting">
+    <tr><th>Web service port:</th><td>{{config.WebServerPort}}</td></tr>
+    <tr><th>Worker registry port:</th><td>{{config.RegistryPort}}</td></tr>
+    <tr><th>Max running jobs:</th><td>{{config.MaxJobs}}</td></tr>
+    <tr><th>Job queue capacity:</th><td>{{config.QueueCapacity}}</td></tr>
+    <tr><th>Data server URL:</th><td>{{config.DataServerURL}}</td></tr>
+</table>
+
+{% endblock %}
+            

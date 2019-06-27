@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+
+{% block contents %}
+<table class=data>
+    <tr>
+        <th>Dataset</th><th>Files</th><th>Events</th><th>Row groups</th><th>Events/row group</th>
+    </tr>
+    {% for ds, files, events, rgs, rgsize in data %}
+        <tr><td>{{ds}}</td><td>{{files}}</td><td>{{events}}</td><td>{{rgs}}</td><td>{{"" if rgsize == None else rgsize}}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+                

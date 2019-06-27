@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+
+{% block contents %}
+<table class=data>
+    <tr>
+        <th>Dataset</th><th>Bucket</th><th>Files</th><th>Events</th><th>Row groups</th><th>Events/row group</th>
+    </tr>
+    {% for ds, files, events, rgs, rgsize, bucket in data %}
+        <tr>
+            <td><a href="./dataset_info?ds={{ds}}">{{ds}}</td>
+            <td>{{bucket}}</td>
+            <td>{{files}}</td><td>{{events}}</td><td>{{rgs}}</td><td>{{"" if rgsize == None else rgsize}}</td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td>{{total_datasets}}</td>
+        <td></td>
+        <td>{{total_files}}</td>
+        <td>{{total_events}}</td>
+        <td>{{total_groups}}</td>
+        <td></td>
+    </tr>        
+</table>
+{% endblock %}
+
+                

@@ -1,0 +1,25 @@
+{% extends "template.html" %}
+
+{% block contents %}
+<h1>Workers ({{total_workers}})</h1>
+
+{% set nworkers = 0 %}
+
+<table class="data">
+    <tr>
+        <th>Tag</th>
+        <th>Host</th>
+        <th>Workers</th>
+    </tr>
+    {% for tag, host, n in workers %}
+        <tr>
+            <td>{{tag}}</td>
+            <td>{{host}}</td>
+            <td>{{n}}</td>
+        <tr>
+        {% set nworkers = nworkers + n %}
+    {% endfor %}
+</table>
+
+{% endblock %}
+            

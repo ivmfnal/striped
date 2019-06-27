@@ -1,0 +1,8 @@
+*.o
+*.so
+.*
+client
+*.py-save
+Untitled*.ipynb
+
+!.gitignore

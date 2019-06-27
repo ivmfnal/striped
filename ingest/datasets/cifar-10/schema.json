@@ -1,0 +1,17 @@
+{
+    "attributes": {
+	"x": 	{
+		"dtype": "<f4",
+		"shape": [32, 32, 3],
+		"subtype": null,
+		"source": "x"
+	},
+	"y":	{
+		"dtype": "<f4",
+		"shape": [10],
+		"subtype": null,
+		"source": "y"
+	}
+    },
+    "branches": {}
+}

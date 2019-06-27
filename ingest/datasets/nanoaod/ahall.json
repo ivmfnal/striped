@@ -1,0 +1,392 @@
+{
+    "frame_map": [
+        {
+            "file": "nano_1.root", 
+            "frames": [
+                16361, 
+                16361, 
+                16360
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_1.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_10.root", 
+            "frames": [
+                16647, 
+                16646, 
+                16646
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_10.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_11.root", 
+            "frames": [
+                16873, 
+                16873, 
+                16873
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_11.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_12.root", 
+            "frames": [
+                23806, 
+                23806
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_12.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_13.root", 
+            "frames": [
+                17184, 
+                17184, 
+                17183
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_13.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_14.root", 
+            "frames": [
+                16992, 
+                16992, 
+                16992
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_14.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_15.root", 
+            "frames": [
+                16384, 
+                16384, 
+                16383
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_15.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_16.root", 
+            "frames": [
+                18006, 
+                18006, 
+                18006
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_16.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_17.root", 
+            "frames": [
+                23601, 
+                23601
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_17.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_18.root", 
+            "frames": [
+                16358, 
+                16358, 
+                16357
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_18.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_19.root", 
+            "frames": [
+                16085, 
+                16085, 
+                16085
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_19.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_2.root", 
+            "frames": [
+                16255, 
+                16254, 
+                16254
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_2.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_20.root", 
+            "frames": [
+                16999, 
+                16998, 
+                16998
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_20.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_21.root", 
+            "frames": [
+                16612, 
+                16611, 
+                16611
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_21.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_22.root", 
+            "frames": [
+                17094, 
+                17094, 
+                17094
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_22.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_23.root", 
+            "frames": [
+                16212, 
+                16212, 
+                16211
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_23.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_24.root", 
+            "frames": [
+                16843, 
+                16842, 
+                16842
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_24.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_25.root", 
+            "frames": [
+                16995, 
+                16995, 
+                16995
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_25.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_26.root", 
+            "frames": [
+                16454, 
+                16453, 
+                16453
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_26.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_27.root", 
+            "frames": [
+                16332, 
+                16331, 
+                16331
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_27.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_28.root", 
+            "frames": [
+                16433, 
+                16433, 
+                16432
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_28.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_29.root", 
+            "frames": [
+                16826, 
+                16825, 
+                16825
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_29.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_3.root", 
+            "frames": [
+                17126, 
+                17126, 
+                17126
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_3.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_30.root", 
+            "frames": [
+                17261, 
+                17261, 
+                17260
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_30.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_31.root", 
+            "frames": [
+                16173, 
+                16172, 
+                16172
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_31.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_32.root", 
+            "frames": [
+                16505, 
+                16505, 
+                16504
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_32.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_33.root", 
+            "frames": [
+                17063, 
+                17063, 
+                17063
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_33.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_34.root", 
+            "frames": [
+                16361, 
+                16360, 
+                16360
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_34.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_35.root", 
+            "frames": [
+                16104, 
+                16103, 
+                16103
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_35.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_36.root", 
+            "frames": [
+                17653, 
+                17652, 
+                17652
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_36.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_37.root", 
+            "frames": [
+                16201, 
+                16200, 
+                16200
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_37.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_38.root", 
+            "frames": [
+                16948, 
+                16947, 
+                16947
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_38.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_39.root", 
+            "frames": [
+                16143, 
+                16143, 
+                16142
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_39.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_4.root", 
+            "frames": [
+                16895, 
+                16894, 
+                16894
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_4.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_40.root", 
+            "frames": [
+                17751
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_40.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_6.root", 
+            "frames": [
+                16621, 
+                16621, 
+                16620
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_6.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_7.root", 
+            "frames": [
+                16467, 
+                16466, 
+                16466
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_7.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_8.root", 
+            "frames": [
+                16440, 
+                16440, 
+                16440
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_8.root", 
+            "type": "split"
+        }, 
+        {
+            "file": "nano_9.root", 
+            "frames": [
+                16164, 
+                16164, 
+                16164
+            ], 
+            "path": "/data/ahall/WJetsToLNu_HT-400/nano_9.root", 
+            "type": "split"
+        }
+    ], 
+    "n_frames": 113, 
+    "start_frame_id": 0
+}

@@ -1,0 +1,52 @@
+{% extends "template.html" %}
+
+{% block contents %}
+
+<h1>Dataset {{ds}}</h1>
+
+<table class="form">
+    <tr>
+        <th>Files:</th><td>{{nfiles}}</td>
+    </tr>
+    <tr>
+        <th>Events:</th><td>{{nevents}}</td>
+    </tr>
+    <tr>
+        <th>Row groups:</th><td>{{ngroups}}</td>
+    </tr>
+</table>    
+
+<h2>Columns</h2>
+<table class="data">
+    <tr>
+        <th colspan=2>Column</th>
+        <th>Root source</th>
+        <th>Data type</th>
+        <th>Shape</th>
+    </tr>
+    {% for name, desc in attributes|sort %}
+        <tr>
+            <td colspan=2>{{name}}</td>
+            <td>{{desc["source"]}}</td>
+            <td>{{desc["dtype"]|escape}} {{desc["subtype"] or ""}}</td>
+            <td>{{desc["shape"]|tidy_shape}}</td>
+        </tr>
+    {% endfor %}
+    {% for bname, blist in branches|sort %}
+        {% for name, desc in blist|sort %}
+            <tr>
+                {% if loop.first %}
+                    <td rowspan={{blist|length}}>{{bname}}</td>
+                {% endif %}
+                <td>{{bname}}.{{name}}</td>
+                <td>{{desc["source"]}}</td>
+                <td>{{desc["dtype"]|escape}} {{desc["subtype"] or ""}}</td>
+                <td>{{desc["shape"]|tidy_shape}}</td>
+            </tr>
+        {% endfor %}
+    {% endfor %}
+</table>
+        
+{% endblock %}
+
+                
