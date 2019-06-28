@@ -7,8 +7,7 @@ T = Tracer()
 
 class Frame:
     
-    def __init__(self, rginfo, column_to_branch, raw_stroll,
-                tagged_event_ids):
+    def __init__(self, rginfo, column_to_branch, raw_stroll, tagged_event_ids,):
         self.RGInfo = rginfo
         #self.RGID = rginfo.RGID
         self.NEvents = rginfo.NEvents
@@ -47,14 +46,15 @@ class Frame:
                     v = self.AttrVault
                 v.addStripe(cn, raw_stroll[cn])
 
-    def eventGroup(self):
-        return QAEventGroup(self.RGInfo, self.RGInfo.NEvents, self.AttrVault, self.VarAttrVaults, self.BranchVaults)
+    def eventGroup(self, iframe, nframes):
+        return QAEventGroup(self.RGInfo, self.RGInfo.NEvents, self.AttrVault, self.VarAttrVaults, self.BranchVaults,
+            iframe, nframes)
         
     
 
 class Dataset(object):
     
-    def __init__(self, striped_client, data_buffer, dataset_name, columns, schema = None, frame_fetcher = None, trace = None):
+    def __init__(self, striped_client, data_buffer, dataset_name, columns, schema = None, trace = None):
         self.T = trace or Tracer()
         global T
         T = self.T
@@ -107,7 +107,6 @@ class Dataset(object):
             
         self.TagConditions = []
         self.ProcessedEvents = 0
-        self.FrameFetcher = frame_fetcher
         #print self.EventTemplate.branchTemplate
         #print "Q Dataset: fetch columns:", self.FetchColumns
         self.Filter = None
@@ -117,14 +116,8 @@ class Dataset(object):
     def event(self):
         return self.EventTemplate
     
-    def frames(self, rgids=None):
-        if rgids is None:   rgids = self.ClientDataset.rgids
-        if rgids:
-            frame_fetcher = self.FrameFetcher or SynchronousFrameFetcher(self.ClientDataset, self.FetchColumns, rgids)
-            for rginfo, data in frame_fetcher.frames():
-            
-                f = Frame(rginfo, self.ColumnToBranch, data, self.TagConditions)
-                yield f
+    def frame(self, rginfo, data):
+        return Frame(rginfo, self.ColumnToBranch, data, self.TagConditions)
             
     def filter(self, qexp):
         self.Filter = qexp

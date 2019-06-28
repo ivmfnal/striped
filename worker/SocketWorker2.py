@@ -51,8 +51,8 @@ class SocketWorkerBuffer(object):
         for hc in self.HCollectors.values():
             hc.T = t
 
-    def dataLoadFailure(self, rgid):
-        self.DXSock.send(DXMessage("data_load_failure", rgid=rgid))
+    def dataLoadFailure(self, rgid, info):
+        self.DXSock.send(DXMessage("data_load_failure", rgid=rgid, info=info))
         
     def setEventsProcessed(self, n):
         self.EventsProcessed = n

@@ -41,18 +41,15 @@ class AsynchronousFrameFetcher(PyThread):
                 if self.Stop:   break
                 #self.log("stripes...")
                 try:    
-                    data = self.ClientDataset.stripes(self.Columns, rginfo.RGID, use_cache=self.UseDataCache)
+                    with self.T["download"]:
+                        data = self.ClientDataset.stripes(self.Columns, rginfo.RGID, use_cache=self.UseDataCache)
                     #self.log("got data")
                 except:
-                    self.Driver.dataLoadFailure(rginfo)
                     info = traceback.format_exc()
                     self.log("Data loader failure for rgid %d: \n%s" % (rginfo.RGID, info))      # this needs to be sent back to the job !
-                    continue
-                if not self.Stop:
-                    #self.log("adding frame to the queue...")
-                    self.Frames.append((rginfo, data))
-                    #self.log("added")
-                #print "queue length:", len(self.Frames)
+                    self.Frames.append(("error", rginfo, info))
+                else:
+                    self.Frames.append(("ok", rginfo, data))
             self.Frames.close()
         finally:
             self.Done = True    
@@ -69,15 +66,11 @@ class AsynchronousFrameFetcher(PyThread):
         
     def frames(self):
         while not self.Done or not self.queueEmpty():
-            if self.T is not None:
-                with self.T["fetch"]:    
-                    tup = self.Frames.pop()  
-            else:
-                tup = self.Frames.pop()      
+            tup = self.Frames.pop()  
             if tup is None:
                 break   # queue closed
             else:
-                yield tup           # (rginfo, data)
+                yield tup           # (status, rginfo, data)
             
 class WorkerDriver:
 
@@ -171,42 +164,44 @@ class WorkerDriver:
                 use_data_cache = self.UseDataCache)
         fetcher.start()
 
-        dataset = Dataset(self.Client, self.Buffer, self.DatasetName,  columns, frame_fetcher=fetcher, trace=T)
+        dataset = Dataset(self.Client, self.Buffer, self.DatasetName,  columns, trace=T)
             
         self.Dataset = dataset
         
         events_delta = 0
-
+        nframes = len(self.RGIDs)
         first_frame = True
-        for frame in dataset.frames(self.RGIDs):
-            if first_frame:
-                #self.log("First frame loaded: %d" % (frame.RGInfo.RGID,))
-                first_frame = False
-            with T["frame"]:
-                event_group = frame.eventGroup()
-                self.SeenEvents += frame.NEvents        # update this before worker.run() so that 
-                                                        # emitted data can be correctly "timestamped" with the nevents
-                out = None
-                stop = False
-                if hasattr(worker, "frame"):
-                    with T["frame/worker"]:
-                        #sandbox_call(worker.run, event_group, job_interface, dbinterface)
-                        dbinterface.FrameID = event_group.rgid
-                        stop = False
-                        try:
-                            out = worker.frame(event_group)
-                            stop = (out == "stop")
-                        except StopIteration:
-                            stop = True
-                self.Dataset.ProcessedEvents = self.SeenEvents
-                self.Buffer.endOfFrame(self.SeenEvents)
-                events_delta += frame.NEvents 
-                if out:
-                    with T["frame/sendData"]:
-                        self.Buffer.sendData(events_delta, out)
-                        events_delta = 0
-                if stop:
-                    break
+        for iframe, (status, rginfo, data) in enumerate(fetcher.frames()):
+            if status == "ok":
+                with T["frame"]:
+                    frame = dataset.frame(rginfo, data)
+                    event_group = frame.eventGroup(iframe, nframes)
+                    self.SeenEvents += frame.NEvents        # update this before worker.run() so that 
+                                                            # emitted data can be correctly "timestamped" with the nevents
+                    out = None
+                    stop = False
+                    if hasattr(worker, "frame"):
+                        with T["frame/worker"]:
+                            #sandbox_call(worker.run, event_group, job_interface, dbinterface)
+                            dbinterface.FrameID = event_group.rgid
+                            stop = False
+                            try:
+                                out = worker.frame(event_group)
+                                stop = (out == "stop")
+                            except StopIteration:
+                                stop = True
+                    self.Dataset.ProcessedEvents = self.SeenEvents
+                    self.Buffer.endOfFrame(self.SeenEvents)
+                    events_delta += frame.NEvents 
+                    if out:
+                        with T["frame/sendData"]:
+                            self.Buffer.sendData(events_delta, out)
+                            events_delta = 0
+                    if stop:
+                        break
+            else:
+                self.Buffer.dataLoadFailure(rginfo.RGID, data)
+
 
         if hasattr(worker, "end"):
                 out = worker.end()
@@ -217,9 +212,6 @@ class WorkerDriver:
         fetcher.stop()
         self.log("Worker %s: done, %d events processed" % (os.getpid(), self.Dataset.ProcessedEvents))
         return self.Dataset.ProcessedEvents
-        
-    def dataLoadFailure(self, rginfo):
-        self.Buffer.dataLoadFailure(rginfo.RGID)
         
     def fill(self, dict_items):
         with self.T["frame/worker/fill"]:

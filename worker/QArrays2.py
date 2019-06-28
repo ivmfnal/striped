@@ -18,12 +18,14 @@ from attribute_setter import constructor, attr_setter
 class QAEventGroup(Filterable):
 
     @constructor
-    def __init__(self, rginfo, nevents, attr_vault, var_attr_vaults, branch_vaults):
+    def __init__(self, rginfo, nevents, attr_vault, var_attr_vaults, branch_vaults, iframe, nframes):
         self._RGInfo = rginfo
         self._NEvents = nevents
         self._AttrVault = attr_vault
         self._VarAttrVaults = var_attr_vaults
         self._BranchVaults = branch_vaults
+        self._IFrame = iframe
+        self._NFrames = nframes
         
         #for bn, bv in branch_vaults.items():
         #    print "QAEventGroup: vault %s: size: %s" % (bn, bv.SizeArray)
@@ -43,7 +45,15 @@ class QAEventGroup(Filterable):
         return self.metadata.get(name)
         
     __getitem__ = meta
-        
+
+    @property
+    def iframe(self):
+        return self._IFrame
+
+    @property
+    def nframes(self):
+        return self._NFrames
+
     @property
     def metadata(self):
         return self._RGInfo.Metadata
