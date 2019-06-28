@@ -10,7 +10,7 @@ Welcome to striped's documentation!
    :maxdepth: 4
    :caption: Contents:
 
-   striped_concepts
+   analysis_code
 
 
 Indices and tables
