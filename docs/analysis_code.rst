@@ -29,13 +29,13 @@ The user analysis code executed by the workers is specified as a Python class wi
         def __init__(self, params, bulk_data, job, db):
             # ...
         
-        def frame(self, objects, last):
+        def frame(self, objects):
             # process frame
-            if last:
-                # this was last frame, do something else
-                return data
-            else:
-                return data
+            return data
+                
+        def end(self):
+            # called once after last frame
+            return data
 
 Worker constructor accepts 4 arguments:
 
@@ -48,13 +48,18 @@ frame() method
 ~~~~~~~~~~~~~~
 Worker's frame() method is called once per each frame. It has 2 arguments:
     * objects - object providing access to the frame data
-    * last is a boolean, telling the Worker that this is last frame it is going to see in this job.
 
 The frame() method can return one of the the following:
 
     * None
     * String "stop". In this case, the framework will stop running this particular worker through the rest of the frames its is supposed to process. Alternatively, the frame() method can raise StopIteration exception. This is useful when the framework is used to look up some object in the database rarher than run though all the objects.
     * A data dictionary. The dictionary can have text keys and strings, integers, floating poing numbers or ndarrays as values. The dictionary can not be nested. If the worker's frame() method returns a dictionary, this dictionary will be passed to the Accumulator's add() method.
+
+end() method
+~~~~~~~~~~~~
+Method Worker.end() will be called once after the worker finished processing its last frame. The method has no arguments.
+It returns either a dictionary with data to be sent to the Accumulator or None. The dictionary has the same restrictions as the
+dictionary returned by the frame() method.
     
 Accumulator
 -----------
@@ -108,7 +113,7 @@ The argument of the Worker's frame() method (objects) is an Object Group Accesso
 
 .. code-block:: python
 
-    def frame(self, objects, last):
+    def frame(self, objects):
         # ... the following are equivalent:
         b1 = objects.branch("Muon")
         b2 = objects.Muon
@@ -121,7 +126,7 @@ The argument of the Worker's frame() method (objects) is an Object Group Accesso
     
         Columns = ["event_id"]
 
-        def frame(self, objects, last):
+        def frame(self, objects):
             # ... the following are equivalent:
             e1 = objects.attr("event_id")
             e2 = objects.event_id
@@ -141,7 +146,7 @@ to the number of objects. For example:
     
         Columns = ["mass"]
 
-        def frame(self, objects, last):
+        def frame(self, objects):
             object_filter = objects.filter(object.mass > 4.5)
 
 See *Filters* section below for details.
@@ -154,7 +159,7 @@ You can iterate over the Object Group Accessor object, as if it was a list of in
     
         Columns = ["mass"]
 
-        def frame(self, objects, last):
+        def frame(self, objects):
             for obj in objects:
                 mass = obj.mass
                 #...
@@ -167,7 +172,7 @@ Alternatively, individual objects can be accessed by indexing the Object Group A
     
         Columns = ["mass"]
 
-        def frame(self, objects, last):
+        def frame(self, objects):
             for i in xrange(objects.count):
                 mass = objects[i].mass
                 #...
@@ -186,7 +191,7 @@ Calling **branch** method of the Object Group accessor object returns a Branch A
     
         Columns = ["Muon.pt"]
 
-        def frame(self, objects, last):
+        def frame(self, objects):
             muons = objects.Muon                    # muons is a Branch Accessor object
             # ... the following are equivalent:
             mu_pt = muons.pt
@@ -202,7 +207,7 @@ Calling **branch** method of the Object Group accessor object returns a Branch A
     
         Columns = ["Muon.pt"]
 
-        def frame(self, objects, last):
+        def frame(self, objects):
             muon_filter = events.Muon.filter(events.Muon.pt > 300.0)
             # or...
             muons = events.Muon     # muons branch
@@ -224,7 +229,7 @@ You can iterate over the branch accessor object, as if it was a list of individu
     
         Columns = ["Muon.pt"]
 
-        def frame(self, objects, last):
+        def frame(self, objects):
             muons = events.Muon             # branch accessor
             for mu in muons:
                 mu_pt = mu.pt               # "pt" value for individual muon in the entire event group
@@ -242,7 +247,7 @@ When iterating over the Object Group Accessor or applying a numeric index to it,
     
         Columns = ["mass"]
 
-        def frame(self, objects, last):
+        def frame(self, objects):
             for obj in objects:                 # obj is an Object Accessor
                 #...
 
@@ -257,7 +262,7 @@ Object Accessor is used to access object attributed and branch elements associat
     
         Columns = ["mass"]
 
-        def frame(self, objects, last):
+        def frame(self, objects):
             for obj in objects:                 # obj is an Object Accessor
                 m1 = obj.attr("mass")           # m1 and m2 are the same
                 m2 = obj.mass
@@ -304,7 +309,7 @@ all branch element pairs regardless of which object they belong to. For example:
     
         Columns = ["muon.p4"]
 
-        def frame(self, objects, last):
+        def frame(self, objects):
             mu_pairs = events.muon.pairs()                      # this is Combo Accessor object
             for mu_pair in mu_pairs:                            # iteration produces pairs of muons for all the events in the group
                 mu1, mu2 = mu_pair                              # unpack the pair
@@ -319,7 +324,7 @@ You can extract first or second member of all pairs from the Combo Accessor:
     
         Columns = ["muon.p4"]
 
-        def frame(self, objects, last):
+        def frame(self, objects):
             mu_pairs = events.muon.pairs()                      # this is Combo Accessor object
             mu1, mu2 = mu_pairs                                 # first and second items of each pair
             mu_mu_mass = invariant_mass_array(mu1.p4, mu2.p4)      # calculate invariant masses from vectors
@@ -346,7 +351,7 @@ same accessor object. Filters are created by passing a boolean mask array of cor
         def __init__(self, params, bulk, job, db):
             self.Job = job
 
-        def frame(self, objects, last):
+        def frame(self, objects):
             
             fq = objects.filter(objects.quality > 3.5)      # "object.quality > 3.5" is an expression resulting in a boolean numpy array
             good_objects = fq(objects)                      # create new Object Group Accessor with fewer objects
@@ -380,7 +385,7 @@ Branch filter examples:
         def __init__(self, params, bulk, job, db):
             self.Job = job
 
-        def frame(self, objects, last):
+        def frame(self, objects):
         
             muons = objects.muon
             high_pt_filter = muon.filter(muon.pt > 100.0)
@@ -405,7 +410,7 @@ passing an existing filter to the filter() method of an accessor, or implicitly 
         def __init__(self, params, bulk, job, db):
             self.Job = job
 
-        def frame(self, objects, last):
+        def frame(self, objects):
             
             heavy_object_filter = objects.filter(objects.mass > 10.3)
             converted_filter = objects.component.filter(heavy_object_filter)    # explicit conversion, object filter to branch filter
@@ -429,7 +434,7 @@ You can use filters with Combo Accessors too. Filters created by Combo Accessors
         def __init__(self, params, bulk, job, db):
             self.Job = job
 
-        def frame(self, events, last):
+        def frame(self, events):
             mu_pairs = events.muon.pairs()                      # this is Combo Accessor object
             mu1, mu2 = mu_pairs                                 # first and second items of each pair
             
