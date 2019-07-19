@@ -18,25 +18,29 @@ class ML_Keras_FitWorker:
                 K.set_session(tf_session)
                 
                 self.ModelConfig = params["_model"]
-
-                lr = params.get("lr", 0.01)
-                if optimizer is None:    optimizer = SGD(lr, momentum=0.0)
                 model = model_from_json(self.ModelConfig["config"])                
-                model.compile(optimizer=optimizer, 
-                        loss=self.ModelConfig["loss"], 
-                        metrics=self.ModelConfig["metrics"])
+                self.Weights0 = [p for n, p in sorted(bulk.items()) if n.startswith("weight_")]
+                loss = self.ModelConfig.get("loss", "categorical_crossentropy")
+                metric = self.ModelConfig.get("metric", "accuracy")
+                
+                optimizer_config = params.get("_optimizer", {})
+                self.Iterations = optimizer_config.get("iterations", 1)
+                if optimizer is None:
+                    optimizer = SGD(
+                                lr =        optimizer_config.get("lr", 0.01), 
+                                nesterov =  optimizer_config.get("nesterov", False), 
+                                momentum =  optimizer_config.get("momentum", 0.0), 
+                                decay =     optimizer_config.get("decay", 0.0001)
+                    )
+                model.compile(optimizer=optimizer, loss=loss, metrics=[metric])
                 self.Model = model
 
-                weights = [p for n, p in sorted(bulk.items()) if n.startswith("weight_")]
-                self.Weights0 = weights
                 
                 self.Deltas = map(np.zeros_like, weights)
                 self.Samples = 0
                 self.SumLoss = 0.0
                 self.SumMetric = 0.0
                 
-                self.Iterations = params["iterations"]
-
         @property
         def Columns(self):
                 return [self.XColumn, self.YColumn]
@@ -132,16 +136,13 @@ class ML_Keras_EvaluateWorker:
                 }
                 
 ML_Keras_EvaluateWorker_text = """
-from striped.ml.keras_backend import ML_Keras_Worker
-from striped.ml import ML_Accumulator
-
-class Worker(ML_Keras_EvaluateWorker):
-        def __init__(self, params, bulk, job_interface, db_interface):
-                ML_Keras_Worker.__init__(self, params, bulk, "image", "labels", 
-                        optimizer = SGD(lr=0.1, nesterov=False, momentum=0.5))
-
-class Accumulator(ML_TrainAccumulator):
-        pass
-
-
+from striped.ml.keras_backend import ML_Keras_EvaluateWorker as Worker
+from striped.ml import ML_EvaluateAccumulator as Accumulator
 """
+
+ML_Keras_FitWorker_text = """
+from striped.ml.keras_backend import ML_Keras_FitWorker as Worker
+from striped.ml import ML_FitAccumulator as Accumulator
+"""
+
+

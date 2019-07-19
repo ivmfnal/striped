@@ -63,7 +63,9 @@ class MomentumOptimizer:
     
 class ML_FitJob:
 
-    def __init__(self, session, model, worker_file=None, worker_text=None, optimizer = None):
+    def __init__(self, session, model, loss="categorical_crossentropy",
+            metric = "accuracy",
+            worker_file=None, worker_text=None, optimizer = None):
         self.Model = model
         self.Deltas = map(np.zeros_like, model.get_weights())
         self.NSamples = 0
@@ -73,8 +75,9 @@ class ML_FitJob:
         self.Loss = self.Metric = None
         self.WorkerText = worker_text
         self.WorkerFile = worker_file
-        self.Optimizer = optimizer or MomentumOptimizer(0.001)
         self.SumMetric = 0.0
+        self.Metric = metric
+        self.Loss = loss
 
     def pack_model(self):
             params = {}
@@ -85,8 +88,8 @@ class ML_FitJob:
                 cfg = model.config()
             params["_model"] = {
                 "config": cfg,
-                "loss": 'categorical_crossentropy',
-                "metrics":      ["accuracy"]
+                "loss": self.Loss,
+                "metrics":      [self.Metric]
                 }
             weights = {"weight_%020d" % (i,):w for i, w in enumerate(model.get_weights())}
             return params, weights
@@ -107,10 +110,15 @@ class ML_FitJob:
                 #weights = self.Optimizer(weights, self.Grads)
                 self.Model.set_weights(weights)
                 
-    def run(self, dataset, learning_rate = 0.01, iterations = 1, **args):
+    def run(self, dataset, learning_rate = 0.01, iterations = 1, nesterov = False, momentum = 0.0, **args):
         params, weights = self.pack_model()
-        params["lr"] = learning_rate
-        params["iterations"] = iterations
+        params["_optimizer"] = {
+            "type":             "SGD",
+            "lr":               learning_rate,
+            "iterations":       iterations,
+            "nesterov":         nesterov,
+            "momentum":         momentum
+        }
         job = self.Session.createJob(dataset,
                             user_params = params,
                             bulk_data = weights,
@@ -173,17 +181,30 @@ class ML_EvaluateJob:
         
 
 class MLSession(object):
-    def __init__(self, striped_session, model):
+    def __init__(self, striped_session, model, platform="keras"):
         self.Model = model
         self.StripedSession = striped_session
+        self.Platform = platform
         
         
     def fit(self, dataset, iterations=1, learning_rate=0.01, worker_file=None, worker_text=None, **args):
+        if worker_file is None and worker_text is None:
+            if self.Platform == "keras":
+                from .keras_backend import ML_Keras_FitWorker_text
+                worker_text = ML_Keras_FitWorker_text
+            else:
+                raise ValueError("Unknown ML platform %s" % (self.Platform,))
         job = ML_FitJob(self.StripedSession, self.Model, worker_file=worker_file, worker_text=worker_text)
         job.run(dataset, learning_rate=learning_rate, iterations=iterations, **args)
         return job.Loss, job.Metric
         
     def evaluate(self, dataset, worker_file=None, worker_text=None, **args):
+        if worker_file is None and worker_text is None:
+            if self.Platform == "keras":
+                from .keras_backend import ML_Keras_EvaluateWorker_text
+                worker_text = ML_Keras_EvaluateWorker_text
+            else:
+                raise ValueError("Unknown ML platform %s" % (self.Platform,))
         job = ML_EvaluateJob(self.StripedSession, self.Model, worker_file=worker_file, worker_text=worker_text)
         job.run(dataset, **args)
         return job.Loss, job.Metric
