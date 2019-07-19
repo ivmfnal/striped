@@ -5,7 +5,7 @@ from model import create_model
 
 model = create_model()
 
-session = Session("striped_dev.yaml")
+session = Session("striped_130tb.yaml")
 
 for epoch in range(5):
 	job = ML_Job(session, model, worker_file="worker.py")
