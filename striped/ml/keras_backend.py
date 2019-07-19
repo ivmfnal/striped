@@ -6,10 +6,10 @@ from keras.optimizers import SGD
 
 class ML_Keras_FitWorker:
 
-        def __init__(self, params, bulk, xcolumn, ycolumn, optimizer = None):
+        def __init__(self, params, bulk, job, db):
                 self.Bulk = bulk
-                self.XColumn = xcolumn
-                self.YColumn = ycolumn
+                self.XColumn = params["xcolumn"]
+                self.YColumn = params["ycolumn"]
 
                 config = tf.ConfigProto()
                 config.intra_op_parallelism_threads = 1
@@ -25,13 +25,12 @@ class ML_Keras_FitWorker:
                 
                 optimizer_config = params.get("_optimizer", {})
                 self.Iterations = optimizer_config.get("iterations", 1)
-                if optimizer is None:
-                    optimizer = SGD(
-                                lr =        optimizer_config.get("lr", 0.01), 
-                                nesterov =  optimizer_config.get("nesterov", False), 
-                                momentum =  optimizer_config.get("momentum", 0.0), 
-                                decay =     optimizer_config.get("decay", 0.0001)
-                    )
+                optimizer = SGD(
+                            lr =        optimizer_config.get("lr", 0.01), 
+                            nesterov =  optimizer_config.get("nesterov", False), 
+                            momentum =  optimizer_config.get("momentum", 0.0), 
+                            decay =     optimizer_config.get("decay", 0.0001)
+                )
                 model.compile(optimizer=optimizer, loss=loss, metrics=[metric])
                 self.Model = model
 
@@ -81,10 +80,10 @@ class ML_Keras_FitWorker:
 
 class ML_Keras_EvaluateWorker:
 
-        def __init__(self, params, bulk, xcolumn, ycolumn):
+        def __init__(self, params, bulk, job, db):
                 self.Bulk = bulk
-                self.XColumn = xcolumn
-                self.YColumn = ycolumn
+                self.XColumn = params["xcolumn"]
+                self.YColumn = params["ycolumn"]
 
                 config = tf.ConfigProto()
                 config.intra_op_parallelism_threads = 1

@@ -11,6 +11,7 @@ class JobDescription:
                 data_mod_url, data_mod_token, bulk_data):
         self.DatasetName = dataset_name
         self.Fraction = fraction
+        assert not not worker_text, "JobDescription: worker text can not be empty"
         self.WorkerText = worker_text
         self.HDescriptors = {}
         self.UserParams = user_params

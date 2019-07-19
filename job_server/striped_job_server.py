@@ -141,7 +141,7 @@ class JobProcess(multiprocessing.Process):
                     self.log("---- exit ----")
         except:
             tb = traceback.format_exc()
-            self.DataExchange.send(DXMessage("job_failed", reason=tb))
+            self.DataExchange.send(DXMessage("job_failed").append(reason=tb))
             self.log("Exception: ------------\n%s" % (tb,))
         finally:
             self.log("----- job stats: -----\n"+self.T.formatStats())            
@@ -236,7 +236,7 @@ class JobTask(Task):
             validated = self.Server.validate_job(job_description)
             if not validated:
                 self.log("job request validation failed %s" % (job_description.AuthToken,))
-                self.DataExchange.send(DXMessage("job_failed", reason="Token validation failed"))
+                self.DataExchange.send(DXMessage("job_failed".append(reason="Token validation failed")))
                 self.Failed = True
                 self.Server.jobFailed(self, "Token validation failed")
             else:   
@@ -245,7 +245,7 @@ class JobTask(Task):
                 self.log("workers: %s" % ([wi.Addr for wi in workers],))
                 if not workers:
                     self.log("no workers found for tags=%s" % (job_description.WorkerTags,))
-                    self.DataExchange.send(DXMessage("job_failed", reason="No available workers found for tags=%s" % (job_description.WorkerTags,)))
+                    self.DataExchange.send(DXMessage("job_failed").append(reason="No available workers found for tags=%s" % (job_description.WorkerTags,)))
                     self.Failed = True
                     self.Server.jobFailed(self, "No available forkers found for tags=%s" % (job_description.WorkerTags,))
                 else:
@@ -333,28 +333,28 @@ class JobServer(PyThread):
                 msg = data_exchange.recv()
                 #print "msg:", msg.Type
                 if msg and msg.Type == 'job_request':
-                    job_description = JobDescription.fromDXMsg(msg)
-                    exists = self.DataClient.dataset(job_description.DatasetName).exists
-                    #print "exists:", exists
-                    if not exists:
-                        self.log("Dataset not found: %s" % (job_description.DatasetName,))
-                        data_exchange.send(DXMessage("job_failed", reason="Dataset '%s' not found" % (job_description.DatasetName,)))
-                    else:
-                        jid = self.jid()
-                        self.log("Job description received. Job id %s assigned" % (jid,))
-                        job_log_file_path = None if self.LogFileDir is None else "%s/job_%s.log" % (self.LogFileDir, jid)
-                        jt = JobTask(self, jid, job_description, self.DataServerURL, self.BulkTransportPort, 
-                                self.DataClient, data_exchange, job_log_file_path)
-                        self.JobQueue << jt
-                        data_exchange = None        # the job task owns it now !
-                        if self.SourceArchive is not None:
-                            open("%s/ws_%s.txt" % (self.SourceArchive, jid), "w").write(job_description.WorkerText)
+                        job_description = JobDescription.fromDXMsg(msg)
+                        exists = self.DataClient.dataset(job_description.DatasetName).exists
+                        #print "exists:", exists
+                        if not exists:
+                            self.log("Dataset not found: %s" % (job_description.DatasetName,))
+                            data_exchange.send(DXMessage("job_failed").append(reason="Dataset '%s' not found" % (job_description.DatasetName,)))
+                        else:
+                            jid = self.jid()
+                            self.log("Job description received. Job id %s assigned" % (jid,))
+                            job_log_file_path = None if self.LogFileDir is None else "%s/job_%s.log" % (self.LogFileDir, jid)
+                            jt = JobTask(self, jid, job_description, self.DataServerURL, self.BulkTransportPort, 
+                                    self.DataClient, data_exchange, job_log_file_path)
+                            self.JobQueue << jt
+                            data_exchange = None        # the job task owns it now !
+                            if self.SourceArchive is not None:
+                                open("%s/ws_%s.txt" % (self.SourceArchive, jid), "w").write(job_description.WorkerText)
                 self.purgeJobHistory()
             except:
                 dump = traceback.format_exc()
                 self.log("Uncaught exception: %s" % (dump,))
                 if data_exchange is not None:
-                    data_exchange.send(DXMessage("job_failed", reason="Exception: %s" % (dump,)))
+                    data_exchange.send(DXMessage("job_failed").append(reason="Exception: %s" % (dump,)))
             finally:
                 if data_exchange is not None:
                     data_exchange.close()

@@ -160,7 +160,7 @@ class SinglePointStripedSession(Lockable):
     def createJob(self, dataset_name, worker_class_tag = "#__worker_class__", fraction = None,
             histograms = [],
             frame_selector = None,
-            worker_class_source = None, worker_class_file = None, display=False,
+            worker_class_text = None, worker_class_file = None, display=False,
             user_callback = None,
             callbacks = None, user_params = {}, use_data_cache = True, bulk_data = {}):
 
@@ -178,18 +178,20 @@ class SinglePointStripedSession(Lockable):
             
         assert user_params is None or isinstance(user_params, dict), "User parameters must be either None or a dictionary. %s used" % (type(user_params),)
 
-        if worker_class_source is None and worker_class_file is not None:
+        if worker_class_text is None and worker_class_file is not None:
                 if isinstance(worker_class_file, (str, unicode)):
                         worker_class_file = open(worker_class_file, "r")
-                worker_class_source = worker_class_file.read()
+                worker_class_text = worker_class_file.read()
 
-        if not worker_class_source and self.IPython:
-                worker_class_source = self.findWorkerClass(worker_class_tag)
+        if not worker_class_text and self.IPython:
+                worker_class_text = self.findWorkerClass(worker_class_tag)
+
+        assert not not worker_class_text, "Worker code must be specified"
 
         auth_token = self.AuthTokenBox.token
         identity = self.AuthTokenBox.Identity
         job_desc = JobDescription(dataset_name, fraction, 
-                worker_class_source, user_params, frame_selector, self.WorkerTags, use_data_cache,
+                worker_class_text, user_params, frame_selector, self.WorkerTags, use_data_cache,
                 auth_token, self.Username, identity, 
                 self.DataModURL, self.DataModTokenBox.token if self.DataModTokenBox is not None else None,
                 bulk_data)
@@ -246,7 +248,9 @@ class SinglePointJob(StripedJob):
         job_desc.addHistograms(hdescriptors)
         msg = job_desc.toDXMsg()
         msg.toExchange(self.DXSocket)
+        #print "SinglePointJob: receiving message from the job server..."
         msg = self.DXSocket.recv()
+        #print "    response received"
         if msg is None:
             raise RuntimeError("Server failed to acknowledge the job")
         elif msg.Type == "job_failed":

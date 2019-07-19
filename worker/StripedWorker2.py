@@ -18,6 +18,7 @@ class AsynchronousFrameFetcher(PyThread):
         #print "AsynchronousFrameFetcher(%s, %s, %s, %s, %s)" % (driver, client, dataset_name, rgids, columns)
         
         self.Driver = driver
+        print "AsynchronousFrameFetcher: dataset: %s, columns: %s" % (dataset_name, columns)
         self.ClientDataset = client.dataset(dataset_name, columns)
         if not self.ClientDataset.exists:
             raise StripedNotFoundException("Dataset %s does not exist in the database" % (dataset_name,))
@@ -158,6 +159,7 @@ class WorkerDriver:
         dbinterface = self.DatabaseInterface(self.Client, self.DatasetName, self.DataModClient)
         with T["worker_constructor"]:
                 worker = self.WorkerClass(self.UserParams, self.BulkData, job_interface, dbinterface)
+                print "WorkerDriver.run(): worker created: %s %s, columns: %s" % (type(worker), worker, worker.Columns)
                 columns = worker.Columns
         worker.Trace = T
         fetcher = AsynchronousFrameFetcher(self, self.Client, self.DatasetName, self.RGIDs, columns, trace=T, log = self.Log,

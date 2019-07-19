@@ -126,6 +126,7 @@ class DXMessage:
         
         # parse header
         words = header.split(delimiter)     # first word is always empty
+        #print "DXMessage: header:", words
         # check sync
         if len(words) < 1:
             raise RuntimeError("Can not parse message header: [%s] delimiter:'%s'" % (header, delimiter))
@@ -177,6 +178,7 @@ class DXMessage:
                                 assert len(data) == original_size, \
                                         "Decompressed size of the attachment is incorrect. Expected length:%d, received:%d" % (original_size, len(data)) 
                             out[name] = data
+                            #print "DXMessage: part <%s> received" % (name,)
                 elif h == '\n':
                         # end of message
                         done = True
@@ -318,7 +320,7 @@ class DataExchangeSocket(BufferedSocket):
     def recv(self):
         try:    msg = DXMessage.fromBufferedSocket(self)
         except: 
-            print traceback.format_exc()
+            #print traceback.format_exc()
             msg = None
         return msg
         

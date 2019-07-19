@@ -7,6 +7,7 @@ class Worker(ML_Keras_FitWorker):
         def __init__(self, params, bulk, job_interface, db_interface):
                 ML_Keras_FitWorker.__init__(self, params, bulk, "image", "labels", 
                         optimizer = SGD(lr=params.get("lr", 0.01), nesterov=False, momentum=0.8, decay=0.0001))
+                print "learning rate:", params.get("lr")
 
 class Accumulator(ML_FitAccumulator):
         pass

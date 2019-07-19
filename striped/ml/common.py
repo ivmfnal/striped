@@ -110,7 +110,7 @@ class ML_FitJob:
                 #weights = self.Optimizer(weights, self.Grads)
                 self.Model.set_weights(weights)
                 
-    def run(self, dataset, learning_rate = 0.01, iterations = 1, nesterov = False, momentum = 0.0, **args):
+    def run(self, dataset, xcolumn, ycolumn, learning_rate = 0.01, iterations = 1, nesterov = False, momentum = 0.0, **args):
         params, weights = self.pack_model()
         params["_optimizer"] = {
             "type":             "SGD",
@@ -119,11 +119,14 @@ class ML_FitJob:
             "nesterov":         nesterov,
             "momentum":         momentum
         }
+        params["xcolumn"] = xcolumn
+        params["ycolumn"] = ycolumn
         job = self.Session.createJob(dataset,
                             user_params = params,
                             bulk_data = weights,
                             callbacks = [self],
                             worker_class_file=self.WorkerFile,
+                            worker_class_text=self.WorkerText,
                             **args)
         job.run()
         self.Runtime = job.runtime
@@ -168,13 +171,16 @@ class ML_EvaluateJob:
                 self.Metric = self.SumMetric / self.NSamples
                 self.Loss = self.SumLoss / self.NSamples
                 
-    def run(self, dataset, **args):
+    def run(self, dataset, xcolumn, ycolumn, **args):
         params, weights = self.pack_model()
+        params["xcolumn"] = xcolumn
+        params["ycolumn"] = ycolumn
         job = self.Session.createJob(dataset,
                             user_params = params,
                             bulk_data = weights,
                             callbacks = [self],
                             worker_class_file=self.WorkerFile,
+                            worker_class_text=self.WorkerText,
                             **args)
         job.run()
         self.Runtime = job.runtime
@@ -187,7 +193,7 @@ class MLSession(object):
         self.Platform = platform
         
         
-    def fit(self, dataset, iterations=1, learning_rate=0.01, worker_file=None, worker_text=None, **args):
+    def fit(self, dataset, xcolumn, ycolumn, iterations=1, learning_rate=0.01, worker_file=None, worker_text=None, **args):
         if worker_file is None and worker_text is None:
             if self.Platform == "keras":
                 from .keras_backend import ML_Keras_FitWorker_text
@@ -195,18 +201,19 @@ class MLSession(object):
             else:
                 raise ValueError("Unknown ML platform %s" % (self.Platform,))
         job = ML_FitJob(self.StripedSession, self.Model, worker_file=worker_file, worker_text=worker_text)
-        job.run(dataset, learning_rate=learning_rate, iterations=iterations, **args)
+        job.run(dataset, xcolumn, ycolumn, learning_rate=learning_rate, iterations=iterations, **args)
         return job.Loss, job.Metric
         
-    def evaluate(self, dataset, worker_file=None, worker_text=None, **args):
+    def evaluate(self, dataset, xcolumn, ycolumn, worker_file=None, worker_text=None, **args):
         if worker_file is None and worker_text is None:
             if self.Platform == "keras":
                 from .keras_backend import ML_Keras_EvaluateWorker_text
                 worker_text = ML_Keras_EvaluateWorker_text
+                #print "MLSession: worker_text: [%s]" % (worker_text,)
             else:
                 raise ValueError("Unknown ML platform %s" % (self.Platform,))
         job = ML_EvaluateJob(self.StripedSession, self.Model, worker_file=worker_file, worker_text=worker_text)
-        job.run(dataset, **args)
+        job.run(dataset, xcolumn, ycolumn, **args)
         return job.Loss, job.Metric
         
         
