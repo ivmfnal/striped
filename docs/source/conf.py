@@ -83,7 +83,7 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+# html_theme = 'alabaster'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -142,7 +142,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'striped.tex', u'striped Documentation',
+    (master_doc, 'striped.tex', u'Striped Documentation',
      u'Igor Mandrichenko', 'manual'),
 ]
 
@@ -169,4 +169,8 @@ texinfo_documents = [
 ]
 
 
+#import guzzle_sphinx_theme
+
+#html_theme_path = guzzle_sphinx_theme.html_theme_path()
+#html_theme = 'guzzle_sphinx_theme'
 

@@ -13,53 +13,87 @@ increase its performance.
 Worker
 ------
 
-The user analysis code executed by the workers is specified as a Python class with the following members:
+.. py:class:: Worker
 
-  * Object constructor
-  * Columns - either class member or the Worker instance attribute - list of column names used for the analysis
-  * frame() method, which will be called by the Framework for each data frame
-  * end() method, which will be called after the last frame is processed by the Worker
+    Worker is user-defined class, which specifies the code executed by the workers.  
+    The user has to define the Worker class with the following members:
 
-.. code-block:: python
+      * Object constructor
+      * Columns - either class member or the Worker instance attribute - list of column names used for the analysis
+      * frame() method, which will be called by the Framework for each data frame
+      * end() method, which will be called after the last frame is processed by the Worker
 
-    class Worker:
+    .. code-block:: python
+
+        class Worker:
     
-        Columns = [...]
+            Columns = [...]
         
-        def __init__(self, params, bulk_data, job, db):
-            # ...
+            def __init__(self, user_params, bulk_data, job, db):
+                # ...
         
-        def frame(self, objects):
-            # process frame
-            return data
+            def frame(self, objects):
+                # process frame
+                return data
                 
-        def end(self):
-            # called once after last frame
-            return data
+            def end(self):
+                # called once after last frame
+                return data
 
-Worker constructor accepts 4 arguments:
+  .. py:method:: __init__(self, user_params, bulk_data, job, database)
+  
+      :param dictionary user_params: job parameters passed by the user to the Session.createJob() function as user_params argument
+      :param dictionary bulk_data: bulk data dictionary passed to Session.createJob()
+      :param object job: an object providing an interface to communicate back to the Job
+      :param object database: the database object can be used to update data in the Striped database
 
-    * params - job parameters passed by the user to the Session.createJob() function as user_params argument
-    * bulk_data - bulk data passed by the user to the Session.createJob() function as bulk_data argument
-    * job - interface object to communicate back to the user job
-    * db - interface object to update data in the database
+  .. py:method:: frame(self, data)
+  
+      this method will be called once for each frame of data to be processed by the worker, synchronously.
+  
+      :param object data: frame accessor object providing access to the frame data
+      :return: Either None or string "stop" or s data dictionary. The dictionary can have text keys and strings, integers, floating poing
+               numbers or ndarrays as values. The dictionary can not be nested. If the worker's frame() method returns a dictionary, 
+               this dictionary will be passed to the Accumulator's add() method.
+      :raises StopIteration: alternative to returning "stop". If the method generates standard Python StopIteration exception, 
+          the iteration through frames by this worker will stop
 
-frame() method
-~~~~~~~~~~~~~~
-Worker's frame() method is called once per each frame. It has 2 arguments:
-    * objects - object providing access to the frame data
+  .. py:method:: end(self) 
 
-The frame() method can return one of the the following:
+        this method will be called once after the worker finished processing its last frame.
+        
+    :return: either a dictionary with data to be sent to the Accumulator or None. The dictionary has the same restrictions as the
+        dictionary returned by the frame() method.
+        
+    The Worker obejct is created once per
+    job per worker and it persists until the worker finishes running through its set of frames. That makes it possible to
+    store and accumulate some data between processing the frames. Here is an example:
+    
+    .. code-block:: python
+    
+        class Worker:
+    
+            Columns = ["Muon.pt"]
+        
+            def __init__(self, user_params, bulk_data, job, db):
+                self.SumPt = 0.0
+                self.NMuons = 0
+        
+            def frame(self, events):
+                pts = events.Muon.pt
+                self.NMuons += len(pts)
+                self.SumPt += sum(pts)
+                # do not return anything, just accumulate data from all frames
+                
+            def end(self):
+                # return accumulated data
+                return {
+                    "mean_pt": self.SumPt/self.NMuons,
+                    "n_muons": self.NMuons
+                    }
 
-    * None
-    * String "stop". In this case, the framework will stop running this particular worker through the rest of the frames its is supposed to process. Alternatively, the frame() method can raise StopIteration exception. This is useful when the framework is used to look up some object in the database rarher than run though all the objects.
-    * A data dictionary. The dictionary can have text keys and strings, integers, floating poing numbers or ndarrays as values. The dictionary can not be nested. If the worker's frame() method returns a dictionary, this dictionary will be passed to the Accumulator's add() method.
 
-end() method
-~~~~~~~~~~~~
-Method Worker.end() will be called once after the worker finished processing its last frame. The method has no arguments.
-It returns either a dictionary with data to be sent to the Accumulator or None. The dictionary has the same restrictions as the
-dictionary returned by the frame() method.
+
     
 Accumulator
 -----------
