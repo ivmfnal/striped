@@ -36,7 +36,7 @@ class ML_Keras_FitWorker:
                 self.Model = model
 
                 
-                self.Deltas = map(np.zeros_like, weights)
+                self.Deltas = map(np.zeros_like, self.Weights0)
                 self.Samples = 0
                 self.SumLoss = 0.0
                 self.SumMetric = 0.0
