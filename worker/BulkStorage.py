@@ -21,7 +21,10 @@ class BulkStorage(object):
         s = BulkStorage(name)
         s.readMap()
         return s
-    
+        
+    def __len__(self):
+        return self.Size
+            
     @staticmethod
     def create(name, data_dict):
         size = 0

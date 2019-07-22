@@ -323,7 +323,9 @@ class Contract(Primitive):
         del self.WorkerInterfaces[worker.WID]
         self.DoneWorkers[worker.WID] = worker
         self.CallbackDelegate.workerExited(worker.WID, status, t, worker.NEvents, self.nrunning())
-        self.log("workerExited(%s, %s). %d still running" % (worker.WID, status, self.nrunning()))
+        self.log("workerExited(%s, %s). %d still running: %s" % (worker.WID, status, self.nrunning(),
+            ','.join(["%s:%s" % wi.WorkerAddress for i, wi in sorted(self.WorkerInterfaces.items())])
+        ))
         if self.nrunning() <= 0:    
             self.wakeup()
 

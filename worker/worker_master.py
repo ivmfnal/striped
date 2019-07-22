@@ -2,7 +2,7 @@ from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR, getho
 import json, time, multiprocessing, os, traceback, sys
 
 from striped.client import StripedClient
-from striped.common import WorkerRegistryPinger, MyThread, DXMessage, WorkerRequest, DataExchangeSocket
+from striped.common import WorkerRegistryPinger, MyThread, DXMessage, WorkerRequest, DataExchangeSocket, LogFile
 from striped.pythreader import TaskQueue, Task, PyThread, synchronized
 
 from SocketWorker2 import SocketWorkerBuffer 
@@ -36,7 +36,7 @@ class WorkerTask(Task):
 
 class Worker(multiprocessing.Process):
 
-    def __init__(self, wid, nworkers, striped_server_url, logfile, cache_limit, module_storage):
+    def __init__(self, wid, nworkers, striped_server_url, logfile_template, cache_limit, module_storage):
         multiprocessing.Process.__init__(self)
         self.ID = wid
         self.NWorkers = nworkers
@@ -49,21 +49,21 @@ class Worker(multiprocessing.Process):
         self.Port = self.Sock.getsockname()[1]
         self.Address = self.Sock.getsockname()
         self.Tasks = TaskQueue(2, capacity=10)
-        if logfile != None:
-            self.LogFile = open(logfile, "w")
+        if logfile_template != None:
+            self.LogFile = LogFile(logfile_template % {"wid":self.ID}, keep=3)
+        self.log("created at port %d" % (self.Port,))
             
     def log(self, msg):
-        msg = "Worker %d port=%d %s: %s" % (self.ID, self.Port, time.ctime(time.time()), msg)
+        msg = "Worker %d: %s" % (self.ID, msg)
         print msg
         if self.LogFile is not None:
-            self.LogFile.write(msg+"\n")
-            self.LogFile.flush()
+            self.LogFile.log(msg)
                     
     def run(self):
         signal.signal(signal.SIGINT, self.sigint)
         self.Sock.listen(10)
         while not self.Stop:
-            self.log("----- accepting new connection...")
+            self.log("accepting new connection...")
             sock, addr = self.Sock.accept()             # synchronously run only 1 job at a time, for now
             dxsock = DataExchangeSocket(sock)
             msg = dxsock.recv()
@@ -80,10 +80,12 @@ class Worker(multiprocessing.Process):
                         dxsock.send(DXMessage("exception").append(info=formatted))
                     except:
                         self.log("Error sending 'exception' message:\n%s" % (traceback.format_exc(),))
-            self.log("----- closing socket")
+            self.log("closing socket")
             dxsock.close()
                     
     def runWorker(self, params, dxsock, frames, wid):
+        t0 = time.time()
+        self.log("------ runWorker entry for job %s worker %s" % (params.JID, self.ID))
         buffer_id = "%s_%s" % (params.JID, self.ID)
         buffer = SocketWorkerBuffer(buffer_id, dxsock, params.HDescriptors, log=self.log)
         #worker_module = sandbox_import_module(module_name, ["Worker"])
@@ -97,6 +99,7 @@ class Worker(multiprocessing.Process):
                 with T["open_bulk_storage"]:
                         bulk_storage = BulkStorage.open(params.BulkDataName)
                         #print "Worker: len(bulk_storage)=%d" % (len(bulk_storage),)
+                self.log("t=%.3f: bulk data received %d bytes, %d keys" % (time.time() - t0, len(bulk_storage), len(bulk_storage.keys())))
         
         worker_class = worker_module.Worker
         dataset_name = params.DatasetName
@@ -108,19 +111,21 @@ class Worker(multiprocessing.Process):
         if params.DataModURL is not None and params.DataModToken is not None:
             data_mod_client = StripedClient(params.DataModURL, data_modification_token=params.DataModToken)
             
+        self.log("t=%.3f: StripedClient initialized" % (time.time() - t0,))
+            
         worker = WorkerDriver(jid, wid, self.Client, worker_class, dataset_name, frames, self.NWorkers, buffer, 
                 user_params, bulk_storage, use_data_cache, 
                 data_mod_client,
                 tracer = T, log = self.log)
-        self.log("Worker driver created for frames: %s" % (frames,))
+        self.log("t=%.3f: Worker driver created for frames: %s" % (time.time() - t0, frames))
         with T["worker.run"]:
             nevents = worker.run()
-        self.log("jid/wid=%s/%s: worker.run() ended with nevents=%s" % (jid,wid,nevents))
+        self.log("t=%.3f: worker.run() ended with nevents=%s" % (time.time() - t0, nevents))
         
         buffer.close(nevents)
         del sys.modules[params.WorkerModuleName]
-        self.log("\n"+T.formatStats())
-        self.log("jid/wid=%s/%s: exit from runWorker" % (jid,wid))
+        self.log("stats:\n"+T.formatStats())
+        self.log("t=%.3f: ------ exit from runWorker" % (time.time() - t0,))
 
     def sigint(self, signum, frame):
         self.Stop = True
@@ -240,7 +245,7 @@ class AccumulatorDriver(Task):
             self.Driver = driver
         
         
-    def __init__(self, dxsock, request, workers, storage, bulk_data_transport):
+    def __init__(self, dxsock, request, workers, storage, bulk_data_transport, log_file):
         Task.__init__(self)
         self.DXSock = dxsock
         self.Request = request
@@ -252,9 +257,13 @@ class AccumulatorDriver(Task):
         self.EventsLastDataForward = 0
         self.T = Tracer()
         self.BulkDataTransport = bulk_data_transport
+        self.LogFile = log_file
 
     def log(self, msg):
-        print ("AccumulatorDriver(%s): %s" % (self.JID, msg))
+        msg = ("AccumulatorDriver(%s): %s" % (self.JID, msg))
+        print msg
+        if self.LogFile is not None:
+            self.LogFile.log(msg)
         
     def run(self):
         try:
@@ -394,17 +403,20 @@ class WorkerMaster(PyThread):
         self.Accumulators = TaskQueue(self.NJobsRunning, capacity=self.QueueCapacity)
         self.BulkDataTransport = bulk_data_transport
         
-        self.LogFile = config.get("LogFile")
-        if self.LogFile is not None:
-            logfile = "%s.log" % (logfile, port)
-            self.LogFile = open(logfile, "w")
+        self.WorkerLogFileTemplate = None
+        self.LogFile = None
+        self.LogDir = config.get("LogDir")
+        if self.LogDir is not None:
+            if not os.path.isdir(self.LogDir):
+                os.makedirs(self.LogDir, 0755)
+            self.WorkerLogFileTemplate = "%s/worker.%%(wid)d.log" % (self.LogDir,)
+            self.LogFile = LogFile("%s/worker_master.log" % (self.LogDir,), keep=3)
 
         
     def log(self, msg):
         print ("Worker master: %s" % (msg,))
         if self.LogFile is not None:
-            self.LogFile.write(msg+"\n")
-            self.LogFile.flush()
+            self.LogFile.log("Worker master: %s" % (msg,))
         
         
     def run(self):
@@ -423,7 +435,7 @@ class WorkerMaster(PyThread):
         # Start workers
         #
         
-        self.Workers = [Worker(i, self.NWorkers, self.StripedServerURL, self.LogFile, self.CacheLimit, self.ModuleStorage) 
+        self.Workers = [Worker(i, self.NWorkers, self.StripedServerURL, self.WorkerLogFileTemplate, self.CacheLimit, self.ModuleStorage) 
                 for i in range(self.NWorkers)]
         for w in self.Workers:
             w.start()
@@ -459,7 +471,7 @@ class WorkerMaster(PyThread):
                         self.log("Signature verification failed: %s" % (reason,))
                         dxsock.send(DXMessage("exception").append(info="Authentication failed: %s" % (reason,)))
                     else:
-                        self.Accumulators << AccumulatorDriver(dxsock, request, self.Workers, self.ModuleStorage, self.BulkDataTransport)
+                        self.Accumulators << AccumulatorDriver(dxsock, request, self.Workers, self.ModuleStorage, self.BulkDataTransport, self.LogFile)
                         close_sock = False
                 except:
                     self.log("Error processing the request. Closing the connection\n%s" % (traceback.format_exc(),))
