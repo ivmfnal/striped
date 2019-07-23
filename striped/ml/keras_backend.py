@@ -8,9 +8,19 @@ class ML_Keras_FitWorker:
 
         def __init__(self, params, bulk, job, db):
                 self.Bulk = bulk
+                self.Params = params
                 self.XColumn = params["xcolumn"]
                 self.YColumn = params["ycolumn"]
-
+                self.Weights0 = [p.copy() for n, p in sorted(bulk.items()) if n.startswith("weight_")]
+                
+                self.Deltas = None
+                self.Samples = 0
+                self.SumLoss = 0.0
+                self.SumMetric = 0.0
+                
+                self.Model = self.initModel(self.Params, self.Weights0)
+                
+        def initModel(self, params, weights):
                 config = tf.ConfigProto()
                 config.intra_op_parallelism_threads = 1
                 config.inter_op_parallelism_threads = 1
@@ -19,7 +29,11 @@ class ML_Keras_FitWorker:
                 
                 self.ModelConfig = params["_model"]
                 model = model_from_json(self.ModelConfig["config"])                
-                self.Weights0 = [p for n, p in sorted(bulk.items()) if n.startswith("weight_")]
+                
+                #for w in self.Weights0:
+                #    print "w: %s %s" % (w.dtype, w.shape)
+                
+                
                 loss = self.ModelConfig.get("loss", "categorical_crossentropy")
                 metric = self.ModelConfig.get("metric", "accuracy")
                 
@@ -32,39 +46,40 @@ class ML_Keras_FitWorker:
                             decay =     optimizer_config.get("decay", 0.0001)
                 )
                 model.compile(optimizer=optimizer, loss=loss, metrics=[metric])
-                self.Model = model
-
-                
-                self.Deltas = map(np.zeros_like, self.Weights0)
-                self.Samples = 0
-                self.SumLoss = 0.0
-                self.SumMetric = 0.0
+                model.set_weights(weights)
+                return model
                 
         @property
         def Columns(self):
                 return [self.XColumn, self.YColumn]
 
         def frame(self, data):
+            with self.Trace["model"]:
+        
                 model = self.Model
-                model.set_weights(self.Weights0)
-                
+                with self.Trace["model/set_weights"]:
+                    model.set_weights(self.Weights0)
+
                 x = getattr(data, self.XColumn)
                 y_ = getattr(data, self.YColumn)
                 n = len(x)
 
 
                 #self.Job.message("run...")
-                        
+
                 model = self.Model
 
                 for t in range(self.Iterations):
-                    with self.Trace["train"]:
+                    with self.Trace["model/train"]:
                             loss, metric = model.train_on_batch(x, y_)
                             
-                with self.Trace["deltas"]:
+                with self.Trace["model/deltas"]:
                         weights1 = model.get_weights()
-                        for d, w1, w0 in zip(self.Deltas, weights1, self.Weights0):
-                            d += (w1-w0)*n
+                        if self.Deltas is None:
+                            self.Deltas = [w1 - w0 for w0, w1 in zip(self.Weights0, weights1)]
+                        else:
+                            for d, w1, w0 in zip(self.Deltas, weights1, self.Weights0):
+                                d += (w1-w0)*n
                 self.SumMetric += metric * n
                 self.SumLoss += loss*n                        
                 self.Samples += n

@@ -67,7 +67,8 @@ class AsynchronousFrameFetcher(PyThread):
         
     def frames(self):
         while not self.Done or not self.queueEmpty():
-            tup = self.Frames.pop()  
+            with self.T["fetcher/wait_frame"]:
+                tup = self.Frames.pop()  
             if tup is None:
                 break   # queue closed
             else:
@@ -162,11 +163,14 @@ class WorkerDriver:
                 #print "WorkerDriver.run(): worker created: %s %s, columns: %s" % (type(worker), worker, worker.Columns)
                 columns = worker.Columns
         worker.Trace = T
-        fetcher = AsynchronousFrameFetcher(self, self.Client, self.DatasetName, self.RGIDs, columns, trace=T, log = self.Log,
-                use_data_cache = self.UseDataCache)
-        fetcher.start()
+        
+        with T["create_start_fetcher"]:
+            fetcher = AsynchronousFrameFetcher(self, self.Client, self.DatasetName, self.RGIDs, columns, trace=T, log = self.Log,
+                    use_data_cache = self.UseDataCache)
+            fetcher.start()
 
-        dataset = Dataset(self.Client, self.Buffer, self.DatasetName,  columns, trace=T)
+        with T["create_Dataset"]:
+            dataset = Dataset(self.Client, self.Buffer, self.DatasetName,  columns, trace=T)
             
         self.Dataset = dataset
         
@@ -175,7 +179,7 @@ class WorkerDriver:
         first_frame = True
         for iframe, (status, rginfo, data) in enumerate(fetcher.frames()):
             if status == "ok":
-                with T["frame"]:
+                with T["frame_loop"]:
                     frame = dataset.frame(rginfo, data)
                     event_group = frame.eventGroup(iframe, nframes)
                     self.SeenEvents += frame.NEvents        # update this before worker.run() so that 
@@ -183,12 +187,12 @@ class WorkerDriver:
                     out = None
                     stop = False
                     if hasattr(worker, "frame"):
-                        with T["frame/worker"]:
                             #sandbox_call(worker.run, event_group, job_interface, dbinterface)
                             dbinterface.FrameID = event_group.rgid
                             stop = False
                             try:
-                                out = worker.frame(event_group)
+                                with T["frame_loop/worker.frame()"]:
+                                    out = worker.frame(event_group)
                                 stop = (out == "stop")
                             except StopIteration:
                                 stop = True
@@ -196,7 +200,7 @@ class WorkerDriver:
                     self.Buffer.endOfFrame(self.SeenEvents)
                     events_delta += frame.NEvents 
                     if out:
-                        with T["frame/sendData"]:
+                        with T["frame_loop/sendData"]:
                             self.Buffer.sendData(events_delta, out)
                             events_delta = 0
                     if stop:
