@@ -39,7 +39,7 @@ class ML_Keras_FitWorker:
                 metric = self.ModelConfig.get("metric", "accuracy")
                 
                 optimizer_config = params.get("_optimizer", {})
-                self.Job.message("optimizer_config: %s" % (optimizer_config,))
+                #self.Job.message("optimizer_config: %s" % (optimizer_config,))
                 self.Iterations = optimizer_config.get("iterations", 1)
                 optimizer = SGD(
                             lr =        optimizer_config.get("lr", 0.01), 
