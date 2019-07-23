@@ -106,9 +106,12 @@ class ML_FitJob:
         if not error:
                 self.Metric = self.SumMetric / self.NSamples
                 self.Loss = self.SumLoss / self.NSamples
-                weights = [w + d/self.NSamples for w, d in zip(self.Model.get_weights(), self.Deltas)]
+                deltas = [d/self.NSamples for d in self.Deltas]
+                weights = [w + d for w, d in zip(self.Model.get_weights(), deltas)]
                 #weights = self.Optimizer(weights, self.Grads)
                 self.Model.set_weights(weights)
+                #for d in deltas:
+                #    print "delta:", d.shape, d.flat[:10]
                 
     def run(self, dataset, xcolumn, ycolumn, learning_rate = 0.01, iterations = 1, nesterov = False, momentum = 0.0, **args):
         params, weights = self.pack_model()

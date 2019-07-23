@@ -7,18 +7,19 @@ from keras.optimizers import SGD
 class ML_Keras_FitWorker:
 
         def __init__(self, params, bulk, job, db):
+                self.Job = job
                 self.Bulk = bulk
                 self.Params = params
                 self.XColumn = params["xcolumn"]
                 self.YColumn = params["ycolumn"]
                 self.Weights0 = [p.copy() for n, p in sorted(bulk.items()) if n.startswith("weight_")]
+                self.Model = self.initModel(self.Params, self.Weights0)
                 
                 self.Deltas = None
                 self.Samples = 0
                 self.SumLoss = 0.0
                 self.SumMetric = 0.0
                 
-                self.Model = self.initModel(self.Params, self.Weights0)
                 
         def initModel(self, params, weights):
                 config = tf.ConfigProto()
@@ -38,6 +39,7 @@ class ML_Keras_FitWorker:
                 metric = self.ModelConfig.get("metric", "accuracy")
                 
                 optimizer_config = params.get("_optimizer", {})
+                self.Job.message("optimizer_config: %s" % (optimizer_config,))
                 self.Iterations = optimizer_config.get("iterations", 1)
                 optimizer = SGD(
                             lr =        optimizer_config.get("lr", 0.01), 
@@ -76,7 +78,7 @@ class ML_Keras_FitWorker:
                 with self.Trace["model/deltas"]:
                         weights1 = model.get_weights()
                         if self.Deltas is None:
-                            self.Deltas = [w1 - w0 for w0, w1 in zip(self.Weights0, weights1)]
+                            self.Deltas = [(w1 - w0)*n for w0, w1 in zip(self.Weights0, weights1)]
                         else:
                             for d, w1, w0 in zip(self.Deltas, weights1, self.Weights0):
                                 d += (w1-w0)*n
