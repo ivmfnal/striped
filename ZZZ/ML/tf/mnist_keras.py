@@ -6,6 +6,7 @@ import tensorflow as tf
 from model_conv import create_model
 from keras import backend as K
 from keras.models import model_from_json, Model
+from tqdm import tqdm
 
 
 config = tf.ConfigProto()
@@ -23,28 +24,33 @@ y_train = to_categorical(y_train, num_classes=10)
 y_test = to_categorical(y_test, num_classes=10)
 
 
+lr = 0.01
+n = 1000
+steps = 1
+mbsize = 40
+
 model = create_model()
-cfg = model.to_json()
-weights = model.get_weights()
+opt = keras.optimizers.SGD(lr=lr, decay=0.0001, momentum=0.5)
 
-m1 = model_from_json(cfg)  
-
-opt = keras.optimizers.SGD(lr=0.2, decay=0.0001, momentum=0.8)
-
-m1.compile(loss='categorical_crossentropy',
+model.compile(loss='categorical_crossentropy',
           optimizer=opt,
           metrics=['accuracy'])
-m1.set_weights(weights)
+          
 
-for epoch in range(5):
-    weights0 = m1.get_weights()
-    m1.train_on_batch(x_train, y_train)
-    weights1 = m1.get_weights()
+weights0 = model.get_weights()
+for epoch in range(50):
+    deltas = map(np.zeros_like, weights0)
+    for i in tqdm(range(0, len(x_train), n)):
+        x = x_train[i:i+n]
+        y = y_train[i:i+n]
+        mb = len(x)
+        if mb:
+            model.set_weights(weights0)
+            model.fit(x, y, batch_size=mbsize, verbose=False)
+            for d, w, w0 in zip(deltas, model.get_weights(), weights0):
+                d += (w-w0)*mb
+    weights0 = [w0+d/len(x_train) for w0, d in zip(weights0, deltas)]
     
-    deltas = [w1-w0 for w1, w0 in zip(weights1, weights0)]
-    for w, d in zip(weights0, deltas):
-        w += d
-    t0 = time.time()    
-    m1.set_weights(weights0)
-    print "set_weights:", time.time() - t0
-    print m1.evaluate(x_test, y_test)
+    model.set_weights(weights0)
+    loss, accuracy = model.test_on_batch(x_test, y_test)
+    print "evaluate: loss=%f, accuracy=%.1f%%" % (loss, accuracy*100.0)

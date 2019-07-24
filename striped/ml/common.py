@@ -113,14 +113,15 @@ class ML_FitJob:
                 #for d in deltas:
                 #    print "delta:", d.shape, d.flat[:10]
                 
-    def run(self, dataset, xcolumn, ycolumn, learning_rate = 0.01, iterations = 1, nesterov = False, momentum = 0.0, **args):
+    def run(self, dataset, xcolumn, ycolumn, learning_rate = 0.01, iterations = 1, nesterov = False, momentum = 0.0, decay = 0.0, **args):
         params, weights = self.pack_model()
         params["_optimizer"] = {
             "type":             "SGD",
             "lr":               learning_rate,
             "iterations":       iterations,
             "nesterov":         nesterov,
-            "momentum":         momentum
+            "momentum":         momentum,
+            "decay":            decay
         }
         params["xcolumn"] = xcolumn
         params["ycolumn"] = ycolumn
@@ -196,7 +197,7 @@ class MLSession(object):
         self.Platform = platform
         
         
-    def fit(self, dataset, xcolumn, ycolumn, iterations=1, learning_rate=0.01, worker_file=None, worker_text=None, **args):
+    def fit(self, dataset, xcolumn, ycolumn, iterations=1, learning_rate=0.01, worker_file=None, worker_text=None, decay=0.0, **args):
         if worker_file is None and worker_text is None:
             if self.Platform == "keras":
                 from .keras_backend import ML_Keras_FitWorker_text
@@ -204,7 +205,7 @@ class MLSession(object):
             else:
                 raise ValueError("Unknown ML platform %s" % (self.Platform,))
         job = ML_FitJob(self.StripedSession, self.Model, worker_file=worker_file, worker_text=worker_text)
-        job.run(dataset, xcolumn, ycolumn, learning_rate=learning_rate, iterations=iterations, **args)
+        job.run(dataset, xcolumn, ycolumn, learning_rate=learning_rate, iterations=iterations, decay=decay, **args)
         return job.Loss, job.Metric
         
     def evaluate(self, dataset, xcolumn, ycolumn, worker_file=None, worker_text=None, **args):

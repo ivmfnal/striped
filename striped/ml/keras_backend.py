@@ -41,6 +41,7 @@ class ML_Keras_FitWorker:
                 optimizer_config = params.get("_optimizer", {})
                 #self.Job.message("optimizer_config: %s" % (optimizer_config,))
                 self.Iterations = optimizer_config.get("iterations", 1)
+                self.MBSize = optimizer_config.get("mbsize", 20)
                 optimizer = SGD(
                             lr =        optimizer_config.get("lr", 0.01), 
                             nesterov =  optimizer_config.get("nesterov", False), 
@@ -73,7 +74,7 @@ class ML_Keras_FitWorker:
 
                 for t in range(self.Iterations):
                     with self.Trace["model/train"]:
-                            loss, metric = model.train_on_batch(x, y_)
+                            loss, metric = model.fit(x, y_, batch_size=self.MBSize)
                             
                 with self.Trace["model/deltas"]:
                         weights1 = model.get_weights()
