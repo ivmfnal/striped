@@ -74,7 +74,8 @@ class ML_Keras_FitWorker:
 
                 for t in range(self.Iterations):
                     with self.Trace["model/train"]:
-                            loss, metric = model.fit(x, y_, batch_size=self.MBSize)
+                            history = model.fit(x, y_, batch_size=self.MBSize)
+                            loss, metric = history.history["loss"][-1], history.history["acc"][-1]
                             
                 with self.Trace["model/deltas"]:
                         weights1 = model.get_weights()
