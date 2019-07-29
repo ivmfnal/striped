@@ -86,7 +86,7 @@ class ML_FitJob:
                 cfg = model.to_json()
             except:
                 cfg = model.config()
-            params["_model"] = {
+            params["model"] = {
                 "config": cfg,
                 "loss": self.Loss,
                 "metrics":      [self.Metric]
@@ -107,24 +107,31 @@ class ML_FitJob:
                 self.Metric = self.SumMetric / self.NSamples
                 self.Loss = self.SumLoss / self.NSamples
                 deltas = [d/self.NSamples for d in self.Deltas]
+                #print "deltas:", [np.mean(w*w) for w in deltas]
                 weights = [w + d for w, d in zip(self.Model.get_weights(), deltas)]
                 #weights = self.Optimizer(weights, self.Grads)
                 self.Model.set_weights(weights)
                 #for d in deltas:
                 #    print "delta:", d.shape, d.flat[:10]
+
+    DefaultOptimizer = {
+        "type": "SGD",
+        "lr":   0.01,
+        "decay":    0.0
+    }
                 
-    def run(self, dataset, xcolumn, ycolumn, learning_rate = 0.01, iterations = 1, nesterov = False, momentum = 0.0, decay = 0.0, **args):
+    def run(self, dataset, xcolumn, ycolumn, iterations = 1, mbsize = 40, optimizer = None, optimizer_params = None, **args):
+        optimizer = optimizer or "SGD"
+        if optimizer_params is None:
+            optimizer_params = self.DefaultOptimizer
         params, weights = self.pack_model()
-        params["_optimizer"] = {
-            "type":             "SGD",
-            "lr":               learning_rate,
-            "iterations":       iterations,
-            "nesterov":         nesterov,
-            "momentum":         momentum,
-            "decay":            decay
-        }
+        params["optimizer"] = optimizer
+        params["optimizer_params"] = optimizer_params
+        params["iterations"] = iterations
+        params["mbsize"] = mbsize
         params["xcolumn"] = xcolumn
         params["ycolumn"] = ycolumn
+        #print "ML_FitJob: worker_file: %s, worker_text: [%s]" % (self.WorkerFile, self.WorkerText[:50] if self.WorkerText is not None else None)
         job = self.Session.createJob(dataset,
                             user_params = params,
                             bulk_data = weights,
@@ -137,7 +144,9 @@ class ML_FitJob:
         
 class ML_EvaluateJob:
 
-    def __init__(self, session, model, worker_file=None, worker_text=None, optimizer = None):
+    def __init__(self, session, model, worker_file=None, worker_text=None, 
+            loss="categorical_crossentropy",
+            metric = "accuracy"):
         self.Model = model
         self.Deltas = map(np.zeros_like, model.get_weights())
         self.Session = session
@@ -147,7 +156,8 @@ class ML_EvaluateJob:
         self.WorkerFile = worker_file
         self.SumMetric = 0.0
         self.NSamples = 0
-        self.Loss = self.Metric = None
+        self.Loss = loss
+        self.Metric = metric
 
     def pack_model(self):
             params = {}
@@ -156,10 +166,10 @@ class ML_EvaluateJob:
                 cfg = model.to_json()
             except:
                 cfg = model.config()
-            params["_model"] = {
+            params["model"] = {
                 "config": cfg,
-                "loss": 'categorical_crossentropy',
-                "metrics":      ["accuracy"]
+                "loss": self.Loss,
+                "metrics":      [self.Metric]
                 }
             weights = {"weight_%020d" % (i,):w for i, w in enumerate(model.get_weights())}
             return params, weights
@@ -197,7 +207,7 @@ class MLSession(object):
         self.Platform = platform
         
         
-    def fit(self, dataset, xcolumn, ycolumn, iterations=1, learning_rate=0.01, worker_file=None, worker_text=None, decay=0.0, **args):
+    def fit(self, dataset, xcolumn, ycolumn, iterations=1, worker_file=None, worker_text=None, optimizer=None, optimizer_params=None, **args):
         if worker_file is None and worker_text is None:
             if self.Platform == "keras":
                 from .keras_backend import ML_Keras_FitWorker_text
@@ -205,7 +215,7 @@ class MLSession(object):
             else:
                 raise ValueError("Unknown ML platform %s" % (self.Platform,))
         job = ML_FitJob(self.StripedSession, self.Model, worker_file=worker_file, worker_text=worker_text)
-        job.run(dataset, xcolumn, ycolumn, learning_rate=learning_rate, iterations=iterations, decay=decay, **args)
+        job.run(dataset, xcolumn, ycolumn, iterations=iterations, optimizer=optimizer, optimizer_params = optimizer_params, **args)
         return job.Loss, job.Metric
         
     def evaluate(self, dataset, xcolumn, ycolumn, worker_file=None, worker_text=None, **args):

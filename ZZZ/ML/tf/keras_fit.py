@@ -108,71 +108,33 @@ class ML_Keras_FitWorker:
                 K.clear_session()
                 return out
 
-class ML_Keras_EvaluateWorker:
 
-        def __init__(self, params, bulk, job, db):
-                self.Bulk = bulk
-                self.XColumn = params["xcolumn"]
-                self.YColumn = params["ycolumn"]
+Worker = ML_Keras_FitWorker
 
-                config = tf.ConfigProto()
-                config.intra_op_parallelism_threads = 1
-                config.inter_op_parallelism_threads = 1
-                tf_session = tf.Session(config=config)
-                K.set_session(tf_session)
-                
-                self.ModelConfig = params["model"]
+class ML_FitAccumulator:
 
-                model = model_from_json(self.ModelConfig["config"])     
-                #print  self.ModelConfig.keys(),   self.ModelConfig["loss"],   self.ModelConfig["metrics"]      
-                model.compile(optimizer=optimizers.SGD(0.1, momentum=0.0), 
-                        loss=self.ModelConfig["loss"], 
-                        metrics=self.ModelConfig["metrics"])
-                self.Model = model
-
-                weights = [p for n, p in sorted(bulk.items()) if n.startswith("weight_")]
-                self.Weights0 = weights
-                
+    def __init__(self, params, bulk, job_interface, db_interface):
+                #weights = [p for n, p in sorted(bulk.items()) if n.startswith("weight_")]
+                self.Deltas = None
                 self.Samples = 0
                 self.SumLoss = 0.0
                 self.SumMetric = 0.0
                 
-        @property
-        def Columns(self):
-                return [self.XColumn, self.YColumn]
-
-        def frame(self, data):
-                model = self.Model
-                model.set_weights(self.Weights0)
-                
-                x = getattr(data, self.XColumn)
-                y_ = getattr(data, self.YColumn)
-                n = len(x)
-
-
-                #self.Job.message("run...")
-                        
-                loss, metric = model.test_on_batch(x, y_)
-                            
-                self.SumMetric += metric * n
-                self.SumLoss += loss*n                        
-                self.Samples += n
-                
-        def end(self):
-                return {
-                    "samples":  self.Samples,
-                    "sumloss":  self.SumLoss,
-                    "summetric":    self.SumMetric
+    def add(self, data):
+        deltas = [p for n, p in sorted(data.items()) if n.startswith("delta_")]
+        if self.Deltas is None:
+            self.Deltas = [d.copy() for d in deltas]
+        else:
+            for d, dd in zip(self.Deltas, deltas):
+                d += dd
+        self.SumLoss += data["sumloss"]
+        self.Samples += data["samples"]
+        self.SumMetric += data["summetric"]
+        
+    def values(self):
+        #print "ML_Accumulator.values(): sending grads"
+        return {"deltas": self.Deltas, "samples":self.Samples, 
+                "sumloss": self.SumLoss, "summetric":self.SumMetric
                 }
-                
-ML_Keras_EvaluateWorker_text = """
-from striped.ml.keras_backend import ML_Keras_EvaluateWorker as Worker
-from striped.ml import ML_EvaluateAccumulator as Accumulator
-"""
-
-ML_Keras_FitWorker_text = """
-from striped.ml.keras_backend import ML_Keras_FitWorker as Worker
-from striped.ml import ML_FitAccumulator as Accumulator
-"""
-
-
+        
+Accumulator = ML_FitAccumulator
