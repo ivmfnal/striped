@@ -163,7 +163,7 @@ class Vault(Filterable):
             else:
                 width = stripe.shape[-1]
                 stripes = []
-                for j in xrange(width):
+                for j in range(width):
                     d, _ = make_pairs(stripe[:,j], self.SizeArray)
                     #print "d shape:", d.shape
                     stripes.append(d)

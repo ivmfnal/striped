@@ -127,8 +127,42 @@ static PyMethodDef module_methods[] = {
     {NULL}  /* Sentinel */
 };
 
+#if PY_MAJOR_VERSION >= 3
+
+/*
+ * Python3
+ */
+
+static struct PyModuleDef moduledef = {
+        PyModuleDef_HEAD_INIT,
+        "striped_c_tools",     /* m_name */
+        "Low level stripe handling library",  /* m_doc */
+        -1,                  /* m_size */
+        module_methods,      /* m_methods */
+        NULL,                /* m_reload */
+        NULL,                /* m_traverse */
+        NULL,                /* m_clear */
+        NULL,                /* m_free */
+    };
+
+
+
+PyMODINIT_FUNC PyInit_striped_c_tools(void)
+{
+    PyObject* m = PyModule_Create(&moduledef);
+    if ( m != NULL )
+	    import_array();
+    return m;
+}
     
-    
+
+
+#else /* PY_MAJOR_VERSION < 3 */
+
+/*
+ * Python2
+ */
+
 #ifndef PyMODINIT_FUNC	/* declarations for DLL import/export */
 #define PyMODINIT_FUNC void
 #endif
@@ -142,3 +176,5 @@ initstriped_c_tools(void)
                        "Low level stripe handling library");
     import_array();
 }
+#endif	/* PY_MAJOR_VERSION >= 3 ? */
+

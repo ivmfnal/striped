@@ -2,7 +2,7 @@ from ..client import StripedClient
 from ..common import Lockable, synchronized
 from ..common import JobTracer as JT
 from striped.hist import HAggregator
-import cPickle, base64, time, sys
+import pickle, base64, time, sys
 
 class UserCallbackList(object):
 
@@ -204,7 +204,7 @@ class DataCallbackObject(Lockable):
         self.Stderr = stderr or sys.stderr
         
     def addHistogram(self, h, inputs, display = True, constants={}):
-        if isinstance(inputs, (str, unicode)):
+        if isinstance(inputs, str):
                 inputs = [inputs]
         ha = HAggregator(h)
         self.Histograms["___h_%s" % (h.id,)] = ha
@@ -251,14 +251,13 @@ class DataCallbackObject(Lockable):
         self.EventsProcessed = max(nevents, self.EventsProcessed)
         stream_data = {}
         update_hist = False
-        for key, data in data_dict.items():
+        for key, data in list(data_dict.items()):
             if key in self.Histograms:
                 ha = self.Histograms[key]
                 ha.add(data)
                 update_hist = True
             else:
                 stream_data[key] = data
-        #print "updateRedeived:  stream_data.keys", stream_data.keys()
         
         if update_hist and time.time() > self.LastUpdateCallback + 1:
             self.CallbackList.callback("on_histograms_update", self.EventsProcessed)

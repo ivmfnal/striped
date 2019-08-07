@@ -1,7 +1,10 @@
 *.cfg
 *.pem
+*.tabs
+*.py-save
 build
 *.bck
+*.bak
 *.pyc
 *.pid
 .*

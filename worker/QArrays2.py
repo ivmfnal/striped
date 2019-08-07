@@ -115,9 +115,9 @@ class QAEventGroup(Filterable):
             return QAEventFilter(self, mask)
             
     def apply_event_filter(self, filter):
-        new_attr_vault = filter(self._AttrVault)
-        new_var_vaults = {n:filter(v) for n, v in self._VarAttrVaults.items()}
-        new_branch_vaults = {n:filter(v) for n, v in self._BranchVaults.items()}
+        new_attr_vault = list(filter(self._AttrVault))
+        new_var_vaults = {n:list(filter(v)) for n, v in self._VarAttrVaults.items()}
+        new_branch_vaults = {n:list(filter(v)) for n, v in self._BranchVaults.items()}
         _, nevents = filter.counts
         return QAEventGroup(self._RGInfo, nevents, new_attr_vault, new_var_vaults, new_branch_vaults)
             
@@ -172,7 +172,7 @@ class QABranch(Filterable):
             return QABranchFilter(self, mask, self._AttrVault.SizeArray)
             
     def apply_row_filter(self, filter):
-        return QABranch(self._Name, filter(self._AttrVault))
+        return QABranch(self._Name, list(filter(self._AttrVault)))
 
     apply_event_filter = apply_row_filter
         
@@ -223,7 +223,7 @@ class QABranchCombo(Filterable):
 
     def apply_event_filter(self, filter):
         return QABranchCombo(self._Name, self._Cardinality, 
-            filter(self._DataVault), filter(self._AttrVault))
+            list(filter(self._DataVault)), list(filter(self._AttrVault)))
 
     apply_row_filter = apply_event_filter
 

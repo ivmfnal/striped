@@ -7,13 +7,13 @@ nitems = 10
 tsum = 0.0
 nframes = 100
 
-for iframe in xrange(nframes):
+for iframe in range(nframes):
     # generate events
     stripe = []
     size = []
-    for ievent in xrange(nevents):
+    for ievent in range(nevents):
         n = random.randint(0,nitems)
-        stripe += [random.random() for _ in xrange(n)]
+        stripe += [random.random() for _ in range(n)]
         size.append(n)
     stripe = np.array(stripe)
     size = np.array(size)
@@ -22,4 +22,4 @@ for iframe in xrange(nframes):
     pairs_data, pairs_sizes = pairs(stripe, size)
     tsum += time.time() - t0    
     
-print (tsum/nframes)
+print((tsum/nframes))

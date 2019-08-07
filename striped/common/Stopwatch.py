@@ -11,7 +11,7 @@ class Stopwatch(object):
     def __enter__(self):
         self.T0 = time.time()
         if self.Inline:
-            print self.Label, "...",
+            print(self.Label, "...", end=' ')
             sys.stdout.flush()
         return self
 
@@ -19,8 +19,8 @@ class Stopwatch(object):
         self.T = time.time() - self.T0
         if self.Label:
             if not self.Inline:
-                print self.Label,
-            print ("%.6f" % (self.T,))
+                print(self.Label, end=' ')
+            print(("%.6f" % (self.T,)))
 
 
     def __str__(self):

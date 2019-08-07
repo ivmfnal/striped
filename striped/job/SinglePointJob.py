@@ -146,7 +146,7 @@ class SinglePointStripedSession(Lockable):
                 v = getattr(__main__, k)
                 #print "----- %s -----" % (k,)
                 #print v
-                if isinstance(v, (str, unicode)) and v.startswith(headline):
+                if isinstance(v, str) and v.startswith(headline):
                     n = int(k[2:])
                     if n > latest_n:
                         v = v.split("\n", 1)[-1]
@@ -165,12 +165,12 @@ class SinglePointStripedSession(Lockable):
             callbacks = None, user_params = {}, use_data_cache = True, bulk_data = {}):
 
         if user_callback is not None:
-            print
-            print "Deprecation warning:"
-            print "'user_callback' argument of the createJob() method is being deprecated " + \
-                    "and replaced with more generic 'callbacks' argument."
-            print "New 'callbacks' argument accepts either single callback object or a list of callback objects."
-            print
+            print()
+            print("Deprecation warning:")
+            print("'user_callback' argument of the createJob() method is being deprecated " + \
+                    "and replaced with more generic 'callbacks' argument.")
+            print("New 'callbacks' argument accepts either single callback object or a list of callback objects.")
+            print()
             if not callbacks:   callbacks = []
             if not isinstance(callbacks, list):
                 callbacks = [callbacks]
@@ -179,7 +179,7 @@ class SinglePointStripedSession(Lockable):
         assert user_params is None or isinstance(user_params, dict), "User parameters must be either None or a dictionary. %s used" % (type(user_params),)
 
         if worker_class_text is None and worker_class_file is not None:
-                if isinstance(worker_class_file, (str, unicode)):
+                if isinstance(worker_class_file, str):
                         worker_class_file = open(worker_class_file, "r")
                 worker_class_text = worker_class_file.read()
 

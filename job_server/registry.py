@@ -6,7 +6,7 @@ Debug = True
 
 def debug(msg):
     if Debug:
-        print msg
+        print(msg)
         
 class WorkerInfo:
     def __init__(self, server_addr, tag):
@@ -17,7 +17,7 @@ class WorkerInfo:
         
     def ping(self):
         self.LastPing = time.time()
-	self.Active = True
+        self.Active = True
 
 class ___Registry(MyThread):
 
@@ -132,9 +132,9 @@ class RegistryServer(MyThread):
                 #debug("key/t: %s/%s" % (k, t))
                 t = wi.LastPing
                 if t < now - self.PingTimeout:
-		    del dct[k]
+                    del dct[k]
 
-	self.KnownWorkers = { k:wi for k, wi in self.KnownWorkers.items() if wi.LastPing > now - 3600 }
+        self.KnownWorkers = { k:wi for k, wi in self.KnownWorkers.items() if wi.LastPing is None or wi.LastPing > now - 3600 }
 
     def run(self):
         sock = socket(AF_INET, SOCK_DGRAM)
@@ -146,7 +146,8 @@ class RegistryServer(MyThread):
         try:
             while True:
                 msg, addr = sock.recvfrom(10000)
-                #debug("received: '%s' from %s" % (msg, addr))
+                msg = msg.decode("utf-8", "ignore")
+                print("received: '%s' from %s" % (msg, addr))
                 try:
                     words = msg.split()
                     if words:
@@ -156,6 +157,7 @@ class RegistryServer(MyThread):
                             self.on_ack(addr, int(words[1]))
 
                 except:
+                    raise
                     continue
         finally:
             purger.stop()
@@ -163,36 +165,38 @@ class RegistryServer(MyThread):
         
     @synchronized                
     def on_ping(self, ping_addr, port, tag, h):
-        #print "on_ping(%s, %s, %s, %s)" % (addr, port, tag, h)
+        print ("on_ping(%s, %s, %s, %s)" % (ping_addr, port, tag, h))
         port = int(port)
-        if h != "%x" % (hash((port, tag)),):
-            #print "Invalid message %s %s %s from %s - hash mismatch" % (port, tag, h, addr)
+        if False and h != "%x" % (hash((port, tag)),):
+            print ("Invalid message %s %s %s from %s - hash mismatch" % (port, tag, h, ping_addr))
             return
         ip, ping_port = ping_addr
         worker_addr = (ip, port)
         if not tag in self.Registry:    self.Registry[tag] = {}
-	worker_id = (ip, ping_port, port)
+        worker_id = (ip, ping_port, port)
         if worker_id in self.Registry[tag]:
             wi = self.Registry[tag][worker_id]
-	    wi.ping()
-	else:
-		if worker_id in self.KnownWorkers:
-			wi = self.KnownWorkers[worker_id]
-		else:
-			wi = self.KnownWorkers[worker_id] = WorkerInfo(worker_addr, tag)
-		self.Sock.sendto("key %s" % (wi.Key,), ping_addr)
+            print("ping old worker")
+            wi.ping()
+        else:
+                if worker_id in self.KnownWorkers:
+                        wi = self.KnownWorkers[worker_id]
+                else:
+                        wi = self.KnownWorkers[worker_id] = WorkerInfo(worker_addr, tag)
+                self.Sock.sendto("key %s" % (wi.Key,), ping_addr)
+                print("ping new worker")
 
     @synchronized                
     def on_ack(self, ping_addr, work_port):
-	ip, ping_port = ping_addr
-	worker_id = (ip, ping_port, work_port)
-	if worker_id in self.KnownWorkers:
-		wi = self.KnownWorkers[worker_id]
-		tag = wi.Tag
-		if not tag in self.Registry:
-			self.Registry[tag] = {}
-		registry = self.Registry[tag]
-		registry[worker_id] = wi
+        ip, ping_port = ping_addr
+        worker_id = (ip, ping_port, work_port)
+        if worker_id in self.KnownWorkers:
+                wi = self.KnownWorkers[worker_id]
+                tag = wi.Tag
+                if not tag in self.Registry:
+                        self.Registry[tag] = {}
+                registry = self.Registry[tag]
+                registry[worker_id] = wi
         
     @synchronized
     def getList(self, tags, salt, n = None):
@@ -208,26 +212,26 @@ class RegistryServer(MyThread):
             lst = self.Registry.get(tag, []).values()
         if not lst: return []
         servers = sorted(lst, key=lambda wi: wi.Addr)           
-	by_addr = {}
-	for wi in servers:
-		ip = wi.Addr[0]
-		lst = by_addr.setdefault(ip, [])
-		lst.append(wi)
-	#
-	# sort by index within node and then by node
-	#
-	n_ips = len(by_addr)
-	lst2 = []
-	for i_ip, lst in enumerate(by_addr.values()):
-		for j, wi in enumerate(lst):
-			lst2.append((j*n_ips+i_ip, wi))
-	lst = [wi for inx, wi in sorted(lst2)]
-	if n is not None:
-		lst = lst[:n]
-	return lst
+        by_addr = {}
+        for wi in servers:
+                ip = wi.Addr[0]
+                lst = by_addr.setdefault(ip, [])
+                lst.append(wi)
+        #
+        # sort by index within node and then by node
+        #
+        n_ips = len(by_addr)
+        lst2 = []
+        for i_ip, lst in enumerate(by_addr.values()):
+                for j, wi in enumerate(lst):
+                        lst2.append((j*n_ips+i_ip, wi))
+        lst = [wi for inx, wi in sorted(lst2)]
+        if n is not None:
+                lst = lst[:n]
+        return lst
 
-	# the rest never worked
-		
+        # the rest never worked
+                
         if n is not None and len(servers) > n:
             state = random.getstate()
             random.seed(hash(salt))
@@ -271,8 +275,8 @@ if __name__ == "__main__":
         if opt == '-l': listener_port = int(val)
         if opt == '-w': http_port = int(val)
         
-    print "Listener UDP port: ", listener_port
-    print "Web service port:  ", http_port
+    print("Listener UDP port: ", listener_port)
+    print("Web service port:  ", http_port)
 
     registry = Registry()
     ping_receiver = PingReceiver(registry, listener_port)

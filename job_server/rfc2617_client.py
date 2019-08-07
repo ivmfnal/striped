@@ -1,4 +1,4 @@
-from urllib2 import Request, urlopen, HTTPPasswordMgr, HTTPDigestAuthHandler, build_opener
+from urllib.request import Request, urlopen, HTTPPasswordMgr, HTTPDigestAuthHandler, build_opener
 import sys
 
 
@@ -23,6 +23,6 @@ import requests
 from requests.auth import HTTPDigestAuth
 
 resp = requests.get(url, auth=HTTPDigestAuth(user, password))
-print resp
+print(resp)
 
 

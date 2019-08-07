@@ -1,4 +1,4 @@
-import sys, __builtin__, importlib
+import sys, builtins, importlib
 
 safe_modules = ["numpy","math","random","scipy","cmath","decimal","fractions","time",
     "numbers", "itertools", "operator",
@@ -7,7 +7,7 @@ safe_modules = ["numpy","math","random","scipy","cmath","decimal","fractions","t
 
 safe_modules = {m:importlib.import_module(m) for m in safe_modules}
 
-saved_import = __builtin__.__import__
+saved_import = builtins.__import__
 
 def safe_import(name, *params):
     safe = (
@@ -29,7 +29,7 @@ saved_builtins = {n:getattr(__builtin__, n) for n in builtin_remove}
     
 def sandbox_call(func, *params, **args):
     try:
-        __builtin__.__import__ = safe_import
+        builtins.__import__ = safe_import
         
         for n in builtin_remove:
             delattr(__builtin__, n)
@@ -38,7 +38,7 @@ def sandbox_call(func, *params, **args):
     except:
         raise
     finally:
-        __builtin__.__import__ = saved_import
+        builtins.__import__ = saved_import
         for n, s in saved_builtins.items():
             setattr(__builtin__, n, s)
 

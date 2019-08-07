@@ -1,4 +1,13 @@
-import sys, os, time, uuid, cPickle, random, multiprocessing
+import sys, os, time, uuid, random, multiprocessing
+
+PY2 = sys.version_info < (3,)
+PY3 = sys.version_info >= (3,)
+
+if PY2:
+	import cPickle as pickle
+else:
+	import pickle
+
 import numpy as np
 from striped.pythreader import PyThread, Primitive, synchronized
 from threading import Event
@@ -12,10 +21,10 @@ def distribute_items(lst, n):
     m = (N-k)/n
     i = 0
     out = []
-    for _ in xrange(k):
+    for _ in range(k):
         out.append(lst[i:i+m+1])
         i += m+1
-    for _ in xrange(n-k):
+    for _ in range(n-k):
         out.append(lst[i:i+m])
         i += m
     return out
@@ -24,7 +33,7 @@ def distribute_items_modulo(lst, n):
     if n == 0:
         return []
     lists = []
-    for _ in xrange(n):
+    for _ in range(n):
         lists.append([])
     for i in lst:
         lists[i%n].append(i)
@@ -63,7 +72,7 @@ class SocketWorkerInterface(PyThread):
         if self.Log:
             self.Log("WorkerInterface %d: %s" % (self.WID, msg))
         else:
-                print("WorkerInterface %d: %s" % (self.WID, msg))
+                print(("WorkerInterface %d: %s" % (self.WID, msg)))
 
     def abort(self):
         self.Abort = True
@@ -76,7 +85,7 @@ class SocketWorkerInterface(PyThread):
             try:    
                 sock.connect(self.WorkerAddress)
             except: 
-                print ("Error connecting to %s" % (self.WorkerAddress,))
+                print(("Error connecting to %s" % (self.WorkerAddress,)))
                 raise
 
             dxsock = DataExchangeSocket(sock)
@@ -200,7 +209,7 @@ class Contract(Primitive):
 
                     worker_module_name = "wm_%s" % (uuid.uuid1(),)
 
-                    for iw in xrange(len(self.Workers)):
+                    for iw in range(len(self.Workers)):
                         rgid_list = rgid_dist[iw]
                         #print iw, len(rgid_list)
                         if len(rgid_list):
@@ -215,7 +224,7 @@ class Contract(Primitive):
     def distributeWork(self, nworkers_job, nworkers_available, dataset, frame_selector, fraction):
         rgids_initial = sorted(dataset.rgids[:])
         nworkers = min(nworkers_job, nworkers_available)
-        workers = range(nworkers_available)
+        workers = list(range(nworkers_available))
         if nworkers < nworkers_available:
                 rstate = random.getstate()
                 seed = hash(dataset.Name)
@@ -248,7 +257,7 @@ class Contract(Primitive):
                 rgids = set(random.sample(rgids, n))
                 random.setstate(rstate)
 
-        rgid_dist = [[][:] for _ in xrange(nworkers_available)]
+        rgid_dist = [[][:] for _ in range(nworkers_available)]
         for iw, lst in enumerate(initial_distribution):
             iw_actual = workers[iw]
             for rgid in lst:
@@ -290,7 +299,7 @@ class Contract(Primitive):
         if self.Log:
             self.Log("Contract: %s" % (msg,))
         else:
-                print("Contract: %s" % (msg,))
+                print(("Contract: %s" % (msg,)))
             
     @synchronized
     def nevents(self):
@@ -341,7 +350,7 @@ class Contract(Primitive):
                 dt = None if timeout is None else max(0.0, t0+timeout - time.time())
                 if dt is None:  dt = 1.0
                 #print "Contract.wait: await(%s)" % (dt, )
-                self.await(dt)
+                self.sleep(dt)
             
     @synchronized
     def abort(self):

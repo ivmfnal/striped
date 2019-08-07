@@ -76,7 +76,7 @@ class MetaNode:
     def __or__(self, right):
         return MetaNode("or", self, right)
         
-    def __nonzero__(self):
+    def __bool__(self):
         raise ValueError("""When building a frame selection expression, use '&', '|', '-' instead of boolean operators 'and', 'or', 'not' respectively. 
         Also keep in mind that '&', '|', '-' take presidence over comparison operators, unlike 'and', 'or', 'not'.
         """)
@@ -111,13 +111,13 @@ if __name__ == "__main__":
 
     #exp = Meta("x")-1 < Meta("y")-1 & Meta("z") < 0
     exp = (Meta("x") < Meta("y")) & ( Meta("y") < 0 )
-    print exp.serialize()
-    print exp.eval(profile)
+    print(exp.serialize())
+    print(exp.eval(profile))
     
     exp = -exp
     
-    print exp.serialize()
+    print(exp.serialize())
     
     exp1 = MetaNode.deserialize(exp.serialize())
-    print exp1.serialize()
+    print(exp1.serialize())
         

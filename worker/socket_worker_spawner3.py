@@ -34,7 +34,7 @@ class SocketWorkerServer(multiprocessing.Process):
         
     def log(self, msg):
         msg = "Worker %d port=%d %s: %s" % (os.getpid(), self.Port, time.ctime(time.time()), msg)
-        print msg
+        print(msg)
         if self.LogFile is not None:
             self.LogFile.write(msg+"\n")
             self.LogFile.flush()
@@ -159,7 +159,7 @@ class WorkerSpawner:
         self.Workers = []
         self.StripedServerURL = server_url
         self.NWorkers = nworkers
-        self.PortRange = range(port_range_start, port_range_start+nworkers)
+        self.PortRange = list(range(port_range_start, port_range_start+nworkers))
         self.ModuleStorage = module_storage
         self.RegistryAddress = registry_address
         if not module_storage in sys.path:
@@ -186,11 +186,11 @@ class WorkerSpawner:
                     nrunning += 1
                 else:
                     if not w in dead:
-                        print "ERROR: Worker %d died with status %d" % (w.pid, w.exitcode)
+                        print("ERROR: Worker %d died with status %d" % (w.pid, w.exitcode))
                         dead.append(w)
                     
     def sigint(self, signum, frame):
-        print "SIGINT received. Terminating..."
+        print("SIGINT received. Terminating...")
         self.terminate()
             
     def terminate(self):
@@ -208,9 +208,9 @@ if __name__ == '__main__':
     cache_limit = float(opts.get("-c", 1.0))*1.0e9
                 
     if len(args) != 6 or "-h" in opts or "-?" in opts:
-        print
-        print Usage
-        print
+        print()
+        print(Usage)
+        print()
         sys.exit(1)
     
 

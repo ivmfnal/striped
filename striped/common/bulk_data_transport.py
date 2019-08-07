@@ -190,7 +190,7 @@ if __name__ == "__main__":
         repeater.join()
     else:
         # client
-        print send_to(sys.argv[2], open(sys.argv[3], "rb").read(), port, sys.argv[4:])
+        print(send_to(sys.argv[2], open(sys.argv[3], "rb").read(), port, sys.argv[4:]))
     
             
             

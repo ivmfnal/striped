@@ -1,5 +1,13 @@
-import json, cPickle
-from .DataExchange import DXMessage
+import json, sys
+
+PY3 = sys.version_info >= (3,)
+
+if PY3:
+	import pickle
+else:
+	import cPickle as pickle
+
+from .DataExchange2 import DXMessage
 from .signature import Signer
 
 class WorkerRequest:
@@ -50,7 +58,7 @@ class WorkerRequest:
             dataset_name = self.DatasetName,
             worker_module_name = self.WorkerModuleName,
             data_server_url = self.DataServerURL,
-            rgids = cPickle.dumps(self.RGIDs),
+            rgids = pickle.dumps(self.RGIDs),
             worker_text = self.WorkerText,
             histograms = json.dumps(self.HDescriptors),
             data_mod_url = self.DataModURL,
@@ -68,7 +76,7 @@ class WorkerRequest:
         nworkers = msg["nworkers"]
         worker_module_name = msg["worker_module_name"]
         data_server_url = msg["data_server_url"]
-        rgids = cPickle.loads(msg["rgids"])
+        rgids = pickle.loads(msg["rgids"])
         worker_text = msg["worker_text"]
         histograms = json.loads(msg["histograms"])
         user_params = msg.get("user_params")

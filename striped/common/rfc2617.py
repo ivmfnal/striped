@@ -15,6 +15,8 @@ def digest_server(realm, env, get_password):
     def md5sum(data):
         from hashlib import md5
         m = md5()
+        if isinstance(data, str):
+            data = data.encode("utf-8")
         m.update(data)
         return m.hexdigest()
 
@@ -25,7 +27,7 @@ def digest_server(realm, env, get_password):
     
     if not matches:
         # need "Authorization" header
-        nonce = base64.b64encode(str(int(time.time())))
+        nonce = base64.b64encode(str(int(time.time())).encode("utf-8"))
         header = 'Digest realm="%s", nonce="%s", algorithm=MD5, qop="auth"' % (realm, nonce)
         return False, header        
     

@@ -2,7 +2,6 @@ from vega import VegaLite
 import uuid
 from IPython.display import publish_display_data, DisplayHandle
 from ..common import Lockable, synchronized
-from thread import get_ident
 
 class UpdatableVegaLite(VegaLite):
     

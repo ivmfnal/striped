@@ -146,7 +146,7 @@ class BulkStorage(object):
                     shape = shape.split(",")
                     offset, size = int(offset), int(size)
                     #print int
-                    shape = map(int, shape)
+                    shape = list(map(int, shape))
                     m[key] = ('a', offset, size, dtype, shape)
             self.DataOffset = self.MM.tell()
         self.Map = m
@@ -172,7 +172,7 @@ if __name__ == "__main__":
         s = BulkStorage.create("test", data)
 
         s1 = BulkStorage.open("test")
-        print s1.keys()
+        print(s1.keys())
         for k, v in s1.items():
-                print k, type(v), v
+                print(k, type(v), v)
         s1.unlink()

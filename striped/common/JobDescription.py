@@ -1,6 +1,12 @@
-import json, cPickle
+import json, sys
+
+PY3 = sys.version_info >= (3,)
+if PY3:
+    import pickle
+else:
+    import cPickle as pickle
 import numpy as np
-from .DataExchange import DXMessage
+from .DataExchange2 import DXMessage
 from .Meta import MetaNode
 from .bulk_data_transport import encodeData
 
@@ -30,7 +36,6 @@ class JobDescription:
         
     def toDXMsg(self):
         msg = DXMessage("job_request", 
-                auth_token = self.AuthToken,
                 data_mod_token = self.DataModificationToken,
                 data_mod_url = self.DataModificationURL,
                 fraction=self.Fraction, 
@@ -44,10 +49,11 @@ class JobDescription:
         msg.append(
             bulk_data = encoded_bulk,
             worker_text=self.WorkerText,
-            worker_tags=cPickle.dumps(self.WorkerTags),
+            worker_tags=pickle.dumps(self.WorkerTags),
             user_params=encoded_params,
             histograms=json.dumps(self.HDescriptors),
-            identity=self.Identity
+            identity=self.Identity,
+            auth_token = self.AuthToken
         )
         if self.FrameSelector is not None:
             msg.append(frame_selector=json.dumps(self.FrameSelector.serialize()))        
@@ -67,7 +73,7 @@ class JobDescription:
         hdescriptors    = json.loads(msg["histograms"])
         user_params     = msg["user_params"] # do not unpickle, pass as is to the workers
         bulk_data       = msg["bulk_data"]  # do not unpickle, pass as is to the workers
-        worker_tags     = cPickle.loads(msg["worker_tags"])
+        worker_tags     = pickle.loads(msg["worker_tags"])
         worker_text     = msg["worker_text"]
         use_data_cache  = msg.get("use_data_cache", "yes") != "no"
         frame_selector  = msg.get("frame_selector")

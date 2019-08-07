@@ -1,9 +1,13 @@
 from .MyThread import MyThread
 from socket import socket, AF_INET, SOCK_DGRAM, gethostbyname
-import json, select
-try:
+import json, select, sys
+
+PY3 = sys.version_info >= (3,)
+PY2 = sys.version_info < (3,)
+
+if PY2:
     from urllib2 import urlopen
-except:
+else:
     from urllib.request import urlopen
 
 class WorkerRegistryClient(object):
@@ -38,7 +42,8 @@ class WorkerRegistryPinger(MyThread):
         poll = select.poll()
         poll.register(sock_fd, select.POLLIN)
         while not self.Stop:
-            sock.sendto("ping %s %s %s" % (self.Port, self.Tag, self.Hash), self.RegistryAddress)
+            ping = ("ping %s %s %s" % (self.Port, self.Tag, self.Hash)).encode("utf-8")
+            sock.sendto(ping, self.RegistryAddress)
             #print "ping sent"
             events = poll.poll(self.PingInterval*1000)
             #print "return from poll()"

@@ -35,21 +35,21 @@ class PrintCallback(object):
     def on_job_start(self, job):
         self.Job = job
         self.EventsToProcess = job.EventsToProcess
-        print "job started: jid=%s, %d total events, %d events to process, dataset: %s" % (
-            job.JID, job.EventsInDataset, job.EventsToProcess, job.DatasetName)
+        print("job started: jid=%s, %d total events, %d events to process, dataset: %s" % (
+            job.JID, job.EventsInDataset, job.EventsToProcess, job.DatasetName))
         
     def on_update(self, nevents):
-        print "%d events processed = %.2f%%" % (nevents, float(nevents)/float(self.EventsToProcess)*100.0)
+        print("%d events processed = %.2f%%" % (nevents, float(nevents)/float(self.EventsToProcess)*100.0))
         
     def on_job_finish(self, nevents, error):
-        print "Job finished, %d events processed" % (nevents,)
+        print("Job finished, %d events processed" % (nevents,))
         if error:
-            print "Error: %s" % (error,)
+            print("Error: %s" % (error,))
 
 class TraceAllCallback(object):
 
     def on_callback(self, name, *params, **args):
-        print "%s %s %s" % (name, params, args)
+        print("%s %s %s" % (name, params, args))
         
 class HistogramUpdateCallback(object):
 

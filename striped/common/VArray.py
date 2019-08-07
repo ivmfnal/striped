@@ -9,7 +9,7 @@ def generate_jagged_rec(depth, maxdata, maxbranch, xstart=0):
         return xstart + n, segment
     else:
         out = []
-        for _ in xrange(n):
+        for _ in range(n):
             xstart, part = generate_jagged_rec(depth-1, maxdata, maxbranch, xstart=xstart)
             out.append(part)
             if maxdata is not None and xstart > maxdata:    break
@@ -36,7 +36,7 @@ def _analyze_rec(depth, data):
 
     else:
         top_sizes = []
-        down_sizes = [[] for _ in xrange(depth-1)]
+        down_sizes = [[] for _ in range(depth-1)]
         data_segments = []
         for arr in data:
             top_sizes.append(len(arr))
@@ -119,7 +119,7 @@ def _expand_flat_index_rec(depth, flat_index, i0, ntop=None, imax=None):
         n = imax-i if imax is not None else ntop
         return [list(flat_index[i0:i0+n])], i0+n
     top = []
-    down_inx = [[] for _ in xrange(depth-1)]        # can not use [[]] * (depth-1) because that will be a list of multiple instances of the same empty list !
+    down_inx = [[] for _ in range(depth-1)]        # can not use [[]] * (depth-1) because that will be a list of multiple instances of the same empty list !
     i = i0
     while (imax is None or i < imax) and (ntop is None or ntop > 0):
         ndown = flat_index[i]
@@ -304,12 +304,12 @@ class VArray(object):
             if self.Depth == 0:
                 return self.FlatArray[inx]
             else:
-                inxlst = range(*inx.indices(len(self)))
+                inxlst = list(range(*inx.indices(len(self))))
                 return self.filter(inxlst)
                 
     def iterate(self):
         n = len(self)
-        for i in xrange(n):
+        for i in range(n):
             yield self[i]
             
     def __iterate____(self):
@@ -421,7 +421,7 @@ if __name__ == '__main__':
         maxdata = 15
         with Stopwatch("creating", inline=True):
             ndata, arr = generate_jagged(10, 3, maxdata, 5)
-        print "Total data length=", ndata
+        print("Total data length=", ndata)
         
         #print "Data:"
         #pprint.pprint(arr)
@@ -430,38 +430,38 @@ if __name__ == '__main__':
             v = VArray.fromJagged(3, np.float, arr)
         #print "Index:", v.SIndex
         flat = v.flat
-        print "Flat array:", v.flat
-        print "Index:          "
+        print("Flat array:", v.flat)
+        print("Index:          ")
         pprint.pprint(v.Index)
         
-        print v.flatIndex
+        print(v.flatIndex)
         
-        print "original array:"
-        print encoder.encode(arr)
+        print("original array:")
+        print(encoder.encode(arr))
         
-        print "v array (%s)" % (v,)
-        print encoder.encode(v)
+        print("v array (%s)" % (v,))
+        print(encoder.encode(v))
         
-        print compare_jagged(arr, v)
+        print(compare_jagged(arr, v))
         
     def mask_test():
         ndata, arr = generate_jagged(3, 2, 60, 5)
-        print len(arr), arr
+        print(len(arr), arr)
         v = VArray.fromJagged(2, np.float, arr)
         n = len(v)
         mask = np.asarray(np.arange(n) % 2, np.bool)
-        print mask
+        print(mask)
         
-        print encoder.encode(v)
+        print(encoder.encode(v))
         
         v1 = v.filter(mask)
-        print encoder.encode(v1)
+        print(encoder.encode(v1))
         
     def scale_test():
         depth = 2
         with Stopwatch("generate", inline=False):
             ndata, arr = generate_jagged(100000, depth, 1000000, 10)
-            print "max data:", ndata
+            print("max data:", ndata)
             
         #pprint.pprint(arr)
             
@@ -479,7 +479,7 @@ if __name__ == '__main__':
         depth = 3
         with Stopwatch("generate", inline=True):
             ndata, arr = generate_jagged(100000, depth, 10000000, 10)
-        print "ndata=", ndata, "   items:", len(arr)
+        print("ndata=", ndata, "   items:", len(arr))
         
         #print encoder.encode(arr)
             

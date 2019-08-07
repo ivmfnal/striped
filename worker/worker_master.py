@@ -21,10 +21,10 @@ def distribute_items(lst, n):
     m = (N-k)/n
     i = 0
     out = []
-    for _ in xrange(k):
+    for _ in range(k):
         out.append(lst[i:i+m+1])
         i += m+1
-    for _ in xrange(n-k):
+    for _ in range(n-k):
         out.append(lst[i:i+m])
         i += m
     return out
@@ -55,7 +55,7 @@ class Worker(multiprocessing.Process):
             
     def log(self, msg):
         msg = "Worker %d: %s" % (self.ID, msg)
-        print msg
+        print(msg)
         if self.LogFile is not None:
             self.LogFile.log(msg)
                     
@@ -261,7 +261,7 @@ class AccumulatorDriver(Task):
 
     def log(self, msg):
         msg = ("AccumulatorDriver(%s): %s" % (self.JID, msg))
-        print msg
+        print(msg)
         if self.LogFile is not None:
             self.LogFile.log(msg)
         
@@ -408,13 +408,13 @@ class WorkerMaster(PyThread):
         self.LogDir = config.get("LogDir")
         if self.LogDir is not None:
             if not os.path.isdir(self.LogDir):
-                os.makedirs(self.LogDir, 0755)
+                os.makedirs(self.LogDir, 0o755)
             self.WorkerLogFileTemplate = "%s/worker.%%(wid)d.log" % (self.LogDir,)
             self.LogFile = LogFile("%s/worker_master.log" % (self.LogDir,), keep=3)
 
         
     def log(self, msg):
-        print ("Worker master: %s" % (msg,))
+        print(("Worker master: %s" % (msg,)))
         if self.LogFile is not None:
             self.LogFile.log("Worker master: %s" % (msg,))
         
@@ -481,7 +481,7 @@ class WorkerMaster(PyThread):
 
                     
     def sigint(self, signum, frame):
-        print "SIGINT received. Terminating..."
+        print("SIGINT received. Terminating...")
         self.terminate()
 
     @synchronized
@@ -502,9 +502,9 @@ if __name__ == '__main__':
     opts = dict(opts)
                 
     if "-h" in opts or "-?" in opts:
-        print
-        print Usage
-        print
+        print()
+        print(Usage)
+        print()
         sys.exit(1)
     
     config = opts["-c"]

@@ -63,7 +63,7 @@ class   Configuration(Primitive):
             
 def log(text):
     if log_file is None:
-        print text
+        print(text)
     else:
         log_file.log(text)
 
@@ -87,7 +87,7 @@ class JobProcess(multiprocessing.Process):
         self.BulkTransportPort = bulk_transport_port
                 
     def log(self, msg):
-        print ("%s: %s" % (time.ctime(time.time()), msg))
+        print(("%s: %s" % (time.ctime(time.time()), msg)))
         if self.LogFile is not None:
             self.LogFile.write("%s: %s\n" % (time.ctime(time.time()), msg))
             self.LogFile.flush()
@@ -235,8 +235,8 @@ class JobTask(Task):
             self.log("validating...")
             validated = self.Server.validate_job(job_description)
             if not validated:
-                self.log("job request validation failed %s" % (job_description.AuthToken,))
-                self.DataExchange.send(DXMessage("job_failed".append(reason="Token validation failed")))
+                self.log("job request validation failed %s" % (repr(job_description.AuthToken),))
+                self.DataExchange.send(DXMessage("job_failed").append(reason="Token validation failed"))
                 self.Failed = True
                 self.Server.jobFailed(self, "Token validation failed")
             else:   
@@ -304,11 +304,11 @@ class JobServer(PyThread):
     @synchronized
     def purgeJobHistory(self):
         now = time.time()
-        self.JobHistory = filter(
+        self.JobHistory = list(filter(
                 lambda j, tmax = now - 24*3600: 
                         j.Ended and j.Ended > tmax,
                 self.JobHistory
-        )
+        ))
 
     @synchronized        
     def jid(self):
@@ -415,7 +415,9 @@ class Authenticator(Primitive):
         
     @synchronized
     def authorize(self, username):
-        return SignedToken({"identity":username}, expiration=self.TTL).encode(self.Secret)
+        token = SignedToken({"identity":username}, expiration=self.TTL).encode(self.Secret)
+        print("token: %s" % (token,))
+        return token
         
     @synchronized
     def validate(self, token, username):
@@ -423,6 +425,7 @@ class Authenticator(Primitive):
             return True, None
         try:    token = SignedToken.decode(token, self.Secret, verify_times=True, leeway=self.TTL_Leeway)
         except Exception as e:
+            print ("Authenticator.validate: %s" % (traceback.format_exc(),))
             return False, str(e)
         return token.Payload.get("identity") == username, token.Payload.get("identity")
             
@@ -436,9 +439,9 @@ class WebServiceHandler(WebPieHandler):
         
     def ___dn(self, env, start_response):
         if "HTTPS_DN" in env:
-            print "DN=", env["HTTPS_DN"]
+            print("DN=", env["HTTPS_DN"])
         else:
-            print "DN not found"
+            print("DN not found")
         start_response("200 OK", [("Contents-Type", "text/plain")])
         return [env.get("HTTPS_DN","DN not found")+"\n"]
         
@@ -671,8 +674,8 @@ web_server = HTTPServer(config.WebServerPort, application)
 rs.start()
 js.start()
 web_server.start()
-print "Web server port:", config.WebServerPort
-print "Job server port:", config.Port
+print("Web server port:", config.WebServerPort)
+print("Job server port:", config.Port)
 web_server.join()
 
 

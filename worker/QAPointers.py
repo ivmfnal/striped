@@ -15,7 +15,7 @@ class QAEventIterator(object):
     def __iter__(self):
         return self
 
-    def next(self):
+    def __next__(self):
         if self.I >= self.NEvents:
             raise StopIteration
         p = QAEventPointer(self.EventGroup, self.I)
@@ -67,7 +67,7 @@ class QABranchPointer:
             return QABranchTerminal(self.Branch._Name, self.Branch._AttrVault, self.IEvent, i)
         elif isinstance(i, slice):
             return [QABranchTerminal(self.Branch._Name, self.Branch._AttrVault, self.IEvent, j) 
-                        for j in xrange(*i.indices(len(self)))]
+                        for j in range(*i.indices(len(self)))]
     
     def __len__(self):
         return self.Branch.length(self.IEvent)
@@ -84,7 +84,7 @@ class QABranchPointer:
     # Iterator protocol
     #
     def iterate(self):
-        for i in xrange(len(self)):
+        for i in range(len(self)):
             yield self[i]
 
     def __iter__(self):
@@ -92,7 +92,7 @@ class QABranchPointer:
         self.Length = len(self)
         return self
         
-    def next(self):
+    def __next__(self):
         if self.Index >= self.Length:
             raise StopIteration
         x = self[self.Index]
@@ -137,7 +137,7 @@ class QAComboIterator(object):
     def __iter__(self):
         return self
         
-    def next(self):
+    def __next__(self):
         if self.I >= self.N:
             raise StopIteration
         self.PairPointer.IPair = self.I

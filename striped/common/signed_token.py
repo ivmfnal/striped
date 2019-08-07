@@ -27,6 +27,8 @@ class SignedTokenUnacceptedAlgorithmError(Exception):
         
 class SignedTokenAuthoriztionError(Exception):
     def __init__(self, msg):
+        if isinstance(msg, bytes):
+            msg = msg.decode("utf-8", "ignore")
         self.Message = msg
         
     def __str__(self):
@@ -35,10 +37,13 @@ class SignedTokenAuthoriztionError(Exception):
 class SignedToken(object):
     
     AcceptedAlgorithms = ["sha256","sha384","sha512","md5"]
-    PreferredAlgorithms = [a for a in AcceptedAlgorithms if a in hashlib.algorithms]
+
+    AvailableAlgorithms = set(hashlib.algorithms if hasattr(hashlib, "algorithms") else hashlib.algorithms_available)
+    
+    #PreferredAlgorithms = [a for a in AcceptedAlgorithms if a in AvailableAlgorithms]
     
     def __init__(self, payload, expiration=None, not_before=None):
-        self.Alg = self.PreferredAlgorithms[0]
+        self.Alg = [a for a in self.AcceptedAlgorithms if a in self.AvailableAlgorithms][0]
         self.Payload = payload
         self.IssuedAt = time.time()
         self.NotBefore = not_before if (not_before is None or not_before > 365*24*3600) else self.IssuedAt + not_before
@@ -50,7 +55,10 @@ class SignedToken(object):
         
     @staticmethod
     def encode_object(x):
-        return base64.b64encode(json.dumps(x))
+        j = json.dumps(x)
+        if isinstance(j, str):
+            j = j.encode("utf-8")
+        return base64.b64encode(j)
         
     @staticmethod
     def decode_object(txt):
@@ -58,13 +66,14 @@ class SignedToken(object):
         
     @staticmethod
     def pack(*words):
-	assert len(words) == 3, "Token must consist of 3 words, got %d instead" % (len(words),)
-        return ".".join(words)
+        assert len(words) == 3, "Token must consist of 3 words, got %d instead" % (len(words),)
+        words = [w.encode("utf-8") if isinstance(w, str) else w for w in words]
+        return b".".join(words)
         
     @staticmethod
     def unpack(txt):
-	words = txt.split(".")
-	assert len(words) == 3, "Token must consist of 3 words, got %d instead: [%s]" % (len(words), txt)
+        words = txt.split(b'.')
+        assert len(words) == 3, "Token must consist of 3 words, got %d instead: [%s]" % (len(words), txt)
         return words
     
     @staticmethod
@@ -72,7 +81,10 @@ class SignedToken(object):
         text = SignedToken.pack(*words)
         h = hashlib.new(alg)
         h.update(text)
-        return h.hexdigest()
+        sig = h.hexdigest()
+        if isinstance(sig, str):
+                sig = sig.encode("utf-8")
+        return sig
 
     def encode(self, secret):
         header = self.encode_object(
@@ -85,6 +97,7 @@ class SignedToken(object):
     @staticmethod
     def decode(txt, secret=None, verify_times=False, leeway=0):
         header, payload, signature = SignedToken.unpack(txt)
+        print ("token.decode:", header, payload, signature)
         header_decoded = SignedToken.decode_object(header)
         try:    alg = header_decoded["alg"]
         except: raise SignedTokenHeaderError
@@ -148,11 +161,11 @@ if __name__ == "__main__":
     payload = {"text":"hello world", "temp":32.0}
     encoded = SignedToken(payload, expiration=0).encode(secret)
     
-    print encoded
+    print(encoded)
     
     t1 = SignedToken.decode(encoded, secret, leeway=10)
-    print t1
-    print t1.Payload
+    print(t1)
+    print(t1.Payload)
         
     
         

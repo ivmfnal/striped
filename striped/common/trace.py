@@ -38,7 +38,7 @@ class Tracer:
         if calibrate:   self.calibrate()
         
     def __getitem__(self, name):
-        if not self.Points.has_key(name):
+        if name not in self.Points:
             self.Points[name] = TracePoint(name)
         return self.Points[name]
         
@@ -60,7 +60,7 @@ class Tracer:
         return "\n".join(out)
         
     def printStats(self):
-        print (self.formatStats())
+        print(self.formatStats())
         
     def reset(self):
         self.Points = {}     
@@ -102,4 +102,4 @@ if __name__ == '__main__':
             T.op2.end()
         if (i%10) == 0:
             for n, st in T.stats():
-                print ('%s: %s %s %s' % ((n,)+st))
+                print('%s: %s %s %s' % ((n,)+st))

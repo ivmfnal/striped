@@ -41,7 +41,7 @@ def check_authorization(env, resp):
   myresp = md5sum('%s:%s:%s:%s:%s:%s' % (a1, dict['nonce'], dict['nc'], dict['cnonce'], dict['qop'], a2))
   #pprint(myresp, sys.stderr, 2)
   if myresp != dict['response']:
-    print >>sys.stderr, "Auth failed!"
+    print("Auth failed!", file=sys.stderr)
     return None
 
   # TODO: check nonce's timestamp
@@ -49,7 +49,7 @@ def check_authorization(env, resp):
   aut_nonce = int(b64decode(dict['nonce']))
   pprint({'cli': aut_nonce, 'srv': cur_nonce}, sys.stderr, 2)
   if cur_nonce - aut_nonce > 10:    # 10sec
-    print >>sys.stderr, "Too old!"
+    print("Too old!", file=sys.stderr)
     return False
 
   return dict['username']

@@ -1,4 +1,7 @@
-import hashlib, base64, time, uuid, random
+import hashlib, base64, time, uuid, random, sys
+
+PY3 = sys.version_info >= (3,)
+PY2 = sys.version_info < (3,)
 
 # init random state
 
@@ -27,7 +30,7 @@ class Token(object):
             self.U = uuid.UUID(int = uuid.uuid1().int ^ uuid.uuid4().int)
         elif isinstance(value, str):
             self.U = uuid.UUID(value)
-        elif isinstance(value, long):
+        elif PY2 and isinstance(value, (long, int)) or PY3 and isinstance(value, int):
             self.U = uuid.UUID(int=value)
         else:
             raise ValueError("Unsupported type for source Token value: %s" % (type(value),))
@@ -51,7 +54,7 @@ class Token(object):
     def __xor__(self, another):
         if isinstance(another, Token):
             return Token(value = self.U.int ^ another.U.int, expiration = self.minExpiration(another))
-        elif isinstance(another, (str, unicode)):
+        elif PY3 and isinstance(another, str) or PY2 and isinstance(another, (str, unicode)):
             return self.encrypt(another)
             
         
@@ -80,12 +83,12 @@ class Signer(object):
 	
 	def calculate(self, t, salt, data, algorithm):
 	    if not algorithm in hashlib.algorithms_available:
-		raise ValueError("Unsupported hash algorithm '%s'" % (algorithm,))
+	        raise ValueError("Unsupported hash algorithm '%s'" % (algorithm,))
 	    h = hashlib.new(algorithm)
 	    if isinstance(t, float):
-		t = int(t+0.5)
+	        t = int(t+0.5)
 	    if isinstance(t, int):
-		t = "%d" % (t,)
+	        t = "%d" % (t,)
 	    s1 = "%s %s %s" % (t,salt,self.Key)
 	    s2 = " ".join(map(str, data))
 	    s = "%s %s" % (s1, s2)
@@ -96,7 +99,7 @@ class Signer(object):
 	    # choose hash algorithm
 	    alg = hash_algorithm()
 	    if not alg:
-		raise ValueError("None of prefered hash algorithms is supported")
+	        raise ValueError("None of prefered hash algorithms is supported")
 
 	    # generate salt   
 		 
@@ -114,13 +117,13 @@ class Signer(object):
 	    now = int(time.time()+0.5)
 	    t = int(t)
 	    if abs(int(t) - now) > time_tolerance:
-		return False, "Time not synchronized: t:%d (%s), my time: %d (%s)" % (t, time.ctime(t), now, time.ctime(now))
+	        return False, "Time not synchronized: t:%d (%s), my time: %d (%s)" % (t, time.ctime(t), now, time.ctime(now))
 	    my_signature = self.calculate(t, salt, data, alg)
 	    #print "Signer.verify(%s, %s, %s, %d, %s) -> %s" % (self.Key, t, salt, len(data), alg, my_signature)
 	    if my_signature == client_signature:
-		return True, "OK"
+	        return True, "OK"
 	    else:
-		return False, "Signature mismatch: expcted: %s, received: %s" % (my_signature, client_signature)
+	        return False, "Signature mismatch: expcted: %s, received: %s" % (my_signature, client_signature)
 	    
 
 	

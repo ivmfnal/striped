@@ -5,15 +5,14 @@ import datetime
 from threading import RLock
 
 def synchronized(func):
-	def synced(self, *params, **args):
-		with self._Lock:
-			return func(self, *params, **args)
-	return synced
+        def synced(self, *params, **args):
+                with self._Lock:
+                        return func(self, *params, **args)
+        return synced
 
 class   LogFile:
         def __init__(self, path, interval = '1d', keep = 10, timestamp=True, append=True):
-                # interval = 'midnight' means roll over at midnight
-		self._Lock = RLock()
+                self._Lock = RLock()
                 self.Path = path
                 self.File = None
                 self.CurLogBegin = 0
@@ -22,15 +21,15 @@ class   LogFile:
                         if interval[-1] == 'd' or interval[-1] == 'D':
                                 interval = interval[:-1]
                                 mult = 24 * 3600
-                                interval = string.atoi(interval) * mult
+                                interval = int(interval) * mult
                         elif interval[-1] == 'h' or interval[-1] == 'H':
                                 interval = interval[:-1]
                                 mult = 3600
-                                interval = string.atoi(interval) * mult
+                                interval = int(interval) * mult
                         elif interval[-1] == 'm' or interval[-1] == 'M':
                                 interval = interval[:-1]
                                 mult = 60
-                                interval = string.atoi(interval) * mult
+                                interval = int(interval) * mult
                 self.Interval = interval
                 self.Keep = keep
                 self.Timestamp = timestamp

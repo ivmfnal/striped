@@ -6,9 +6,9 @@ PY2 = sys.version_info < (3,)
 import numpy as np
 import zlib, base64
 if PY3:
-        import pickle
+	import pickle
 else:
-        import cPickle as pickle
+	import cPickle as pickle
 from . import HPlot
 
 class HistAxis(object):

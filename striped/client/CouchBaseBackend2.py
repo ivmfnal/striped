@@ -1,4 +1,8 @@
 import time, sys, random
+
+PY3 = sys.version_info >= (3,)
+PY2 = sys.version_info < (3,)
+
 try:
     # if couchbase is unavailable, ignore until these names are used
     import couchbase
@@ -10,7 +14,10 @@ try:
 except:
     pass
 
-from ConfigParser import ConfigParser
+if PY3:
+	from configparser import ConfigParser
+else:
+	from ConfigParser import ConfigParser
 import os
 import numpy as np
 from striped.common import stripe_key, rginfo_key, standalone_data_key, stripe_header, data_header, parse_data
@@ -74,7 +81,7 @@ def retry(method, retries=20):
                     pass
                     
                 if self.PrintErrors and rem_retries < retries/2:
-                        print ("_upsert_and_retry:%s\n    remaining retry count: %d     sleep time: %.1f seconds" % (e, rem_retries, sleep_time))
+                        print(("_upsert_and_retry:%s\n    remaining retry count: %d     sleep time: %.1f seconds" % (e, rem_retries, sleep_time)))
                 time.sleep((1.0+random.random())/2*sleep_time)
                 sleep_time *= 1.5
                 rem_retries -= 1
@@ -168,7 +175,7 @@ class CouchBaseBackend(object):
         if len(data_dict) > self.GET_PUT_CHUNK:
             keys = data_dict.keys()
             n = len(keys)
-            for i in xrange(0, n, self.GET_PUT_CHUNK):
+            for i in range(0, n, self.GET_PUT_CHUNK):
                 chunk = { k:data_dict[k] for k in keys[i:i+self.GET_PUT_CHUNK] }
                 #print "_put_multi: chunk=", len(chunk), "format=", format, 
                 #print [(k,len(d)) for k, d in chunk.items()]
@@ -185,7 +192,7 @@ class CouchBaseBackend(object):
     def ____get_multi(self, keys, no_format = False):
         out_data = {}
         if len(keys) > self.GET_PUT_CHUNK:
-            for i in xrange(0, len(keys), self.GET_PUT_CHUNK):
+            for i in range(0, len(keys), self.GET_PUT_CHUNK):
                 data = self.CB.get_multi(keys[i:i+self.GET_PUT_CHUNK], quiet=True, no_format=no_format)
                 for k, v in data.items():
                     out_data[k] = v.value if v is not None else None
@@ -198,7 +205,7 @@ class CouchBaseBackend(object):
     @retry
     def _get_multi(self, keys, no_format = False):
         out_data = {}
-        for i in xrange(0, len(keys), self.GET_PUT_CHUNK):
+        for i in range(0, len(keys), self.GET_PUT_CHUNK):
             ksegment = keys[i:i+self.GET_PUT_CHUNK]
             data = self.CB.get_multi(ksegment, quiet=True, no_format=no_format)
             for k in ksegment:
@@ -264,7 +271,7 @@ class CouchBaseBackend(object):
             done = False
             segments = []
             while not done:
-                parts_keys = ["%s.%d" % (key, i+j) for j in xrange(n)]
+                parts_keys = ["%s.%d" % (key, i+j) for j in range(n)]
                 parts_data = self._get_multi(parts_keys, no_format=True)
                 for k in parts_keys:
                     segment = parts_data[k]
@@ -306,7 +313,7 @@ class CouchBaseBackend(object):
             key = keys[cn]
             data = data_dict[key]
             if data is None:
-                raise KeyError, "Stripe for column %s (key=%s) not found" % (cn, key)
+                raise KeyError("Stripe for column %s (key=%s) not found" % (cn, key))
             dtype = None
             if data.startswith("#__header:"):
                 i = data.index("#", 1)
@@ -319,7 +326,7 @@ class CouchBaseBackend(object):
                             dtype = f.split("=",1)[1]
                             break
             if dtype is None:   
-                print "dtype not found in header:", repr(data[:100])
+                print("dtype not found in header:", repr(data[:100]))
                 dtype = dtypes[cn]
             out_dict[cn] = np.frombuffer(data, dtype)
         return out_dict
@@ -434,7 +441,7 @@ class CouchBaseBackend(object):
             key = "%s:@@rgmap.json" % (dataset_name,)
             rgmap = self[key].json
         except:
-            print "Can not get row group map from the database"
+            print("Can not get row group map from the database")
             raise
         return rgmap            # as dictionary
 
@@ -535,7 +542,7 @@ if __name__ == '__main__':
 
         for k in items.keys():
             if out_data[k] != items[k]:
-                print ("Difference for key %s" % (k,))
+                print(("Difference for key %s" % (k,)))
                 
     def test_read_write():
         fixed = ":" + "1234567890"*10000
@@ -546,7 +553,7 @@ if __name__ == '__main__':
         diff = 0
         for k in data.keys():
             if data[k] != read_data[k]:
-                print ("Data differs for key <%s>" % (k,))
+                print(("Data differs for key <%s>" % (k,)))
                 diff += 1
         if not diff:
             print ("Data varification succeeded")
@@ -565,11 +572,11 @@ if __name__ == '__main__':
     def test_rgids():
         it = b.RGIDs(sys.argv[2])
         for v in it:
-            print (type(v))
+            print((type(v)))
             print (v)   
             
     def test_schema():
-        print (b.schema(sys.argv[2]))
+        print((b.schema(sys.argv[2])))
             
     test_read_write()
     

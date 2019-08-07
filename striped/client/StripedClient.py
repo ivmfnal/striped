@@ -1,12 +1,24 @@
-import json, zlib, time, random, sys, traceback, urllib
-from urllib2 import HTTPError, URLError, urlopen, Request
+import json, zlib, time, random, sys, traceback
+
+PY3 = sys.version_info >= (3,)
+PY2 = sys.version_info < (3,)
+
+if PY3:
+	from urllib.error import HTTPError, URLError
+	from urllib.request import urlopen, Request
+	import urllib.request, urllib.parse, urllib.error
+	from urllib.parse import quote
+else:
+	from urllib2 import HTTPError, URLError, urlopen, Request
+	from urllib2 import quote
+
 import numpy as np
 #from femtocode.definitons import Dataset, ColumnName, Column, Segment, Schema
 #from typesystem import Schema
 
 from striped.common import synchronized, Lockable, parse_data
 from striped.common.exceptions import StripedNotFoundException
-from DataCache import DataCache
+from .DataCache import DataCache
 
 MAX_URL_LENGTH = 1000
 
@@ -286,7 +298,7 @@ class StripedDataset(Lockable):
     def rginfos(self, rgids):
         if isinstance(rgids, int):
             rgids = [rgids]
-        return map(RGInfo, self.rginfo(rgids))
+        return list(map(RGInfo, self.rginfo(rgids)))
         
     def nevents(self):
         return sum([r.NEvents for r in self.rginfos(self.rgids)])
@@ -392,7 +404,7 @@ class StripedDataset(Lockable):
     def stripes(self, columns, rgid, compress=False, use_cache = None):
         if use_cache is None:   use_cache = self.UseDataCache
         #sys.stderr.write("stripes: %s\n" % (type(columns), ))
-        if columns and isinstance(columns[0], (str, unicode)):
+        if columns and isinstance(columns[0], str):
             columns_dict = self.columns(columns)
             columns = [columns_dict[cn] for cn in columns]
             #sys.stderr.write("columns converted: %s\n" % (columns,))
@@ -699,9 +711,9 @@ class StripedClient(Lockable):
         if data is None:
             # assume binary for now
             url = "./data?key=%s&json=no&compress=%s" % \
-                (urllib.quote(key), "yes" if compress else "no")
+                (quote(key), "yes" if compress else "no")
             if dataset:
-                url += "&ds=%s" % (urllib.quote(dataset),)
+                url += "&ds=%s" % (quote(dataset),)
             #print "url:", url
             request = self.requestWithRetries(url, bypass_cache=not use_cache)
             data = request.read()
@@ -724,7 +736,7 @@ if __name__ == '__main__':
         dataset = sys.argv[1]
         client = StripedClient(sys.argv[1])
         for ds in client.datasets():
-            print (ds.Name)
+            print(ds.Name)
     
     def rgids():
         Usage="""
@@ -753,7 +765,7 @@ if __name__ == '__main__':
         dataset = client.dataset(sys.argv[2])
         all_columns = dataset.allColumns        # this is a dictionary { column name -> column object }
         for cn, c in all_columns.items():
-            print ("%s %s" % (cn, c.Descriptor))
+            print("%s %s" % (cn, c.Descriptor))
     
     def rginfo():
         Usage="""
@@ -761,7 +773,7 @@ if __name__ == '__main__':
         """
         client = StripedClient(sys.argv[1])
         dataset = sys.argv[2]
-        rgids = range(int(sys.argv[3]), int(sys.argv[4])+1)
+        rgids = list(range(int(sys.argv[3]), int(sys.argv[4])+1))
         dataset = client.dataset(dataset)
         rginfos = dataset.rginfos(rgids)
         for rginfo in rginfos:
@@ -775,7 +787,7 @@ if __name__ == '__main__':
         dataset = sys.argv[2]
         dataset = client.dataset(dataset)
         column = dataset.column(sys.argv[3])
-        print (column.descriptor)
+        print(column.descriptor)
         
     def multi_column_desc():
         Usage="""
@@ -785,7 +797,7 @@ if __name__ == '__main__':
         dataset = sys.argv[2]
         dataset = client.dataset(dataset)
         column = dataset.column(sys.argv[3])
-        print (column.descriptor)
+        print(column.descriptor)
             
     def stripes():
         Usage="""
@@ -801,7 +813,7 @@ if __name__ == '__main__':
         t1 = time.time()
         delta_t = t1-t0
         for cn, stripe in data.items():
-            print ("%s %s %s" % (cn, stripe[0].dtype, len(stripe)))
+            print("%s %s %s" % (cn, stripe[0].dtype, len(stripe)))
         
     def stripes_sizes():
         Usage="""
@@ -810,10 +822,10 @@ if __name__ == '__main__':
         client = StripedClient(sys.argv[1])
         dataset = client.dataset(sys.argv[2])
         columns = dataset.columns(sys.argv[3].split(",")).values()
-        rgids = range(99)
+        rgids = list(range(99))
         t0 = time.time()
         sizes_dict = dataset.stripeSizes(columns, rgids)
-        print ("Time: %s" % (time.time() - t0,))
+        print("Time: %s" % (time.time() - t0,))
         print (sizes_dict)
          
     def get_stripe():
@@ -828,7 +840,7 @@ if __name__ == '__main__':
         stripe = column.stripe(rgid)
         t1 = time.time()
         delta_t = t1-t0
-        print ("Stripe received. Time=%f, length=%d, type=%s" % (delta_t, len(stripe), stripe[0].dtype))
+        print("Stripe received. Time=%f, length=%d, type=%s" % (delta_t, len(stripe), stripe[0].dtype))
         print (stripe)
         
     def get_stripe_assembled():
@@ -852,7 +864,7 @@ if __name__ == '__main__':
         client = StripedClient(sys.argv[1])
         ds = client.dataset(sys.argv[2])
         schema = ds.schema
-        print (json.dumps(schema, sort_keys=True, indent = 4, separators=(',',': ')))
+        print(son.dumps(schema, sort_keys=True, indent = 4, separators=(',',': ')))
         
     def tagged_events():
         Usage="""
@@ -874,7 +886,7 @@ if __name__ == '__main__':
         dataset_name = sys.argv[2]
         key = sys.argv[3]
         data = client.standalone_data(dataset_name, key)
-        print repr(data)
+        print(repr(data))
 
     get_data()
         

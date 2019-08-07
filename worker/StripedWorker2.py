@@ -89,7 +89,7 @@ class WorkerDriver:
             args.update(kv)
             np = len(params)
             assert np%2 == 0, "Positional arguments must come in name, value pairs"
-            for i in xrange(0, np, 2):
+            for i in range(0, np, 2):
                 args[params[i]] = params[i+1]
             self.Driver.fill(args)
             
@@ -98,7 +98,7 @@ class WorkerDriver:
             args.update(kv)
             np = len(params)
             assert np%2 == 0, "Positional arguments must come in name, value pairs"
-            for i in xrange(0, np, 2):
+            for i in range(0, np, 2):
                 args[params[i]] = params[i+1]
             self.Driver.send(args)
             
