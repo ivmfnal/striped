@@ -3,6 +3,7 @@ from striped.pythreader import Primitive, PyThread, Task, TaskQueue, synchronize
 import socket, time
 import threading
 from .dataEncoder import encodeData
+from .DataExchange2 import to_bytes, to_str
 
 
 _BUFSIZE = 10000000
@@ -31,8 +32,7 @@ class Forwarder(PyThread):
                 header += " " + a
         header += '\n'
         
-        sock.send(header)
-        sock.send(self.Data)
+        sock.send(to_bytes(header) + to_bytes(self.Data))
         self.Response = sock.recv(10)
         #print "Forwarder:%s: done: [%s] time=%s" % (threading.current_thread().name, self.Response, time.time() - t0)
         
@@ -53,7 +53,7 @@ class BulkDataSender(object):
     def start(self):
         n = len(self.Addresses)
         if n > 0:
-            nsegment = (n + self.NSplit - 1)/self.NSplit
+            nsegment = (n + self.NSplit - 1)//self.NSplit
             forwarders = []
             for i in range(0, n, nsegment):
                 lst = self.Addresses[i:i+nsegment]
@@ -67,7 +67,7 @@ class BulkDataSender(object):
         for f in self.Forwarders:
             #print "joining %s..." % (f.name,)
             f.join()
-            assert f.Response == "OK"
+            assert f.Response == b"OK"
         
 class Handler(Task):
 
@@ -85,7 +85,7 @@ class Handler(Task):
                     text = self.Sock.recv(1000)
                     if not text:
                         return      # premature EOF
-                    header += text
+                    header += to_str(text)
                 header, data = header.split("\n", 1)
                 words = header.split()
                 name, size = words[:2]
@@ -124,7 +124,7 @@ class Handler(Task):
                 
                 client.wait()
                     
-                self.Sock.send("OK")
+                self.Sock.send(b"OK")
         finally:
                 # no matter what happens, clean up
                 self.Transport = None

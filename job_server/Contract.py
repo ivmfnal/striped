@@ -1,4 +1,4 @@
-import sys, os, time, uuid, random, multiprocessing
+import sys, os, time, uuid, random, multiprocessing, traceback
 
 PY2 = sys.version_info < (3,)
 PY3 = sys.version_info >= (3,)
@@ -15,10 +15,9 @@ import socket, traceback, random, time
 from striped.common import DXMessage, WorkerRequest, DataExchangeSocket, BulkDataSender
 
 def distribute_items(lst, n):
-    #print "distribute_items_simple(%d, %d)" % (len(lst), n)
     N = len(lst)
     k = N % n
-    m = (N-k)/n
+    m = (N-k)//n
     i = 0
     out = []
     for _ in range(k):
@@ -82,11 +81,7 @@ class SocketWorkerInterface(PyThread):
             self.Contract.waitForStart()
             tstart = time.time()
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            try:    
-                sock.connect(self.WorkerAddress)
-            except: 
-                print(("Error connecting to %s" % (self.WorkerAddress,)))
-                raise
+            sock.connect(self.WorkerAddress)
 
             dxsock = DataExchangeSocket(sock)
 
@@ -123,6 +118,7 @@ class SocketWorkerInterface(PyThread):
 
                 else:
                     self.log("message(%s)" % (msg.Type,))
+                    """
                     if msg.Type == 'flush':
                         nevents = int(msg["nevents"])
                         events_delta = nevents - self.LastNEvents
@@ -132,8 +128,9 @@ class SocketWorkerInterface(PyThread):
                         #print "buffer %s: updateReceived done"  % (self.WID,)
                         hists = {}
                         streams = {}
+                    """
 
-                    elif msg.Type == 'message':
+                    if msg.Type == 'message':
                         message = msg["message"]
                         nevents = msg["nevents"]
                         self.Contract.messageReceived(self, nevents, message)
@@ -148,7 +145,13 @@ class SocketWorkerInterface(PyThread):
                         streams[name] = msg["data"] # do not unpickle yet !
 
                     elif msg.Type == 'data':
+                            self.log("data mesage: events_delta=%s" % (msg["events_delta"],))
                             self.Contract.dataReceived(self, msg["events_delta"], msg["data"])
+
+                    elif msg.Type == 'events':
+                            n = msg["events_delta"]
+                            self.log("events delta: %s" % (n,))
+                            self.Contract.eventsDelta(n)
 
                     elif msg.Type == 'exception':
                         #print "Contract: exception received"
@@ -156,6 +159,8 @@ class SocketWorkerInterface(PyThread):
 
                     elif msg.Type == 'data_load_failure':
                         self.Contract.dataLoadFailureReceived(self, msg["rgid"])
+        except:
+            self.log("run(): exception: %s" % (traceback.format_exc(),))
         finally:
             self.Contract.workerExited(self, 0, time.time() - tstart)
             self.Contract = None        # break circular dependencies
@@ -301,16 +306,20 @@ class Contract(Primitive):
         else:
                 print(("Contract: %s" % (msg,)))
             
+    """
     @synchronized
     def nevents(self):
         n = sum(w.NEvents for w in self.WorkerInterfaces.values()) + sum(w.NEvents for w in self.DoneWorkers.values())
         #print "sum of workers:", n
         return n
+    """
     
+    """
     @synchronized
     def updateReceived(self, worker, hists, streams, nevents_delta):
         self.CallbackDelegate.updateReceived(worker.WID, hists, streams, nevents_delta)
-        
+    """
+
     @synchronized
     def dataReceived(self, worker, events_delta, data):
         self.CallbackDelegate.dataReceived(worker.WID, events_delta, data)
@@ -321,7 +330,7 @@ class Contract(Primitive):
         
     @synchronized
     def messageReceived(self, worker, nevents, message):
-        self.CallbackDelegate.messageReceived(worker.WID, nevents, message)
+        self.CallbackDelegate.messageReceived(worker.WID, message)
         
     @synchronized
     def dataLoadFailureReceived(self, worker, rgid):

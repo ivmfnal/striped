@@ -180,7 +180,7 @@ class JobProcess(multiprocessing.Process):
         if client_disconnected:
             self.log("Client disconnected (because of the communication error). Aborting")
             self.Contract.abort()
-            
+
     def dataReceived(self, wid, events_delta, data):
         with self.T["callback/data"]:
             self.DataExchange.send(DXMessage("data", wid=wid, events_delta=events_delta).append(data=data))
@@ -203,7 +203,7 @@ class JobProcess(multiprocessing.Process):
             self.FirstWorkerExitT = time.time()
         self.LastWorkerExitT = time.time()
         with self.T["callback/worker_exit"]:
-            self.DataExchange.send(DXMessage("worker_exit", nrunning=nrunning, wid=wid, address=self.Workers[wid].Addr, status=status,
+            self.DataExchange.send(DXMessage("worker_exit", nrunning=nrunning, wid=wid, status=status,
                 t=t, nevents=nevents))
         
 class JobTask(Task):
@@ -416,7 +416,7 @@ class Authenticator(Primitive):
     @synchronized
     def authorize(self, username):
         token = SignedToken({"identity":username}, expiration=self.TTL).encode(self.Secret)
-        print("token: %s" % (token,))
+        #print("token: %s" % (token,))
         return token
         
     @synchronized
@@ -425,7 +425,7 @@ class Authenticator(Primitive):
             return True, None
         try:    token = SignedToken.decode(token, self.Secret, verify_times=True, leeway=self.TTL_Leeway)
         except Exception as e:
-            print ("Authenticator.validate: %s" % (traceback.format_exc(),))
+            #print ("Authenticator.validate: %s" % (traceback.format_exc(),))
             return False, str(e)
         return token.Payload.get("identity") == username, token.Payload.get("identity")
             
@@ -436,14 +436,6 @@ class WebServiceHandler(WebPieHandler):
                 
     def log(self, msg):
         log("[WebServer]: %s" % (msg,))
-        
-    def ___dn(self, env, start_response):
-        if "HTTPS_DN" in env:
-            print("DN=", env["HTTPS_DN"])
-        else:
-            print("DN not found")
-        start_response("200 OK", [("Contents-Type", "text/plain")])
-        return [env.get("HTTPS_DN","DN not found")+"\n"]
         
     def job_server_address(self, request, relpath, **args):
         return Response(

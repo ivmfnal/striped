@@ -174,7 +174,7 @@ class WorkerDriver:
             
         self.Dataset = dataset
         
-        events_delta = 0
+        events_delta = total_events = 0
         nframes = len(self.RGIDs)
         first_frame = True
         for iframe, (status, rginfo, data) in enumerate(fetcher.frames()):
@@ -196,9 +196,10 @@ class WorkerDriver:
                                 stop = (out == "stop")
                             except StopIteration:
                                 stop = True
-                    self.Dataset.ProcessedEvents = self.SeenEvents
-                    self.Buffer.endOfFrame(self.SeenEvents)
+                    #self.Dataset.ProcessedEvents = self.SeenEvents
+                    self.Buffer.endOfFrame(frame.NEvents)
                     events_delta += frame.NEvents 
+                    total_events += frame.NEvents
                     if out:
                         with T["frame_loop/sendData"]:
                             self.Buffer.sendData(events_delta, out)
@@ -217,7 +218,7 @@ class WorkerDriver:
                 
         fetcher.stop()
         self.log("Worker %s: done, %d events processed" % (os.getpid(), self.Dataset.ProcessedEvents))
-        return self.Dataset.ProcessedEvents
+        return total_events
         
     def fill(self, dict_items):
         with self.T["frame/worker/fill"]:

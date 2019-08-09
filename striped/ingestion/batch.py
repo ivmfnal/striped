@@ -10,7 +10,7 @@ except:
 
 def distribute_items(N, n):
     k = N % n
-    m = (N-k)/n
+    m = (N-k)//n
     i = 0
     out = [m+1]*k + [m]*(n-k)
     return out

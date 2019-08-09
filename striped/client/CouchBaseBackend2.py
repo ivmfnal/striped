@@ -80,7 +80,7 @@ def retry(method, retries=20):
                 except NoMemoryError as e:
                     pass
                     
-                if self.PrintErrors and rem_retries < retries/2:
+                if self.PrintErrors and rem_retries < retries//2:
                         print(("_upsert_and_retry:%s\n    remaining retry count: %d     sleep time: %.1f seconds" % (e, rem_retries, sleep_time)))
                 time.sleep((1.0+random.random())/2*sleep_time)
                 sleep_time *= 1.5
@@ -122,7 +122,7 @@ class CouchBaseBackend(object):
         n = length//max_segment + 1
         N = length
         k = N % n
-        m = (N-k)/n
+        m = (N-k)//n
         i = 0
         out = [m+1]*k + [m]*(n-k)
         return out
@@ -534,7 +534,7 @@ if __name__ == '__main__':
             key = prefix + str(len(data))
             items[key] = data
             data = data + data + data
-            data = data[:len(data)/2] + "12345"
+            data = data[:len(data)//2] + "12345"
 
         b.put_data(items)
 

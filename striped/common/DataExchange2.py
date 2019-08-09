@@ -1,6 +1,8 @@
 import socket, zlib, traceback
 import numpy as np
 
+EOFException = Exception()
+
 def to_str(x):
         if isinstance(x, str):  return x
         elif isinstance(x, bytes):      return x.decode("utf-8")
@@ -84,7 +86,7 @@ class DXMessage:
                         msg.append(to_bytes("%s=n%s:%s:%d:" % (n, v.dtype.str, 
                                 ",".join(["%d" % (x,) for x in v.shape]), len(data))) + data)
                 else:
-                        assert isinstance(v, (int, float, bool)) or v is None
+                        assert isinstance(v, (int, float, bool)) or v is None, "Unknown DXMessage argument type %s: %s" % (type(v), repr(v))
                         msg.append(to_bytes("%s==%s" % (n, v)))
         msg = self.Del.join(msg) + self.Del
         return b"%s%d:%s" % (self.Sync, len(msg), msg)
@@ -101,12 +103,17 @@ class DXMessage:
 
 
         sync = buffered.readn(3)
+        if not sync:	
+            print("DXSocket.fromBuffered(): EOF")
+            return None		# EOF
+        #print("DXSocket.fromBuffered(): sync received")
+
         if sync != DXMessage.Sync:
                 raise IOError("Stream is out of sync. Received %s instead of sync %s" % (to_str(sync), to_str(DXMessage.Sync)))
 
         msg_size = buffered.readuntil(b":")
         if not msg_size:
-                return None
+                raise IOError("Incomplete message. Sync received, but can not read message size")
 
         msg_size = int(msg_size)
         body = buffered.readn(msg_size)
@@ -182,11 +189,9 @@ class BufferedSocket(Context):
         buflst = [word]
         while not stop in word:
                 word = self.Sock.recv(1000000)
-                if not word:    break
+                if not word:    raise IOError("Socket closed while reading until %s" % (repr(stop),))
                 else:           buflst.append(word)
         buf = b''.join(buflst)
-        if not stop in buf:
-                return None             # eof
         head, self.Buffer = buf.split(stop,1)
         #print ("readuntil(%x): <%s>_<%s>" % (ord(stop), head, self.Buffer))
         return head
@@ -204,8 +209,6 @@ class BufferedSocket(Context):
                     break   # eof
                 length += len(word)
                 buflst.append(word)
-        if length < n:
-                return None     # EOF
         data = b''.join(buflst)
         out, self.Buffer = data[:n], data[n:]
         #print ("readn(%d): <%s>_<%s>" % (n, out, self.Buffer))
@@ -237,12 +240,12 @@ class BufferedBytes(Context):
                         self.I = new_i
                         return out
                 else:
-                        return None
+                        raise IOError("End of buffer while reading until %s" % (repr(stop),))
 
         def readn(self, n):
                 #print ("readn: I=%d, n=%d, L=%d" % (self.I, n, len(self.Buffer)))
                 if self.I + n > len(self.Buffer):
-                        return None
+                        raise IOError("End of buffer while reading %d bytes (buffer remaining: %d)" % (n, len(self.Buffer) - self.I))
                 new_i = self.I + n
                 out = self.Buffer[self.I:new_i]
                 self.I = new_i

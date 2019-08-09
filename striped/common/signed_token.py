@@ -97,7 +97,7 @@ class SignedToken(object):
     @staticmethod
     def decode(txt, secret=None, verify_times=False, leeway=0):
         header, payload, signature = SignedToken.unpack(txt)
-        print ("token.decode:", header, payload, signature)
+        #print ("token.decode:", header, payload, signature)
         header_decoded = SignedToken.decode_object(header)
         try:    alg = header_decoded["alg"]
         except: raise SignedTokenHeaderError

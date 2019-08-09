@@ -1,4 +1,5 @@
 import numpy as np, posix_ipc, mmap
+from striped.common import to_bytes, to_str
 
 #
 # Stores a dictionary { "key" -> (ndarray or int or float or string) } in a POSIX IPC shared memory segment
@@ -83,7 +84,7 @@ class BulkStorage(object):
     def initMap(self):
         self.Map = {}
         self.MM.seek(0)
-        self.MM.write("\n")
+        self.MM.write(b"\n")
         self.DataOffset = 1
         self.MM.seek(0)
         self.MM.flush()
@@ -115,10 +116,10 @@ class BulkStorage(object):
                     j += size
                 else:
                     raise ValueError("Unknown value type %s for key %s" % (type(value), key))
-                self.MM.write(header)
-            self.MM.write("\n")
+                self.MM.write(to_bytes(header))
+            self.MM.write(b"\n")
             for b in data:
-                self.MM.write(bytes(b))
+                self.MM.write(to_bytes(b))
             self.MM.flush()
         
     def readMap(self):
@@ -132,8 +133,10 @@ class BulkStorage(object):
                 line = self.MM.readline()
                 line = line.strip()
                 if not line:  break
-                words = line.split(":")
+                words = line.split(b":")
                 key, typ = words[:2]
+                key = to_str(key)
+                typ = to_str(typ)
                 value = None
                 if typ == 'n':
                     try:    value=int(words[2])

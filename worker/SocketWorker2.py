@@ -65,14 +65,6 @@ class SocketWorkerBuffer(object):
                 hc.fill(dct)
                 self.NFills += 1
                 
-    def addStreams(self, nevents, dct):
-        for k, d in dct.items():
-            sb = self.SBuffers.get(k)
-            if sb is None:
-                sb = StreamBuffer()
-                self.SBuffers[k] = sb
-            sb.addData(nevents, d)
-            
     def message(self, nevents, message):
         self.DXSock.send(DXMessage("message", nevents=nevents).append(message=message))
         
@@ -109,15 +101,19 @@ class SocketWorkerBuffer(object):
         self.DXSock.send(msg)
 
     def dataSequence(self):
-	    seq = self.DataSequence
-	    self.DataSequence += 1
-	    return seq
+            seq = self.DataSequence
+            self.DataSequence += 1
+            return seq
 
     def sendData(self, events_delta, data):
         storage_name = "%s_%s" % (self.ID, self.dataSequence())
         storage = BulkStorage.create(storage_name, data)
         msg = DXMessage("data", events_delta=events_delta, storage=storage_name)
         self.DXSock.send(msg)
+
+    def bumpEvents(self, events_delta):
+        if events_delta > 0:
+             self.DXSock.send(DXMessage("events", delta=events_delta))
         
     def close(self, nevents):
         self.log("close")

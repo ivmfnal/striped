@@ -346,7 +346,7 @@ class Hist:
                 dct = {"__count":float(c), "__error":e, "__hid":self.id}
                 for iaxis, (idata, aname) in enumerate(zip(indexes, self.DenseAxesList)):
                     dct[aname] = self.DenseBins[iaxis][idata]
-                    midbin = (self.DenseBins[iaxis][idata] + self.DenseBins[iaxis][idata+1])/2
+                    midbin = (self.DenseBins[iaxis][idata] + self.DenseBins[iaxis][idata+1])//2
                     dct["__midbin_" + aname] = midbin
                 lst.append(dct)
         else:

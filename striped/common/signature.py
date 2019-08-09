@@ -1,4 +1,5 @@
 import hashlib, base64, time, uuid, random, sys
+from .DataExchange2 import to_bytes, to_str
 
 PY3 = sys.version_info >= (3,)
 PY2 = sys.version_info < (3,)
@@ -92,7 +93,7 @@ class Signer(object):
 	    s1 = "%s %s %s" % (t,salt,self.Key)
 	    s2 = " ".join(map(str, data))
 	    s = "%s %s" % (s1, s2)
-	    h.update(s)
+	    h.update(to_bytes(s))
 	    return h.hexdigest()
 
 	def sign(self, data):

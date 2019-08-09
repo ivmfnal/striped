@@ -131,15 +131,19 @@ class StripedJob(Lockable):
     def jobStarted(self):
         self.CallbackList.callback("on_job_start", self)
 
+    """
     @synchronized
     def updateReceived(self, wid, data_dict, nevents):
         self.CallbackList.callback("on_update", nevents)
-        self.EventsProcessed = max(nevents, self.EventsProcessed)
         self.DataCallbackDelegate.updateReceived(self, data_dict, self.EventsProcessed)
         self.DataReceivedCounter += 1
-        
+    """
+    
     @synchronized
     def dataReceived(self, wid, events_delta, data):
+        #print("dataReceived(wid=%s, delta=%s)" % (wid, events_delta))
+        self.EventsProcessed += events_delta
+        #print("self.EventsProcessed -> ", self.EventsProcessed)
         self.CallbackList.callback("on_data", wid, events_delta, data)
         
     @synchronized
@@ -158,8 +162,8 @@ class StripedJob(Lockable):
             self.Stderr.flush()
         
     @synchronized
-    def workerExited(self, wid, address, status, t, total_events, nrunning):
-        self.CallbackList.callback("on_worker_exit", wid, address, status, t, total_events, nrunning)
+    def workerExited(self, wid, status, t, total_events, nrunning):
+        self.CallbackList.callback("on_worker_exit", wid, status, t, total_events, nrunning)
         
     @synchronized
     def jobFinished(self):
@@ -247,6 +251,12 @@ class DataCallbackObject(Lockable):
     #
         
     @synchronized
+    def jobEnded(self):
+        if self.Fig is not None:
+            self.plotHistograms()            
+
+    """
+    @synchronized
     def updateReceived(self, job, data_dict, nevents):
         self.EventsProcessed = max(nevents, self.EventsProcessed)
         stream_data = {}
@@ -265,8 +275,5 @@ class DataCallbackObject(Lockable):
 
         if stream_data:
             self.CallbackList.callback("on_streams_update", self.EventsProcessed, stream_data)
+    """
                 
-    @synchronized
-    def jobEnded(self):
-        if self.Fig is not None:
-            self.plotHistograms()            

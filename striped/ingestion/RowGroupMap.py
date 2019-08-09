@@ -26,9 +26,9 @@ class RowGroupMap:
 			return [nevents]
 		if nevents % target_group_size == 0:
 			return [target_group_size]*(nevents/target_group_size)
-		M = (nevents+target_group_size-1)/target_group_size     # number of groups
+		M = (nevents+target_group_size-1)//target_group_size     # number of groups
 		n = nevents % M
-		k = nevents / M
+		k = nevents // M
 		return [k+1]*n + [k]*(M-n)
 
 	def scanFiles(self, files):

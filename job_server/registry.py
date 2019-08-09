@@ -1,6 +1,6 @@
 from socket import socket, AF_INET, SOCK_DGRAM, SOL_SOCKET, SO_REUSEADDR, gethostbyaddr
 import time, random, select
-from striped.common import MyThread, synchronized, random_salt
+from striped.common import MyThread, synchronized, random_salt, to_bytes, to_str
 
 Debug = True
 
@@ -11,7 +11,7 @@ def debug(msg):
 class WorkerInfo:
     def __init__(self, server_addr, tag):
         self.Addr = server_addr
-        self.LastPing = None
+        self.LastPing = time.time()
         self.Key = random_salt()
         self.Tag = tag
         
@@ -19,82 +19,6 @@ class WorkerInfo:
         self.LastPing = time.time()
         self.Active = True
 
-class ___Registry(MyThread):
-
-    def __init__(self):
-        MyThread.__init__(self)
-        self.Registry = {}      # {tag: {(ip,port): last ping time}}
-        self.PingTimeout = 5   # seconds
-        self.PurgeInterval = 12
-        
-    @synchronized
-    def pingReceived(self, tag, ip, port):
-        if Debug:
-                try:    
-                        hn = gethostbyaddr(ip)[0]
-                except:
-                        hn = ""
-                debug("ping from: [%s] %s(%s):%d" % (tag, ip, hn, port))
-        
-        dct = self.Registry.get(tag)
-        if dct is None: 
-            dct = {}
-            self.Registry[tag] = dct
-        dct[(ip, port)] = time.time()
-        #debug("added: %s/(%s,%s)" % (tag, ip, port))
-        
-    @synchronized
-    def purge(self):
-        now = time.time()
-        #debug("purging %s" % (now,))
-        for tag, dct in self.Registry.items():
-            lst = dct.items()
-            for k, t in lst:
-                #debug("key/t: %s/%s" % (k, t))
-                if t < now - self.PingTimeout:
-                    del dct[k]
-                    debug("....> purged: %s/%s" % (tag, k))
-
-    @synchronized
-    def getList(self, tags, salt, n = None):
-        tag = None if tags is None else tags[0] # for now, only 1 tag, ignore the rest
-        if tags is None:
-            # all workers
-            lst = [
-                    wi
-                        for dct in self.Registry.values()
-                        for wi in dct.values()
-                ]        
-        else:
-            lst = self.Registry.get(tag, []).values()
-        if not lst: return []
-        servers = sorted(lst, key=lambda wi: (wi.Tag, wi.Addr))           
-        if n is not None and len(servers) > n:
-            state = random.getstate()
-            random.seed(hash(salt))
-            servers = random.sample(servers, n)
-            random.setstate(state)
-        return servers
-        
-    @synchronized
-    def workersInfo(self):
-        #
-        # returns list of workers and their tags:
-        # [(tag, ip, port, last_ping)]
-        #
-        
-        return [
-            wi
-                for dct in self.Registry.values()
-                for wi in dct.values()
-        ]
-        
-                
-    def run(self):
-        while True:
-            time.sleep(self.PurgeInterval)
-            self.purge()
-            
 class RegistryPurger(MyThread): 
 
     def __init__(self, server):
@@ -128,7 +52,7 @@ class RegistryServer(MyThread):
         now = time.time()
         #debug("purging %s" % (now,))
         for dct in self.Registry.values():
-            for k, wi in dct.items():
+            for k, wi in list(dct.items()):
                 #debug("key/t: %s/%s" % (k, t))
                 t = wi.LastPing
                 if t < now - self.PingTimeout:
@@ -147,7 +71,7 @@ class RegistryServer(MyThread):
             while True:
                 msg, addr = sock.recvfrom(10000)
                 msg = msg.decode("utf-8", "ignore")
-                print("received: '%s' from %s" % (msg, addr))
+                #print("received: '%s' from %s" % (msg, addr))
                 try:
                     words = msg.split()
                     if words:
@@ -165,10 +89,10 @@ class RegistryServer(MyThread):
         
     @synchronized                
     def on_ping(self, ping_addr, port, tag, h):
-        print ("on_ping(%s, %s, %s, %s)" % (ping_addr, port, tag, h))
+        #print ("on_ping(%s, %s, %s, %s)" % (ping_addr, port, tag, h))
         port = int(port)
         if False and h != "%x" % (hash((port, tag)),):
-            print ("Invalid message %s %s %s from %s - hash mismatch" % (port, tag, h, ping_addr))
+            #print ("Invalid message %s %s %s from %s - hash mismatch" % (port, tag, h, ping_addr))
             return
         ip, ping_port = ping_addr
         worker_addr = (ip, port)
@@ -176,18 +100,21 @@ class RegistryServer(MyThread):
         worker_id = (ip, ping_port, port)
         if worker_id in self.Registry[tag]:
             wi = self.Registry[tag][worker_id]
-            print("ping old worker")
+            #print("ping old worker")
             wi.ping()
         else:
                 if worker_id in self.KnownWorkers:
                         wi = self.KnownWorkers[worker_id]
                 else:
                         wi = self.KnownWorkers[worker_id] = WorkerInfo(worker_addr, tag)
-                self.Sock.sendto("key %s" % (wi.Key,), ping_addr)
-                print("ping new worker")
+                msg = to_bytes("key %s" % (wi.Key,))
+                #print("ping: new worker: sending %s to %s" % (msg, ping_addr))
+                self.Sock.sendto(msg, ping_addr)
+                #print("ping: new worker: id:%s, addr:%s, tag:%s" % (worker_id, worker_addr, tag))
 
     @synchronized                
     def on_ack(self, ping_addr, work_port):
+        #print ("on_ack(%s, %s)" % (ping_addr, work_port))
         ip, ping_port = ping_addr
         worker_id = (ip, ping_port, work_port)
         if worker_id in self.KnownWorkers:
@@ -201,7 +128,9 @@ class RegistryServer(MyThread):
     @synchronized
     def getList(self, tags, salt, n = None):
         tag = None if tags is None else tags[0] # for now, only 1 tag, ignore the rest
+        #print ("registry.getList: tags: %s %s" % (type(tags), tags))
         if tags is None:
+            #print("registry.getList: Registry: %s" % (self.Registry,))
             # all workers
             lst = [
                     wi
@@ -210,6 +139,7 @@ class RegistryServer(MyThread):
                 ]        
         else:
             lst = self.Registry.get(tag, []).values()
+        #print ("registry.getList: lst:", lst)
         if not lst: return []
         servers = sorted(lst, key=lambda wi: wi.Addr)           
         by_addr = {}

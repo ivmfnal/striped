@@ -18,7 +18,7 @@ def distribute_items(lst, n):
     #print "distribute_items_simple(%d, %d)" % (len(lst), n)
     N = len(lst)
     k = N % n
-    m = (N-k)/n
+    m = (N-k)//n
     i = 0
     out = []
     for _ in range(k):
@@ -60,7 +60,9 @@ class Worker(multiprocessing.Process):
             self.LogFile.log(msg)
                     
     def run(self):
+        self.log("Started")
         signal.signal(signal.SIGINT, self.sigint)
+        self.log("Listening...")
         self.Sock.listen(10)
         while not self.Stop:
             self.log("accepting new connection...")
@@ -253,11 +255,17 @@ class AccumulatorDriver(Task):
         self.Workers = workers
         self.ModuleStorage = storage
         self.Accumulator = None
-        self.EventsAccumulated = 0
-        self.EventsLastDataForward = 0
+        self.EventsSeen = 0
+        self.EventsReported = 0
         self.T = Tracer()
         self.BulkDataTransport = bulk_data_transport
         self.LogFile = log_file
+
+    def eventsDelta(self, n=0):
+        self.EventsSeen += n
+        delta = self.EventsSeen - self.EventsReported
+        self.EventsReported = self.EventsSeen
+        return delta
 
     def log(self, msg):
         msg = ("AccumulatorDriver(%s): %s" % (self.JID, msg))
@@ -270,12 +278,12 @@ class AccumulatorDriver(Task):
             storage = None
             bulk_data = None
             
-            frames = self.Request.RGIDs
-            frames_by_worker = distribute_items(frames, len(self.Workers))
             worker_module_name = "m_%s_%s" % (os.getpid(), self.Request.JID)     
             module_file = "%s/%s.py" % (self.ModuleStorage, worker_module_name)
             open(module_file, "w").write(self.Request.WorkerText)
 
+            frames = self.Request.RGIDs
+            frames_by_worker = distribute_items(frames, len(self.Workers))
             params = WorkerParams.fromRequest(self.Request, worker_module_name)
 
             #
@@ -321,11 +329,13 @@ class AccumulatorDriver(Task):
             self.log("all worker interfaces closed")
 
             if self.Accumulator is not None:
-                nevents = self.EventsAccumulated
                 data = self.Accumulator.values()
                 if data is not None:
                     with self.T["send accumulated data"]:
-                        self.DXSock.send(DXMessage("data", events_delta = 0, format="encode")(data=encodeData(data)))
+                        events_delta = self.eventsDelta()
+                        self.log("sending accumulated data with events_delta=%d" % (events_delta,))
+                        self.DXSock.send(DXMessage("data", events_delta = events_delta,
+                                format="encode")(data=encodeData(data)))
 
             #self.DXSock.send(DXMessage("flush", nevents=self.EventsAccumulated))
                         
@@ -350,7 +360,7 @@ class AccumulatorDriver(Task):
 
     @synchronized
     def message(self, message):
-        self.DXSock.send(DXMessage("message", nevents=self.EventsAccumulated).append(message=message))
+        self.DXSock.send(DXMessage("message", nevents=0).append(message=message))
 
     @synchronized            
     def messageFromWorker(self, worker_interface, msg):
@@ -359,13 +369,12 @@ class AccumulatorDriver(Task):
             storage = BulkStorage.open(msg["storage"])
             #print "Accumulator.messageFromWorker(data): keys:", storage.keys()
             events_delta = msg["events_delta"]
-            #print "messageFromWorker:events_delta=", events_delta
+            self.log("data message: events_delta=%s" % (events_delta,))
             data = storage.asDict()
             if self.Accumulator is None:
-                msg = DXMessage("data", events_delta = events_delta, format="encode")(data=encodeData(data))
+                msg = DXMessage("data", events_delta = self.eventsDelta(events_delta), format="encode")(data=encodeData(data))
                 self.DXSock.send(msg)
             else:
-                    self.EventsAccumulated += events_delta
                     through = None
                     try:
                         with self.T["accumulate"]:
@@ -373,11 +382,11 @@ class AccumulatorDriver(Task):
                     except:
                         self.DXSock.send(DXMessage("exception").append(info=traceback.format_exc()))
                     if through is not None:
-                        delta = self.EventsAccumulated - self.EventsLastDataForward
                         with self.T["send through data"]:
-                            msg = DXMessage("data", events_delta = delta, format="encode")(data=encodeData(through))
+                            msg = DXMessage("data", events_delta = self.eventsDelta(events_delta), format="encode")(data=encodeData(through))
                             self.DXSock.send(msg)       
-                        self.EventsLastDataForward = self.EventsAccumulated
+                    else:
+                        self.EventsSeen += events_delta
             storage.unlink()
         else:
             self.DXSock.send(msg)       
@@ -439,6 +448,7 @@ class WorkerMaster(PyThread):
                 for i in range(self.NWorkers)]
         for w in self.Workers:
             w.start()
+            self.log("startied worker %d with pid %d" % (w.ID, w.pid))
         nrunning = self.NWorkers
         
         while not self.Stop:

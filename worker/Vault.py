@@ -147,7 +147,7 @@ class Vault(Filterable):
         if not self.primary:
             raise NotImplementedError("Creating pairs from non-primary vaults is not implemented")
 
-        pair_sizes = np.array([n*(n-1)/2 if n > 1 else 0 for n in self.SizeArray])
+        pair_sizes = np.array([n*(n-1)//2 if n > 1 else 0 for n in self.SizeArray])
         nevents = self.Length
         L = sum(pair_sizes)
 

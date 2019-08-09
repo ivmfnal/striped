@@ -44,7 +44,7 @@ class SinglePointStripedSession(Lockable):
         protected = (stat.S_IMODE(st.st_mode) % 64) == 0
         if not protected:
             raise RuntimeError("Striped client configuration file %s must be protected. Use: \n   $ chmod 0500 %s" % (config, config))
-        config = yaml.load(open(config, "r"))
+        config = yaml.load(open(config, "r"), Loader=yaml.BaseLoader)
         web_service_address = (config["JobServer"]["host"], config["JobServer"]["port"])
         worker_tags = worker_tags if worker_tags is not None else config.get("WorkerTags")
         username = username or config["Username"] 
@@ -101,7 +101,7 @@ class SinglePointStripedSession(Lockable):
         # TODO: check file key protection here
         resp = requests.get("https://%s:%s/authorize?user=%s" % (self.JobServerHost, self.AuthenticationPort, self.Username),
                         cert=(self.CertFile, self.KeyFile), verify=False)
-        if resp.status_code/100 == 2:
+        if resp.status_code//100 == 2:
             response = json.loads(resp.text)
             return response["token"], response["expiration"], response["identity"]
         else:
@@ -110,7 +110,7 @@ class SinglePointStripedSession(Lockable):
     def requestStripesModificationToken(self):
         status, body = digest_client("%s/token?role=upload_stripes" % (self.DataServerURL,),
                             self.DataServerUsername, self.DataServerPassword)
-        if status/100 == 2:
+        if status//100 == 2:
             encoded = body.strip()
             t = SignedToken.decode(encoded)
             return encoded, t.Expirationt, t.Payload.get("identity", "")
@@ -120,7 +120,7 @@ class SinglePointStripedSession(Lockable):
     def requestAuthToken(self):
         status, body = digest_client("http://%s:%s/token?role=run" % (self.WebServiceHost, self.WebServicePort),
                             self.Username, self.Password)
-        if status/100 == 2:
+        if status//100 == 2:
             encoded = body.strip()
             t = SignedToken.decode(encoded)
             return encoded, t.Expirationt, t.Payload.get("identity", "")
@@ -296,7 +296,7 @@ class SinglePointJob(StripedJob):
                     #print "empty message"
                     break
                     
-                #print "SinglePointJob: msg type=%s" % (msg.Type,)
+                #print ("SinglePointJob: msg type=%s" % (msg.Type,))
 
                 if msg.Type == "histograms":
                     wid = int(msg["wid"])
@@ -314,7 +314,7 @@ class SinglePointJob(StripedJob):
                     assert format=="pickle", "Unknown stream serialization format %s" % (format,)
                     data = decodeData(msg["data"])
                     self.updateReceived(wid, {name:data}, total_events)
-                    
+
                 elif msg.Type == "data":
                     wid = int(msg["wid"])
                     data = decodeData(msg["data"])
@@ -345,14 +345,14 @@ class SinglePointJob(StripedJob):
                     self.dataLoadFailureReceived(wid, rgid)
                     
                 elif msg.Type == "job_done":
-                    self.EventsProcessed = msg["total_events"]
+                    #self.EventsProcessed = msg["total_events"]
                     self.NRunning = 0
                     self.jobFinished()
                     done = True
                                         
                 elif msg.Type == "worker_exit":
                     self.NRunning = msg["nrunning"]
-                    self.workerExited(msg["wid"], msg["status"], msg["address"], msg["t"], msg["nevents"], msg["nrunning"])
+                    self.workerExited(msg["wid"], msg["status"], msg["t"], msg["nevents"], msg["nrunning"])
                     #if self.NRunning <= 0:
                     #    self.jobFinished()
         finally:

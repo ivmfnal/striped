@@ -4,19 +4,20 @@ PY3 = sys.version_info >= (3,)
 PY2 = sys.version_info < (3,)
 
 if PY3:
-	from urllib.error import HTTPError, URLError
-	from urllib.request import urlopen, Request
-	import urllib.request, urllib.parse, urllib.error
-	from urllib.parse import quote
+        from urllib.error import HTTPError, URLError
+        from urllib.request import urlopen, Request
+        import urllib.request, urllib.parse, urllib.error
+        from urllib.parse import quote
 else:
-	from urllib2 import HTTPError, URLError, urlopen, Request
-	from urllib2 import quote
+        from urllib2 import HTTPError, URLError, urlopen, Request
+        from urllib2 import quote
 
 import numpy as np
 #from femtocode.definitons import Dataset, ColumnName, Column, Segment, Schema
 #from typesystem import Schema
 
 from striped.common import synchronized, Lockable, parse_data
+from striped.common import to_str, to_bytes
 from striped.common.exceptions import StripedNotFoundException
 from .DataCache import DataCache
 
@@ -235,7 +236,7 @@ class StripedDataset(Lockable):
    
     def schema(self, use_cache=None):
         if use_cache is None: use_cache = self.UseMetaCache
-	#print "use_cache:", use_cache
+        #print "use_cache:", use_cache
         if not use_cache or not self.Schema:
             url = "./dataset_schema?ds=%s" % (self.Name, )
             schema = self.Client.requestWithRetries(url, bypass_cache=not use_cache).read()
@@ -244,7 +245,7 @@ class StripedDataset(Lockable):
     
     @property    
     def rgids(self, use_cache=None):
-	#print "dataset.rgids: calling sever %s" % (self.Client.URLHead,)
+        #print "dataset.rgids: calling sever %s" % (self.Client.URLHead,)
         if use_cache is None: use_cache = self.UseDataCache
         if self.RGIDs is None or not use_cache:
             rgids = self.Client.requestWithRetries("./rgids?ds=%s" % (self.Name,), bypass_cache=not use_cache).read()
@@ -509,7 +510,7 @@ class StripedClient(Lockable):
                             self.DataModUsername, self.DataModPassword)
 
 
-	#print "Client: self.UseMetaCache=", self.UseMetaCache
+        #print "Client: self.UseMetaCache=", self.UseMetaCache
         
     def useCache(self, **args):
         if "data" in args:
@@ -575,9 +576,9 @@ class StripedClient(Lockable):
                 self.log("URLError %s" % (error,))
                 code = 500
                 response = None
-            if code/100 == 2:   done = True
-            elif code/100 == 4: raise StripedNotFoundException("'Not found' response for URL: %s" % (url,))
-            elif code/100 == 5:
+            if code//100 == 2:   done = True
+            elif code//100 == 4: raise StripedNotFoundException("'Not found' response for URL: %s" % (url,))
+            elif code//100 == 5:
                 # retry later
                 tsleep = random.random() * delay
                 sys.stderr.write("url:%s error:%s. will retry in %.3f seconds\n" % (url, error, tsleep))
@@ -611,19 +612,21 @@ class StripedClient(Lockable):
         request = self.requestWithRetries(url, bypass_cache=not use_cache, timeout=120)
         data = request.read()
         #print "data: %s" % (repr(data[:100]),)
-        header_end = data.index("\n")
+        header_end = data.index(b"\n")
         header = data[:header_end]
         i = header_end + 1
         #print "header: [%s]" %(header,)
         for w in header.split():
-            try:    cn, length = w.split(":")
+            try:    
+                cn, length = w.split(b":")
+                length = int(length)
+                cn = to_str(cn)
             except ValueError:
                 sys.stderr.write("Error parsing header [%s] url:%s status:%s" % 
                         (header, url, request.getcode()))
                 sys.stderr.write("request status=%s" % (request.getcode(),))
                 sys.stderr.write(traceback.format_exc()+"\n")
                 sys.exit(1)
-            length = int(length)
             segment = data[i:i+length]
             if compress:    
                     segment=zlib.decompress(segment)
@@ -633,15 +636,15 @@ class StripedClient(Lockable):
             
     def convertStripe(self, data, desc):
         dtype = desc.NPType
-        if data[:10] == "#__header:":
-            i = data.index("#", 1)
+        if data[:10] == b"#__header:":
+            i = data.index(b"#", 1)
             if i > 0:
                 header = data[10:i]
                 data = data[i+1:]
-                fields = header.split(";")
+                fields = header.split(b";")
                 for f in fields:
-                    if f.startswith("dtype="):
-                        dtype = f.split("=",1)[1]
+                    if f.startswith(b"dtype="):
+                        dtype = f.split(b"=",1)[1]
                         break                
         data = np.frombuffer(data, dtype)
         if not desc.ConvertToNPType is None and desc.ConvertToNPType != desc.NPType:
