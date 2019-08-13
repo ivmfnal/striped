@@ -315,6 +315,11 @@ class SinglePointJob(StripedJob):
                     data = decodeData(msg["data"])
                     self.updateReceived(wid, {name:data}, total_events)
 
+                elif msg.Type == "events":
+                    wid = int(msg["wid"])
+                    events_delta = msg.get("events_delta")
+                    self.eventsDelta(wid, events_delta)
+                    
                 elif msg.Type == "data":
                     wid = int(msg["wid"])
                     data = decodeData(msg["data"])

@@ -596,7 +596,7 @@ class Hist:
             
 if __name__ == '__main__':
     import pprint, json
-    h3 = Hist(bin('x', 100,0,1), bin('y', [0.0, 0.1, 0.5, 0.7]), category('c'))
+    h3 = Hist(bins('x', 100,0,1), bins('y', [0.0, 0.1, 0.5, 0.7]), category('c'))
     x = np.random.random((100,))
     y = np.random.random((100,))
     h3.fill(x=x, y=y, c="hello")
@@ -604,7 +604,7 @@ if __name__ == '__main__':
     y = np.random.random((100,))
     h3.fill(x=x, y=y, c="world")
     
-    h2 = Hist(bin('x', 10,0,1), category('c', label="category"))
+    h2 = Hist(bins('x', 10,0,1), category('c', label="category"))
     x = np.random.random((100,))
     h2.fill(x=x, c="hello")
     x = np.random.random((100,))

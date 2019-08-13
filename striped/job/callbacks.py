@@ -18,8 +18,8 @@ class ProgressBarCallback(object):
         self.Bar = tqdm(total=self.NTotal, desc=self.Desc,
             unit_scale = self.UnitScale)
 
-    def on_update(self, nevents):
-        self.update(nevents)    
+    def on_events(self, wid, delta):
+        self.update(self.NDone + delta)
     
     def on_job_finish(self, nevents, error):
         self.update(nevents)

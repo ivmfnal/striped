@@ -151,7 +151,7 @@ class SocketWorkerInterface(PyThread):
                     elif msg.Type == 'events':
                             n = msg["events_delta"]
                             self.log("events delta: %s" % (n,))
-                            self.Contract.eventsDelta(n)
+                            self.Contract.eventsDelta(self, n)
 
                     elif msg.Type == 'exception':
                         #print "Contract: exception received"
@@ -320,6 +320,10 @@ class Contract(Primitive):
         self.CallbackDelegate.updateReceived(worker.WID, hists, streams, nevents_delta)
     """
 
+    @synchronized
+    def eventsDelta(self, worker, events_delta):
+        self.CallbackDelegate.eventsDelta(worker.WID, events_delta)
+        
     @synchronized
     def dataReceived(self, worker, events_delta, data):
         self.CallbackDelegate.dataReceived(worker.WID, events_delta, data)

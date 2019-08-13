@@ -126,7 +126,7 @@ class Worker(multiprocessing.Process):
         
         buffer.close(nevents)
         del sys.modules[params.WorkerModuleName]
-        self.log("stats:\n"+T.formatStats())
+        self.log("------ Worker %s stats: -----\n%s" % (self.ID, T.formatStats()))
         self.log("t=%.3f: ------ exit from runWorker" % (time.time() - t0,))
 
     def sigint(self, signum, frame):
@@ -356,7 +356,7 @@ class AccumulatorDriver(Task):
                 except OSError:
                     pass
                 
-            self.log("\n"+self.T.formatStats())
+            self.log("---- Accumulator stats ----\n" + self.T.formatStats())
 
     @synchronized
     def message(self, message):
@@ -369,7 +369,7 @@ class AccumulatorDriver(Task):
             storage = BulkStorage.open(msg["storage"])
             #print "Accumulator.messageFromWorker(data): keys:", storage.keys()
             events_delta = msg["events_delta"]
-            self.log("data message: events_delta=%s" % (events_delta,))
+            #self.log("data message: events_delta=%s" % (events_delta,))
             data = storage.asDict()
             if self.Accumulator is None:
                 msg = DXMessage("data", events_delta = self.eventsDelta(events_delta), format="encode")(data=encodeData(data))

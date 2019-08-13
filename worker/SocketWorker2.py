@@ -70,8 +70,9 @@ class SocketWorkerBuffer(object):
         
     def endOfFrame(self, nevents):
         #self.log("end of frame")
+        self.DXSock.send(DXMessage("events", events_delta=nevents))
         t = time.time()
-        if self.NFills and random.random() < (t-self.LastFlush)/self.FlushInterval:
+        if False and self.NFills and random.random() < (t-self.LastFlush)/self.FlushInterval:
             self.LastFlush = t
             self.flushAll(nevents)
             

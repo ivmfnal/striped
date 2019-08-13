@@ -197,7 +197,6 @@ class WorkerDriver:
                             except StopIteration:
                                 stop = True
                     #self.Dataset.ProcessedEvents = self.SeenEvents
-                    self.Buffer.endOfFrame(frame.NEvents)
                     events_delta += frame.NEvents 
                     total_events += frame.NEvents
                     if out:
@@ -208,6 +207,7 @@ class WorkerDriver:
                         break
             else:
                 self.Buffer.dataLoadFailure(rginfo.RGID, data)
+            self.Buffer.endOfFrame(rginfo.NEvents)
 
 
         if hasattr(worker, "end"):

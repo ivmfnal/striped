@@ -1,5 +1,5 @@
 from ..client import StripedClient
-from ..common import Lockable, synchronized
+from striped.pythreader import Primitive, synchronized
 from ..common import JobTracer as JT
 from striped.hist import HAggregator
 import pickle, base64, time, sys
@@ -48,10 +48,10 @@ class UserCallbackList(object):
         
     __call__ = callback
         
-class StripedJob(Lockable):
+class StripedJob(Primitive):
 
     def __init__(self, url_head, dataset_name, callbacks, user_params, stdout=None, stderr=None):
-        Lockable.__init__(self)
+        Primitive.__init__(self)
         self.URLHead = url_head
         self.Client = StripedClient(url_head)
         self.DatasetName = dataset_name
@@ -140,10 +140,12 @@ class StripedJob(Lockable):
     """
     
     @synchronized
-    def dataReceived(self, wid, events_delta, data):
-        #print("dataReceived(wid=%s, delta=%s)" % (wid, events_delta))
+    def eventsDelta(self, wid, events_delta):
         self.EventsProcessed += events_delta
-        #print("self.EventsProcessed -> ", self.EventsProcessed)
+        self.CallbackList.callback("on_events", wid, events_delta)
+        
+    @synchronized
+    def dataReceived(self, wid, events_delta, data):
         self.CallbackList.callback("on_data", wid, events_delta, data)
         
     @synchronized
@@ -194,10 +196,10 @@ class StripedJob(Lockable):
             self.Stderr.write("Job %s: worker #%d failed to load frame %d\n" % (self.JID, wid, frameid))
             self.Stderr.flush()
             
-class DataCallbackObject(Lockable):
+class DataCallbackObject(Primitive):
 
     def __init__(self, callback_list, stdout, stderr):
-        Lockable.__init__(self)
+        Primitive.__init__(self)
         self.Histograms = {}            # {key: histogram aggregator}
         self.CallbackList = callback_list
         self.LastUpdateCallback = 0
