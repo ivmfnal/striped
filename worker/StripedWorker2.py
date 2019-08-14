@@ -222,12 +222,8 @@ class WorkerDriver:
         
     def fill(self, dict_items):
         with self.T["frame/worker/fill"]:
-            self.Buffer.fillHistos(self.SeenEvents, dict_items)
+            self.Buffer.fillHistos(dict_items)
 
-    def send(self, dict_items):
-        with self.T["frame/worker/send"]:
-            self.Buffer.addStreams(self.SeenEvents, dict_items)
-            
     def message(self,message):
         with self.T["frame/worker/message"]:
             self.Buffer.message(self.SeenEvents, message)

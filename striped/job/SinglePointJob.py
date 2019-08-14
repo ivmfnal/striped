@@ -298,13 +298,13 @@ class SinglePointJob(StripedJob):
                     
                 #print ("SinglePointJob: msg type=%s" % (msg.Type,))
 
-                if msg.Type == "histograms":
+                if msg.Type == "hist":
                     wid = int(msg["wid"])
-                    total_events = msg["total_events"]
-                    data_dict = {}
+                    dumps = {}
                     for k, v in msg.items():
-                        data_dict[k] = v
-                    self.updateReceived(wid, data_dict, total_events)
+                        if k.startswith("h:"):
+                            dumps[k[2:]] = v 
+                    self.histogramsReceived(wid, dumps)
                     
                 elif msg.Type == "stream":
                     wid = int(msg["wid"])

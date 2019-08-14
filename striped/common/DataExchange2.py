@@ -41,15 +41,15 @@ class DXMessage:
     def __setitem__(self, name, value):
         self.Args[name] = value
         
-    def append(self, *param, **dct):
+    def append(self, *params, **kv):
         #
-        # append(dictionary)
+        # append(name, value, name, value, ...)
         # append(name=value, name=value...)
         #
         d = {}
-        d.update(dct)
-        for p in param:
-                d.update(p)
+        for i in range(0, len(params), 2):
+            d[params[i]] = params[i+1]
+        d.update(kv)
         for k, v in d.items():
                 assert isinstance(v, (int, float, str, bool, type(None), np.ndarray, bytes)), "Unknown value type: %s" % (type(v),)
         self.Args.update(d)

@@ -12,6 +12,7 @@ from striped.common.exceptions import StripedNotFoundException
 from striped.common.dataEncoder import decodeData, encodeData
 from BulkStorage import BulkStorage
 from striped.common import Tracer, BulkDataTransport
+from striped.hist import HAccumulator
 
 
 def distribute_items(lst, n):
@@ -260,6 +261,9 @@ class AccumulatorDriver(Task):
         self.T = Tracer()
         self.BulkDataTransport = bulk_data_transport
         self.LogFile = log_file
+        self.HAccumulators = {hid:HAccumulator(desc) for hid, desc in request.HDescriptors.items()}
+        self.HistSentTime = 0.0
+        self.HistSendInterval = 20.0
 
     def eventsDelta(self, n=0):
         self.EventsSeen += n
@@ -337,6 +341,8 @@ class AccumulatorDriver(Task):
                         self.DXSock.send(DXMessage("data", events_delta = events_delta,
                                 format="encode")(data=encodeData(data)))
 
+            self.sendHistograms()
+
             #self.DXSock.send(DXMessage("flush", nevents=self.EventsAccumulated))
                         
         except:
@@ -388,8 +394,30 @@ class AccumulatorDriver(Task):
                     else:
                         self.EventsSeen += events_delta
             storage.unlink()
+        elif msg.Type == "hist":
+            for k, v in msg.items():
+                if k.startswith("h:"):
+                    hid = k[2:]
+                    self.HAccumulators[hid].add(v)
+                    #print("AccumulatorDriver: h(%s).Counts->%s" % (hid, self.HAccumulators[hid].H.Counts))
+            now = time.time()
+            if now > self.HistSentTime + self.HistSendInterval:
+                self.sendHistograms()
+                self.HistSentTime = now
         else:
             self.DXSock.send(msg)       
+
+    def sendHistograms(self):
+                msg = DXMessage("hist")
+                nhist = 0
+                for hid, hacc in self.HAccumulators.items():
+                    if hacc.NFills:
+                        #print ("sendHistograms: counts=", hacc.H.Counts)
+                        msg.append("h:"+hid, hacc.dump())
+                        nhist += 1
+                if nhist:
+                    self.DXSock.send(msg)
+        
          
         
 class WorkerMaster(PyThread):

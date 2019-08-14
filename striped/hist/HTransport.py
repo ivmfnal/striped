@@ -9,6 +9,11 @@ class HAggregator(object):
         self.H = histogram
         #self.Display = display         not used
         #self.Constants = constants   not used
+
+    @staticmethod
+    def from_meta(meta):
+        h = Hist.empty_from_meta(desc)
+        return HAggregator(h)
             
     def inputs(self):
         return self.H.fields
@@ -17,14 +22,31 @@ class HAggregator(object):
         return self.H.meta()
 
     def add(self, dump):
-        counts = Hist.deserialize_counts(dump)
-        self.H.add_counts(counts)
-        
+        self.H.addSerializedCounts(dump)
+
     @property
     def histogram(self):
         return self.H
         
+class HAccumulator(object):  
 
+    # this object wraps the histbook histogram at the receiving end (the job)
+
+    def __init__(self, desc):
+        self.H = Hist.empty_from_meta(desc)
+        self.NFills = 0
+
+    def add(self, dump):
+        self.H.addSerializedCounts(dump)
+        self.NFills += 1
+
+    def dump(self, clear=True):
+        dump = self.H.serializeCounts()
+        if clear:
+            self.H.clear()
+            self.NFills = 0
+        return dump
+        
 class HCollector(object):
 
     # this object wraps the histbook histogram at the sending end (the job)
@@ -42,10 +64,13 @@ class HCollector(object):
         return self.Inputs
         
     def fill(self, data_dict):
+        #print("HCollector.fill: data_dict:")
+        #for k, v in data_dict.items():
+        #    print ("  %s=%s, [%f ... %f]" % (k, v[:20], min(v), max(v)))
         self.H.fill(data_dict)
     
     def dump(self, clear=True):
-        dump = self.H.serialize_counts()
+        dump = self.H.serializeCounts()
         if clear:
             self.H.clear()
         return dump

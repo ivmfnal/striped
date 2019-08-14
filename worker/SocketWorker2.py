@@ -57,13 +57,18 @@ class SocketWorkerBuffer(object):
     def setEventsProcessed(self, n):
         self.EventsProcessed = n
     
-    def fillHistos(self, nevents, dct):
+    def fillHistos(self, dct):
         input_set = set(dct.keys())
+        nfilled = 0
         for hc in self.HCollectors.values():
             hc_inputs = hc.inputs()
-            if input_set >= hc_inputs:
+            #print ("hc_inputs:", hc_inputs, "   input_set:", input_set)
+            if input_set == hc_inputs:
                 hc.fill(dct)
-                self.NFills += 1
+                nfilled += 1
+        if nfilled == 0:
+            raise ValueError("No histograms found matching given set of variables")
+        self.NFills += nfilled
                 
     def message(self, nevents, message):
         self.DXSock.send(DXMessage("message", nevents=nevents).append(message=message))
@@ -72,17 +77,18 @@ class SocketWorkerBuffer(object):
         #self.log("end of frame")
         self.DXSock.send(DXMessage("events", events_delta=nevents))
         t = time.time()
-        if False and self.NFills and random.random() < (t-self.LastFlush)/self.FlushInterval:
+        if self.NFills:
             self.LastFlush = t
-            self.flushAll(nevents)
-            
+            msg = DXMessage("hist")
+            for hid, hb in self.HCollectors.items():
+                msg.append("h:"+hid, hb.dump())
+                #print "counts:", counts
+            self.DXSock.send(msg)
+            self.NFills = 0
+
     def flushAll(self, nevents):
         #self.log("flush all, nevents=%d" % (nevents,))
         
-        for hid, hb in self.HCollectors.items():
-            dump = hb.dump()
-            #print "counts:", counts
-            self.DXSock.send(DXMessage("hist", type="h", hid=hid).append(dump=dump))
             
         for sn, sb in self.SBuffers.items():
             values = sb.flush()

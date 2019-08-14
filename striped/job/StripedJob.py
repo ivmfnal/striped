@@ -145,6 +145,14 @@ class StripedJob(Primitive):
         self.CallbackList.callback("on_events", wid, events_delta)
         
     @synchronized
+    def histogramsReceived(self, wid, dumps):
+        hdict = self.histograms()
+        for hid, dump in dumps.items():
+            h = hdict[hid]
+            h.add(dump)
+        self.CallbackList.callback("on_histograms", wid)
+
+    @synchronized
     def dataReceived(self, wid, events_delta, data):
         self.CallbackList.callback("on_data", wid, events_delta, data)
         

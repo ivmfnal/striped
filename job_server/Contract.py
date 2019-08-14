@@ -101,8 +101,6 @@ class SocketWorkerInterface(PyThread):
             self.log("Worker parameters sent. Time since created=%f" % (time.time() - self.Created,))
 
             eof = False
-            hists = {}
-            streams = {}
             while not eof:
                     #print "%s: readCunk..." % (self.WID,)
 
@@ -118,25 +116,12 @@ class SocketWorkerInterface(PyThread):
 
                 else:
                     self.log("message(%s)" % (msg.Type,))
-                    """
-                    if msg.Type == 'flush':
-                        nevents = int(msg["nevents"])
-                        events_delta = nevents - self.LastNEvents
-                        self.LastNEvents = nevents
-                        #print "buffer %s: updateReceived..." % (self.WID,)
-                        self.Contract.updateReceived(self, hists, streams, events_delta)
-                        #print "buffer %s: updateReceived done"  % (self.WID,)
-                        hists = {}
-                        streams = {}
-                    """
 
                     if msg.Type == 'message':
-                        message = msg["message"]
-                        nevents = msg["nevents"]
-                        self.Contract.messageReceived(self, nevents, message)
+                        self.Contract.forward(self, msg)
 
                     elif msg.Type == 'hist':
-                        hists[msg["hid"]] = msg["dump"]
+                        self.Contract.forward(self, msg)
 
                     elif msg.Type == 'stream':
                         name = msg["name"]
@@ -319,6 +304,11 @@ class Contract(Primitive):
     def updateReceived(self, worker, hists, streams, nevents_delta):
         self.CallbackDelegate.updateReceived(worker.WID, hists, streams, nevents_delta)
     """
+
+    @synchronized
+    def forward(self, worker, msg, add_wid=True):
+        if add_wid:	msg(wid=worker.WID)
+        self.CallbackDelegate.forward(msg)
 
     @synchronized
     def eventsDelta(self, worker, events_delta):

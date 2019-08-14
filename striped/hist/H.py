@@ -3,13 +3,20 @@ import sys
 PY3 = sys.version_info >= (3,)
 PY2 = sys.version_info < (3,)
 
+if PY3:
+	import pickle
+else:
+	import cPickle as pickle
+
 import numpy as np
 import zlib, base64
-if PY3:
-        import pickle
-else:
-        import cPickle as pickle
 from . import HPlot
+
+def to_bytes(string):
+                return string.encode("utf-8")
+
+def to_str(b):
+        return b.decode("utf-8", "ignore")
 
 class HistAxis(object):
    
@@ -160,12 +167,43 @@ def category(name, *params, **args):
     return CatAxis(name, *params, **args)
 
 def bins(name, *params, **args):
+    print("Hist.bins: params:", params)
     if len(params) == 3:
         return LinearAxis(name, params[0], params[1], params[2], label=args.get("label"))
     elif len(params) == 1:
         return VarAxis(name, params[0], label=args.get("label"))
     else:
         raise ValueError("bin accepts either 4 or 2 arguments")
+
+def serialize_array(counts, compress=True):
+        assert isinstance(counts, np.ndarray)
+        data = bytes(np.ascontiguousarray(counts).data)
+        data = zlib.compress(data, 1)
+        #data = base64.b64encode(zlib.compress(data, 1))
+        return (counts.dtype.str, counts.shape, data)
+                
+def deserialize_array(x):
+        dtype, shape, data = x
+        data = zlib.decompress(data)
+        return np.frombuffer(data, dtype=dtype).reshape(shape)
+        
+def serialize_counts(counts):
+        if isinstance(counts, dict):
+            counts = {k: serialize_array(v) for k, v in counts.items()}
+        elif isinstance(counts, np.ndarray):
+            counts = serialize_array(counts)
+        return pickle.dumps(counts)
+
+def deserialize_counts(buf):
+        counts = pickle.loads(buf)
+        #print ("deserialize_counts: unpickled:", counts)
+        if isinstance(counts, tuple):
+            return deserialize_array(counts)
+        elif isinstance(counts, dict):
+            return {k:deserialize_array(v) for k, v in counts.items()}
+        else:
+            return None
+
         
 class Hist:
     
@@ -207,7 +245,32 @@ class Hist:
             self.Counts = new_counts
         else:
             self.Counts[...] = 0.0
-                    
+
+    def serializeCounts(self):
+        return serialize_counts(self.Counts)
+    
+    def addCounts(self, counts):
+        if counts is None:      return
+        assert isinstance(counts, dict) == isinstance(self.Counts, dict), "Histograms of different kinds can not be added"
+        assert isinstance(counts, np.ndarray) == isinstance(self.Counts, np.ndarray), "Histograms of different kinds can not be added"
+        if isinstance(counts, np.ndarray):
+            self.Counts += counts
+        else:
+            for k, c in self.Counts.items():
+                c += counts.get(k, 0.0)
+
+    def addSerializedCounts(self, scounts):
+        deserialized = deserialize_counts(scounts)
+        #print("H.addSerializedCounts: deserialized:", deserialized)
+        return self.addCounts(deserialized)
+
+    def __iadd__(self, another):
+        if isinstance(another, Hist):
+                c1 = another.Counts
+        elif isinstance(another, (int, float, np.ndarray, dict)):
+                c1 = another
+        self.addCounts(c1)
+       
 
     @property                        
     def fields(self):
@@ -252,6 +315,7 @@ class Hist:
         # Do the fill
         if len(numeric_values):
             counts, _ = np.histogramdd(numeric_values, self.DenseBins, weights = weights)
+            #print ("Hist.fill: counts:", counts)
         else:
             counts = 1.0 if weights is None else weights      # just a scalar 1, because all axes happen to be categorical
 
@@ -263,28 +327,11 @@ class Hist:
                 my_counts += counts
         else:
             self.Counts += counts
+            #print ("Hist.fill: counts->", self.Counts)
 
     def counts(self):
         return self.Counts
-        
-    def add_counts(self, c1):
-        assert isinstance(c1, dict) == isinstance(self.Counts, dict), "Histograms of different kinds can not be added"
-        if isinstance(c1, dict):
-            for k1, counts1 in c1.items():
-                if k1 in self.Counts:
-                    self.Counts[k1] += counts1
-                else:
-                    self.Counts[k1] = counts1.copy()
-        else:
-            self.Counts += c1
-       
-    def add(self, another):
-        if isinstance(another, Hist):
-                c1 = another.Counts
-        elif isinstance(another, (int, float, np.ndarray, dict)):
-                c1 = another
-        self.add_counts(c1)
-       
+
     def meta(self):
         return dict(
             axes = [self.Axes[name].meta() for name in self.NameList],
@@ -297,43 +344,6 @@ class Hist:
         weights = meta["weights"]
         return Hist(*alist, weights=weights)
 
-    @staticmethod 
-    def serialize_array(counts):
-        if isinstance(counts, np.ndarray):
-            data = np.ascontiguousarray(counts).data
-            data = base64.b64encode(zlib.compress(data, 1))
-            return (counts.dtype.str, counts.shape, data)
-        else:
-            # assume scalar
-            return counts
-                
-    @staticmethod 
-    def deserialize_array(x):
-        if isinstance(x, (tuple, list)):
-            dtype, shape, data = x
-            data = zlib.decompress(base64.b64decode(data))
-            return np.frombuffer(data, dtype=dtype).reshape(shape)
-        else:
-            return x
-            
-    def serialize_counts(self):
-        if self.Counts is None:
-            obj = None
-        elif isinstance(self.Counts, dict):
-            obj = {key:self.serialize_array(counts) for key, counts in self.Counts.items()}
-        elif isinstance(self.Counts, np.ndarray):
-            obj = self.serialize_array(self.Counts)
-        return pickle.dumps(obj)
-    
-    @staticmethod 
-    def deserialize_counts(buffer):
-        if not buffer:  return None
-        obj = pickle.loads(buffer)
-        if isinstance(obj, dict):
-            return {key:Hist.deserialize_array(counts) for key, counts in obj.items()}
-        else:
-            return Hist.deserialize_array(obj)
-    
     def layerAsList(self, layer, constraints):
         if isinstance(layer, np.ndarray):
             lst = []
@@ -369,38 +379,6 @@ class Hist:
         else:
             return self.layerAsList(self.Counts, constraints)
             
-    def select_old(self, **constraints):
-        name, value = constraints.items()[0]
-        axis = self.Axes[name]
-        new_axes = [ax for ax in self.AxesList if ax.Name != name]
-        counts = None
-        if axis.isSparse:
-            if len(self.SparseAxesList) == 1:
-                counts = self.Counts.get((value,))
-            else:
-                counts = {}
-                i = self.SparseAxesList.index(name)
-                for keys, layer in self.Counts.items():
-                    keys = tuple(keys[:i]+keys[i+1:])
-                    counts[keys] = layer
-        else:
-            # the constrained axis is dense
-            ibin = axis.project(value)
-            iaxis = self.DenseAxesList.index(name)
-            ndense = len(self.DenseAxesList)
-            selector = [slice(None, None, None)]*ndense
-            selector = selector[:iaxis] + [ibin] + selector[iaxis+1:]
-            if isinstance(self.Counts, dict):
-                counts = {}
-                for keys, layer in self.Counts.items():
-                    counts[keys] = layer[selector]
-            else:
-                counts = self.Counts[selector]
-        h = Hist.build(new_axes, self.Weights, counts)
-        remaining = {n:v for n, v in constraints.items() if n != name}
-        if remaining:
-            h = self.slice(**remaining)
-        return h
         
     def select(self, **constraints):
         remaining_axes = [ax for ax in self.AxesList if not ax.Name in constraints]
@@ -544,6 +522,7 @@ class Hist:
 #
 
     def beside(self, axis_name):
+        import HPlot
         # for now, require that the axis is sparse
         assert axis_name in self.Axes and self.Axes[axis_name].isSparse, "The axis to spread over must be sparse"
         return HPlot.Spread(self, haxis = axis_name)
@@ -604,16 +583,24 @@ if __name__ == '__main__':
     y = np.random.random((100,))
     h3.fill(x=x, y=y, c="world")
     
-    h2 = Hist(bins('x', 10,0,1), category('c', label="category"))
+    h2 = Hist(bins('x', 5,0,1), bins('y', 10, 0, 5), category('a', label="category a"), category('b', label="category b"))
     x = np.random.random((100,))
-    h2.fill(x=x, c="hello")
+    h2.fill(x=x, y=x, a="hello", b="world")
     x = np.random.random((100,))
-    h2.fill(x=x, c="world")
-    print(h2.Counts)
-    #print h2.meta()
+    h2.fill(x=x, y=x, a="alpha", b="beta")
     
-    plot = h2.area(color="c")
-    print(json.dumps(plot.vegalite(), indent=4))
+    size = 0
+    for k, c in h2.Counts.items():
+        size += len(bytes(c.data))
+
+    print("Counts:", size, h2.Counts)
+    print ("Meta:", h2.meta())
+    serialized = h2.serializeCounts()
+    print ("Serialzed counts:", len(serialized), serialized)
+    print ("Deserialized counts:", deserialize_counts(serialized))
+    
+    #plot = h2.area(color="c")
+    #print(json.dumps(plot.vegalite(), indent=4))
     
     
         

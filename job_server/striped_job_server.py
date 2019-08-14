@@ -181,6 +181,10 @@ class JobProcess(multiprocessing.Process):
             self.log("Client disconnected (because of the communication error). Aborting")
             self.Contract.abort()
 
+    def forward(self, msg):
+        with self.T["callback/forward/%s" % (msg.Type,)]:
+            self.DataExchange.send(msg)
+
     def eventsDelta(self, wid, events_delta):
         with self.T["callback/eventsDelta"]:
             self.DataExchange.send(DXMessage("events", wid=wid, events_delta=events_delta))
