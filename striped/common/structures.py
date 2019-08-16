@@ -1,4 +1,7 @@
-import numpy as np
+import numpy as np, sys
+
+PY3 = sys.version_info >= (3,)
+PY2 = sys.version_info < (3,)
 
 
 def stripe_key(dataset_name, column_name, rgid):
@@ -20,7 +23,8 @@ def standalone_data_key(dataset_name, key, json=False):
 StripeHeaderFormatVersion = "1.0"
 
 def stripe_header(array):
-    return "#__header:version=%s;dtype=%s#" % (StripeHeaderFormatVersion, array.dtype.str)
+    h = "#__header:version=%s;dtype=%s#" % (StripeHeaderFormatVersion, array.dtype.str)
+    return h.encode("utf-8")
     
 def data_header(data):
     if isinstance(data, np.ndarray):
@@ -37,7 +41,7 @@ def deserialize_array(text):
 	
 
 def format_array(array):
-    return bytes(stripe_header(array)) + bytes(array.data)
+    return stripe_header(array) + bytes(array.data)
 
 def parse_data(data):
     if not data: return None

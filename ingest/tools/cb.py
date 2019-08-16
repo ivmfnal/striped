@@ -10,7 +10,7 @@ python cb.py put [-j] [-f <file>|-d <data>] <bucket> <key>
 """
 
 if not sys.argv[1:]:
-    print Usage
+    print(Usage)
     sys.exit(1)
     
 cmd = sys.argv[1]
@@ -39,9 +39,9 @@ if cmd == "get":
             open(out_file, "wb").write(data)
         elif dtype:
             data = np.frombuffer(data, dtype=dtype)
-            print data.shape, data.dtype, data
+            print(data.shape, data.dtype, data)
         else:
-            print len(data), repr(data[:100])
+            print(len(data), repr(data[:100]))
 
 elif cmd == "put":
 

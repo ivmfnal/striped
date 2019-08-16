@@ -1,0 +1,47 @@
+#!/bin/env python
+
+import sys, os
+
+from striped.ingestion import run_batch, create_batch
+from striped.ingestion import createDataset, listDataset, verifyDataset, deleteDataset, listDatasets
+
+Usage="""
+striped_ingest [command] [subcommand] [args ...]
+
+Commands and subcommands:
+
+    batch             - manage ingestion batch
+        create        
+        run           
+    
+    dataset           - manage datasets
+        create
+        frames
+        verify
+        delete
+        list          - list all datasets in the bucket
+"""
+
+command = "" if not sys.argv[1:] else sys.argv[1]
+subcommand = "" if not sys.argv[2:] else sys.argv[2]
+args = sys.argv[3:]
+
+if command == "batch":
+
+    if subcommand == "create":      create_batch(args)
+    elif subcommand == "run":       run_batch(args)
+        
+elif command == "dataset":
+
+    {
+        "create":   createDataset,
+        "frames":   listDataset,
+        "verify":   verifyDataset,
+        "delete":   deleteDataset,
+        "list":     listDatasets
+    }[subcommand](args)
+
+else:
+    print(Usage)
+    sys.exit(2)
+    

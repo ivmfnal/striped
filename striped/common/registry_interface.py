@@ -1,4 +1,4 @@
-from pythreader import PyThread
+from striped.pythreader import PyThread
 from socket import socket, AF_INET, SOCK_DGRAM, gethostbyname
 import json, select, sys, time
 from .DataExchange2 import to_str, to_bytes

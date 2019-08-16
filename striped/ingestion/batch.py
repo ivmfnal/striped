@@ -1,4 +1,7 @@
-import json
+import json, sys
+
+PY3 = sys.version_info >= (3,)
+PY2 = sys.version_info < (3,)
 
 use_tqdm = False
 try:
@@ -16,9 +19,9 @@ def distribute_items(N, n):
     return out
 
 def split_to_parts(total_size, target_part_size):
-        if total_size < (4*target_part_size)/3:
+        if total_size < (4*target_part_size)//3:
                 return [total_size]
-        nparts = total_size/target_part_size
+        nparts = total_size//target_part_size
         part_size_0 = float(total_size)/nparts
         part_size_1 = float(total_size)/(nparts+1)
         if abs(part_size_0-target_part_size) > abs(part_size_1-target_part_size):
@@ -37,7 +40,7 @@ class SplitSegment(object):
         return len(self.FrameSizes)
         
     def frameIDs(self):
-        return range(self.StartFrameID, self.StartFrameID+len(self))
+        return list(range(self.StartFrameID, self.StartFrameID+len(self)))
         
     def toDict(self):
         return dict(
@@ -92,7 +95,7 @@ class FrameMap(object):
         
     def __len__(self):
         # total number of frames
-        return sum(map(lambda x: len(x), self.Map), 0)        
+        return sum([len(x) for x in self.Map], 0)        
         
     def __iter__(self):
         return (s for s in self.Map)
@@ -107,7 +110,7 @@ class FrameMap(object):
         file_sizes = [(file_path, data_reader_class(file_path, None).nevents())
                             for file_path in path_list
                     ]
-        provenance_map = dict(zip(paths, provenance_names))
+        provenance_map = dict(list(zip(paths, provenance_names)))
         segments = []
         current_segment = []
         current_segment_size = 0
@@ -152,7 +155,7 @@ class FrameMap(object):
     
     @staticmethod        
     def fromJSON(json_or_object):
-        if isinstance(json_or_object, (str, unicode)):
+        if isinstance(json_or_object, str):
             json_or_object = json.loads(json_or_object)
         m = []
         for segment in json_or_object:
@@ -202,24 +205,24 @@ class Batch(object):
     
     @staticmethod
     def fromJSON(json_or_object):
-        if isinstance(json_or_object, (str, unicode)):
+        if isinstance(json_or_object, str):
             json_or_object = json.loads(json_or_object)
         return Batch(start_frame_id = json_or_object["start_frame_id"], frame_map = FrameMap.fromJSON(json_or_object["frame_map"]))
         
     @staticmethod
     def load(path_or_file):
-	def json_object_hook(arg): # this hook will convert every unicode key or value to utf-8 while loading json
-		out = {}
-		for k, v in arg.items():
-			if isinstance(k, unicode): k = k.encode("utf-8")
-			if isinstance(v, unicode): v = v.encode("utf-8")
-			elif isinstance(v, list):
-				v = [x.encode("utf-8") if isinstance(x, unicode) else x 
-						for x in v
-				]
-			out[k] = v
-		return out
-        if isinstance(path_or_file, (str, unicode)):
+        def json_object_hook(arg): # this hook will convert every unicode key or value to utf-8 while loading json
+
+                def to_str(x):
+                    if isinstance(x, list):
+                        return [to_str(xx) for xx in x]
+                    if PY3 and isinstance(x, bytes): return x.decode("utf-8", "ignore")
+                    if PY2 and isinstance(x, (bytes, unicode)): return str(x)
+                    return x
+
+                return { to_str(k) : to_str(v) for k, v in arg.items() }
+
+        if isinstance(path_or_file, str):
             path_or_file = open(path_or_file, "r")
         return Batch.fromJSON(json.load(path_or_file, object_hook=json_object_hook))
         

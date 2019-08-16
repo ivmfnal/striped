@@ -47,8 +47,13 @@ class   CouchBaseConfig:
                 if envVar is None:
                     envVar = 'COUCHBASE_BACKEND_CFG'
                 path = os.environ[envVar]
+            if not os.path.isfile(path):
+                raise ValueError("Couchbase backend configuration file '%s' does not exist" % (path,))
             config.read(path)
         self.Config = config
+
+        if not self.SectionName in self.Config.sections():
+            raise ValueError("Couchbase backend configuration file does not have section '%s'" % (self.SectionName,))
 
         self.Username = self.get("Username")
         self.Password = self.get("Password")
@@ -98,8 +103,7 @@ class CouchBaseBackend(object):
                     config = None, print_errors = False,
                     **bucket_options):
         if isinstance(config, str) or config is None:
-            try:    config = CouchBaseConfig(path = config)
-            except: config = None
+            config = CouchBaseConfig(path = config)
         elif isinstance(config, ConfigParser):
             config = CouchBaseConfig(config = config)
         if config is not None:

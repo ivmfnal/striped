@@ -12,6 +12,7 @@ build: $(BUILD_DIR) build_striped_tools striped
 	cd job_server; make DSTDIR=$(BUILD_DIR)/job_server build
 	cd worker; make DSTDIR=$(BUILD_DIR)/worker build
 	cd striped; make DSTDIR=$(BUILD_DIR)/striped build
+	cd ingest; make BINDIR=$(BUILD_DIR)/bin LIBDIR=$(BUILD_DIR)/striped/ingestion build
         
 tarball: clean $(TARDIR) build
 	cd $(BUILD_DIR); tar cf $(TARFILE) *

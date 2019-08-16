@@ -9,18 +9,18 @@ import re
 #
 
 try:
-	# uproot 2
-	genobjclass = uproot.interp.jagged.asobjs
+        # uproot 2
+        genobjclass = uproot.interp.jagged.asobjs
 except:
-	# uproot 3
-	genobjclass = uproot.interp.objects.asgenobj
+        # uproot 3
+        genobjclass = uproot.interp.objects.asgenobj
 
 try:
-	# uproot 3
-	stringobjclass = uproot.interp.objects.asstring
+        # uproot 3
+        stringobjclass = uproot.interp.objects.asstring
 except:
-	# uproot 2
-	stringobjclass = uproot.interp.strings.asstrings	
+        # uproot 2
+        stringobjclass = uproot.interp.strings.asstrings        
 
 
 
@@ -202,9 +202,9 @@ class Uproot2DArray(UprootArray):
     def stripeSizes(self, groups):
         arr = self.array
         i = 0
-        try:    lens = np.array(map(len, arr))
+        try:    lens = np.array(list(map(len, arr)))
         except:
-            print "Can not calculate length in:", arr
+            print("Can not calculate length in:", arr)
             raise
         for g in groups:
             yield lens[i:i+g]
@@ -214,7 +214,7 @@ class Uproot2DArray(UprootArray):
         dtype = dtype or self.DType
         arr = self.flatArray()
         i = 0
-        size_array = np.array(map(len, arr))
+        size_array = np.array(list(map(len, arr)))
         for g in groups:
             segment = arr[i:i+g]
             concatenated = []
@@ -234,7 +234,7 @@ class Uproot2DArray(UprootArray):
         
     def flattenedShape(self):
         j = len(self.Shape)
-        for i in xrange(len(self.Shape)):
+        for i in range(len(self.Shape)):
             if i is not None:
                 j = i
                 break
@@ -298,7 +298,7 @@ class Uproot2D_TLorentzVector(Uproot2DArray):
 
         
     def flatArray(self):
-        raise NotImplementedError, "Do we actually need this?"
+        raise NotImplementedError("Do we actually need this?")
 #        lst = []
 #        for vector_list in self.array:
 #            tuples = np.array([v.tolist() for v in vector_list], dtype=np.float64)
@@ -378,7 +378,7 @@ class UprootArray_Jagged(Uproot2DArray):
                 yield contents[starts[js]:stops[js+n-1]], sizes[js:js+n]
             else:
                 # make copy
-                yield np.concatenate([contents[starts[js+i]:stops[js+i]] for i in xrange(n)]), sizes[js:js+n]
+                yield np.concatenate([contents[starts[js+i]:stops[js+i]] for i in range(n)]), sizes[js:js+n]
             js += n
 
             
@@ -435,8 +435,8 @@ if __name__ == '__main__':
 
         ua = UprootArray.create(t["Jets"])
         for stripe, sizes in ua.stripesAndSizes([10,10,10]):
-            print sizes
-            print type(stripe), stripe
+            print(sizes)
+            print(type(stripe), stripe)
             
                                        
 

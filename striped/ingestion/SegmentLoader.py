@@ -9,7 +9,7 @@ from striped.common import Stopwatch, Tracer
 from striped.common import stripe_key, format_array, rginfo_key, RGInfo, ProvenanceSegment
 from striped.pythreader import DEQueue, PyThread
 
-from batch import SplitSegment, MergeSegment
+from .batch import SplitSegment, MergeSegment
 
 #from trace import Tracer
 
@@ -140,7 +140,7 @@ class MergeLoader(object):
 
         for bname, bdict in schema["branches"].items():
             branch_size_arrays = [reader.branchSizeArray(bname) for reader in data_readers]
-            branch_size_array = np.asarray(np.concatenate(filter(lambda x: len(x) > 0, branch_size_arrays)), dtype=SIZE_ARRAY_DTYPE)
+            branch_size_array = np.asarray(np.concatenate([x for x in branch_size_arrays if len(x) > 0]), dtype=SIZE_ARRAY_DTYPE)
 
             writer.add(rgid, bname + ".@size", branch_size_array)
 
@@ -204,7 +204,7 @@ class SplitLoader(object):
         
         schema = self.Schema
         groups = self.FrameSizes
-        rgids_to_use = range(self.StartFrameID, self.StartFrameID+len(self.FrameSizes))
+        rgids_to_use = list(range(self.StartFrameID, self.StartFrameID+len(self.FrameSizes)))
         dry_run = self.DryRun
         data_reader = self.DataReaderClass(self.FilePath, self.Schema)
         metadata = data_reader.profile() or None
