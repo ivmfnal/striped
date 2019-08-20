@@ -178,6 +178,7 @@ class MergeLoader(object):
         rginfo = RGInfo(rgid, segments, profile=metadata)
         if not dry_run:
             self.Backend.put_json({rginfo_key(self.DatasetName, rgid): rginfo.toDict()})
+            self.Backend.RGIDs(self.DatasetName)        # to trigger view reindexing
 
 
 class SplitLoader(object):
@@ -287,6 +288,7 @@ class SplitLoader(object):
 
         if not dry_run and rginfos:
             self.Backend.put_json(rginfos)
+            self.Backend.RGIDs(self.DatasetName)        # to trigger view reindexing
 
 def segmentLoader(segment, frames_to_load, dataset_name, data_reader_class, schema, metadata, backend, dry_run = False):
     assert schema is not None
