@@ -1,7 +1,6 @@
 from striped.ingestion import Batch, FileInfo
 from striped.client import CouchBaseBackend
-from pythreader import TaskQueue, Task
-from DataReader import DataReader
+from striped.pythreader import TaskQueue, Task
 
 import time, sys, getopt, os, glob, stat, json
 
