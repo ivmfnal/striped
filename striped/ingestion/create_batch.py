@@ -87,7 +87,14 @@ def create_batch(argv):
     if not Quiet:
             print("Building frame map from %d files..." % (len(paths,)))
 
-    batch = Batch().build(DataReader, FrameSize, paths, provenance_names, show_progress = not Quiet)
+    backend = CouchBaseBackend(BucketName, print_errors = True, config = Config)
+    schema = backend.schema(DatasetName)
+
+    if not schema:
+        print ("Dataset %s not found" % (DatasetName,))
+        sys.exit(1)
+        
+    batch = Batch().build(DataReader, schema, FrameSize, paths, provenance_names, show_progress = not Quiet)
 
     NFrames = len(batch)
 
@@ -111,7 +118,6 @@ def create_batch(argv):
                 if not Quiet:       print("Frame ID range starting at %d will be reused" % (start_farme_id,))
 
     if start_farme_id is None:
-        backend = CouchBaseBackend(BucketName, print_errors = True, config = Config)
         start_farme_id = backend.allocateRGIDs(DatasetName, NFrames)
         if not Quiet:       print("Frame ID range is allocated starting at %d" % (start_farme_id,))
 

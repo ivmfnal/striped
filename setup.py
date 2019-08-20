@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 import numpy as np
 from setuptools import setup, Extension, find_packages
+import sys
+
+include_worker = ("--include-worker" in sys.argv[1:])
 
 def get_version():
     globs = {}
@@ -8,7 +11,15 @@ def get_version():
     version = globs["Version"]
     return version
     
-packages = ['striped', 'striped.job', 'striped.common', 'striped.client', 'striped.ingestion', 'striped.pythreader']
+packages = ['striped', 'striped.job', 'striped.common', 'striped.client', 'striped.ingestion', 'striped.pythreader', 'striped.hist',
+	'striped.ml']
+
+ext_modeules = [] 
+include_dirs = []
+
+if include_worker:
+	ext_modeules = [Extension('striped_c_tools',['stripe_tools/stripe_tools.c'])]
+	include_dirs = [np.get_include()]
 
 setup(name = "striped",
       version = get_version(),
@@ -33,7 +44,7 @@ setup(name = "striped",
                      "Topic :: Scientific/Engineering :: Physics",
                      ],
       platforms = "Any",
-      ext_modules = [Extension('striped_c_tools',['stripe_tools/stripe_tools.c'])],
-        include_dirs = [np.get_include()],
+      ext_modules = ext_modeules,
+      include_dirs = include_dirs,
       zip_safe = False
       )

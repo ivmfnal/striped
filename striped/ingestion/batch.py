@@ -104,10 +104,10 @@ class FrameMap(object):
         return self.Map[i]
 
     @staticmethod
-    def build(data_reader_class, target_frame_size, paths, provenance_names, show_progress=False):
+    def build(data_reader_class, schema, target_frame_size, paths, provenance_names, show_progress=False):
 
         path_list = paths if not (show_progress and use_tqdm) else tqdm.tqdm(paths)
-        file_sizes = [(file_path, data_reader_class(file_path, None).nevents())
+        file_sizes = [(file_path, data_reader_class(file_path, schema).nevents())
                             for file_path in path_list
                     ]
         provenance_map = dict(list(zip(paths, provenance_names)))
@@ -200,8 +200,8 @@ class Batch(object):
         )
         
     @staticmethod 
-    def build(data_reader_class, frame_size, paths, names, show_progress = False):
-        return Batch(frame_map = FrameMap.build(data_reader_class, frame_size, paths, names, show_progress=show_progress))
+    def build(data_reader_class, schema, frame_size, paths, names, show_progress = False):
+        return Batch(frame_map = FrameMap.build(data_reader_class, schema, frame_size, paths, names, show_progress=show_progress))
     
     @staticmethod
     def fromJSON(json_or_object):
