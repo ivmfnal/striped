@@ -1,7 +1,34 @@
-from striped.ingestion import Batch
+from striped.ingestion import Batch, FileInfo
 from striped.client import CouchBaseBackend
+from pythreader import TaskQueue, Task
+from DataReader import DataReader
 
 import time, sys, getopt, os, glob, stat, json
+
+
+use_tqdm = False
+try:
+        from tqdm import tqdm
+        use_tqdm = True
+except:
+        pass
+
+
+
+class GetNEventsTask(Task):
+
+    def __init__(self, file_info, schema, tick):
+        Task.__init__(self)
+        self.FileInfo = file_info
+        self.Schema = schema
+        self.Tick = tick
+        
+    def run(self):
+        reader = DataReader(self.FileInfo.Path, self.Schema)
+        self.FileInfo.NEvents = reader.nevents()
+        if self.Tick is not None:
+            self.Tick()
+        
 
 def create_batch(argv):
     from DataReader import DataReader
@@ -22,10 +49,11 @@ def create_batch(argv):
                  to keep in the provenance data, defailt=0, i.e. keep the file name only
         -x <extension> - if the input is specified as a directory, then this is the extension of data files
                          under the directory. Default = "root"
+        -m <n readers> - run multiple data reader threads in parallel, default = 1
         -q - be quiet
     """
 
-    opts, args = getopt.getopt(argv, "n:p:k:x:O:qc:")
+    opts, args = getopt.getopt(argv, "n:p:k:x:O:qc:m:")
     opts = dict(opts)
     Config = opts.get("-c")
     FrameSize = int(opts.get("-n", 10000))
@@ -34,6 +62,7 @@ def create_batch(argv):
     Extension = opts.get("-x", "root")
     Override = "-O" in opts
     OverrideMode = opts.get("-O")
+    MaxReaders = int(opts.get("-m", 1))
 
     Quiet = "-q" in opts
 
@@ -93,8 +122,23 @@ def create_batch(argv):
     if not schema:
         print ("Dataset %s not found" % (DatasetName,))
         sys.exit(1)
-        
-    batch = Batch().build(DataReader, schema, FrameSize, paths, provenance_names, show_progress = not Quiet)
+
+    class FileCounter(object):
+    
+        def __init__(self, ntotal, show_tqdm):
+            self.T = None if not (use_tqdm and show_tqdm) else tqdm(total=ntotal)
+            
+        def tick(self, n=1):
+            if self.T is not None:
+                self.T.update(n)
+            
+
+    file_counter = FileCounter(len(paths), not Quiet)
+    file_infos = [FileInfo(path, None, prov) for path, prov in zip(paths, provenance_names)]
+    queue = TaskQueue(MaxReaders, tasks = [GetNEventsTask(fi, schema, file_counter.tick) for fi in file_infos])
+    queue.waitUntilEmpty()
+            
+    batch = Batch().build(DataReader, schema, FrameSize, file_infos)
 
     NFrames = len(batch)
 

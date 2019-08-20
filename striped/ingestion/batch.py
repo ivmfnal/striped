@@ -27,6 +27,12 @@ def split_to_parts(total_size, target_part_size):
         if abs(part_size_0-target_part_size) > abs(part_size_1-target_part_size):
                 nparts += 1
         return distribute_items(total_size, nparts)
+        
+class FileInfo(object):
+    def __init__(self, path, nevents, provenance_name):
+        self.Path = path
+        self.NEvents = nevents
+        self.ProvenanceName = provenance_name
 
 class SplitSegment(object):
 
@@ -104,18 +110,17 @@ class FrameMap(object):
         return self.Map[i]
 
     @staticmethod
-    def build(data_reader_class, schema, target_frame_size, paths, provenance_names, show_progress=False):
+    def build(data_reader_class, schema, target_frame_size, file_infos):
 
-        path_list = paths if not (show_progress and use_tqdm) else tqdm.tqdm(paths)
-        file_sizes = [(file_path, data_reader_class(file_path, schema).nevents())
-                            for file_path in path_list
-                    ]
-        provenance_map = dict(list(zip(paths, provenance_names)))
+        path_list = [f.Path for f in file_infos]
+        file_sizes = [f.NEvents for f in file_infos]
+        provenance_names = [f.ProvenanceName for f in file_infos]
+        provenance_map = dict(list(zip(path_list, provenance_names)))
         segments = []
         current_segment = []
         current_segment_size = 0
-        for fp, fs in file_sizes:
-        
+        for fi in file_infos:
+            fp, fs = fi.Path, fi.NEvents
             d_add = abs(current_segment_size + fs - target_frame_size)
             d_close = abs(current_segment_size - target_frame_size)
             
@@ -200,8 +205,8 @@ class Batch(object):
         )
         
     @staticmethod 
-    def build(data_reader_class, schema, frame_size, paths, names, show_progress = False):
-        return Batch(frame_map = FrameMap.build(data_reader_class, schema, frame_size, paths, names, show_progress=show_progress))
+    def build(data_reader_class, schema, frame_size, file_infos):
+        return Batch(frame_map = FrameMap.build(data_reader_class, schema, frame_size, file_infos))
     
     @staticmethod
     def fromJSON(json_or_object):

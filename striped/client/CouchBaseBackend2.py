@@ -177,7 +177,7 @@ class CouchBaseBackend(object):
 
     def _put_multi(self, data_dict, format):
         if len(data_dict) > self.GET_PUT_CHUNK:
-            keys = data_dict.keys()
+            keys = list(data_dict.keys())
             n = len(keys)
             for i in range(0, n, self.GET_PUT_CHUNK):
                 chunk = { k:data_dict[k] for k in keys[i:i+self.GET_PUT_CHUNK] }
@@ -542,7 +542,7 @@ if __name__ == '__main__':
 
         b.put_data(items)
 
-        out_data = b.get_data(items.keys())
+        out_data = b.get_data(list(items.keys()))
 
         for k in items.keys():
             if out_data[k] != items[k]:
@@ -553,9 +553,9 @@ if __name__ == '__main__':
         
         data = {"key:%d" % (x,): str(x)+fixed for x in range(1000)}
         b.put_data(data)
-        read_data = b.get_data(data.keys())
+        read_data = b.get_data(list(data.keys()))
         diff = 0
-        for k in data.keys():
+        for k in list(data.keys()):
             if data[k] != read_data[k]:
                 print(("Data differs for key <%s>" % (k,)))
                 diff += 1
