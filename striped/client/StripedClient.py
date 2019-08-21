@@ -581,7 +581,7 @@ class StripedClient(Lockable):
             elif code//100 == 5:
                 # retry later
                 tsleep = random.random() * delay
-                sys.stderr.write("url:%s error:%s. will retry in %.3f seconds\n" % (url, error, tsleep))
+                sys.stderr.write("url:%s error 500. will retry in %.3f seconds\n" % (url, tsleep))
                 self.log("Error code: %s, will retry in %s seconds" % (code, tsleep))
                 time.sleep(tsleep)
             else:
