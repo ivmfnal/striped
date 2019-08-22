@@ -104,7 +104,7 @@ class DXMessage:
 
         sync = buffered.readn(3)
         if not sync:	
-            print("DXSocket.fromBuffered(): EOF")
+            #print("DXSocket.fromBuffered(): EOF")
             return None		# EOF
         #print("DXSocket.fromBuffered(): sync received")
 

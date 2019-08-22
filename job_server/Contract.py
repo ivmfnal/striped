@@ -279,6 +279,9 @@ class Contract(Primitive):
             with self.T["WorkerInterface.start()"]:
                 w.start()
             #time.sleep(0.001)
+
+        if transport_client is not None:
+            transport_client.wait()
         
         self.StartEvent.set()
         

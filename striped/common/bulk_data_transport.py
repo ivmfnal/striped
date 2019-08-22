@@ -26,11 +26,11 @@ class Forwarder(PyThread):
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, _BUFSIZE)
         sock.connect((self.Server, self.Port))
         
-        header = "%s %d" % (self.Name, len(self.Data))
+        header = b"%s %d" % (to_bytes(self.Name), len(self.Data))
         if self.ForwardTo:
             for a in self.ForwardTo:
-                header += " " + a
-        header += '\n'
+                header += b" " + to_bytes(a)
+        header += b'\n'
         
         sock.send(to_bytes(header) + to_bytes(self.Data))
         self.Response = sock.recv(10)
@@ -80,13 +80,15 @@ class Handler(Task):
     def run(self):
         try:
                 self.Sock.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, _BUFSIZE)
-                header = ""
-                while not "\n" in header:
+                header = b""
+                while not b'\n' in header:
                     text = self.Sock.recv(1000)
                     if not text:
                         return      # premature EOF
-                    header += to_str(text)
-                header, data = header.split("\n", 1)
+                    header += text
+                header, data = header.split(b"\n", 1)
+                header = to_str(header)
+                #print ("Bulk handler: header: %s" % (header,))
                 words = header.split()
                 name, size = words[:2]
                 forward_to = words[2:]
@@ -99,7 +101,7 @@ class Handler(Task):
                         return      # premature EOF
                     data_len += len(part)
                     data.append(part)
-                data = ''.join(data)
+                data = b''.join(data)
                 
                 #print "Handler: received data [%s], %d bytes" % (name, len(data))
                 #print "Handler: forwarding to: %s" % (forward_to,)

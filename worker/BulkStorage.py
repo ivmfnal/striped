@@ -10,6 +10,7 @@ class BulkStorage(object):
         self.Name = name
         self.Shm = shm if shm is not None else posix_ipc.SharedMemory(self.Name)
         self.Size = self.Shm.size
+        #print("BulkStorage: mmap size:", self.Size)
         self.MM = mmap.mmap(self.Shm.fd, self.Size) if self.Size > 0 else None
         self.Data = { k:v for k,v in data.items() }
         self.Keys = self.Data.keys()
@@ -35,7 +36,7 @@ class BulkStorage(object):
             elif isinstance(v, (int, float)):
                 size += 100
             elif isinstance(v, np.ndarray):
-                size += len(v.data) + 100
+                size += len(bytes(v.data)) + 100
             size += len(k)
         shm = posix_ipc.SharedMemory(name, size=size, flags=posix_ipc.O_CREAT)
         s = BulkStorage(name, shm, data_dict)
@@ -119,7 +120,9 @@ class BulkStorage(object):
                 self.MM.write(to_bytes(header))
             self.MM.write(b"\n")
             for b in data:
-                self.MM.write(to_bytes(b))
+                bb = to_bytes(b)
+                #print ("BulkStorage.save: b: %d" % (len(bb),))
+                self.MM.write(bb)
             self.MM.flush()
         
     def readMap(self):
@@ -133,7 +136,8 @@ class BulkStorage(object):
                 line = self.MM.readline()
                 line = line.strip()
                 if not line:  break
-                words = line.split(b":")
+                line = to_str(line)
+                words = line.split(":")
                 key, typ = words[:2]
                 key = to_str(key)
                 typ = to_str(typ)
