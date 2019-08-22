@@ -382,7 +382,7 @@ class StripedDataset(Lockable):
             raise KeyError("The following columns are not found in the dataset: %s" % (",".join(missing),))
 
         if include_size_columns:
-            for cn, cc in out_dict.items():
+            for cn, cc in list(out_dict.items()):
                 sc = cc.sizeColumn
                 if sc is not None:  out_dict[sc.Name] = sc 
 
@@ -393,7 +393,7 @@ class StripedDataset(Lockable):
 
     def columnToBranch(self, column_names):
         columns_dict = self.columns(column_names, include_size_columns=True)
-        return { cn: cc.descriptor.ParentArray for cn, cc in columns_dict.items() }
+        return { cn: cc.descriptor.ParentArray for cn, cc in list(columns_dict.items()) }
 
     @property    
     def allColumns(self):           # conveninence
@@ -437,7 +437,7 @@ class StripedDataset(Lockable):
         # data is dictionary {column_name -> npy_array}
         header = []
         body = []
-        for cn, arr in data.items():
+        for cn, arr in list(data.items()):
             cd = self.column(cn).descriptor
             data = bytes(np.asarray(arr, cd.NPType).data)
             body.append(data)
