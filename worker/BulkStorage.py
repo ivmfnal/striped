@@ -109,11 +109,11 @@ class BulkStorage(object):
                 elif isinstance(value, (int, float)):
                     header = "%s:n:%s\n" % (key, value)
                 elif isinstance(value, np.ndarray):
-                    size = len(value.data)
+                    size = len(bytes(value.data))
                     dtype = value.dtype.str
                     shape = value.shape
                     header = "%s:a:%d:%d:%s:%s\n" % (key, j, size, dtype, ",".join(["%d" % (dim,) for dim in shape]))
-                    data.append(value.data)
+                    data.append(bytes(value.data))
                     j += size
                 else:
                     raise ValueError("Unknown value type %s for key %s" % (type(value), key))
