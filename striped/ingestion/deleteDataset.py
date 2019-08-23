@@ -55,7 +55,7 @@ def deleteDataset(argv):
     config = None
     ratio = 1.0
 
-    opts, args = getopt.getopt(sys.argv[1:], "c:r:m")
+    opts, args = getopt.getopt(argv, "c:r:m")
     opts = dict(opts)
     if "-c" in opts:        
             config = opts["-c"]

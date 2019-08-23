@@ -23,6 +23,7 @@ class GetNEventsTask(Task):
         self.Tick = tick
         
     def run(self):
+        from DataReader import DataReader
         reader = DataReader(self.FileInfo.Path, self.Schema)
         self.FileInfo.NEvents = reader.nevents()
         if self.Tick is not None:
