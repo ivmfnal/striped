@@ -21,7 +21,7 @@ class ML_NNet_Worker:
                 self.SumLoss = 0.0
                 self.SumMetric = 0.0
 
-        def convert_data(self, frame):
+        def preconvert_data(self, frame):
                 x = data.dot(self.Columns[0])
                 y_ = data.dot(self.Columns[1])
                 n = len(x)
@@ -32,9 +32,7 @@ class ML_NNet_Worker:
                 model = self.Model
                 model.set_weights(self.Weights0)
                 
-                x = getattr(data, self.XColumn)
-                y_ = getattr(data, self.YColumn)
-                n = len(x)
+                n, x, y_ = self.preconvert_data(data)
 
 
                 #self.Job.message("run...")
@@ -42,7 +40,7 @@ class ML_NNet_Worker:
                 model = self.Model
 
                 with self.Trace["forward"]:
-                        y, losses, metrics = model.forward([x], [y_])
+                        y, losses, metrics = model.forward(x, y_)
                         loss = losses[0]
                         metric = metrics[0]
                         self.SumLoss += loss*n
