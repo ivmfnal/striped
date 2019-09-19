@@ -22,8 +22,8 @@ class ML_NNet_Worker:
                 self.SumMetric = 0.0
 
         def preconvert_data(self, frame):
-                x = data.dot(self.Columns[0])
-                y_ = data.dot(self.Columns[1])
+                x = frame.dot(self.Columns[0])
+                y_ = frame.dot(self.Columns[1])
                 n = len(x)
                 return n, [x], [y]
             

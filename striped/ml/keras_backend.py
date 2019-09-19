@@ -60,9 +60,9 @@ class ML_Keras_FitWorker:
                 
                 return model
                 
-        def convert_data(self, frame):
-                x = getattr(data, self.Columns[0])
-                y_ = getattr(data, self.Columns[1])
+        def preconvert_data(self, frame):
+                x = frame.dot(self.Columns[0])
+                y_ = frame.dot(self.Columns[1])
                 n = len(x)
                 return n, [x], [y]
             
@@ -73,7 +73,7 @@ class ML_Keras_FitWorker:
                 with self.Trace["model/reset"]:
                     model = self.resetModel(self.Model)
 
-                n, x, y_ = self.getXY(data)
+                n, x, y_ = self.preconvert_data(data)
 
                 for t in range(self.Iterations):
                     with self.Trace["model/train"]:
