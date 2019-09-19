@@ -6,8 +6,7 @@ class ML_NNet_Worker:
 
         def __init__(self, params, bulk, xcolumn, ycolumn):
                 self.Bulk = bulk
-                self.XColumn = xcolumn
-                self.YColumn = ycolumn
+                self.Columns = params["columns"]
 
                 model = Model.from_config(params["_model"]["config"])
                 trainer = SGD(params["lr"], params.get("momentum", 0.5))
@@ -22,10 +21,13 @@ class ML_NNet_Worker:
                 self.SumLoss = 0.0
                 self.SumMetric = 0.0
 
-        @property
-        def Columns(self):
-                return [self.XColumn, self.YColumn]
-
+        def convert_data(self, frame):
+                x = data.dot(self.Columns[0])
+                y_ = data.dot(self.Columns[1])
+                n = len(x)
+                return n, [x], [y]
+            
+                
         def frame(self, data):
                 model = self.Model
                 model.set_weights(self.Weights0)

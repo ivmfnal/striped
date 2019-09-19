@@ -16,8 +16,7 @@ class ML_Keras_FitWorker:
                 self.Job = job
                 self.Bulk = bulk
                 self.Params = params
-                self.XColumn = params["xcolumn"]
-                self.YColumn = params["ycolumn"]
+                self.Columns = params["columns"]
                 self.Iterations = params.get("iterations", 1)
                 self.MBSize = params.get("mbsize", 40)
                 self.ModelConfig = params["model"]
@@ -61,26 +60,21 @@ class ML_Keras_FitWorker:
                 
                 return model
                 
-        @property
-        def Columns(self):
-                return [self.XColumn, self.YColumn]
-
+        def convert_data(self, frame):
+                x = getattr(data, self.Columns[0])
+                y_ = getattr(data, self.Columns[1])
+                n = len(x)
+                return n, [x], [y]
+            
+                
         def frame(self, data):
             with self.Trace["model"]:
         
                 with self.Trace["model/reset"]:
                     model = self.resetModel(self.Model)
 
-                x = getattr(data, self.XColumn)
-                y_ = getattr(data, self.YColumn)
-                n = len(x)
+                n, x, y_ = self.getXY(data)
 
-
-                #self.Job.message("run...")
-
-                #self.Job.message("mbsize: %s" % (self.MBSize,))
-                #self.Job.message("initial_model: %s" % (digest(model.get_weights()),))
-                #self.Job.message("x/y: %d %d %s/%s" % (data.rgid, len(x), np.mean(x*x), np.mean(y_*y_)))
                 for t in range(self.Iterations):
                     with self.Trace["model/train"]:
                             history = model.fit(x, y_, batch_size=self.MBSize, verbose=False, shuffle=False)
@@ -112,8 +106,7 @@ class ML_Keras_EvaluateWorker:
 
         def __init__(self, params, bulk, job, db):
                 self.Bulk = bulk
-                self.XColumn = params["xcolumn"]
-                self.YColumn = params["ycolumn"]
+                self.Columns = params["columns"]
 
                 config = tf.ConfigProto()
                 config.intra_op_parallelism_threads = 1
@@ -137,18 +130,17 @@ class ML_Keras_EvaluateWorker:
                 self.SumLoss = 0.0
                 self.SumMetric = 0.0
                 
-        @property
-        def Columns(self):
-                return [self.XColumn, self.YColumn]
+        def getXY(self, frame):
+                x = getattr(data, self.Columns[0])
+                y_ = getattr(data, self.Columns[1])
+                n = len(x)
+                return n, [x], [y]
 
         def frame(self, data):
                 model = self.Model
                 model.set_weights(self.Weights0)
                 
-                x = getattr(data, self.XColumn)
-                y_ = getattr(data, self.YColumn)
-                n = len(x)
-
+                n, x, y_ = self.getXY(data)
 
                 #self.Job.message("run...")
                         
