@@ -30,7 +30,7 @@ def deleteDataset(argv):
                 if ratio > random.random():
                         #print k
                         if len(group) >= n:
-                            print(group[0])
+                            #print(group[0])
                             yield group
                             group = []
                         group.append(k)
@@ -72,11 +72,12 @@ def deleteDataset(argv):
 
     backend = CouchBaseBackend(bucket_name, config=config)
     bucket = backend.bucket
-    if meta_only:
-            n = delete_metadata(backend, dataset_name)
-    else:
-            n = delete_dataset(dataset_name, bucket, ratio)
-    print(n, "items removed")
+    n_meta = delete_metadata(backend, dataset_name)
+    n_data = 0
+    if not meta_only:
+            n_data = delete_dataset(dataset_name, bucket, ratio)
+    print(n_meta, "metadata items removed")
+    print(n_data, "data items removed")
 
 
 if __name__ == "__main__":

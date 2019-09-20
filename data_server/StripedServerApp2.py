@@ -125,7 +125,7 @@ class StripedHandler(WebPieHandler):
         branches = [ (bname, sorted(bdict.items())) for bname, bdict in schema["branches"].items() ]
         return self.render_to_response("dataset_info.html", ds=ds, nfiles = len(files), nevents = ne, ngroups = ng,
                 attributes = schema["attributes"].items(),
-                branches = branches,
+                branches = branches
                 )
         
     def ____buckets(self, req, relpath, **args):
@@ -159,7 +159,7 @@ class StripedHandler(WebPieHandler):
     def dataset_list(self, req, relpath, **args):
         self.App.scanDatasets()
         lst = sorted(self.App.datasets())
-        return Response(json.dumps(lst), content_type="text/json")
+        return Response(json.dumps(lst), content_type="text/json", cache_expires=self.MetadataTTL)
         
     def dataset_schema(self, req, relpath, ds=None, **args):
         backend = self.App.backendForDataset(ds)
@@ -169,7 +169,7 @@ class StripedHandler(WebPieHandler):
             schema = backend.schema(ds)
         except StripedNotFoundException:
             return Response("Dataset %s is not found" % (ds,), status=404)
-        return Response(json.dumps(schema), content_type="text/json")
+        return Response(json.dumps(schema), content_type="text/json", cache_expires=self.MetadataTTL)
         
     @cacheability_control
     def stripe(self, req, relpath, ds=None, rgid=None, column=None, compressed="no", **args):
@@ -587,7 +587,11 @@ class StripedApp(WebPieApp):
     def backendForDataset(self, dataset):
         #self.scanDatasets()
         bucket_name = self.bucketForDataset(dataset)
-        if not bucket_name: return None
+        if not bucket_name: 
+            self.scanDatasets()
+            bucket_name = self.bucketForDataset(dataset)
+            if not bucket_name:
+                return None
         return self.backendForBucket(bucket_name)
         
     def backendForBucket(self, bucket_name):

@@ -120,7 +120,7 @@ class ML_FitJob:
         "decay":    0.0
     }
                 
-    def run(self, dataset, xcolumn, ycolumn, iterations = 1, mbsize = 40, optimizer = None, optimizer_params = None, **args):
+    def run(self, dataset, columns, iterations = 1, mbsize = 40, optimizer = None, optimizer_params = {}, **args):
         optimizer = optimizer or "SGD"
         if optimizer_params is None:
             optimizer_params = self.DefaultOptimizer
@@ -129,8 +129,7 @@ class ML_FitJob:
         params["optimizer_params"] = optimizer_params
         params["iterations"] = iterations
         params["mbsize"] = mbsize
-        params["xcolumn"] = xcolumn
-        params["ycolumn"] = ycolumn
+        params["columns"] = columns
         #print "ML_FitJob: worker_file: %s, worker_text: [%s]" % (self.WorkerFile, self.WorkerText[:50] if self.WorkerText is not None else None)
         job = self.Session.createJob(dataset,
                             user_params = params,
@@ -185,10 +184,9 @@ class ML_EvaluateJob:
                 self.Metric = self.SumMetric / self.NSamples
                 self.Loss = self.SumLoss / self.NSamples
                 
-    def run(self, dataset, xcolumn, ycolumn, **args):
+    def run(self, dataset, columns, **args):
         params, weights = self.pack_model()
-        params["xcolumn"] = xcolumn
-        params["ycolumn"] = ycolumn
+        params["columns"] = columns
         job = self.Session.createJob(dataset,
                             user_params = params,
                             bulk_data = weights,
@@ -207,7 +205,7 @@ class MLSession(object):
         self.Platform = platform
         
         
-    def fit(self, dataset, xcolumn, ycolumn, iterations=1, worker_file=None, worker_text=None, optimizer=None, optimizer_params=None, **args):
+    def fit(self, dataset, columns, iterations=1, worker_file=None, worker_text=None, optimizer=None, optimizer_params=None, **args):
         if worker_file is None and worker_text is None:
             if self.Platform == "keras":
                 from .keras_backend import ML_Keras_FitWorker_text
@@ -215,10 +213,10 @@ class MLSession(object):
             else:
                 raise ValueError("Unknown ML platform %s" % (self.Platform,))
         job = ML_FitJob(self.StripedSession, self.Model, worker_file=worker_file, worker_text=worker_text)
-        job.run(dataset, xcolumn, ycolumn, iterations=iterations, optimizer=optimizer, optimizer_params = optimizer_params, **args)
+        job.run(dataset, columns, iterations=iterations, optimizer=optimizer, optimizer_params = optimizer_params, **args)
         return job.Loss, job.Metric
         
-    def evaluate(self, dataset, xcolumn, ycolumn, worker_file=None, worker_text=None, **args):
+    def evaluate(self, dataset, columns, worker_file=None, worker_text=None, **args):
         if worker_file is None and worker_text is None:
             if self.Platform == "keras":
                 from .keras_backend import ML_Keras_EvaluateWorker_text
@@ -227,7 +225,7 @@ class MLSession(object):
             else:
                 raise ValueError("Unknown ML platform %s" % (self.Platform,))
         job = ML_EvaluateJob(self.StripedSession, self.Model, worker_file=worker_file, worker_text=worker_text)
-        job.run(dataset, xcolumn, ycolumn, **args)
+        job.run(dataset, columns, **args)
         return job.Loss, job.Metric
         
         

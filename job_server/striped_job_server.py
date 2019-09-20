@@ -676,6 +676,10 @@ js.start()
 web_server.start()
 print("Web server port:", config.WebServerPort)
 print("Job server port:", config.Port)
+
+with open("job_server.pid","w") as pidfile:
+    pidfile.write("%d" % (os.getpid(),))
+
 web_server.join()
 
 

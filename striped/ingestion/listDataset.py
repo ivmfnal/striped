@@ -83,7 +83,8 @@ def listDataset(argv):
             rgids = set()
             nevents = 0
 
-            try:        counter =  backend.counter("%s:@@nextRGID" % (dataset_name,), delta=0).value
+            try:        
+                counter =  backend.counter("%s:@@nextRGID" % (dataset_name,), delta=0).value
             except NotFoundError:
                     counter = None
 
@@ -92,21 +93,21 @@ def listDataset(argv):
                 for s in info["Segments"]:
                     files.add(s["FileName"])
                 nevents += info["NEvents"]
-            print("Counter:           ", counter)
+            print("Next FrameID:      ", counter)
             print("Files:             ", len(files))
-            print("Row groups:        ", len(rgids))
-            print("Max rgid:          ", max(rgids))
+            print("Frames:            ", len(rgids))
             print("Events:            ", nevents)
             if len(rgids):
-                    print("Events/row group:  ", int(float(nevents)/float(len(rgids))+0.5))
+                print("Max farme id:      ", max(rgids))
+                print("Events/frame:      ", int(float(nevents)/float(len(rgids))+0.5))
 
-            maxrgid = max(rgids)
-            if len(rgids) < maxrgid + 1:
-                    print("Missing RGIDs (%d):" % (maxrgid+1 - len(rgids),))
-                    for rgid in range(maxrgid):
-                            if not rgid in rgids:
-                                    print(rgid, end=' ')
-                    print()
+                maxrgid = max(rgids)
+                if len(rgids) < maxrgid + 1:
+                        print("Missing RGIDs (%d):" % (maxrgid+1 - len(rgids),))
+                        for rgid in range(maxrgid):
+                                if not rgid in rgids:
+                                        print(rgid, end=' ')
+                        print()
                 
         
 if __name__ == "__main__":
