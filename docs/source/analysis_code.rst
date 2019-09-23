@@ -13,32 +13,33 @@ increase its performance.
 Worker
 ------
 
-.. py:class:: Worker
 
-    Worker is user-defined class, which specifies the code executed by the workers.  
-    The user has to define the Worker class with the following members:
+Worker is user-defined class, which specifies the code executed by the workers.  
+The user has to define the Worker class with the following members:
 
-      * Object constructor
-      * Columns - either class member or the Worker instance attribute - list of column names used for the analysis
-      * frame() method, which will be called by the Framework for each data frame
-      * end() method, which will be called after the last frame is processed by the Worker
+  * Object constructor
+  * Columns - either class member or the Worker instance attribute - list of column names used for the analysis
+  * frame() method, which will be called by the Framework for each data frame
+  * end() method, which will be called after the last frame is processed by the Worker
 
-    .. code-block:: python
+.. code-block:: python
 
-        class Worker:
+    class Worker:
+
+        Columns = [...]
     
-            Columns = [...]
-        
-            def __init__(self, user_params, bulk_data, job, db):
-                # ...
-        
-            def frame(self, objects):
-                # process frame
-                return data
-                
-            def end(self):
-                # called once after last frame
-                return data
+        def __init__(self, user_params, bulk_data, job, db):
+            # ...
+    
+        def frame(self, objects):
+            # process frame
+            return data
+            
+        def end(self):
+            # called once after last frame
+            return data
+
+.. py:class:: Worker
 
   .. py:method:: __init__(self, user_params, bulk_data, job, database)
   
@@ -60,7 +61,7 @@ Worker
 
   .. py:method:: end(self) 
 
-        this method will be called once after the worker finished processing its last frame.
+    this method will be called once after the worker finished processing its last frame.
         
     :return: either a dictionary with data to be sent to the Accumulator or None. The dictionary has the same restrictions as the
         dictionary returned by the frame() method.
@@ -121,19 +122,23 @@ anyway, but obviously there will be no data reduction, so all the Worker's outpu
             # ...
             return data_dict
 
-add() method
-~~~~~~~~~~~~
-Accumulator's add() method received the data dictionary returned by the Worker's frame() and end() methods, if any.
-Optionally, the add() method can return some other data dictionary, or it can return None. If the add() method returns
-some non-empty data dictionary, it is forwarded to the Job object.
+.. py:class:: Accumulator
 
-values() method
-~~~~~~~~~~~~~~~
-The Framework will call Accumulator's values() method only once, when all the Workers on the worker node finish processing
-their data, after calling their end() after all data returned by Worker's frame() and end() methods was passed
-to the Accumulator's add() method.
+  .. py:method:: add(self, data)
+  
+    add() method is called to accumulate data received from workers running on the same worker node.
+    
+    :param dictionary data: data dictionary returned by Worker.frame() or Worker.end() method
+    
+    :return: same kind of data dictionry as returned by Worker or None. If a dictionary is returned, it will be sent to the Job.
 
-The values() method returns either None or a data dictionary. This data dictionary will be sent to the Job.
+  .. py:method:: values(self)
+
+    The Framework will call Accumulator's values() method only once, when all the Workers on the worker node finish processing
+    their data, after calling their end() after all data returned by Worker's frame() and end() methods was passed
+    to the Accumulator's add() method.
+
+    :return: same kind of data dictionry as returned by Worker or None. If a dictionary is returned, it will be sent to the Job.
 
 Accessing Frame Data
 --------------------
