@@ -1,19 +1,24 @@
 FROM striped_base:latest
 
-RUN /sbin/adduser -d /home/striped striped; chown -R striped /home/striped
-
 USER striped
 
 WORKDIR /home/striped
 
-RUN cd ${HOME}; git clone http://cdcvs.fnal.gov/projects/nosql-ldrd striped
-RUN cd ${HOME}/striped ; make 
-RUN cd ${HOME} ; rm -rf striped
+RUN pip install uproot uproot-methods awkward 
+RUN pip install fnal-column-analysis-tools
 
-ADD ./scripts ${HOME}
+RUN cd ~ && \
+    git clone https://github.com/ivmfnal/striped.git striped && \
+    mkdir -p build && \
+    cd striped && \
+    make
+    
+RUN mkdir ~/striped_home && \
+    ln -s ~/build/striped ~/striped_home/product
 
-RUN ln -s ${HOME}/build/striped ${HOME}/product
+ADD scripts/*.sh striped_home/
+ADD config striped_home/config/
 
-EXPOSE 8765
+EXPOSE 8765 8766
 
-CMD cd ${HOME}; ./run_micro_server.sh
+#CMD cd ~/striped_home; ./run_micro_server.sh

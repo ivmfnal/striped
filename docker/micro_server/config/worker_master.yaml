@@ -1,0 +1,7 @@
+ServerURL: http://dbdata0vm.fnal.gov:9091/striped_130tb/app
+Registry:
+        port: 7566
+        host: localhost
+NWorkers: 3
+LogDir: /tmp
+ModuleStorage: /tmp
