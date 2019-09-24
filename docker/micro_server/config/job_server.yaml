@@ -1,0 +1,15 @@
+DataServerURL:  http://dbdata0vm.fnal.gov:9091/striped_130tb/app
+WebServerPort:  8766
+Port:           8765
+RegistryPort:   7566
+LogFileDir:     /tmp
+SourceArchive:  /tmp
+AARequred:      yes
+
+
+Users:
+    test_user:
+        password: user4Test
+        roles:
+            - run
+    
