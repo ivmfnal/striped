@@ -3,6 +3,8 @@ RUN yum -y update
 RUN yum install -y git gcc sudo make 
 RUN yum install -y wget
 
+RUN adduser -d /home/striped striped
+
 USER striped
 WORKDIR /home/striped
 
@@ -23,7 +25,7 @@ RUN wget "https://bootstrap.pypa.io/get-pip.py" -O /tmp/get-pip.py && \
 RUN pip install numpy
 RUN pip install scipy
 RUN pip install pandas tables
-RUN pip install jupyter IPython vega histbook numba cloudpickle
+RUN pip install jupyter IPython vega numba cloudpickle
 
 
 
