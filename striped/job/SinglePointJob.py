@@ -70,7 +70,7 @@ class SinglePointStripedSession(Lockable):
             raise RuntimeError("Can not get Job Server addres from the web service")
         addr = tuple(json.loads(resp.text))
 
-        self.JobServerAddress = addr
+        self.JobServerAddress = (self.WebServiceHost, addr[1])
         
         #print addr
 
