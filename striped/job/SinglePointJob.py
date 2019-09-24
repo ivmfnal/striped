@@ -72,6 +72,7 @@ class SinglePointStripedSession(Lockable):
 
         self.JobServerAddress = (self.WebServiceHost, addr[1])
         
+        
         #print addr
 
         self.WorkerTags = worker_tags
