@@ -317,8 +317,8 @@ class DataExchangeSocket(BufferedSocket):
     def __init__(self, sock, address = None):
         BufferedSocket.__init__(self, sock)
         self.Address = address
-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 10000000)
-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 10000000)
+        sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 1000000)
+        sock.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 1000000)
         
     @staticmethod
     def connect(address):
