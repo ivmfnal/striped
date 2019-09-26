@@ -1,21 +1,24 @@
-1. Build the striped_base docker image:
+1. Build the Micro Server image:
 
-    $ docker build -t striped_base --no-cache striped_base
-    
-2. Build the micro server image:
+    $ ./build_striped_micro_server.sh
 
-    $ docker build -t micro_server --no-cache micro_server
+2. Create a directory somewhere with configuration files for the Micro Server. It must include:
+
+   job_server.yaml - Job Server configuration
+   worker_master.yaml - Worker Master configuration
+   
+   Use templates found under micro_server/config
     
 3. Run the micro_server:
 
-    $ docker run --rm -p 8765:8765 micro_server
+    $ ./run_micro_server.sh -c /path/to/config_directory
     
-4. Point your client code to the node where you run the microserver. It has to be inside FNAL LAN:
+4. Configure your client to talk to the Micro Server - use striped.yaml template found under test_job.
 
-    from striped.job import SinglePointStripedSession as Session
-    job_server = ("node.where.docker.runs.fnal.gov", 8765)
-    session = Session(job_server) 
-    ...
+5. pip install striped
+
+6. Run your client job. 
+
     
 
 
