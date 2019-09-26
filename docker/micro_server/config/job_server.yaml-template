@@ -1,4 +1,6 @@
-DataServerURL:  http://dbdata0vm.fnal.gov:9091/striped_130tb/app
+
+
+DataServerURL:  http://host.fnal.gov:9091/striped_130tb/app
 WebServerPort:  8766
 Port:           8765
 RegistryPort:   7566

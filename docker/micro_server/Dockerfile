@@ -20,8 +20,8 @@ RUN mkdir ~/striped_home && \
     ln -s ~/build/striped ~/striped_home/product
 
 ADD --chown=striped scripts/*.sh striped_home/
-ADD --chown=striped config striped_home/config/
+#ADD --chown=striped config striped_home/config/
 
 EXPOSE 8765 8766
 
-CMD cd ~/striped_home  #; ./run_micro_server.sh
+CMD cd ~/striped_home  ; ./run_micro_server.sh

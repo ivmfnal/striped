@@ -1,4 +1,4 @@
-ServerURL: http://dbdata0vm.fnal.gov:9091/striped_130tb/app
+ServerURL: http://host.gov:9091/striped_130tb/app
 Registry:
         port: 7566
         host: localhost
