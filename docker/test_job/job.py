@@ -1,3 +1,4 @@
+
 from striped.job import Session
 from striped.job.callbacks import ProgressBarCallback
 import numpy as np
